@@ -8,13 +8,16 @@
   --dark-mode-text: #ececec;
   --dark-mode-bg-1: #161616;
   --dark-mode-bg-2: #111;
-  --alliance-bg-1: #002f6d;
-  --alliance-bg-2: #001e44;
-  --alliance-alt-1: #4968aa;
+  --alliance-bg-1: hsl(214, 100%, 21%);
+  --alliance-bg-2: hsl(214, 100%, 13%);
+  --alliance-alt-1: hsl(221, 40%, 48%);
+  --horde-bg-1: hsl(0, 100%, 21%);
+  --horde-bg-2: hsl(0, 100%, 13%);
+  --horde-alt-1: hsl(0, 40%, 48%);
 
-  --theme-bg: var(--alliance-bg-1);
-  --theme-bg-2: var(--alliance-bg-2);
-  --theme-alt-1: var(--alliance-alt-1);
+  --theme-bg: var(--horde-bg-1);
+  --theme-bg-2: var(--horde-bg-2);
+  --theme-alt-1: var(--horde-alt-1);
   --theme-text: var(--dark-mode-text);
   --theme-good: #11c700;
   --theme-bad: #bb0000;
