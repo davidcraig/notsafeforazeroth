@@ -28,12 +28,12 @@ const wikiPages = [
       { name: 'Death Knight', slug: '/classes/deathknight', wowClassColour: true }
     ]
   },
-  {
-    name: 'Shadowlands', pages: [
-      { name: 'Castle Nathria', slug: '/shadowlands/nathria' },
-      { name: 'FAQ', slug: '/shadowlands/faq' },
-    ]
-  }
+  // {
+  //   name: 'Shadowlands', pages: [
+  //     { name: 'Castle Nathria', slug: '/shadowlands/nathria' },
+  //     { name: 'FAQ', slug: '/shadowlands/faq' },
+  //   ]
+  // }
 ]
 
 function renderNavigationItem(item) {
