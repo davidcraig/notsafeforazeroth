@@ -65,13 +65,8 @@ export default function Navigation() {
           return renderNavigationItem(page)
         })}
         <Item
-          href='https://raider.io/guilds/eu/silvermoon/Not%20Safe%20for%20Azeroth'
+          href='https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth'
           title='Raider.IO'
-          target='_blank'
-        />
-        <Item
-          href='https://www.wowprogress.com/guild/eu/silvermoon/Not+Safe+for+Azeroth'
-          title='WoWProgress'
           target='_blank'
         />
       </End>
