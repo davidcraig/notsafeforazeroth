@@ -1,50 +1,50 @@
-.content {
-  .widget {
-    margin-bottom: 1em;
+.widget {
+  margin-bottom: 1em;
 
-    .card-content {
-      padding: 0;
+  .card-content {
+    padding: 0;
 
-      .table {
-        background: transparent;
+    .table {
+      background: transparent;
+      width: 100%;
+    }
+  }
+}
+
+.widget-recruitment {
+  .recruitment-open { color: var(--theme-good); }
+  .recruitment-closed { color: var(--theme-bad); }
+
+  .table tbody td {
+    @include class-colours();
+  }
+}
+
+.widget-progression {
+  .card-content {
+    .table {
+      td {
+        color: var(--theme-text);
       }
-    }
-  }
 
-  .widget-recruitment {
-    .recruitment-open { color: var(--theme-good); }
-    .recruitment-closed { color: var(--theme-bad); }
-
-    .table tbody td {
-      @include class-colours();
-    }
-  }
-
-  .widget-progression {
-    .card-content {
-      .table {
-        td {
-          color: var(--theme-text);
-        }
-
-        tr {
-          &.alive {
-            td {
-              color: var(--theme-bad, red);
-            }
+      tr {
+        &.alive {
+          td {
+            color: var(--theme-bad, red);
           }
-          &.normal,
-          &.heroic,
-          &.mythic {
-            td {
-              color: var(--theme-good, green);
-            }
+        }
+        &.normal,
+        &.heroic,
+        &.mythic {
+          td {
+            color: var(--theme-good, green);
           }
         }
       }
     }
   }
 }
+
 
 
 

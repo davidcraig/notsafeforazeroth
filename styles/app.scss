@@ -73,101 +73,98 @@ body {
   min-height: 100vh;
 }
 
-.content {
-  padding-top: 40px;
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--theme-text);
 
-  .h1, .h2, .h3, .h4, .h5, .h6 {
+  @include class-colours();
+}
+
+.tabs {
+  margin-bottom: 0;
+
+  ul {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+
+.card {
+  border: 1px solid var(--theme-bg-2);
+  border-radius: 0;
+  margin-bottom: 1em;
+
+  &.mage {
+    .card-header > .card-header-title {
+      color: var(--wow-class-mage) !important;
+    }
+  }
+  &.priest {
+    .card-header > .card-header-title {
+      color: var(--wow-class-priest) !important;
+    }
+  }
+  &.warlock {
+    .card-header > .card-header-title {
+      color: var(--wow-class-warlock) !important;
+    }
+  }
+  &.druid {
+    .card-header > .card-header-title {
+      color: var(--wow-class-druid) !important;
+    }
+  }
+  &.rogue {
+    .card-header > .card-header-title {
+      color: var(--wow-class-rogue) !important;
+    }
+  }
+  &.monk {
+    .card-header > .card-header-title {
+      color: var(--wow-class-monk) !important;
+    }
+  }
+  &.demonhunter {
+    .card-header > .card-header-title {
+      color: var(--wow-class-demonhunter) !important;
+    }
+  }
+  &.hunter {
+    .card-header > .card-header-title {
+      color: var(--wow-class-hunter) !important;
+    }
+  }
+  &.shaman {
+    .card-header > .card-header-title {
+      color: var(--wow-class-shaman) !important;
+    }
+  }
+  &.warrior {
+    .card-header > .card-header-title {
+      color: var(--wow-class-warrior) !important;
+    }
+  }
+  &.paladin {
+    .card-header > .card-header-title {
+      color: var(--wow-class-paladin) !important;
+    }
+  }
+  &.deathknight {
+    .card-header > .card-header-title {
+      color: var(--wow-class-deathknight) !important;
+    }
+  }
+}
+
+.card, .card-content {
+  background: transparent;
+  color: var(--theme-text);
+}
+
+.card-header {
+  @apply p-2;
+  background: var(--theme-bg-2);
+  .card-header-title {
     color: var(--theme-text);
-
-    @include class-colours();
-  }
-
-  .tabs {
-    margin-bottom: 0;
-
-    ul {
-      margin-left: 0;
-      margin-top: 0;
-    }
-  }
-
-  .card {
-    border: 1px solid var(--theme-bg-2);
-    border-radius: 0;
-    margin-bottom: 1em;
-
-    &.mage {
-      .card-header > .card-header-title {
-        color: var(--wow-class-mage) !important;
-      }
-    }
-    &.priest {
-      .card-header > .card-header-title {
-        color: var(--wow-class-priest) !important;
-      }
-    }
-    &.warlock {
-      .card-header > .card-header-title {
-        color: var(--wow-class-warlock) !important;
-      }
-    }
-    &.druid {
-      .card-header > .card-header-title {
-        color: var(--wow-class-druid) !important;
-      }
-    }
-    &.rogue {
-      .card-header > .card-header-title {
-        color: var(--wow-class-rogue) !important;
-      }
-    }
-    &.monk {
-      .card-header > .card-header-title {
-        color: var(--wow-class-monk) !important;
-      }
-    }
-    &.demonhunter {
-      .card-header > .card-header-title {
-        color: var(--wow-class-demonhunter) !important;
-      }
-    }
-    &.hunter {
-      .card-header > .card-header-title {
-        color: var(--wow-class-hunter) !important;
-      }
-    }
-    &.shaman {
-      .card-header > .card-header-title {
-        color: var(--wow-class-shaman) !important;
-      }
-    }
-    &.warrior {
-      .card-header > .card-header-title {
-        color: var(--wow-class-warrior) !important;
-      }
-    }
-    &.paladin {
-      .card-header > .card-header-title {
-        color: var(--wow-class-paladin) !important;
-      }
-    }
-    &.deathknight {
-      .card-header > .card-header-title {
-        color: var(--wow-class-deathknight) !important;
-      }
-    }
-  }
-
-  .card, .card-content {
-    background: transparent;
-    color: var(--theme-text);
-  }
-
-  .card-header {
-    background: var(--theme-bg-2);
-    .card-header-title {
-      color: var(--theme-text);
-    }
   }
 }
 
