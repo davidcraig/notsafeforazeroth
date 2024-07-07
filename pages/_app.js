@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
+import { Inter } from 'next/font/google'
 import '../styles/app.scss'
 
 const wowhead = (
@@ -9,14 +10,19 @@ const wowhead = (
       `
     }} />,
   <script src="https://wow.zamimg.com/widgets/power.js"></script>
-)
+);
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Navbar />
+      <Navbar className={inter.className} />
       {wowhead}
-      <Component {...pageProps} />
+      <Component className={inter.className} {...pageProps} />
     </>
   )
 }

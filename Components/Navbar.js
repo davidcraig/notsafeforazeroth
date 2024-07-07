@@ -55,9 +55,9 @@ const externalLink = (href, title) => {
   return <a href={href} target='_blank' rel='noopener noreferrer'>{title}</a>
 }
 
-export default function Navigation() {
+export default function Navigation(props) {
   return (
-    <nav className='navbar p-4 flex'>
+    <nav className={`navbar p-4 flex ${props.className}`}>
       <a className='brand font-bold text-xl' href='/'>&lt;Not Safe for Azeroth&gt;</a>
       <div className='ml-auto'>
         {externalLink('https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth', 'Raider.IO')}
