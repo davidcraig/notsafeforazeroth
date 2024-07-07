@@ -11,6 +11,7 @@ const classStatuses = [
   { name: 'Monk',         status: 'Open', css: 'fg-monk' },
   { name: 'Hunter',       status: 'Open', css: 'fg-hunter' },
   { name: 'Shaman',       status: 'Open', css: 'fg-shaman' },
+  { name: 'Evoker',       status: 'Open', css: 'fg-evoker' },
   { name: 'Paladin',      status: 'Open', css: 'fg-paladin' },
   { name: 'Warrior',      status: 'Open', css: 'fg-warrior' },
   { name: 'Death Knight', status: 'Open', css: 'fg-deathknight' },

@@ -1,0 +1,116 @@
+:root {
+  /* Classes */
+  --wow-class-priest: #fff;
+  --wow-class-mage: #69CCF0;
+  --wow-class-warlock: #9482C9;
+  --wow-class-rogue: #FFF569;
+  --wow-class-druid: #FF7D0A;
+  --wow-class-monk: #00FF96;
+  --wow-class-demonhunter: #A330C9;
+  --wow-class-hunter: #ABD473;
+  --wow-class-shaman: #0070DE;
+  --wow-class-evoker: #33937F;
+  --wow-class-deathknight: #C41F3B;
+  --wow-class-warrior: #C79C6E;
+  --wow-class-paladin: #F58CBA;
+  /* Rarity */
+  --wow-rarity-poor: #9d9d9d;
+  --wow-rarity-common: #fff;
+  --wow-rarity-uncommon: #1eff00;
+  --wow-rarity-rare: #0070dd;
+  --wow-rarity-epic: #a335ee;
+  --wow-rarity-legendary: #ff8000;
+  --wow-rarity-artifact: #e6cc80;
+  --wow-rarity-heirloom: #00ccff;
+}
+
+/* Classes */
+
+/* Forground (text color) */
+.fg-deathknight, a.fg-deathknight { color: var(--wow-class-deathknight); }
+.fg-demonhunter, a.fg-demonhunter { color: var(--wow-class-demonhunter); }
+.fg-druid, a.fg-druid { color: var(--wow-class-druid); }
+.fg-evoker, a.fg-evoker { color: var(--wow-class-evoker); }
+.fg-hunter, a.fg-hunter { color: var(--wow-class-hunter); }
+.fg-mage, a.fg-mage { color: var(--wow-class-mage); }
+.fg-monk, a.fg-monk { color: var(--wow-class-monk); }
+.fg-paladin, a.fg-paladin { color: var(--wow-class-paladin); }
+.fg-priest, a.fg-priest { color: var(--wow-class-priest); }
+.fg-rogue, a.fg-rogue { color: var(--wow-class-rogue); }
+.fg-shaman, a.fg-shaman { color: var(--wow-class-shaman); }
+.fg-warlock, a.fg-warlock { color: var(--wow-class-warlock); }
+.fg-warrior, a.fg-warrior { color: var(--wow-class-warrior); }
+
+.fg-deathknight-important, a.fg-deathknight-important { color: var(--wow-class-deathknight) !important; }
+.fg-demonhunter-important, a.fg-demonhunter-important { color: var(--wow-class-demonhunter) !important; }
+.fg-druid-important, a.fg-druid-important { color: var(--wow-class-druid) !important; }
+.fg-hunter-important, a.fg-hunter-important { color: var(--wow-class-hunter) !important; }
+.fg-mage-important, a.fg-mage-important { color: var(--wow-class-mage) !important; }
+.fg-monk-important, a.fg-monk-important { color: var(--wow-class-monk) !important; }
+.fg-paladin-important, a.fg-paladin-important { color: var(--wow-class-paladin) !important; }
+.fg-priest-important, a.fg-priest-important { color: var(--wow-class-priest) !important; }
+.fg-rogue-important, a.fg-rogue-important { color: var(--wow-class-rogue) !important; }
+.fg-shaman-important, a.fg-shaman-important { color: var(--wow-class-shaman) !important; }
+.fg-evoker-important, a.fg-evoker-important { color: var(--wow-class-evoker) !important; }
+.fg-warlock-important, a.fg-warlock-important { color: var(--wow-class-warlock) !important; }
+.fg-warrior-important, a.fg-warrior-important { color: var(--wow-class-warrior) !important; }
+
+/* Backgrounds (background-color) */
+.bg-deathknight, a.bg-deathknight { background-color: var(--wow-class-deathknight); }
+.bg-demonhunter, a.bg-demonhunter { background-color: var(--wow-class-demonhunter); }
+.bg-druid, a.bg-druid { background-color: var(--wow-class-druid); }
+.bg-hunter, a.bg-hunter { background-color: var(--wow-class-hunter); }
+.bg-evoker, a.bg-evoker { background-color: var(--wow-class-evoker); }
+.bg-mage, a.bg-mage { background-color: var(--wow-class-mage); }
+.bg-monk, a.bg-monk { background-color: var(--wow-class-monk); }
+.bg-paladin, a.bg-paladin { background-color: var(--wow-class-paladin); }
+.bg-priest, a.bg-priest { background-color: var(--wow-class-priest); }
+.bg-rogue, a.bg-rogue { background-color: var(--wow-class-rogue); }
+.bg-shaman, a.bg-shaman { background-color: var(--wow-class-shaman); }
+.bg-warlock, a.bg-warlock { background-color: var(--wow-class-warlock); }
+.bg-warrior, a.bg-warrior { background-color: var(--wow-class-warrior); }
+
+.bg-deathknight-important, a.bg-deathknight-important { background-color: var(--wow-class-deathknight) !important; }
+.bg-demonhunter-important, a.bg-demonhunter-important { background-color: var(--wow-class-demonhunter) !important; }
+.bg-druid-important, a.bg-druid-important { background-color: var(--wow-class-druid) !important; }
+.bg-evoker-important, a.bg-evoker-important { background-color: var(--wow-class-evoker) !important; }
+.bg-hunter-important, a.bg-hunter-important { background-color: var(--wow-class-hunter) !important; }
+.bg-mage-important, a.bg-mage-important { background-color: var(--wow-class-mage) !important; }
+.bg-monk-important, a.bg-monk-important { background-color: var(--wow-class-monk) !important; }
+.bg-paladin-important, a.bg-paladin-important { background-color: var(--wow-class-paladin) !important; }
+.bg-priest-important, a.bg-priest-important { background-color: var(--wow-class-priest) !important; }
+.bg-rogue-important, a.bg-rogue-important { background-color: var(--wow-class-rogue) !important; }
+.bg-shaman-important, a.bg-shaman-important { background-color: var(--wow-class-shaman) !important; }
+.bg-warlock-important, a.bg-warlock-important { background-color: var(--wow-class-warlock) !important; }
+.bg-warrior-important, a.bg-warrior-important { background-color: var(--wow-class-warrior) !important; }
+
+/* Rarity */
+
+/* Foreground */
+.fg-poor { color: var(--wow-rarity-poor); }
+.fg-common { color: var(--wow-rarity-common); }
+.fg-uncommon { color: var(--wow-rarity-uncommon); }
+.fg-rare { color: var(--wow-rarity-rare); }
+.fg-epic { color: var(--wow-rarity-epic); }
+.fg-legendary { color: var(--wow-rarity-legendary); }
+.fg-artifact { color: var(--wow-rarity-artifact); }
+.fg-heirloom { color: var(--wow-rarity-heirloom); }
+
+.fg-poor-important { color: var(--wow-rarity-poor) !important; }
+.fg-common-important { color: var(--wow-rarity-common) !important; }
+.fg-uncommon-important { color: var(--wow-rarity-uncommon) !important; }
+.fg-rare-important { color: var(--wow-rarity-rare) !important; }
+.fg-epic-important { color: var(--wow-rarity-epic) !important; }
+.fg-legendary-important { color: var(--wow-rarity-legendary) !important; }
+.fg-artifact-important { color: var(--wow-rarity-artifact) !important; }
+.fg-heirloom-important { color: var(--wow-rarity-heirloom) !important; }
+
+/* Background */
+.bg-poor-important { background-color: var(--wow-rarity-poor) !important; }
+.bg-common-important { background-color: var(--wow-rarity-common) !important; }
+.bg-uncommon-important { background-color: var(--wow-rarity-uncommon) !important; }
+.bg-rare-important { background-color: var(--wow-rarity-rare) !important; }
+.bg-epic-important { background-color: var(--wow-rarity-epic) !important; }
+.bg-legendary-important { background-color: var(--wow-rarity-legendary) !important; }
+.bg-artifact-important { background-color: var(--wow-rarity-artifact) !important; }
+.bg-heirloom-important { background-color: var(--wow-rarity-heirloom) !important; }

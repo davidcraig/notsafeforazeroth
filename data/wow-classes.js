@@ -10,6 +10,7 @@ export const Shaman = { name: 'Shaman', css: 'shaman', roles: [ 'DPS', 'Healer' 
 export const Warrior = { name: 'Warrior', css: 'warrior', roles: [ 'DPS', 'Tank' ] }
 export const Paladin = { name: 'Paladin', css: 'paladin', roles: [ 'DPS', 'Tank' ] }
 export const DeathKnight = { name: 'Death Knight', css: 'deathknight', roles: [ 'DPS', 'Tank' ] }
+export const Evoker = { name: 'Evoker', css: 'evoker', roles: [ 'DPS', 'Healer' ] }
 
 export const classes = {
   Mage,
@@ -23,6 +24,7 @@ export const classes = {
 
   Hunter,
   Shaman,
+  Evoker,
 
   Warrior,
   Paladin,

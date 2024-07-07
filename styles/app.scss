@@ -1,5 +1,5 @@
 @import '~bulma';
-@import '@davidcraig/wow/wow.css';
+@import 'wow';
 @import 'navbar';
 @import 'table';
 @import 'tabs';
@@ -33,6 +33,7 @@
   &.fg-demonhunter { color: var(--wow-class-demonhunter); }
   &.fg-hunter { color: var(--wow-class-hunter); }
   &.fg-shaman { color: var(--wow-class-shaman); }
+  &.fg-evoker { color: var(--wow-class-evoker); }
   &.fg-warrior { color: var(--wow-class-warrior); }
   &.fg-deathknight { color: var(--wow-class-deathknight); }
   &.fg-paladin { color: var(--wow-class-paladin); }
@@ -46,6 +47,7 @@
   &.fg-rogue { color: var(--wow-class-rogue) !important; }
   &.fg-monk { color: var(--wow-class-monk) !important; }
   &.fg-demonhunter { color: var(--wow-class-demonhunter) !important; }
+  &.fg-evoker { color: var(--wow-class-evoker) !important; }
   &.fg-hunter { color: var(--wow-class-hunter) !important; }
   &.fg-shaman { color: var(--wow-class-shaman) !important; }
   &.fg-warrior { color: var(--wow-class-warrior) !important; }
