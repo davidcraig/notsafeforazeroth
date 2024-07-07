@@ -24,7 +24,7 @@ function PageWithWidgets(props) {
         </Column>
         <Column>
           <Recruitment />
-          <Progress />
+          {/* <Progress /> */}
         </Column>
       </Columns>
     </div>
