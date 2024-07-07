@@ -37,8 +37,8 @@ export default function Recruitment() {
         <tbody>
           {classStatuses.map(s => {
             return <tr key={s.css}>
-              <td className={s.css}>{s.name}</td>
-              <td className={getStatusClass(s)}>{s.status}</td>
+              <td className={`${s.css} px-2 py-1`}>{s.name}</td>
+              <td className={`${getStatusClass(s)} px-2 py-1`}>{s.status}</td>
             </tr>
           })}
         </tbody>

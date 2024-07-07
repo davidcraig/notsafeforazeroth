@@ -1,8 +1,6 @@
-@import '~bulma';
-@import 'wow';
-@import 'navbar';
-@import 'table';
-@import 'tabs';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --dark-mode-text: #ececec;
@@ -22,6 +20,11 @@
   --theme-good: #11c700;
   --theme-bad: #bb0000;
 }
+
+@import 'wow';
+@import 'navbar';
+@import 'table';
+@import 'tabs';
 
 @mixin class-colours {
   &.fg-mage { color: var(--wow-class-mage); }

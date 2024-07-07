@@ -16,11 +16,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Navbar />
       {wowhead}
-      <div className='container'>
-        <div className='content'>
-          <Component {...pageProps} />
-        </div>
-      </div>
+      <Component {...pageProps} />
     </>
   )
 }

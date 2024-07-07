@@ -1,6 +1,5 @@
 import React from 'react'
 import { Card } from '@davidcraig/react-bulma'
-import { castleNathria } from '../../data/shadowlands/raids'
 
 function getCurrentRaidTier() {
   return null

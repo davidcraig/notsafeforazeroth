@@ -51,26 +51,36 @@ function renderNavigationItem(item) {
   return <Item className={itemCssClass} key={item.slug} title={item.name} href={item.slug} />
 }
 
+const externalLink = (href, title) => {
+  return <a href={href} target='_blank' rel='noopener noreferrer'>{title}</a>
+}
+
 export default function Navigation() {
   return (
-    <Navbar>
-      <Brand title='Not Safe for Azeroth' />
-      <Start>
-        {pages.map(page => {
-          return renderNavigationItem(page)
-        })}
-      </Start>
-      <End>
-        {wikiPages.map(page => {
-          return renderNavigationItem(page)
-        })}
-        <Item
-          href='https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth'
-          title='Raider.IO'
-          target='_blank'
-        />
-      </End>
-    </Navbar>
+    <nav className='navbar p-4 flex'>
+      <a className='brand font-bold text-xl' href='/'>&lt;Not Safe for Azeroth&gt;</a>
+      <div className='ml-auto'>
+        {externalLink('https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth', 'Raider.IO')}
+      </div>
+    </nav>
+    // <Navbar>
+    //   <Brand title='Not Safe for Azeroth' />
+    //   <Start>
+    //     {pages.map(page => {
+    //       return renderNavigationItem(page)
+    //     })}
+    //   </Start>
+    //   <End>
+    //     {wikiPages.map(page => {
+    //       return renderNavigationItem(page)
+    //     })}
+    //     <Item
+    //       href='https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth'
+    //       title='Raider.IO'
+    //       target='_blank'
+    //     />
+    //   </End>
+    // </Navbar>
   )
 }
 

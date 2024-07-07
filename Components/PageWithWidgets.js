@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import React from 'react'
-import { Column, Columns } from '@davidcraig/react-bulma'
 import Recruitment from './Widgets/Recruitment'
 import Progress from './Widgets/Progress'
 
@@ -16,17 +15,18 @@ function PageWithWidgets(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Columns>
-        <Column class='is-two-thirds'>
+      <div className='grid grid-cols-12 gap-4'>
+        <div className='col-span-8 p-4'>
           <main className={pageClass}>
             {props.children}
           </main>
-        </Column>
-        <Column>
+
+        </div>
+        <div className='col-span-4 p-4'>
           <Recruitment />
           {/* <Progress /> */}
-        </Column>
-      </Columns>
+        </div>
+      </div>
     </div>
   )
 }
