@@ -21,7 +21,7 @@ export default function ClassEvoker() {
       title='Evoker'
       class={Evoker}
       discord={DISCORD}
-      guides={guides}
+      // guides={guides}
       specs={[
         { name: 'Havoc', key: 'havoc' },
         { name: 'Vengeance', key: 'vengeance' },
