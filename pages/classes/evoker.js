@@ -2,6 +2,12 @@ import React from 'react'
 import Page from '../../Components/WoWClassPage'
 import { Evoker } from '../../data/wow-classes'
 
+const guides = {
+  devastation: [],
+  preservation: [],
+  augmentation: [],
+}
+
 // const guides = {
 //   havoc: [
 //     { name: 'Icy Veins', url: 'https://www.icy-veins.com/wow/havoc-demon-hunter-pve-dps-guide' },
@@ -21,10 +27,11 @@ export default function ClassEvoker() {
       title='Evoker'
       class={Evoker}
       discord={DISCORD}
-      // guides={guides}
+      guides={guides}
       specs={[
-        { name: 'Havoc', key: 'havoc' },
-        { name: 'Vengeance', key: 'vengeance' },
+        { name: 'Devastation', key: 'devastation' },
+        { name: 'Augmentation', key: 'augmentation' },
+        { name: 'Preservation', key: 'preservation' },
       ]}
     >
     </Page>
