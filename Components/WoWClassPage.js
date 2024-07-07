@@ -24,7 +24,7 @@ export function renderClassGuides(guides) {
     <ul>
       {
         guides.map(guide => {
-          return <li>
+          return <li key={guide.url}>
             <ExternalLink url={guide.url} text={guide.name} />
           </li>
         })
