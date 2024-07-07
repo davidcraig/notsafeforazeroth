@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-// import { DemonHunter } from '../../data/wow-classes'
+import { Evoker } from '../../data/wow-classes'
 
 // const guides = {
 //   havoc: [
@@ -19,7 +19,7 @@ export default function ClassEvoker() {
   return (
     <Page
       title='Evoker'
-      class={DemonHunter}
+      class={Evoker}
       discord={DISCORD}
       guides={guides}
       specs={[
