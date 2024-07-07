@@ -11,5 +11,7 @@ export default function Home() {
       description='A World of Warcraft guild on Silvermoon EU.'
       url='https://notsafeforazeroth.netlify.app/'
     />
+
+    <img src='/NSFA-Recruitment.jpg' />
   </PageWithWidgets>
 }

@@ -1,6 +1,8 @@
 import classes from './wow-classes'
 
-const LEVEL_CAP = 60
+import GetLevelCap from '../Functions/WoW/GetLevelCap'
+
+const LEVEL_CAP = GetLevelCap();
 
 const Characters = [
   { name: 'Sniperdrood', class: classes.Druid, level: LEVEL_CAP },

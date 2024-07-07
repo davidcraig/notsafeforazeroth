@@ -3,7 +3,7 @@ import { Card } from '@davidcraig/react-bulma'
 import { castleNathria } from '../../data/shadowlands/raids'
 
 function getCurrentRaidTier() {
-  return castleNathria
+  return null
 }
 
 function getStatus (progression) {
