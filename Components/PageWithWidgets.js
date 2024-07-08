@@ -24,7 +24,7 @@ function PageWithWidgets(props) {
         </div>
         <div className='col-span-4 p-4'>
           <Recruitment />
-          {/* <Progress /> */}
+          <Progress />
         </div>
       </div>
     </div>

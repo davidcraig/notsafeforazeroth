@@ -1,9 +1,6 @@
 import React from 'react'
 import { Card } from '@davidcraig/react-bulma'
-
-function getCurrentRaidTier() {
-  return null
-}
+import GetCurrentRaidTier from '../../Functions/WoW/GetCurrentRaidTier'
 
 function getStatus (progression) {
   if (!progression.normal) {
@@ -27,7 +24,7 @@ function getStatusClass (progression) {
 }
 
 export default function Progress() {
-  const progression = getCurrentRaidTier()
+  const progression = GetCurrentRaidTier().progression;
 
   return (
     <Card title='Progression' className='widget widget-progression'>
