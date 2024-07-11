@@ -52,14 +52,14 @@ function renderNavigationItem(item) {
 }
 
 const externalLink = (href, title) => {
-  return <a className='ml-4' href={href} target='_blank' rel='noopener noreferrer'>{title}</a>
+  return <a className='ml-4 p-4 md:p-0' href={href} target='_blank' rel='noopener noreferrer'>{title}</a>
 }
 
 export default function Navigation(props) {
   return (
-    <nav className={`navbar p-4 flex ${props.className}`}>
-      <a className='brand font-bold text-xl' href='/'>&lt;Not Safe for Azeroth&gt;</a>
-      <div className='ml-auto'>
+    <nav className={`navbar p-4 flex flex-col md:flex-row ${props.className}`}>
+      <a className='brand font-bold text-xl ml-auto md:ml-0 mr-auto' href='/'>&lt;Not Safe for Azeroth&gt;</a>
+      <div className='ml-auto mr-auto md:mr-0 flex flex-col md:flex-row'>
         {externalLink('https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth', 'Raider.IO')}
         {externalLink('https://discord.gg/CtqNwgQnJm', 'Discord')}
         {externalLink('https://worldofwarcraft.blizzard.com/en-gb/guild/eu/tarren-mill/not-safe-for-azeroth', 'Armoury')}
