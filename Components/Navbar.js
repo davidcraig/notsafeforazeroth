@@ -62,6 +62,7 @@ export default function Navigation(props) {
       <div className='ml-auto'>
         {externalLink('https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth', 'Raider.IO')}
         {externalLink('https://discord.gg/CtqNwgQnJm', 'Discord')}
+        {externalLink('https://worldofwarcraft.blizzard.com/en-gb/guild/eu/tarren-mill/not-safe-for-azeroth', 'Armoury')}
       </div>
     </nav>
     // <Navbar>
