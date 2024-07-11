@@ -1,7 +1,8 @@
 import Page from './PageWithWidgets'
 import React from 'react'
 import ExternalLink from './ExternalLink'
-import { Card, Column, Columns, TabbedContent } from '@davidcraig/react-bulma'
+import { Card, Column, Columns } from '@davidcraig/react-bulma'
+import TabbedContent from './TabbedContent'
 
 function RenderDiscord(discord) {
   return <a href={discord} target='_blank'>{discord}</a>
@@ -102,8 +103,10 @@ export default function WoWClassPage(props) {
 
   return (
     <Page title={props.title} className={css}>
-      <h1 className={`h1 fg-${css}`}>{name}</h1>
-      {discord}
+      <h1 className={`h1 text-2xl fg-${css} mb-4`}>{name}</h1>
+      <div className='mb-4'>
+        {discord}
+      </div>
       <TabbedContent content={tabContent} />
       {props.children}
     </Page>

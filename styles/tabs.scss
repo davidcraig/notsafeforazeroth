@@ -22,8 +22,11 @@
   border-bottom: 0;
 }
 
+.tabs li {
+  border-bottom: 1px solid transparent;
+}
+
 .tabs .is-active {
-  padding: 2px 6px;
   // border: 2px solid var(--tab-colour);
   border-bottom: 1px solid var(--tab-colour);
   color: var(--tab-colour);
