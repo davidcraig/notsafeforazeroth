@@ -13,7 +13,7 @@ function RenderDiscords(discord) {
   }
 
   if (Array.isArray(discord)) {
-    return <p>Discords: <ul>{discord.map(d => <li>{RenderDiscord(d)}</li>)}</ul></p>
+    return <p>Discords: <ul>{discord.map(d => <li key={d}>{RenderDiscord(d)}</li>)}</ul></p>
   }
 
   return <p>Discord: {RenderDiscord(discord)}</p>
