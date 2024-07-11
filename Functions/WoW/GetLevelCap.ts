@@ -1,5 +1,7 @@
+import GetCurrentExpansion from "./GetCurrentExpansion";
+
 const GetLevelCap = () => {
-  return 70;
+  return GetCurrentExpansion().levelcap;
 }
 
 export default GetLevelCap

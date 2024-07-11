@@ -12,13 +12,18 @@
   --horde-bg-1: hsl(0, 100%, 21%);
   --horde-bg-2: hsl(0, 100%, 13%);
   --horde-alt-1: hsl(0, 40%, 48%);
+  --alliance-good: #11c700;
+  --alliance-bad: #bb0000;
+  --horde-good: #4cc441;
+  --horde-bad: #e63333;
 
   --theme-bg: var(--horde-bg-1);
+  --theme-off-white: #ececec;
   --theme-bg-2: var(--horde-bg-2);
   --theme-alt-1: var(--horde-alt-1);
   --theme-text: var(--dark-mode-text);
-  --theme-good: #11c700;
-  --theme-bad: #bb0000;
+  --theme-good: var(--horde-good);
+  --theme-bad: var(--horde-bad);
 }
 
 @import 'wow';

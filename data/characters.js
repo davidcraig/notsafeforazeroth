@@ -4,16 +4,20 @@ import GetLevelCap from '../Functions/WoW/GetLevelCap'
 
 const LEVEL_CAP = GetLevelCap();
 
-const Characters = [
-  { name: 'Sniperdrood', class: classes.Druid, level: LEVEL_CAP },
-  { name: 'Snipermagi', class: classes.Mage, level: LEVEL_CAP },
-  { name: 'Snipedin', class: classes.Paladin, level: LEVEL_CAP },
-  { name: 'Snípéh', class: classes.Hunter, level: LEVEL_CAP },
-  { name: 'Tyriant', class: classes.Rogue, level: LEVEL_CAP }
+const SnipersCharacters = [
+  { name: 'Sníperdk', class: classes.DeathKnight, level: 70 },
+  { name: 'Sniperdrood', class: classes.Druid, level: 70 },
 ]
+const ChrisCharacters = [
+  { name: 'Aronin', class: classes.Paladin, level: 70 },
+]
+const RobCharacters = []
+const OtherCharacters = []
+
+const GuildCharacters = [...SnipersCharacters, ...ChrisCharacters, ...RobCharacters, ...OtherCharacters]
 
 export function findByName(name) {
-  const found = Characters.find(function(char) {
+  const found = GuildCharacters.find(function(char) {
     return char.name === name;
   })
   if (typeof found === 'object') {
@@ -26,4 +30,4 @@ export function findByName(name) {
   return false
 }
 
-export default Characters
+export default GuildCharacters

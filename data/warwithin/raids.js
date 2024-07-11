@@ -39,5 +39,14 @@ export const nerubarPalace = [
     normal: false, heroic: false, mythic: false,
     video: '', mythic_video: ''
   },
-
 ]
+
+export const raids = {
+  "nerubarPalace": {
+    name: "Nerub-ar Palace",
+    slug: 'nerubar',
+    progression: nerubarPalace
+  }
+}
+
+export default raids

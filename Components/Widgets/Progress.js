@@ -24,10 +24,11 @@ function getStatusClass (progression) {
 }
 
 export default function Progress() {
-  const progression = GetCurrentRaidTier().progression;
+  const currentTier = GetCurrentRaidTier()
+  const progression = currentTier.progression;
 
   return (
-    <Card title='Progression' className='widget widget-progression'>
+    <Card title={`Progression - ${currentTier.name}`} className='widget widget-progression'>
       <table className='table is-narrow is-striped'>
         <tbody>
           {progression.map(p => {

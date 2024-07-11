@@ -25,19 +25,20 @@
     .table {
       td {
         color: var(--theme-text);
+        @apply px-2;
       }
 
       tr {
         &.alive {
           td {
-            color: var(--theme-bad, red);
+            color: var(--theme-bad);
           }
         }
         &.normal,
         &.heroic,
         &.mythic {
           td {
-            color: var(--theme-good, green);
+            color: var(--theme-good);
           }
         }
       }
