@@ -16,6 +16,7 @@
   --alliance-bad: #bb0000;
   --horde-good: #4cc441;
   --horde-bad: #e63333;
+  --horde-link: hsl(180, 78%, 45%);
 
   --theme-bg: var(--horde-bg-1);
   --theme-off-white: #ececec;
@@ -24,6 +25,7 @@
   --theme-text: var(--dark-mode-text);
   --theme-good: var(--horde-good);
   --theme-bad: var(--horde-bad);
+  --theme-link: var(--horde-link);
 }
 
 @import 'wow';
@@ -76,6 +78,10 @@ html, body {
 
 body {
   min-height: 100vh;
+}
+
+a {
+  color: var(--horde-link);
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6 {
