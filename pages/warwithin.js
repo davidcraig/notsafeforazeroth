@@ -38,12 +38,24 @@ export default function WarWithin() {
     <h1 className='h1 text-xl mb-4'>War Within 11.0+</h1>
 
     <h2 className='h2 text-lg'>Raids</h2>
-    {Object.keys(raids).map(index => {
-      let raid = raids[index];
-      return <div key={`raid-${index}`}>
-        {raid.name} - Bosses: {raid.progression.length}
-      </div>
-    })}
+    <table>
+      <thead>
+        <tr>
+          <th className='px-2'>Raid</th>
+          <th className='px-2'>Bosses</th>
+        </tr>
+      </thead>
+      <tbody>
+        {Object.keys(raids).map(index => {
+          let raid = raids[index];
+          return <tr key={`raid-${index}`}>
+            <td className='px-2'>{raid.name}</td>
+            <td className='px-2'>{raid.progression.length}</td>
+          </tr>
+        })}
+      </tbody>
+    </table>
+    
     {/* <TabbedContent
       content={
         [
