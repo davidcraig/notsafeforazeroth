@@ -12,22 +12,25 @@ const pages = [
 ]
 
 const wikiPages = [
-  {
-    name: 'Classes', pages: [
-      { name: 'Priest', slug: '/classes/priest', wowClassColour: true },
-      { name: 'Mage', slug: '/classes/mage', wowClassColour: true },
-      { name: 'Warlock', slug: '/classes/warlock', wowClassColour: true },
-      { name: 'Druid', slug: '/classes/druid', wowClassColour: true },
-      { name: 'Rogue', slug: '/classes/rogue', wowClassColour: true },
-      { name: 'Monk', slug: '/classes/monk', wowClassColour: true },
-      { name: 'Demon Hunter', slug: '/classes/demonhunter', wowClassColour: true },
-      { name: 'Hunter', slug: '/classes/hunter', wowClassColour: true },
-      { name: 'Shaman', slug: '/classes/shaman', wowClassColour: true },
-      { name: 'Warrior', slug: '/classes/warrior', wowClassColour: true },
-      { name: 'Paladin', slug: '/classes/paladin', wowClassColour: true },
-      { name: 'Death Knight', slug: '/classes/deathknight', wowClassColour: true }
-    ]
-  },
+  // {
+  //   name: 'Classes', pages: [
+  //     { name: 'Priest', slug: '/classes/priest', wowClassColour: true },
+  //     { name: 'Mage', slug: '/classes/mage', wowClassColour: true },
+  //     { name: 'Warlock', slug: '/classes/warlock', wowClassColour: true },
+  //     { name: 'Druid', slug: '/classes/druid', wowClassColour: true },
+  //     { name: 'Rogue', slug: '/classes/rogue', wowClassColour: true },
+  //     { name: 'Monk', slug: '/classes/monk', wowClassColour: true },
+  //     { name: 'Demon Hunter', slug: '/classes/demonhunter', wowClassColour: true },
+  //     { name: 'Hunter', slug: '/classes/hunter', wowClassColour: true },
+  //     { name: 'Shaman', slug: '/classes/shaman', wowClassColour: true },
+  //     { name: 'Warrior', slug: '/classes/warrior', wowClassColour: true },
+  //     { name: 'Paladin', slug: '/classes/paladin', wowClassColour: true },
+  //     { name: 'Death Knight', slug: '/classes/deathknight', wowClassColour: true }
+  //   ]
+  // },
+  // {
+  //   name: 'War Within', pages: [],
+  // }
   // {
   //   name: 'Shadowlands', pages: [
   //     { name: 'Castle Nathria', slug: '/shadowlands/nathria' },
@@ -38,7 +41,7 @@ const wikiPages = [
 
 function renderNavigationItem(item) {
   if (item.pages) {
-    return <Dropdown key={item.name} title={item.name}>
+    return <Dropdown className='pr-2' key={item.name} title={item.name}>
       {item.pages.map(dropdownPage => {
         return renderNavigationItem(dropdownPage)
       })}
