@@ -46,7 +46,7 @@ function renderSpecCard(index, props) {
           <ul>
             {
               guides.map(guide => {
-                return <li><ExternalLink url={guide.url} text={guide.name} /></li>
+                return <li key={guide}><ExternalLink url={guide.url} text={guide.name} /></li>
               })
             }
           </ul>

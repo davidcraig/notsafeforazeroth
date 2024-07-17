@@ -30,6 +30,15 @@ export default function ClassMonk() {
           title='Monk Tank Guide'
           videoHeight='250'
         />
+      ),
+      windwalker: (
+        <Card
+          title='Weak Auras'
+        >
+          <div className='p-4'>
+            <a href='https://wago.io/WindwalkerLastAbility'>WindwalkerLastAbility</a>
+          </div>
+        </Card>
       )
     }
   }

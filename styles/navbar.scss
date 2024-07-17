@@ -55,3 +55,19 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     color: var(--wow-class-deathknight) !important;
   }
 }
+
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown > .navbar-dropdown {
+  display: none;
+}
+
+.has-dropdown:hover .navbar-dropdown {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: inherit;
+  @apply p-2;
+}
