@@ -25,6 +25,7 @@
   --theme-text: var(--dark-mode-text);
   --theme-good: var(--horde-good);
   --theme-bad: var(--horde-bad);
+  --theme-warn: hsl(59, 100%, 35%);
   --theme-link: var(--horde-link);
 }
 
@@ -201,3 +202,7 @@ a.spell {
     }
   }
 }
+
+.alive { color: var(--theme-bad); }
+.progress { color: var(--theme-warn); }
+.killed { color: var(--theme-good); }
