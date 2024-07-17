@@ -3,6 +3,8 @@ import TabbedContent from '../Components/TabbedContent'
 import Timeline from '../Components/Timeline'
 import PageWithWidgets from '../Components/PageWithWidgets'
 
+import raids from '../data/warwithin/raids'
+
 // const NathriaProgression = [
 //   {
 //     date: '1 Jan',
@@ -33,7 +35,15 @@ import PageWithWidgets from '../Components/PageWithWidgets'
 
 export default function WarWithin() {
   return <PageWithWidgets title='War Within'>
-    <h1 className='h1 text-xl'>War Within 11.0+</h1>
+    <h1 className='h1 text-xl mb-4'>War Within 11.0+</h1>
+
+    <h2 className='h2 text-lg'>Raids</h2>
+    {Object.keys(raids).map(index => {
+      let raid = raids[index];
+      return <div key={`raid-${index}`}>
+        {raid.name} - Bosses: {raid.progression.length}
+      </div>
+    })}
     {/* <TabbedContent
       content={
         [

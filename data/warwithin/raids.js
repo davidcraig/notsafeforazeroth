@@ -42,7 +42,7 @@ export const nerubarPalace = [
 ]
 
 export const raids = {
-  "nerubarPalace": {
+  1: {
     name: "Nerub-ar Palace",
     slug: 'nerubar',
     progression: nerubarPalace

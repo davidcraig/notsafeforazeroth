@@ -1,7 +1,7 @@
 import { raids } from "../../data/warwithin/raids"
 
 const GetCurrentRaidTier = () => {
-  return raids.nerubarPalace
+  return raids[1]
 }
 
 export default GetCurrentRaidTier
