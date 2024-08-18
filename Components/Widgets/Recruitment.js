@@ -30,7 +30,7 @@ function getStatusClass (classStatus) {
   }
 }
 
-export default function Recruitment() {
+export default function Recruitment(showImg = true) {
   return (
     <Card title='Recruitment' className='widget widget-recruitment'>
       <table className='table is-narrow is-striped'>
@@ -42,10 +42,14 @@ export default function Recruitment() {
             </tr>
           })} */}
           <tr>
-            <td className='recruitment-open px-2 py-1'>We are currently looking for several players, any spec and role are welcome while we build our core team.</td>
+            <td className='recruitment-open p-4'>We are currently looking for several players, any spec and role are welcome while we build our core team.</td>
           </tr>
         </tbody>
       </table>
+
+      {showImg && <img src='/NSFA-Recruitment.jpg' />}
+
+      
     </Card>
   )
 }

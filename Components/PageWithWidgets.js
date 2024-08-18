@@ -16,14 +16,16 @@ function PageWithWidgets(props) {
       </Head>
 
       <div className='grid grid-cols-12 gap-4'>
-        <div className='col-span-12 md:col-span-8 p-4'>
+        <div className='col-span-12 lg:col-span-4 p-4'>
           <main className={pageClass}>
             {props.children}
           </main>
 
         </div>
-        <div className='col-span-12 md:col-span-4 p-4'>
+        <div className='col-span-12 lg:col-span-4 p-4'>
           <Recruitment />
+        </div>
+        <div className='col-span-12 lg:col-span-4 p-4'>
           <Progress />
         </div>
       </div>
