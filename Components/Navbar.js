@@ -30,9 +30,13 @@ const wikiPages = [
   //     { name: 'Death Knight', slug: '/classes/deathknight', wowClassColour: true }
   //   ]
   // },
-  // {
-  //   name: 'War Within', pages: [],
-  // }
+  {
+    name: 'War Within', pages: [
+      { name: 'Raids', pages: [
+        { name: 'Nerub-ar Palace', slug: '/warwithin/raid/nerubarpalace' }
+      ] }
+    ],
+  }
   // {
   //   name: 'Shadowlands', pages: [
   //     { name: 'Castle Nathria', slug: '/shadowlands/nathria' },

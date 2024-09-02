@@ -2,22 +2,22 @@ export const nerubarPalace = [
   {
     name: 'Ulgrax the Devourer', slug: 'nerub-ulgrax',
     normal: false, heroic: false, mythic: false,
-    video: '', mythic_video: ''
+    video: 'tqQwkWxFb', mythic_video: '', img: '1_ulgrax.jpg'
   },
   {
     name: 'The Bloodbound Horror', slug: 'nerub-bloodbound',
     normal: false, heroic: false, mythic: false,
-    video: '', mythic_video: ''
+    video: 'GpMXMvkiKVg', mythic_video: '', img: '2_bloodbound.jpg'
   },
   {
     name: 'Sikran, Captain of the Sureki', slug: 'nerub-sikran',
     normal: false, heroic: false, mythic: false,
-    video: '', mythic_video: ''
+    video: 'keaSH1x2_Qs', mythic_video: '', img: '3_sikran.jpg'
   },
   {
     name: "Rasha'nan", slug: 'nerub-rasha',
     normal: false, heroic: false, mythic: false,
-    video: '', mythic_video: ''
+    video: 'nfLMTxy5ZJA', mythic_video: '', img: '4_rashanan.png'
   },
   {
     name: "Broodtwister Ovi'nax", slug: 'nerub-ovi',
@@ -37,7 +37,7 @@ export const nerubarPalace = [
   {
     name: 'Queen Ansurek', slug: 'nerub-ansurek',
     normal: false, heroic: false, mythic: false,
-    video: '', mythic_video: ''
+    video: 'iWN_ts0diYY', mythic_video: ''
   },
 ]
 
