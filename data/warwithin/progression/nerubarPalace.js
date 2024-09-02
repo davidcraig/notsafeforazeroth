@@ -2,7 +2,7 @@ export const nerubarPalace = [
   {
     name: 'Ulgrax the Devourer', slug: 'nerub-ulgrax',
     normal: false, heroic: false, mythic: false,
-    video: 'tqQwkWxFb', mythic_video: '', img: '1_ulgrax.jpg'
+    video: 'tqQwkWxFb-A', mythic_video: '', img: '1_ulgrax.jpg'
   },
   {
     name: 'The Bloodbound Horror', slug: 'nerub-bloodbound',
