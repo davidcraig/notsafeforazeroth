@@ -27,7 +27,7 @@ export const nerubarPalace = [
   {
     name: "Neux-Princess Ky'veza", slug: 'nerub-kyveza',
     normal: false, heroic: false, mythic: false,
-    video: '', mythic_video: '', img: '6_kyveza.png'
+    video: 'ke32FUap15M', mythic_video: '', img: '6_kyveza.png'
   },
   {
     name: 'The Silken Court', slug: 'nerub-court',
