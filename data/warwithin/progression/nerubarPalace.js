@@ -22,7 +22,7 @@ export const nerubarPalace = [
   {
     name: "Broodtwister Ovi'nax", slug: 'nerub-ovi',
     normal: true, heroic: false, mythic: false,
-    video: '', mythic_video: '', img: '5_broodtwister.jpg'
+    video: 'IDxShhSEANw', mythic_video: '', img: '5_broodtwister.jpg'
   },
   {
     name: "Neux-Princess Ky'veza", slug: 'nerub-kyveza',
@@ -32,12 +32,12 @@ export const nerubarPalace = [
   {
     name: 'The Silken Court', slug: 'nerub-court',
     normal: false, heroic: false, mythic: false,
-    video: '', mythic_video: '', img: '7_silken_court.jpg'
+    video: '9igs9OLixBg', mythic_video: '', img: '7_silken_court.jpg'
   },
   {
     name: 'Queen Ansurek', slug: 'nerub-ansurek',
     normal: false, heroic: false, mythic: false,
-    video: 'iWN_ts0diYY', mythic_video: ''
+    video: 'PAladvFsWoA', mythic_video: '', img: '8_queen_ansurek.jpg'
   },
 ]
 
