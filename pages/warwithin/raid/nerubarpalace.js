@@ -14,29 +14,21 @@ export default function NerubarPalace(props) {
     <h2 className='text-lg'>Boss Guides</h2>
     <div className=''>
 
-      {nerubBosses.map((boss,index) => {
-        return <div key={boss.slug} className='mt-4'>
-          <h1>{boss.name} ({index+1} / 8)</h1>
-          <div className='flex flex-row'>
-            {boss.img && (
-              <img style={{flexBasis: '50%', flexGrow: 0, flexShrink: 0, maxWidth: '50%'}} src={boss.img ? `${imgPath}${boss.img}` : null} />
-            )}
-            {boss.video && (
-              <YoutubeEmbed url={boss.video} height='450' />
-            )}
-
-          </div>
+      <div className='grid grid-cols-2 lg:grid-cols-3 gap-2 mb-2'>
+        {nerubBosses.map((boss,index) => {
+              return boss.video && (
+                <YoutubeEmbed url={boss.video} height='450' />
+              )
+        })}
         </div>
-      })}
 
-      {/* {bosses.map(boss => {
-        return <Card {...boss} videoHeight='400'>
-          {boss.img && (
-            <img src={boss.img ? `${imgPath}${boss.img}` : null} />
-          )}
-        </Card>
-      })} */}
-
+      <div className='grid grid-cols-2 xl:grid-cols-3 gap-2'>
+        {nerubBosses.map((boss,index) => {
+              return boss.img && (
+                <img style={{width: '100%', flexGrow: 0, flexShrink: 0, maxWidth: '100%'}} src={boss.img ? `${imgPath}${boss.img}` : null} />
+              )
+        })}
+      </div>
     </div>
   </Page>
 }
