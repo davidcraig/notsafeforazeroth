@@ -92,7 +92,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 }
 
 .has-dropdown.is-open > .navbar-dropdown .has-dropdown.is-open > .navbar-dropdown {
-    display: flex;
+  display: flex;
   flex-direction: column;
   position: absolute;
   top: -.5rem;
