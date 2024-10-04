@@ -31,7 +31,7 @@ export const nerubarPalace = [
   },
   {
     name: 'The Silken Court', slug: 'nerub-court',
-    normal: false, heroic: false, mythic: false,
+    normal: true, heroic: false, mythic: false,
     video: '9igs9OLixBg', mythic_video: '', img: '7_silken_court.jpg'
   },
   {
