@@ -6,17 +6,17 @@ export const nerubarPalace = [
   },
   {
     name: 'The Bloodbound Horror', slug: 'nerub-bloodbound',
-    normal: true, heroic: false, mythic: false,
+    normal: true, heroic: true, mythic: false,
     video: 'GpMXMvkiKVg', mythic_video: '', img: '2_bloodbound.jpg'
   },
   {
     name: 'Sikran, Captain of the Sureki', slug: 'nerub-sikran',
-    normal: true, heroic: false, mythic: false,
+    normal: true, heroic: true, mythic: false,
     video: 'keaSH1x2_Qs', mythic_video: '', img: '3_sikran.jpg'
   },
   {
     name: "Rasha'nan", slug: 'nerub-rasha',
-    normal: true, heroic: false, mythic: false,
+    normal: true, heroic: true, mythic: false,
     video: 'nfLMTxy5ZJA', mythic_video: '', img: '4_rashanan.png'
   },
   {
@@ -36,7 +36,7 @@ export const nerubarPalace = [
   },
   {
     name: 'Queen Ansurek', slug: 'nerub-ansurek',
-    normal: false, heroic: false, mythic: false,
+    normal: true, heroic: false, mythic: false,
     video: 'PAladvFsWoA', mythic_video: '', img: '8_queen_ansurek.jpg'
   },
 ]
