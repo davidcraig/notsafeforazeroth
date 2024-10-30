@@ -187,6 +187,39 @@ const renderAlt = (alt) => {
   </>
 }
 
+const ClassCompWidget = () => {
+  let data = []
+
+  Object.keys(wowClasses).forEach(cl => {
+    const wClass = wowClasses[cl]
+    data.push({
+      key: cl,
+      name: wClass.name,
+      count: roster.combined.filter(m => m.main?.class?.name === wClass.name).length,
+      css: `fg-${wClass.css}-important`
+    })
+  })
+
+  return (
+    <>
+      <Card title="Class Composition ~">
+        <table>
+          <tbody>
+            {
+              data.map(wowClass => {
+                return <tr key={wowClass.key}>
+                  <td className={wowClass.css}>{wowClass.name}</td>
+                  <td className={wowClass.css}>{wowClass.count}</td>
+                </tr>
+              })
+            }
+          </tbody>
+        </table>
+      </Card>
+    </>
+  )
+}
+
 export default function Roster() {
   return <Page>
     <h1 className='h1'>Roster</h1>
@@ -209,21 +242,7 @@ export default function Roster() {
           <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.Healer.icon} /> Healers: {roster.combined.filter(m => m.main?.role?.name === "Healer").length}</div>
         </Card>
 
-        <Card title="Class Composition ~">
-          <table>
-            <tbody>
-              {
-                Object.keys(wowClasses).map(cl => {
-                  const wClass = wowClasses[cl]
-                  return <tr key={cl}>
-                    <td className={`fg-${wClass.css}-important`}>{wClass.name}</td>
-                    <td className={`fg-${wClass.css}-important`}>{roster.combined.filter(m => m.main?.class?.name === cl.name).length}</td>
-                  </tr>
-                })
-              }
-            </tbody>
-          </table>
-        </Card>
+        <ClassCompWidget />
       </aside>
     </div>
   </Page>
