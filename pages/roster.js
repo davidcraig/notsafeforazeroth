@@ -178,12 +178,10 @@ const getArmoryLink = (character, realm) => {
 
 const renderAlt = (alt) => {
   return <>
-    <p className={`fg-${alt.class?.css}`}>
       {alt?.role && (
         <img width={24} height={24} style={{display: 'inline-block', marginRight: '.25rem'}} src={alt.role.icon} />
       )}
-      <a target="_blank" rel='noopener noreferrer' className={`fg-${alt.class.css}`} href={getArmoryLink(alt.name, alt.realm?.slug)}>{alt.name}</a>
-    </p>
+      <a target="_blank" rel='noopener noreferrer' className={`fg-${alt.class.css} mr-4`} href={getArmoryLink(alt.name, alt.realm?.slug)}>{alt.name}</a>
   </>
 }
 
