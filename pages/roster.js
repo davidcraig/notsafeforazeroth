@@ -1,71 +1,89 @@
 import React from 'react'
-import { ItemGrid } from '@davidcraig/react-bulma'
-import PageWithWidgets from '../Components/PageWithWidgets'
 import Page from '../Components/Page'
 import { Card } from '@davidcraig/react-bulma/dist/Card/Card'
 import wowClasses from '../data/wow-classes'
+import realms from '../data/realms'
+import ROLES from '../data/roles'
 
 const RANKS = {
   Officer: 'Officer',
+  Enforcer: 'Enforcer',
   Member: 'Member'
 }
 
-const ROLES = {
-  DPS: { name: 'DPS', icon: '/img/wow/dps.png' },
-  Tank: { name: 'Tank', icon: '/img/wow/tank.png' },
-  Healer: { name: 'Healer', icon: '/img/wow/healer.png' },
+let characters = {}
+  // // Tom
+  
+
+  // /// Enforcers
+
+  // // Melzy
+  
+
+  // /// Members
+
+  // // Naezu
+  // Naezu: { class: wowClasses.Shaman, name: 'Naezu', role: ROLES.Healer, realm: realms.Silvermoon },
+
+  // // Dødsrytter
+  // Dødsrytter: { class: wowClasses.DeathKnight, name: 'Dødsrytter ', role: ROLES.Tank },
+  // // Dutchey
+  // Dutcheyagain: { class: wowClasses.Warrior, name: 'Dutcheyagain ', role: ROLES.DPS },
+  // // Crassius
+  // Crássiúss: { class: wowClasses.Hunter, name: 'Crássiúss', role: ROLES.DPS },
+  // Twiggss: { class: wowClasses.Mage, name: 'Twiggss', role: ROLES.DPS },
+  // // Walshy
+  // Walshy: { class: wowClasses.Paladin, name: 'Walshy', role: ROLES.DPS },
+  // // Lahtac
+  // Lahtac: { class: wowClasses.DemonHunter, name: 'Lahtac', role: ROLES.DPS },
+  // // Shldor
+  // Shldor: { class: wowClasses.Rogue, name: 'Shldor', role: ROLES.DPS },
+  // // Nihäo
+  // Nihäo: { class: wowClasses.Monk, name: 'Nihäo', role: ROLES.DPS },
+
+const addCharacter = (name, wowClass, role, realm) => {
+  characters[name] = { name, class: wowClass, role, realm }
 }
 
-const characters = {
-  // Chris
-  Violatór: { name: 'Violatór', class: wowClasses.Rogue, role: ROLES.DPS },
-  // Dave (Sniper)
-  Snipevoke: { class: wowClasses.Evoker, name: 'Snipevoke', role: ROLES.DPS },
-  Sniperwar: { class: wowClasses.Warrior, name: 'Sniperwar', role: ROLES.DPS },
-  // Rob
-  Whoorelips: { class: wowClasses.Hunter, name: 'Whoorelips', role: ROLES.DPS },
-  // Gary
-  Palabellum: { class: wowClasses.Paladin, name: 'Palabellum', role: ROLES.DPS },
-  Hoarfróst: { class: wowClasses.DeathKnight, name: 'Hoarfróst', role: ROLES.DPS },
-  // Tom
-  Demonbanger: { class: wowClasses.Warlock, name: 'Demonbanger', role: ROLES.DPS },
-  Skiradan: { class: wowClasses.DemonHunter, name: 'Skiradan', role: ROLES.DPS },
-
-  /// Enforcers
-
-  // Melzy
-  Melzyshocker: { class: wowClasses.Shaman, name: 'Melzyshocker', role: ROLES.Healer },
-  Downyanixs: { class: wowClasses.Mage, name: 'Downyanixs', role: ROLES.DPS },
-
-  /// Members
-
-  // Dødsrytter
-  Dødsrytter: { class: wowClasses.DeathKnight, name: 'Dødsrytter ', role: ROLES.Tank },
-  // Dutchey
-  Dutcheyagain: { class: wowClasses.Warrior, name: 'Dutcheyagain ', role: ROLES.DPS },
-  // Crassius
-  Crássiúss: { class: wowClasses.Hunter, name: 'Crássiúss', role: ROLES.DPS },
-  Twiggss: { class: wowClasses.Mage, name: 'Twiggss', role: ROLES.DPS },
-  // Walshy
-  Walshy: { class: wowClasses.Paladin, name: 'Walshy', role: ROLES.DPS },
-  // Lahtac
-  Lahtac: { class: wowClasses.DemonHunter, name: 'Lahtac', role: ROLES.DPS },
-  // Shldor
-  Shldor: { class: wowClasses.Rogue, name: 'Shldor', role: ROLES.DPS },
-  // Nihäo
-  Nihäo: { class: wowClasses.Monk, name: 'Nihäo', role: ROLES.DPS },
-}
+// Chris
+addCharacter('Violatór', wowClasses.Rogue, ROLES.DPS, realms.TarrenMill);
+addCharacter('Aronin', wowClasses.Paladin, ROLES.Tank, realms.TarrenMill)
+// Sniper
+addCharacter('Snipevoke', wowClasses.Evoker, ROLES.DPS, realms.TarrenMill);
+addCharacter('Sniperwar', wowClasses.Warrior, ROLES.DPS, realms.TarrenMill);
+// Rob
+addCharacter('Whoorelips', wowClasses.Hunter, ROLES.DPS, realms.TarrenMill);
+// Gary
+addCharacter('Palabellum', wowClasses.Paladin, ROLES.DPS, realms.TarrenMill);
+addCharacter('Hoarfróst', wowClasses.DeathKnight, ROLES.DPS, realms.TarrenMill);
+// Tom
+addCharacter('Demonbanger', wowClasses.Warlock, ROLES.DPS, realms.TarrenMill);
+addCharacter('Skiradan', wowClasses.DemonHunter, ROLES.DPS, realms.TarrenMill);
+// Melzy
+addCharacter('Melzyshocker', wowClasses.Shaman, ROLES.Healer, realms.TarrenMill);
+addCharacter('Downyanixs', wowClasses.Mage, ROLES.DPS, realms.GrimBatol);
+// Dødsrytter
+addCharacter('Dødsrytter', wowClasses.DeathKnight, ROLES.Tank, realms.TarrenMill);
+// Dutchet
+addCharacter('Dutcheyagain', wowClasses.Warrior, ROLES.DPS, realms.TarrenMill);
+// Crassius
+addCharacter('Crássiúss', wowClasses.Hunter, ROLES.DPS, realms.Kazzak);
+// Shldor
+addCharacter('Shldor', wowClasses.Rogue, ROLES.DPS, realms.TarrenMill);
+// Lahtac
+addCharacter('Lahtac', wowClasses.DemonHunter, ROLES.DPS, realms.TarrenMill);
+// Walshy
+addCharacter('Walshy', wowClasses.Paladin, ROLES.DPS, realms.TarrenMill);
 
 const roster = {
   officers: [
     {
       real: 'Chris',
       rank: RANKS.Officer,
-      main: {
-        class: wowClasses.Paladin,
-        name: 'Aronin',
-        role: ROLES.Tank
-      }
+      main: characters.Aronin,
+      alts: [
+        characters.Violatór
+      ]
     },
     {
       real: 'Dave / Sniper',
@@ -95,7 +113,7 @@ const roster = {
   ],
   enforcers: [
     {
-      rank: RANKS.Member,
+      rank: RANKS.Enforcer,
       main: characters.Melzyshocker,
       alts: [
         characters.Downyanixs
@@ -103,42 +121,50 @@ const roster = {
     },
   ],
   members: [
-    {
-      rank: RANKS.Member,
-      main: characters.Dødsrytter
-    },
-    {
-      rank: RANKS.Member,
-      main: characters.Dutcheyagain
-    },
-    {
-      rank: RANKS.Member,
-      main: characters.Crássiúss
-    },
-    {
-      rank: RANKS.Member,
-      main: characters.Walshy
-    },
-    {
-      rank: RANKS.Member,
-      main: characters.Shldor
-    },
   ]
 }
+
+const addMember = (character, alts) => {
+  let obj = {
+    rank: RANKS.Member,
+    main: character
+  }
+
+  if (alts) {
+    obj.alts = alts
+  }
+
+  roster.members.push(obj)
+}
+
+addMember(characters.Dødsrytter);
+addMember(characters.Dutcheyagain);
+addMember(characters.Crássiúss);
+addMember(characters.Shldor);
+addMember(characters.Lahtac);
+addMember(characters.Walshy);
 
 roster.combined = [...roster.officers, ...roster.enforcers, ...roster.members]
 
 const getCardTitle = (m) => {
+  if (!m.main) return
   let fragment = (
     <>
-      {m.main?.role && (
+      {m.main && m.main?.role && (
         <img width={24} height={24} style={{display: 'inline-block', marginRight: '.25rem'}} src={m.main.role.icon} />
       )}
-      {m.main?.name}{m.real && ` (${m.real})`}
+      <a target="_blank" rel='noopener noreferrer' className={`fg-${m.main.class.css}`} href={getArmoryLink(m.main?.name, m.main?.realm?.slug)}>{m.main?.name}</a>{m.real && ` (${m.real})`}
     </>
   )
 
   return fragment
+}
+
+const getArmoryLink = (character, realm) => {
+  if (!character) return
+  if (!realm) { return character }
+
+  return `https://worldofwarcraft.blizzard.com/en-gb/character/eu/${realm}/${character}`
 }
 
 const renderAlt = (alt) => {
@@ -147,7 +173,7 @@ const renderAlt = (alt) => {
       {alt?.role && (
         <img width={24} height={24} style={{display: 'inline-block', marginRight: '.25rem'}} src={alt.role.icon} />
       )}
-      {alt.name}
+      <a target="_blank" rel='noopener noreferrer' className={`fg-${alt.class.css}`} href={getArmoryLink(alt.name, alt.realm?.slug)}>{alt.name}</a>
     </p>
   </>
 }
@@ -167,29 +193,29 @@ export default function Roster() {
 
     <div className='grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'>
       <Card title="Role Composition ~">
-        <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.DPS.icon} /> {roster.combined.filter(m => m.main.role.name === "DPS").length}</div>
-        <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.Tank.icon} /> {roster.combined.filter(m => m.main.role.name === "Tank").length}</div>
-        <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.Healer.icon} /> {roster.combined.filter(m => m.main.role.name === "Healer").length}</div>
+        <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.DPS.icon} /> DPS: {roster.combined.filter(m => m.main?.role?.name === "DPS").length}</div>
+        <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.Tank.icon} /> Tanks: {roster.combined.filter(m => m.main?.role?.name === "Tank").length}</div>
+        <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.Healer.icon} /> Healers: {roster.combined.filter(m => m.main?.role?.name === "Healer").length}</div>
       </Card>
 
       <Card title="Class Composition ~">
         {/* Cloth */}
-        <div className='fg-mage'>Mage: {roster.combined.filter(m => m.main.class.name === "Mage").length}</div>
-        <div className='fg-priest'>Priest: {roster.combined.filter(m => m.main.class.name === "Priest").length}</div>
-        <div className='fg-warlock'>Warlock: {roster.combined.filter(m => m.main.class.name === "Warlock").length}</div>
+        <div className='fg-mage'>Mage: {roster.combined.filter(m => m.main?.class?.name === "Mage").length}</div>
+        <div className='fg-priest'>Priest: {roster.combined.filter(m => m.main?.class?.name === "Priest").length}</div>
+        <div className='fg-warlock'>Warlock: {roster.combined.filter(m => m.main?.class?.name === "Warlock").length}</div>
         {/* Leather */}
-        <div className='fg-druid'>Druid: {roster.combined.filter(m => m.main.class.name === "Druid").length}</div>
-        <div className='fg-rogue'>Rogue: {roster.combined.filter(m => m.main.class.name === "Rogue").length}</div>
-        <div className='fg-monk'>Monk: {roster.combined.filter(m => m.main.class.name === "Monk").length}</div>
-        <div className='fg-demonhunter'>Demon Hunter: {roster.combined.filter(m => m.main.class.name === "Demon Hunter").length}</div>
+        <div className='fg-druid'>Druid: {roster.combined.filter(m => m.main?.class?.name === "Druid").length}</div>
+        <div className='fg-rogue'>Rogue: {roster.combined.filter(m => m.main?.class?.name === "Rogue").length}</div>
+        <div className='fg-monk'>Monk: {roster.combined.filter(m => m.main?.class?.name === "Monk").length}</div>
+        <div className='fg-demonhunter'>Demon Hunter: {roster.combined.filter(m => m.main?.class.name === "Demon Hunter").length}</div>
         {/* Mail */}
-        <div className='fg-hunter'>Hunter {roster.combined.filter(m => m.main.class.name === "Hunter").length}</div>
-        <div className='fg-shaman'>Shaman {roster.combined.filter(m => m.main.class.name === "Shaman").length}</div>
-        <div className='fg-evoker'>Evoker {roster.combined.filter(m => m.main.class.name === "Evoker").length}</div>
+        <div className='fg-hunter'>Hunter {roster.combined.filter(m => m.main?.class?.name === "Hunter").length}</div>
+        <div className='fg-shaman'>Shaman {roster.combined.filter(m => m.main?.class?.name === "Shaman").length}</div>
+        <div className='fg-evoker'>Evoker {roster.combined.filter(m => m.main?.class?.name === "Evoker").length}</div>
         {/* Plate */}
-        <div className='fg-warrior'>Warrior {roster.combined.filter(m => m.main.class.name === "Warrior").length}</div>
-        <div className='fg-paladin'>Paladin {roster.combined.filter(m => m.main.class.name === "Paladin").length}</div>
-        <div className='fg-deathknight'>Death Knight {roster.combined.filter(m => m.main.class.name === "Death Knight").length}</div>
+        <div className='fg-warrior'>Warrior {roster.combined.filter(m => m.main?.class?.name === "Warrior").length}</div>
+        <div className='fg-paladin'>Paladin {roster.combined.filter(m => m.main?.class?.name === "Paladin").length}</div>
+        <div className='fg-deathknight'>Death Knight {roster.combined.filter(m => m.main?.class?.name === "Death Knight").length}</div>
       </Card>
     </div>
   </Page>
