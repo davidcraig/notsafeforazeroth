@@ -24,13 +24,7 @@ let characters = {}
 
   // // Naezu
   // Naezu: { class: wowClasses.Shaman, name: 'Naezu', role: ROLES.Healer, realm: realms.Silvermoon },
-
-  // // Dødsrytter
-  // Dødsrytter: { class: wowClasses.DeathKnight, name: 'Dødsrytter ', role: ROLES.Tank },
-  // // Dutchey
-  // Dutcheyagain: { class: wowClasses.Warrior, name: 'Dutcheyagain ', role: ROLES.DPS },
   // // Crassius
-  // Crássiúss: { class: wowClasses.Hunter, name: 'Crássiúss', role: ROLES.DPS },
   // Twiggss: { class: wowClasses.Mage, name: 'Twiggss', role: ROLES.DPS },
   // // Walshy
   // Walshy: { class: wowClasses.Paladin, name: 'Walshy', role: ROLES.DPS },
@@ -51,6 +45,7 @@ addCharacter('Aronin', wowClasses.Paladin, ROLES.Tank, realms.TarrenMill)
 // Sniper
 addCharacter('Snipevoke', wowClasses.Evoker, ROLES.DPS, realms.TarrenMill);
 addCharacter('Sniperwar', wowClasses.Warrior, ROLES.DPS, realms.TarrenMill);
+addCharacter('Sniperdrood', wowClasses.Druid, ROLES.DPS, realms.TarrenMill);
 // Rob
 addCharacter('Whoorelips', wowClasses.Hunter, ROLES.DPS, realms.TarrenMill);
 // Gary
@@ -68,6 +63,7 @@ addCharacter('Dødsrytter', wowClasses.DeathKnight, ROLES.Tank, realms.TarrenMil
 addCharacter('Dutcheyagain', wowClasses.Warrior, ROLES.DPS, realms.TarrenMill);
 // Crassius
 addCharacter('Crássiúss', wowClasses.Hunter, ROLES.DPS, realms.Kazzak);
+addCharacter('Twiggss', wowClasses.Mage, ROLES.DPS, realms.Kazzak);
 // Shldor
 addCharacter('Shldor', wowClasses.Rogue, ROLES.DPS, realms.TarrenMill);
 // Lahtac
@@ -98,7 +94,8 @@ const roster = {
       rank: RANKS.Officer,
       main: characters.Snipevoke,
       alts: [
-        characters.Sniperwar
+        characters.Sniperwar,
+        characters.Sniperdrood
       ]
     },
     {
@@ -147,7 +144,7 @@ const addMember = (character, alts) => {
 
 addMember(characters.Dødsrytter);
 addMember(characters.Dutcheyagain);
-addMember(characters.Crássiúss);
+addMember(characters.Crássiúss, [characters.Twiggss]);
 addMember(characters.Shldor);
 addMember(characters.Lahtac);
 addMember(characters.Walshy);
@@ -223,20 +220,48 @@ const ClassCompWidget = () => {
   )
 }
 
+const RosterAsTable = ({ className }) => {
+  return (
+    <table className={className}>
+      <thead>
+        <tr>
+          <th>Main</th>
+          <th>Alts</th>
+        </tr>
+      </thead>
+      <tbody>
+        {roster.combined.map(player => {
+          return <tr>
+            <td>{getCardTitle(player)}</td>
+            <td>{player.alts && (
+              player.alts.map(alt => { return renderAlt(alt) })
+            )}</td>
+          </tr>
+        })}
+      </tbody>
+    </table>
+  )
+}
+
 export default function Roster() {
   return <Page>
     <h1 className='h1'>Roster</h1>
     <div className='grid grid-cols-1 lg:grid-cols-6 gap-2'>
 
-      <main className='grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 lg:col-span-5'>
-        {roster.combined.map(m => {
+      <RosterAsTable className='lg:col-span-5'></RosterAsTable>
+
+      {/* <main className='flex flex-col grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 lg:col-span-5'>
+        {SHOW_ALTS && roster.combined.map(m => {
           return <Card title={getCardTitle(m)} className={m.main?.class?.css}>
-            {m.alts && (
+            {SHOW_ALTS && m.alts && (
               m.alts.map(alt => renderAlt(alt))
             )}
           </Card>
         })}
-      </main>
+        {!SHOW_ALTS && roster.combined.map(m => {
+          return <div className={m.main?.class?.css}>{getCardTitle(m)}</div>
+        })}
+      </main> */}
 
       <aside className='grid grid-cols-1 lg:col-span-1'>
         <Card title="Role Composition ~">

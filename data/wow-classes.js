@@ -9,7 +9,7 @@ export const DemonHunter = { name: 'Demon Hunter', css: 'demonhunter', roles: [ 
 
 export const Hunter = { name: 'Hunter', css: 'hunter', roles: [ 'DPS' ] }
 export const Shaman = { name: 'Shaman', css: 'shaman', roles: [ 'DPS', 'Healer' ] }
-export const Evoker = { name: 'Evoker', css: 'evoker', roles: [ 'DPS', 'Healer' ] }
+export const Evoker = { name: 'Evoker', css: 'evoker', roles: [ 'DPS', 'Healer' ], armoryBg: '/img/wow/classes/armory_bg_class_evoker.jpg' }
 
 export const Warrior = { name: 'Warrior', css: 'warrior', roles: [ 'DPS', 'Tank' ] }
 export const Paladin = { name: 'Paladin', css: 'paladin', roles: [ 'DPS', 'Tank' ] }
