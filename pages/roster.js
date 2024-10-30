@@ -80,6 +80,8 @@ addCharacter('Teflonmanjo', wowClasses.Druid, ROLES.DPS, realms.TarrenMill);
 addCharacter('Gashenmage', wowClasses.Mage, ROLES.DPS, realms.TarrenMill);
 // Tillytubby
 addCharacter('Tillytubby', wowClasses.Druid, ROLES.DPS, realms.TarrenMill);
+// Nihäo
+addCharacter('Nihäo', wowClasses.Monk, ROLES.DPS, realms.TarrenMill);
 
 const roster = {
   officers: [
@@ -152,6 +154,7 @@ addMember(characters.Walshy);
 addMember(characters.Teflonmanjo);
 addMember(characters.Gashenmage);
 addMember(characters.Tillytubby);
+addMember(characters.Nihäo);
 
 roster.combined = [...roster.officers, ...roster.enforcers, ...roster.members]
 
