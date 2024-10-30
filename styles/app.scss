@@ -177,6 +177,10 @@ a {
   color: var(--theme-text);
 }
 
+.card-content {
+  padding: .25rem;
+}
+
 .card-header {
   @apply p-2;
   background: var(--theme-bg-2);
