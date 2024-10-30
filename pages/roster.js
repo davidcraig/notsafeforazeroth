@@ -74,6 +74,12 @@ addCharacter('Shldor', wowClasses.Rogue, ROLES.DPS, realms.TarrenMill);
 addCharacter('Lahtac', wowClasses.DemonHunter, ROLES.DPS, realms.TarrenMill);
 // Walshy
 addCharacter('Walshy', wowClasses.Paladin, ROLES.DPS, realms.TarrenMill);
+// Teflonmanjo
+addCharacter('Teflonmanjo', wowClasses.Druid, ROLES.DPS, realms.TarrenMill);
+// Gashenmage
+addCharacter('Gashenmage', wowClasses.Mage, ROLES.DPS, realms.TarrenMill);
+// Tillytubby
+addCharacter('Tillytubby', wowClasses.Druid, ROLES.DPS, realms.TarrenMill);
 
 const roster = {
   officers: [
@@ -143,6 +149,9 @@ addMember(characters.Crássiúss);
 addMember(characters.Shldor);
 addMember(characters.Lahtac);
 addMember(characters.Walshy);
+addMember(characters.Teflonmanjo);
+addMember(characters.Gashenmage);
+addMember(characters.Tillytubby);
 
 roster.combined = [...roster.officers, ...roster.enforcers, ...roster.members]
 
@@ -181,42 +190,41 @@ const renderAlt = (alt) => {
 export default function Roster() {
   return <Page>
     <h1 className='h1'>Roster</h1>
-    <div className='grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'>
-      {roster.combined.map(m => {
-        return <Card title={getCardTitle(m)} className={m.main?.class?.css}>
-          {m.alts && (
-            m.alts.map(alt => renderAlt(alt))
-          )}
+    <div className='grid grid-cols-1 lg:grid-cols-6 gap-2'>
+
+      <main className='grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 lg:col-span-5'>
+        {roster.combined.map(m => {
+          return <Card title={getCardTitle(m)} className={m.main?.class?.css}>
+            {m.alts && (
+              m.alts.map(alt => renderAlt(alt))
+            )}
+          </Card>
+        })}
+      </main>
+
+      <aside className='grid grid-cols-1 lg:col-span-1'>
+        <Card title="Role Composition ~">
+          <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.DPS.icon} /> DPS: {roster.combined.filter(m => m.main?.role?.name === "DPS").length}</div>
+          <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.Tank.icon} /> Tanks: {roster.combined.filter(m => m.main?.role?.name === "Tank").length}</div>
+          <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.Healer.icon} /> Healers: {roster.combined.filter(m => m.main?.role?.name === "Healer").length}</div>
         </Card>
-      })}
-    </div>
 
-    <div className='grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'>
-      <Card title="Role Composition ~">
-        <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.DPS.icon} /> DPS: {roster.combined.filter(m => m.main?.role?.name === "DPS").length}</div>
-        <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.Tank.icon} /> Tanks: {roster.combined.filter(m => m.main?.role?.name === "Tank").length}</div>
-        <div><img width={24} height={24} style={{display: 'inline-block', marginRight: '.5rem'}} src={ROLES.Healer.icon} /> Healers: {roster.combined.filter(m => m.main?.role?.name === "Healer").length}</div>
-      </Card>
-
-      <Card title="Class Composition ~">
-        {/* Cloth */}
-        <div className='fg-mage'>Mage: {roster.combined.filter(m => m.main?.class?.name === "Mage").length}</div>
-        <div className='fg-priest'>Priest: {roster.combined.filter(m => m.main?.class?.name === "Priest").length}</div>
-        <div className='fg-warlock'>Warlock: {roster.combined.filter(m => m.main?.class?.name === "Warlock").length}</div>
-        {/* Leather */}
-        <div className='fg-druid'>Druid: {roster.combined.filter(m => m.main?.class?.name === "Druid").length}</div>
-        <div className='fg-rogue'>Rogue: {roster.combined.filter(m => m.main?.class?.name === "Rogue").length}</div>
-        <div className='fg-monk'>Monk: {roster.combined.filter(m => m.main?.class?.name === "Monk").length}</div>
-        <div className='fg-demonhunter'>Demon Hunter: {roster.combined.filter(m => m.main?.class.name === "Demon Hunter").length}</div>
-        {/* Mail */}
-        <div className='fg-hunter'>Hunter {roster.combined.filter(m => m.main?.class?.name === "Hunter").length}</div>
-        <div className='fg-shaman'>Shaman {roster.combined.filter(m => m.main?.class?.name === "Shaman").length}</div>
-        <div className='fg-evoker'>Evoker {roster.combined.filter(m => m.main?.class?.name === "Evoker").length}</div>
-        {/* Plate */}
-        <div className='fg-warrior'>Warrior {roster.combined.filter(m => m.main?.class?.name === "Warrior").length}</div>
-        <div className='fg-paladin'>Paladin {roster.combined.filter(m => m.main?.class?.name === "Paladin").length}</div>
-        <div className='fg-deathknight'>Death Knight {roster.combined.filter(m => m.main?.class?.name === "Death Knight").length}</div>
-      </Card>
+        <Card title="Class Composition ~">
+          <table>
+            <tbody>
+              {
+                Object.keys(wowClasses).map(cl => {
+                  const wClass = wowClasses[cl]
+                  return <tr key={cl}>
+                    <td className={`fg-${wClass.css}-important`}>{wClass.name}</td>
+                    <td className={`fg-${wClass.css}-important`}>{roster.combined.filter(m => m.main?.class?.name === cl.name).length}</td>
+                  </tr>
+                })
+              }
+            </tbody>
+          </table>
+        </Card>
+      </aside>
     </div>
   </Page>
 }
