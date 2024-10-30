@@ -21,12 +21,12 @@ export const nerubarPalace = [
   },
   {
     name: "Broodtwister Ovi'nax", slug: 'nerub-ovi',
-    normal: true, heroic: false, mythic: false,
+    normal: true, heroic: true, mythic: false,
     video: 'IDxShhSEANw', mythic_video: '', img: '5_broodtwister.jpg'
   },
   {
     name: "Neux-Princess Ky'veza", slug: 'nerub-kyveza',
-    normal: true, heroic: false, mythic: false,
+    normal: true, heroic: true, mythic: false,
     video: 'ke32FUap15M', mythic_video: '', img: '6_kyveza.png'
   },
   {
