@@ -222,7 +222,7 @@ const ClassCompWidget = () => {
 
 const RosterAsTable = ({ className }) => {
   return (
-    <table className={className}>
+    <table className={`table table-striped ${className}`}>
       <thead>
         <tr>
           <th>Main</th>
@@ -245,7 +245,7 @@ const RosterAsTable = ({ className }) => {
 
 export default function Roster() {
   return <Page>
-    <h1 className='h1'>Roster</h1>
+    <h1 className='h1 text-xl mb-4'>Roster</h1>
     <div className='grid grid-cols-1 lg:grid-cols-6 gap-2'>
 
       <RosterAsTable className='lg:col-span-5'></RosterAsTable>
