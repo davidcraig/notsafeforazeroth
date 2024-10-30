@@ -150,6 +150,11 @@ a {
       color: var(--wow-class-shaman) !important;
     }
   }
+  &.evoker {
+    .card-header > .card-header-title {
+      color: var(--wow-class-evoker) !important;
+    }
+  }
   &.warrior {
     .card-header > .card-header-title {
       color: var(--wow-class-warrior) !important;
