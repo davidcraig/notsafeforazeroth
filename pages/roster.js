@@ -12,28 +12,6 @@ const RANKS = {
 }
 
 let characters = {}
-  // // Tom
-  
-
-  // /// Enforcers
-
-  // // Melzy
-  
-
-  // /// Members
-
-  // // Naezu
-  // Naezu: { class: wowClasses.Shaman, name: 'Naezu', role: ROLES.Healer, realm: realms.Silvermoon },
-  // // Crassius
-  // Twiggss: { class: wowClasses.Mage, name: 'Twiggss', role: ROLES.DPS },
-  // // Walshy
-  // Walshy: { class: wowClasses.Paladin, name: 'Walshy', role: ROLES.DPS },
-  // // Lahtac
-  // Lahtac: { class: wowClasses.DemonHunter, name: 'Lahtac', role: ROLES.DPS },
-  // // Shldor
-  // Shldor: { class: wowClasses.Rogue, name: 'Shldor', role: ROLES.DPS },
-  // // Nihäo
-  // Nihäo: { class: wowClasses.Monk, name: 'Nihäo', role: ROLES.DPS },
 
 const addCharacter = (name, wowClass, role, realm) => {
   characters[name] = { name, class: wowClass, role, realm }
