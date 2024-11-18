@@ -46,6 +46,7 @@ addCharacter('Aronin', wowClasses.Paladin, ROLES.Tank, realms.TarrenMill)
 addCharacter('Snipevoke', wowClasses.Evoker, ROLES.DPS, realms.TarrenMill);
 addCharacter('Sniperwar', wowClasses.Warrior, ROLES.DPS, realms.TarrenMill);
 addCharacter('Sniperdrood', wowClasses.Druid, ROLES.DPS, realms.TarrenMill);
+addCharacter('Snipedeath', wowClasses.DeathKnight, ROLES.Tank, realms.TarrenMill);
 // Rob
 addCharacter('Whoorelips', wowClasses.Hunter, ROLES.DPS, realms.TarrenMill);
 // Gary
@@ -54,13 +55,6 @@ addCharacter('Hoarfróst', wowClasses.DeathKnight, ROLES.DPS, realms.TarrenMill)
 // Tom
 addCharacter('Demonbanger', wowClasses.Warlock, ROLES.DPS, realms.TarrenMill);
 addCharacter('Skiradan', wowClasses.DemonHunter, ROLES.DPS, realms.TarrenMill);
-// Melzy
-addCharacter('Melzyshocker', wowClasses.Shaman, ROLES.Healer, realms.TarrenMill);
-addCharacter('Downyanixs', wowClasses.Mage, ROLES.DPS, realms.GrimBatol);
-// Dødsrytter
-addCharacter('Dødsrytter', wowClasses.DeathKnight, ROLES.Tank, realms.TarrenMill);
-// Dutchet
-addCharacter('Dutcheyagain', wowClasses.Warrior, ROLES.DPS, realms.TarrenMill);
 // Crassius
 addCharacter('Crássiúss', wowClasses.Hunter, ROLES.DPS, realms.Kazzak);
 addCharacter('Twiggss', wowClasses.Mage, ROLES.DPS, realms.Kazzak);
@@ -75,9 +69,11 @@ addCharacter('Teflonmanjo', wowClasses.Druid, ROLES.DPS, realms.TarrenMill);
 // Gashenmage
 addCharacter('Gashenmage', wowClasses.Mage, ROLES.DPS, realms.TarrenMill);
 // Tillytubby
-addCharacter('Tillytubby', wowClasses.Druid, ROLES.DPS, realms.TarrenMill);
-// Nihäo
-addCharacter('Nihäo', wowClasses.Monk, ROLES.DPS, realms.TarrenMill);
+addCharacter('Tillytubby', wowClasses.Druid, ROLES.Healer, realms.TarrenMill);
+// Polish
+addCharacter('Polishperson', wowClasses.DemonHunter, ROLES.DPS, realms.TarrenMill);
+// Mehtiina
+addCharacter('Mehtiina', wowClasses.Shaman, ROLES.Healer, realms.TarrenMill);
 
 const roster = {
   officers: [
@@ -92,9 +88,10 @@ const roster = {
     {
       real: 'Dave / Sniper',
       rank: RANKS.Officer,
-      main: characters.Snipevoke,
+      main: characters.Snipedeath,
       alts: [
         characters.Sniperwar,
+        characters.Snipevoke,
         characters.Sniperdrood
       ]
     },
@@ -116,15 +113,7 @@ const roster = {
       alts: [ characters.Demonbanger ]
     },
   ],
-  enforcers: [
-    {
-      rank: RANKS.Enforcer,
-      main: characters.Melzyshocker,
-      alts: [
-        characters.Downyanixs
-      ]
-    },
-  ],
+  enforcers: [],
   members: [
   ]
 }
@@ -142,16 +131,15 @@ const addMember = (character, alts) => {
   roster.members.push(obj)
 }
 
-addMember(characters.Dødsrytter);
-addMember(characters.Dutcheyagain);
 addMember(characters.Crássiúss, [characters.Twiggss]);
 addMember(characters.Shldor);
 addMember(characters.Lahtac);
 addMember(characters.Walshy);
 addMember(characters.Teflonmanjo);
 addMember(characters.Gashenmage);
+addMember(characters.Polishperson);
 addMember(characters.Tillytubby);
-addMember(characters.Nihäo);
+addMember(characters.Mehtiina);
 
 roster.combined = [...roster.officers, ...roster.enforcers, ...roster.members]
 
