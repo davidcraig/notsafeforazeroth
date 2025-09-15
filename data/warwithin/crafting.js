@@ -1,11 +1,6 @@
-import materials from "./crafting/materials"
 import Blacksmithing from "./crafting/blacksmithing"
 import Leatherworking from "./crafting/leatherworking"
 import Engineering from "./crafting/engineering"
-
-const RingingDeepsIngot = { name: 'Ringing Deeps Ingot', url: 'https://www.wowhead.com/item=221754/ringing-deeps-ingot' }
-const SanctifiedAlloy = { name: 'Sanctified Alloy', url: 'https://www.wowhead.com/item=222423/sanctified-alloy' }
-const IronclawAlloy = { name: 'Ironclaw Alloy', url: 'https://www.wowhead.com/item=222426/ironclaw-alloy' }
 
 const bs = {
     name: 'Blacksmithing',
