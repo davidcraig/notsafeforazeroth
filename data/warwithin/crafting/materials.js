@@ -8,6 +8,10 @@ const GloomChitin = { name: 'Gloom Chitin', url: 'https://www.wowhead.com/item=2
 const ChitinArmorBanding = { name: 'Chitin Armor Banding', url: 'https://www.wowhead.com/item=219898/chitin-armor-banding', rarity: 'uncommon' }
 const WrithingHide = { name: 'Writhing Hide', url: 'https://www.wowhead.com/item=219886/writhing-hide', rarity: 'rare' }
 const LeyfusedHide = { name: 'Leyfused Hide', url: 'https://www.wowhead.com/item=219892/leyfused-hide', rarity: 'rare' }
+const NascentGildedHarbingerCrest = { name: "Nascent Gilded Harbinger Crest", "url": 'https://www.wowhead.com/item=220789/nascent-gilded-harbinger-crest', rarity: "epic" }
+const StormDust = { name: "Storm Dust", url: "https://www.wowhead.com/item=219946/storm-dust", rarity: "common" }
+const GleamingShard = { name: "Gleaming Shard", url: "https://www.wowhead.com/item=219949/gleaming-shard", rarity: "rare" }
+const RefulgentCrystal = { name: "Refulgent Crystal", url: "https://www.wowhead.com/item=219952/refulgent-crystal", rarity: "epic" }
 
 export default {
     GloomfathomHide,
@@ -24,4 +28,9 @@ export default {
     ChitinArmorBanding,
     WrithingHide,
     LeyfusedHide,
+    /* Enchanting */
+    NascentGildedHarbingerCrest,
+    StormDust,
+    GleamingShard,
+    RefulgentCrystal,
 }

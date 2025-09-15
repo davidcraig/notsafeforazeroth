@@ -11,7 +11,6 @@ const bs = {
             "name": 'Snipedeath-TarrenMill',
             "class":  { name: 'Death Knight', css: 'deathknight' },
             "items": [
-                /* Shield: Beledar's Bulwark */
                 Blacksmithing.BeledarsBulwark,
                 Blacksmithing.EverforgedVambraces,
                 Blacksmithing.EverforgedPauldrons,
@@ -42,9 +41,7 @@ const eng = {
             "name": 'Sniperwar-Silvermoon',
             "class":  { name: 'Warrior', css: 'warrior' },
             "items": [
-                {
-                    ...Engineering.CrowdPummeler230
-                }
+                Engineering.CrowdPummeler230,
             ]
         }
     ],
@@ -66,6 +63,9 @@ const ench = {
         {
             "name": "Snipermagi-TarrenMill",
             "class":  { name: 'Mage', css: 'mage' },
+            "items": [
+                Enchanting.EnchantedGildedHarbingerCrest
+            ]
         }
     ]
 }
