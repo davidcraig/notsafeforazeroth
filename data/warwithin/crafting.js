@@ -3,7 +3,7 @@ const blacksmithing = {
     crafters: [
         {
             "name": 'Snipedeath',
-            "class":  { name: 'Death Knight', css: 'death-knight' },
+            "class":  { name: 'Death Knight', css: 'deathknight' },
             "items": [
                 {
                     "name": "Beledar's Bulwark",

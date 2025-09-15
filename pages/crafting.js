@@ -26,8 +26,8 @@ function RenderExpansionCrafting(expansionData, professionKey) {
 
         profession.crafters.map(crafter => {
           return crafter.items.map(item => {
-            return <tr key={item.name+crafter.name} className={`fg-${crafter.class.css}`}>
-              <td>{crafter.name}</td>
+            return <tr key={item.name+crafter.name}>
+              <td className={`fg-${crafter.class.css}`}>{crafter.name}</td>
               <td><a className={`fg-${item.rarity}`} href={item.url}>{item.name}</a></td>
               <td>
                 <div className='flex'>
