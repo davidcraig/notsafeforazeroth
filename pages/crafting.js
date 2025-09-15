@@ -26,6 +26,7 @@ function RenderExpansionCrafting(expansionData, professionKey) {
       {
 
         profession.crafters.map(crafter => {
+          if (!crafter.items) { return }
           return crafter.items.map(item => {
             return <tr key={item.name+crafter.name}>
               <td className={`fg-${crafter.class.css}`}>{crafter.name}</td>
@@ -57,6 +58,7 @@ function RenderWarWithin() {
     { title: 'Blacksmithing', content: RenderExpansionCrafting(wwCrafting, 'bs') },
     { title: 'Leatherworking', content: RenderExpansionCrafting(wwCrafting, 'lw') },
     { title: 'Engineering', content: RenderExpansionCrafting(wwCrafting, 'eng') },
+    { title: 'Tailoring', content: RenderExpansionCrafting(wwCrafting, 'tailor') },
   ]} />
 }
 
