@@ -13,7 +13,7 @@ function RenderExpansionCrafting(expansionData, professionKey) {
     return ''
   }
 
-  return <table className='table is-narrow is-striped'>
+  return <table className='table is-narrow is-striped mt-4'>
     <thead>
       <tr>
         <th>Crafter</th>
