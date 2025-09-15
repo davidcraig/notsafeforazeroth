@@ -47,8 +47,19 @@ const eng = {
     ],
 }
 
+const tailor = {
+    name: 'Tailoring',
+    crafters: [
+        {
+            "name": "Snipermagi-TarrenMill",
+            "class":  { name: 'Mage', css: 'mage' },
+        }
+    ]
+}
+
 export default {
     bs,
     lw,
-    eng
+    eng,
+    tailor,
 }
