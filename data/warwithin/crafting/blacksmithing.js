@@ -37,7 +37,7 @@ const Blacksmithing = {
     },
     EverforgedGauntlets: {
         "name": "Everforged Gauntlets",
-        "type": "Bracers, Plate",
+        "type": "Gloves, Plate",
         "rarity": "epic",
         "url": 'https://www.wowhead.com/item=222437/everforged-gauntlets',
         "materials": [
