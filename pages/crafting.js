@@ -1,65 +1,70 @@
 import React from 'react'
-import PageWithWidgets from '../Components/PageWithWidgets'
-import { TabbedContent } from '@davidcraig/react-bulma'
+import Page from '../Components/Page'
+import wwCrafting from '../data/warwithin/crafting'
+import { TabbedContent } from '../Components/TabbedContent'
 
-function RenderProfessionTabs() {
-  // const content = [
-  //   { title: 'Tailoring', content: RenderLegendaries('tailoring') },
-  //   { title: 'Leatherworking', content: RenderLegendaries('leatherworking') },
-  //   { title: 'Blacksmithing', content: RenderLegendaries('blacksmithing') },
-  //   { title: 'Jewelcrafting', content: RenderLegendaries('jewelcrafting') },
-  // ]
+function RenderExpansionCrafting(expansionData, professionKey) {
+  if (!expansionData || !professionKey || !expansionData.hasOwnProperty(professionKey)) {
+    return ''
+  }
+  let profession = expansionData[professionKey]
+  console.log(profession, "profession")
+  if (!profession || !profession.crafters) {
+    return ''
+  }
 
-  return <TabbedContent content={content} />
+  return <table className='table is-narrow is-striped'>
+    <thead>
+      <tr>
+        <th>Crafter</th>
+        <th>Item</th>
+        <th>Materials</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+
+        profession.crafters.map(crafter => {
+          return crafter.items.map(item => {
+            return <tr key={item.name+crafter.name} className={`fg-${crafter.class.css}`}>
+              <td>{crafter.name}</td>
+              <td><a className={`fg-${item.rarity}`} href={item.url}>{item.name}</a></td>
+              <td>
+                <div className='flex'>
+                {
+                  item.materials.map(mat => {
+                    return (
+                      <>
+                      { mat.url ? <a href={mat.url}>{mat.name}</a> : mat.name } x{mat.quantity}
+                      </>
+                    )
+                  })
+                }
+                </div>
+              </td>
+            </tr>
+          })
+        })
+      }
+    </tbody>
+  </table>
 }
 
-function RenderLegendaries(profession) {
-  // let prof = crafting.legendaries[profession]
-  // if (!prof.crafters) {
-  //   return ''
-  // }
-
-  return "";
-    // <table className='table is-narrow is-striped'>
-    //   <thead>
-    //     <tr>
-    //       <th>Crafter</th>
-    //       <th>Item</th>
-    //       <th>Rank</th>
-    //       <th>Materials</th>
-    //     </tr>
-    //   </thead>
-    //   <tbody>
-    //     {
-    //       prof.crafters.map(craft => {
-    //         return craft.legendaries.map(lego => {
-    //           return <tr key={lego.legendary.name+craft.crafter.name} className={`fg-${craft.crafter.class.css}`}>
-    //             <td>{craft.crafter.name}</td>
-    //             <td><a className='fg-legendary' href={`https://www.wowhead.com/item=${lego.legendary.id}`}>{lego.legendary.name}</a></td>
-    //             <td>Rank {lego.rank}</td>
-    //             <td>
-    //               {
-    //                 lego.legendary.materials[`rank_`+lego.rank].map(mat => {
-    //                   return (
-    //                     <>
-    //                     <a href={`https://www.wowhead.com/item=${mat.type.itemId}`}>{mat.type.name}</a> x{mat.quantity}<span className='space'> </span>
-    //                     </>
-    //                   )
-    //                 })
-    //               }
-    //             </td>
-    //           </tr>
-    //         })
-    //       })
-    //     }
-    //   </tbody>
-    // </table>
+function RenderWarWithin() {
+  return <TabbedContent content={[
+    { title: 'Blacksmithing', content: RenderExpansionCrafting(wwCrafting, 'blacksmithing') },
+  ]} />
 }
 
 export default function Crafting() {
-  return <PageWithWidgets title='Crafting'>
+  const tabs = [
+    // { title: 'Shadowlands', content: RenderShadowlands() },
+    { title: 'War Within', content: RenderWarWithin() },
+  ]
+  
+  return <Page title='Crafting'>
     <h1 className='h1'>Crafting</h1>
-    <h2 className='h2 fg-legendary-important'>Legendaries</h2>
-    {/* {RenderProfessionTabs()} */}
-  </PageWithWidgets>
+
+    <TabbedContent content={tabs} />
+  </Page>
 }
