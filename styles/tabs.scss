@@ -23,13 +23,14 @@
 }
 
 .tabs li {
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--horde-bg-2);
 }
 
 .tabs .is-active {
   // border: 2px solid var(--tab-colour);
-  border-bottom: 1px solid var(--tab-colour);
+  border-bottom: 1px solid var(--horde-alt-2);
   color: var(--tab-colour);
+  font-weight: bold;
 }
 
 .tabs li a:hover {
@@ -37,5 +38,5 @@
 }
 
 .tabs li a {
-  color: #ececec;
+  color: var(--horde-alt-1);
 }

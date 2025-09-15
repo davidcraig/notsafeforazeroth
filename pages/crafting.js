@@ -18,6 +18,7 @@ function RenderExpansionCrafting(expansionData, professionKey) {
       <tr>
         <th>Crafter</th>
         <th>Item</th>
+        <th>Type</th>
         <th>Materials</th>
       </tr>
     </thead>
@@ -28,14 +29,15 @@ function RenderExpansionCrafting(expansionData, professionKey) {
           return crafter.items.map(item => {
             return <tr key={item.name+crafter.name}>
               <td className={`fg-${crafter.class.css}`}>{crafter.name}</td>
-              <td><a className={`fg-${item.rarity}`} href={item.url}>{item.name}</a> ({item.type})</td>
+              <td><a className={`fg-${item.rarity}`} href={item.url}>{item.name}</a></td>
+              <td>{item.type}</td>
               <td>
                 <div className='flex'>
                 {
                   item.materials.map(mat => {
                     return (
                       <div className='mr-4' key={mat.name}>
-                      { mat.url ? <a href={mat.url}>{mat.name}</a> : mat.name } x{mat.quantity}
+                      { mat.url ? <a href={mat.url} className={`fg-${mat.rarity || 'common'}`}>{mat.name}</a> : mat.name } x{mat.quantity}
                       </div>
                     )
                   })
@@ -52,7 +54,9 @@ function RenderExpansionCrafting(expansionData, professionKey) {
 
 function RenderWarWithin() {
   return <TabbedContent content={[
-    { title: 'Blacksmithing', content: RenderExpansionCrafting(wwCrafting, 'blacksmithing') },
+    { title: 'Blacksmithing', content: RenderExpansionCrafting(wwCrafting, 'bs') },
+    { title: 'Leatherworking', content: RenderExpansionCrafting(wwCrafting, 'lw') },
+    { title: 'Engineering', content: RenderExpansionCrafting(wwCrafting, 'eng') },
   ]} />
 }
 
