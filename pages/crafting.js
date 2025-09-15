@@ -34,9 +34,9 @@ function RenderExpansionCrafting(expansionData, professionKey) {
                 {
                   item.materials.map(mat => {
                     return (
-                      <>
+                      <div className='mr-4' key={mat.name}>
                       { mat.url ? <a href={mat.url}>{mat.name}</a> : mat.name } x{mat.quantity}
-                      </>
+                      </div>
                     )
                   })
                 }
