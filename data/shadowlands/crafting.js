@@ -7,8 +7,10 @@ const tailor = {
             "name": "Snipermagi-TarrenMill",
             "class":  { name: 'Mage', css: 'mage' },
             "items": [
-                Tailoring.GrimVeiledBelt,
-                Tailoring.GrimVeiledBracers,
+                Tailoring.GrimVeiledBelt_Rank1,
+                Tailoring.GrimVeiledBracers_Rank1,
+                Tailoring.GrimVeiledCape_Rank1,
+                Tailoring.GrimVeiledHood_Rank1,
             ]
         }
     ]
