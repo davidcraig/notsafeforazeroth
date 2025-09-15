@@ -6,8 +6,8 @@ const externalLinkSvg = <svg width={20} height={20} xmlns="http://www.w3.org/200
 const pages = [
   {
     name: 'Guild', pages: [
-      { name: 'Rules', slug: '/rules' },
-      { name: 'Officers', slug: '/officers' },
+      // { name: 'Rules', slug: '/rules' },
+      // { name: 'Officers', slug: '/officers' },
       { name: 'Crafting', slug: '/crafting' },
     ]
   }
@@ -48,7 +48,7 @@ const wikiPages = [
 const DropdownLink = ({ key, title, children }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div key={key} className={`navbar-item has-dropdown is-hoverable ${open ? "is-open" : ""}`}>
+    <div key={key} className={`navbar-item ml-4 has-dropdown is-hoverable ${open ? "is-open" : ""}`}>
       <a className='navbar-link' onClick={(e) => { e.preventDefault; setOpen(!open) }}>{title}</a>
       <div className='navbar-dropdown'>
         {children}
@@ -59,7 +59,7 @@ const DropdownLink = ({ key, title, children }) => {
 
 function renderNavigationItem(item) {
   if (item.pages) {
-    return <DropdownLink className='pr-2' key={item.name} title={item.name}>
+    return <DropdownLink className='pr-2 mr-4 ml-4' key={item.name} title={item.name}>
       {item.pages.map(dropdownPage => {
         return renderNavigationItem(dropdownPage)
       })}
@@ -83,6 +83,9 @@ export default function Navigation(props) {
     <nav className={`navbar p-4 flex flex-col md:flex-row ${props.className}`}>
       <a className='brand font-bold text-xl ml-auto md:ml-0 mr-auto' href='/'>&lt;Not Safe for Azeroth&gt;</a>
       <div className='ml-auto mr-auto md:mr-0 flex flex-col md:flex-row text-center'>
+        {pages.map(page => {
+          return renderNavigationItem(page)
+        })}
         {wikiPages.map(page => {
           return renderNavigationItem(page)
         })}
