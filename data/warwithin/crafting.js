@@ -22,7 +22,7 @@ const blacksmithing = {
     name: 'Blacksmithing',
     crafters: [
         {
-            "name": 'Snipedeath',
+            "name": 'Snipedeath-TarrenMill',
             "class":  { name: 'Death Knight', css: 'deathknight' },
             "items": [
                 {
