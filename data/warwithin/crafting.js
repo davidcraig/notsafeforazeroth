@@ -1,6 +1,8 @@
 import Blacksmithing from "./crafting/blacksmithing"
 import Leatherworking from "./crafting/leatherworking"
 import Engineering from "./crafting/engineering"
+import Tailoring from "./crafting/tailoring"
+import Enchanting from "./crafting/enchanting"
 
 const bs = {
     name: 'Blacksmithing',
@@ -57,9 +59,20 @@ const tailor = {
     ]
 }
 
+const ench = {
+    name: 'Enchanting',
+    crafters: [
+        {
+            "name": "Snipermagi-TarrenMill",
+            "class":  { name: 'Mage', css: 'mage' },
+        }
+    ]
+}
+
 export default {
     bs,
     lw,
     eng,
     tailor,
+    ench,
 }

@@ -59,6 +59,7 @@ function RenderWarWithin() {
     { title: 'Leatherworking', content: RenderExpansionCrafting(wwCrafting, 'lw') },
     { title: 'Engineering', content: RenderExpansionCrafting(wwCrafting, 'eng') },
     { title: 'Tailoring', content: RenderExpansionCrafting(wwCrafting, 'tailor') },
+    { title: 'Enchanting', content: RenderExpansionCrafting(wwCrafting, 'ench') },
   ]} />
 }
 
