@@ -11,20 +11,31 @@ const Tailoring = {
             { ...materials.SpoolOfDuskthread, "quantity": 30 },
             { ...materials.DuskweaveBolt, "quantity": 4 }
         ]
+    },
+    GlovesOfTheWovenDusk: {
+        "name": "Gloves of the Woven Dusk",
+        "type": "Gloves, Cloth",
+        "rarity": "epic",
+        "url": "https://www.wowhead.com/item=222809/gloves-of-the-woven-dusk",
+        "materials": [
+            { ...materials.AdorningRibbon, "quantity": 5 },
+            { ...materials.DuskweaveBolt, "quantity": 8 },
+            { ...materials.GleamingShard, "quantity": 6 },
+            { ...materials.SpoolOfDuskthread, "quantity": 15 }
+        ]
+    },
+    SlippersOfTheWovenDusk: {
+        "name": "Slippers of the Woven Dusk",
+        "type": "Gloves, Cloth",
+        "rarity": "epic",
+        "url": "https://www.wowhead.com/item=222810/slippers-of-the-woven-dusk",
+        "materials": [
+            { ...materials.AdorningRibbon, "quantity": 5 },
+            { ...materials.DuskweaveBolt, "quantity": 10 },
+            { ...materials.GleamingShard, "quantity": 6 },
+            { ...materials.SpoolOfDuskthread, "quantity": 10 }
+        ]
     }
-    // GlyphEtchedVambraces: {
-    //     "name": "Glyph-Etched Vambraces",
-    //     "type": "Bracers, Mail",
-    //     "rarity": "epic",
-    //     "url": 'https://www.wowhead.com/item=219342/glyph-etched-vambraces',
-    //     "materials": [
-    //         { "name": "Any Spark", "quantity": 1, "url": materials.SparkOfStarlight.url },
-    //         { ...materials.GloomfathomHide, "quantity": 2 },
-    //         { ...materials.GloomChitin, "quantity": 150 },
-    //         { ...materials.WrithingHide, "quantity": 3 },
-    //         { ...materials.ChitinArmorBanding, "quantity": 1 },
-    //     ]
-    // },
 }
 
 export default Tailoring

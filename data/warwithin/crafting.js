@@ -55,6 +55,8 @@ const tailor = {
             "class":  { name: 'Mage', css: 'mage' },
             "items": [
                 Tailoring.DuskweaveBag,
+                Tailoring.GlovesOfTheWovenDusk,
+                Tailoring.SlippersOfTheWovenDusk,
             ]
         }
     ]
