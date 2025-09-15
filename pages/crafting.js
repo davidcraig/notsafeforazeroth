@@ -1,6 +1,7 @@
 import React from 'react'
 import Page from '../Components/Page'
 import wwCrafting from '../data/warwithin/crafting'
+import slCrafting from '../data/shadowlands/crafting'
 import { TabbedContent } from '../Components/TabbedContent'
 
 function RenderExpansionCrafting(expansionData, professionKey) {
@@ -53,6 +54,12 @@ function RenderExpansionCrafting(expansionData, professionKey) {
   </table>
 }
 
+function RenderShadowlands() {
+  return <TabbedContent content={[
+    { title: 'Tailoring', content: RenderExpansionCrafting(slCrafting, 'tailor') },
+  ]} />
+}
+
 function RenderWarWithin() {
   return <TabbedContent content={[
     { title: 'Blacksmithing', content: RenderExpansionCrafting(wwCrafting, 'bs') },
@@ -65,8 +72,8 @@ function RenderWarWithin() {
 
 export default function Crafting() {
   const tabs = [
-    // { title: 'Shadowlands', content: RenderShadowlands() },
     { title: 'War Within', content: RenderWarWithin() },
+    { title: 'Shadowlands', content: RenderShadowlands() },
   ]
   
   return <Page title='Crafting'>
