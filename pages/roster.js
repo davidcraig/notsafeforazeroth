@@ -36,22 +36,6 @@ addCharacter('Skiradan', wowClasses.DemonHunter, ROLES.DPS, realms.TarrenMill);
 // Crassius
 addCharacter('Crássiúss', wowClasses.Hunter, ROLES.DPS, realms.Kazzak);
 addCharacter('Twiggss', wowClasses.Mage, ROLES.DPS, realms.Kazzak);
-// Shldor
-addCharacter('Shldor', wowClasses.Rogue, ROLES.DPS, realms.TarrenMill);
-// Lahtac
-addCharacter('Lahtac', wowClasses.DemonHunter, ROLES.DPS, realms.TarrenMill);
-// Walshy
-addCharacter('Walshy', wowClasses.Paladin, ROLES.DPS, realms.TarrenMill);
-// Teflonmanjo
-addCharacter('Teflonmanjo', wowClasses.Druid, ROLES.DPS, realms.TarrenMill);
-// Gashenmage
-addCharacter('Gashenmage', wowClasses.Mage, ROLES.DPS, realms.TarrenMill);
-// Tillytubby
-addCharacter('Tillytubby', wowClasses.Druid, ROLES.Healer, realms.TarrenMill);
-// Polish
-addCharacter('Polishperson', wowClasses.DemonHunter, ROLES.DPS, realms.TarrenMill);
-// Mehtiina
-addCharacter('Mehtiina', wowClasses.Shaman, ROLES.Healer, realms.TarrenMill);
 
 const roster = {
   officers: [
@@ -110,14 +94,6 @@ const addMember = (character, alts) => {
 }
 
 addMember(characters.Crássiúss, [characters.Twiggss]);
-addMember(characters.Shldor);
-addMember(characters.Lahtac);
-addMember(characters.Walshy);
-addMember(characters.Teflonmanjo);
-addMember(characters.Gashenmage);
-addMember(characters.Polishperson);
-addMember(characters.Tillytubby);
-addMember(characters.Mehtiina);
 
 roster.combined = [...roster.officers, ...roster.enforcers, ...roster.members]
 
