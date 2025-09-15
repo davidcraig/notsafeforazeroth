@@ -28,7 +28,8 @@ const lw = {
             "name": 'Snipá-Magtheridon',
             "class":  { name: 'Hunter', css: 'hunter' },
             "items": [
-                Leatherworking.GlyphEtchedVambraces
+                Leatherworking.GlyphEtchedVambraces,
+                Leatherworking.GlyphEtchedGauntlets,
             ]
         }
     ],

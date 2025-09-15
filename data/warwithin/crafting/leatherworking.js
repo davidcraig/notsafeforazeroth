@@ -14,6 +14,19 @@ const Leatherworking = {
             { ...materials.ChitinArmorBanding, "quantity": 1 },
         ]
     },
+    GlyphEtchedGauntlets: {
+        "name": "Glyph-Etched Gauntlets",
+        "type": "Gloves, Mail",
+        "rarity": "epic",
+        "url": 'https://www.wowhead.com/item=219341/glyph-etched-gauntlets',
+        "materials": [
+            { "name": "Any Spark", "quantity": 1, "url": materials.SparkOfStarlight.url },
+            { ...materials.GloomfathomHide, "quantity": 1 },
+            { ...materials.GloomChitin, "quantity": 150 },
+            { ...materials.LeyfusedHide, "quantity": 3 },
+            { ...materials.ChitinArmorBanding, "quantity": 1 },
+        ]
+    },
 }
 
 export default Leatherworking

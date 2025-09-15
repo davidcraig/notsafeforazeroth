@@ -7,6 +7,7 @@ const BountifulBolts = { name: 'Bountiful Bolts', url: 'https://www.wowhead.com/
 const GloomChitin = { name: 'Gloom Chitin', url: 'https://www.wowhead.com/item=212667/gloom-chitin', rarity: 'common' }
 const ChitinArmorBanding = { name: 'Chitin Armor Banding', url: 'https://www.wowhead.com/item=219898/chitin-armor-banding', rarity: 'uncommon' }
 const WrithingHide = { name: 'Writhing Hide', url: 'https://www.wowhead.com/item=219886/writhing-hide', rarity: 'rare' }
+const LeyfusedHide = { name: 'Leyfused Hide', url: 'https://www.wowhead.com/item=219892/leyfused-hide', rarity: 'rare' }
 
 export default {
     GloomfathomHide,
@@ -22,4 +23,5 @@ export default {
     GloomChitin,
     ChitinArmorBanding,
     WrithingHide,
+    LeyfusedHide,
 }
