@@ -1,6 +1,17 @@
 import materials from "./materials";
 
 const Tailoring = {
+    DuskweaveBag: {
+        "name": "Duskweave Bag",
+        "type": "Bag",
+        "rarity": "rare",
+        "url": "https://www.wowhead.com/item=222856/duskweave-bag",
+        "materials": [
+            { ...materials.AdorningRibbon, "quantity": 2 },
+            { ...materials.SpoolOfDuskthread, "quantity": 30 },
+            { ...materials.DuskweaveBolt, "quantity": 4 }
+        ]
+    }
     // GlyphEtchedVambraces: {
     //     "name": "Glyph-Etched Vambraces",
     //     "type": "Bracers, Mail",

@@ -5,7 +5,7 @@ const Engineering = {
         "name": "Crowd Pummeler 2-30",
         "type": "Mount",
         "rarity": "epic",
-        "url": 'https://www.wowhead.com/spell=450246/beledars-bulwark',
+        "url": 'https://www.wowhead.com/item=221967/crowd-pummeler-2-30',
         "materials": [
            { ...materials.BountifulBolts, "quantity": 1000 }
         ]

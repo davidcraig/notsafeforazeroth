@@ -12,6 +12,9 @@ const NascentGildedHarbingerCrest = { name: "Nascent Gilded Harbinger Crest", "u
 const StormDust = { name: "Storm Dust", url: "https://www.wowhead.com/item=219946/storm-dust", rarity: "common" }
 const GleamingShard = { name: "Gleaming Shard", url: "https://www.wowhead.com/item=219949/gleaming-shard", rarity: "rare" }
 const RefulgentCrystal = { name: "Refulgent Crystal", url: "https://www.wowhead.com/item=219952/refulgent-crystal", rarity: "epic" }
+const AdorningRibbon = { name: "Adorning Ribbon", url: "https://www.wowhead.com/item=228930/adorning-ribbon", rarity: "uncommon" }
+const SpoolOfDuskthread = { name: "Spool of Duskthread", url: "https://www.wowhead.com/item=222789/spool-of-duskthread", rarity: "rare" }
+const DuskweaveBolt = { name: "Duskweave Bolt", url: "https://www.wowhead.com/item=222798/duskweave-bolt", rarity: "epic" }
 
 export default {
     GloomfathomHide,
@@ -33,4 +36,8 @@ export default {
     StormDust,
     GleamingShard,
     RefulgentCrystal,
+    /* Tailoring */
+    AdorningRibbon,
+    SpoolOfDuskthread,
+    DuskweaveBolt,
 }

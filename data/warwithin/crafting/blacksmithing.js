@@ -5,7 +5,7 @@ const Blacksmithing = {
         "name": "Beledar's Bulwark",
         "type": "Shield",
         "rarity": "epic",
-        "url": 'https://www.wowhead.com/spell=450246/beledars-bulwark',
+        "url": 'https://www.wowhead.com/item=222459/beledars-bulwark',
         "materials": [
             { "name": "Any Spark", "quantity": 1, "url": materials.SparkOfStarlight.url },
             { ...materials.GloomfathomHide, "quantity": 1 },

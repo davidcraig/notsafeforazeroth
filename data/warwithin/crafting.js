@@ -53,6 +53,9 @@ const tailor = {
         {
             "name": "Snipermagi-TarrenMill",
             "class":  { name: 'Mage', css: 'mage' },
+            "items": [
+                Tailoring.DuskweaveBag,
+            ]
         }
     ]
 }
