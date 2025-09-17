@@ -9,53 +9,51 @@ import React from 'react'
  * @param {any} props.content[].content - Tab content.
  */
 export class TabbedContent extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
-      activeTab: this.setDefaultTab()
+      activeTab: '0'
     }
     this.changeTab = this.changeTab.bind(this)
   }
 
-  setDefaultTab () {
-    return Object.keys(this.props.content).slice(0, 1)[0]
-  }
-
-  changeTab (e) {
-    const key = e.target.attributes['data-tab'].value
+  changeTab(e) {
+    const key = e.target.getAttribute('data-tab')
     this.setState({ activeTab: key })
   }
 
-  renderTabs () {
-    const content = this.props.content
-    return Object.keys(content).map(key => {
-      if (key === this.state.activeTab) {
-        return <li key={key} className='p-2 is-active'>{content[key].title}</li>
-      } else {
-        return <li key={key} className='p-2'><a data-tab={key} onClick={this.changeTab}>{content[key].title}</a></li>
-      }
+  renderTabs() {
+    return this.props.content.map((tab, index) => {
+      const key = String(index)
+      const isActive = key === this.state.activeTab
+      return (
+        <li key={key} className={`p-2 ${isActive ? 'is-active' : ''}`}>
+          {isActive ? tab.title : (
+            <a data-tab={key} onClick={this.changeTab}>{tab.title}</a>
+          )}
+        </li>
+      )
     })
   }
 
-  renderActiveTabContent () {
-    const tabKey = this.state.activeTab
-    return this.props.content[tabKey].content
+  renderActiveTabContent() {
+    const index = parseInt(this.state.activeTab, 10)
+    const tab = this.props.content[index]
+    return tab?.content ?? <>No tab content found</>
   }
 
-  render () {
-    if (Object.keys(this.props.content).length > 0) {
-      const tabs = <div className='tabs'><ul className='flex'>{this.renderTabs()}</ul></div>
-      const content = this.renderActiveTabContent()
-
-      return (
-        <>
-          {tabs}
-          {content}
-        </>
-      )
+  render() {
+    if (!Array.isArray(this.props.content) || this.props.content.length === 0) {
+      return <>No content</>
     }
-    return ''
+
+    return (
+      <>    
+        <div className='tabs'>
+          <ul className='flex'>{this.renderTabs()}</ul>
+        </div>
+        {this.renderActiveTabContent()}
+      </>
+    )
   }
 }
-
-export default TabbedContent
