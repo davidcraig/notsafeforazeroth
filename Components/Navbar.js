@@ -47,7 +47,8 @@ if (showClassLinks) {
         { name: 'Shaman', slug: '/classes/shaman', wowClassColour: true },
         { name: 'Warrior', slug: '/classes/warrior', wowClassColour: true },
         { name: 'Paladin', slug: '/classes/paladin', wowClassColour: true },
-        { name: 'Death Knight', slug: '/classes/deathknight', wowClassColour: true }
+        { name: 'Death Knight', slug: '/classes/deathknight', wowClassColour: true },
+        { name: 'Evoker', slug: '/classes/evoker', wowClassColour: true }
       ]
     }
   )

@@ -45,6 +45,9 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   &.shaman {
     color: var(--wow-class-shaman) !important;
   }
+  &.evoker {
+    color: var(--wow-class-evoker) !important;
+  }
   &.warrior {
     color: var(--wow-class-warrior) !important;
   }
