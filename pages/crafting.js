@@ -11,6 +11,8 @@ const TabWithKey = TabbedContentWithKey(TabbedContent)
 
 const warWithinProfessionKeys = Object.keys(wwCrafting)
 const shadowlandsProfessionKeys = Object.keys(slCrafting)
+const nonCraftingKeys = ["skinning", "mining", "herbalism"]
+
 
 function getCrafterSkillMap(expansionData) {
   const crafterMap = {}
@@ -140,10 +142,16 @@ function RenderExpansionCrafting(expansionData, professionKey) {
 }
 
 function RenderShadowlands() {
-  const tabs = shadowlandsProfessionKeys.map(key => ({
-    title: slCrafting[key]?.name || key,
-    content: RenderExpansionCrafting(slCrafting, key)
-  }))
+  const tabs = shadowlandsProfessionKeys.filter(key => !nonCraftingKeys.includes(key)).map(key => 
+  {
+    if (key == 'mining' || key == "skinning") {
+      return null
+    }
+    return {
+      title: slCrafting[key]?.name || key,
+      content: RenderExpansionCrafting(slCrafting, key)
+    }
+  })
 
   return (
     <div className='mt-4'>
@@ -155,12 +163,24 @@ function RenderShadowlands() {
   )
 }
 
+const GetExpansionTabs = (expansionCraftingData) => {
+  const keys = Object.keys(expansionCraftingData)
+
+  return keys.filter(key => !nonCraftingKeys.includes(key)).map(key => ({
+      title: expansionCraftingData[key]?.name || key,
+      content: RenderExpansionCrafting(expansionCraftingData, key)
+    }
+  ))
+}
 
 function RenderWarWithin() {
-  const tabs = warWithinProfessionKeys.map(key => ({
-    title: wwCrafting[key]?.name || key,
-    content: RenderExpansionCrafting(wwCrafting, key)
-  }))
+  const tabs = GetExpansionTabs(wwCrafting);
+
+  // const tabs = warWithinProfessionKeys.filter(key => !nonCraftingKeys.includes(key)).map(key => ({
+  //     title: wwCrafting[key]?.name || key,
+  //     content: RenderExpansionCrafting(wwCrafting, key)
+  //   }
+  // ))
 
   return (
     <div className='mt-4'>

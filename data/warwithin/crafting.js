@@ -13,6 +13,7 @@ const bs = {
         {
             "name": 'Snipedeath-TarrenMill',
             "class":  { name: 'Death Knight', css: 'deathknight' },
+            "skill": { current: 78, cap: 100 },
             "items": [
                 Blacksmithing.BeledarsBulwark,
                 Blacksmithing.EverforgedVambraces,
@@ -29,6 +30,7 @@ const lw = {
         {
             "name": 'Snipá-Magtheridon',
             "class":  { name: 'Hunter', css: 'hunter' },
+            "skill": { current: 62, cap: 100 },
             "items": [
                 Leatherworking.GlyphEtchedVambraces,
                 Leatherworking.GlyphEtchedGauntlets,
@@ -37,12 +39,37 @@ const lw = {
     ],
 }
 
+const skinning = {
+    name: 'Skinning',
+    crafters: [
+        {
+            "name": 'Snipá-Magtheridon',
+            "class":  { name: 'Hunter', css: 'hunter' },
+            "skill": { current: 100, cap: 100 },
+            "items": []
+        }
+    ]
+}
+
+const mining = {
+    name: 'Mining',
+    crafters: [
+        {
+            "name": 'Sniperwar-Silvermoon',
+            "class":  { name: 'Warrior', css: 'warrior' },
+            "skill": { current: 100, cap: 100 },
+            "items": []
+        }
+    ]
+}
+
 const eng = {
     name: 'Engineering',
     crafters: [
         {
             "name": 'Sniperwar-Silvermoon',
             "class":  { name: 'Warrior', css: 'warrior' },
+            "skill": { current: 65, cap: 100 },
             "items": [
                 Engineering.CrowdPummeler230,
             ]
@@ -56,6 +83,7 @@ const tailor = {
         {
             "name": "Snipermagi-TarrenMill",
             "class":  { name: 'Mage', css: 'mage' },
+            "skill": { current: 66, cap: 100 },
             "items": [
                 Tailoring.DuskweaveBag,
                 Tailoring.GlovesOfTheWovenDusk,
@@ -71,6 +99,7 @@ const ench = {
         {
             "name": "Snipermagi-TarrenMill",
             "class":  { name: 'Mage', css: 'mage' },
+            "skill": { current: 53, cap: 100 },
             "items": [
                 Enchanting.EnchantedGildedHarbingerCrest
             ]
@@ -84,4 +113,6 @@ export default {
     eng,
     tailor,
     ench,
+    skinning,
+    mining
 }
