@@ -25,11 +25,11 @@ type Props = {
   children?: React.ReactNode
 }
 
-function RenderDiscord(discord?: string | string[]) {
+function RenderDiscord(wowClass: WoWClass, discord?: string | string[]) {
   if (!discord) return null
 
   const renderLink = (url: string) => (
-    <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
+    <a className={`fg-${wowClass.css}`} href={url} target="_blank" rel="noopener noreferrer">{url}</a>
   )
 
   if (Array.isArray(discord)) {
@@ -77,7 +77,7 @@ export default function WoWClassPage(props: Props) {
         {name}
         </h1>
       <div className="mb-4">
-        {RenderDiscord(classData.discord)}
+        {RenderDiscord(classData, classData.discord)}
       </div>
 
       <div className={`grid gap-4 mt-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-${gridCols}`}>
