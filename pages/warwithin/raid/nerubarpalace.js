@@ -4,7 +4,7 @@ import { default as nerubBosses } from '../../../data/warwithin/progression/neru
 
 const imgPath = '/img/warwithin/raid/nerubar/'
 
-export default function NerubarPalace(props) {
+export default function NerubarPalace() {
   return <Page title='Nerub-ar Palace'>
     <h1 className='text-xl'>Nerub-ar Palace</h1>
 

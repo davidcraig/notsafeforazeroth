@@ -4,7 +4,7 @@ import { default as manaforgeBosses } from '../../../data/warwithin/progression/
 
 const imgPath = '/img/warwithin/raid/nerubar/'
 
-export default function NerubarPalace(props) {
+export default function NerubarPalace() {
   return <Page title='Nerub-ar Palace'>
     <h1 className='text-xl'>Manaforge Omega</h1>
 
