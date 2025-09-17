@@ -87,6 +87,14 @@ function renderSpecTab(index, props) {
 }
 
 export default function WoWClassPage(props) {
+  if (!props.class || !props.class.css || !props.class.name) {
+    return (
+      <Page title="Invalid Class">
+        <p>Class data is missing or malformed.</p>
+      </Page>
+    )
+  }
+
   const css = props.class.css
   const name = props.class.name
   const discord = RenderDiscords(props.discord)
