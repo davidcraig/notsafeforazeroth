@@ -4,7 +4,7 @@ export function WoWProfessionSkillBar({ skill, cap, label, color }) {
   const baseSkill = Math.min(skill, cap)
   const bonus = skill > cap ? skill - cap : 0
   const percent = (baseSkill / cap) * 100
-  const displayText = bonus > 0 ? `${cap}+${bonus}/${cap}` : `${baseSkill}/${cap}`
+  const displayText = bonus > 0 ? `${cap} + ${bonus} / ${cap}` : `${baseSkill} / ${cap}`
   const barWidth = '100px'
 
   return (

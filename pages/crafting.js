@@ -12,6 +12,70 @@ const TabWithKey = TabbedContentWithKey(TabbedContent)
 const warWithinProfessionKeys = Object.keys(wwCrafting)
 const shadowlandsProfessionKeys = Object.keys(slCrafting)
 
+function getCrafterSkillMap(expansionData) {
+  const crafterMap = {}
+
+  Object.values(expansionData).forEach(profession => {
+    profession.crafters?.forEach(crafter => {
+      const name = crafter.name
+      if (!crafterMap[name]) {
+        crafterMap[name] = {
+          class: crafter.class,
+          skills: []
+        }
+      }
+
+      crafterMap[name].skills.push({
+        profession: profession.name,
+        skill: crafter.skill?.current ?? 0,
+        cap: crafter.skill?.cap ?? 100
+      })
+    })
+  })
+
+  return crafterMap
+}
+
+function RenderCrafterSkillGrid(expansionData) {
+  const crafterMap = getCrafterSkillMap(expansionData)
+
+  return (
+    <div className="crafter-grid" style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+      gap: '1rem',
+      marginBottom: '2rem'
+    }}>
+      {Object.entries(crafterMap).map(([name, { class: crafterClass, skills }]) => (
+        <div key={name} style={{
+          padding: '0.75rem',
+          border: '1px solid rgba(0,0,0,0.4)',
+          backgroundColor: 'rgba(0,0,0,0.1)'
+        }}>
+          <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }} className={`fg-${crafterClass.css}`}>
+            {name}
+          </div>
+
+          <div style={{
+            display: 'flex',
+            gap: '1rem',
+            flexWrap: 'wrap'
+          }}>
+            {skills.map((skillData, idx) => (
+              <WoWProfessionSkillBar
+                key={idx}
+                skill={skillData.skill}
+                cap={skillData.cap}
+                label={skillData.profession}
+                color={crafterClass.css}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
 
 function RenderCraftersItemsTable(profession) {
   if (!profession.crafters) return null
@@ -57,25 +121,6 @@ function RenderCraftersItemsTable(profession) {
   </>
 }
 
-function RenderSkillBars(profession) {
-  if (!profession.crafters) {
-    console.warn("No crafters for", profession)
-    return null
-  }
-  console.log(profession)
-  if (!profession.crafters.length > 0) return null
-
-  return (
-    <div>
-      {profession.crafters.map(crafter => {
-        return <div>
-          {crafter.name} - {profession.name} <WoWProfessionSkillBar skill={crafter.skill?.current ?? 0} cap={crafter.skill?.cap ?? 100} color={crafter["class"].css} />
-        </div>
-      })}
-    </div>
-  )
-}
-
 function RenderExpansionCrafting(expansionData, professionKey) {
   if (!expansionData || !professionKey || !expansionData.hasOwnProperty(professionKey)) {
     return ''
@@ -87,8 +132,6 @@ function RenderExpansionCrafting(expansionData, professionKey) {
 
   return (
     <>
-      <p>Skill Bars</p>
-      {RenderSkillBars(profession)}
       <p>Crafters Items</p>
       {RenderCraftersItemsTable(profession)}
     </>
@@ -106,9 +149,7 @@ function RenderShadowlands() {
     <div className='mt-4'>
       <h1>Shadowlands</h1>
 
-      <p>Skill Bars</p>
-      {shadowlandsProfessionKeys.map(key => RenderSkillBars(slCrafting[key]))}
-
+      {RenderCrafterSkillGrid(slCrafting)}
       <TabWithKey id="sl-crafting" content={tabs} />
     </div>
   )
@@ -125,9 +166,7 @@ function RenderWarWithin() {
     <div className='mt-4'>
       <h1>The War Within</h1>
 
-      <p>Skill Bars</p>
-      {warWithinProfessionKeys.map(key => RenderSkillBars(wwCrafting[key]))}
-
+      {RenderCrafterSkillGrid(wwCrafting)}
       <TabWithKey id="tww-crafting" content={tabs} />
     </div>
   )
