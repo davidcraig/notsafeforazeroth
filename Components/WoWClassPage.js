@@ -1,7 +1,6 @@
-import Page from './PageWithWidgets'
+import PageWithWidgets from './PageWithWidgets'
 import React from 'react'
 import ExternalLink from './ExternalLink'
-import { Card, Column, Columns } from '@davidcraig/react-bulma'
 import TabbedContent from './TabbedContent'
 
 function RenderDiscord(discord) {
@@ -34,89 +33,94 @@ export function renderClassGuides(guides) {
   )
 }
 
-function renderSpecCard(index, props) {
-  const spec = props.specs[index]
-  const guides = props.guides[spec.key]
+// function renderSpecCard(index, props) {
+//   const spec = props.specs[index]
+//   const guides = props.guides[spec.key]
 
-  return (
-    <Card title={spec.name}>
-      {guides.length > 0 && (
-        <>
-          Guides:
-          <ul>
-            {
-              guides.map(guide => {
-                return <li key={guide}><ExternalLink url={guide.url} text={guide.name} /></li>
-              })
-            }
-          </ul>
-        </>
-      )}
-      {props.specContent && props.specContent[spec.key]}
-    </Card>
-  )
-}
+//   return (
+//     <Card title={spec.name}>
+//       {guides.length > 0 && (
+//         <>
+//           Guides:
+//           <ul>
+//             {
+//               guides.map(guide => {
+//                 return <li key={guide}><ExternalLink url={guide.url} text={guide.name} /></li>
+//               })
+//             }
+//           </ul>
+//         </>
+//       )}
+//       {props.specContent && props.specContent[spec.key]}
+//     </Card>
+//   )
+// }
 
-function renderSpecTab(index, props) {
-  const spec = props.specs[index]
-  const guides = Object.prototype.hasOwnProperty.bind(props, 'guides')
-    ? props.guides[spec.key]
-    : []
+// function renderSpecTab(index, props) {
+  
+//   console.log(props)
+//   const spec = props.specs[index]
+//   console.log('Rendering spec:', spec.key)
+//   console.log('Spec content:', props.specContent?.[spec.key])
+//   const guides = Object.prototype.hasOwnProperty.bind(props, 'guides')
+//     ? props.guides[spec.key]
+//     : []
 
-  return (
-    <Columns>
-      <Column>
-        {props.specContent && props.specContent[spec.key]}
-      </Column>
-      <Column>
-        {guides.length > 0 && (
-          <>
-            Guides:
-            <ul>
-              {
-                guides.map(guide => {
-                  return <li><ExternalLink url={guide.url} text={guide.name} /></li>
-                })
-              }
-            </ul>
-          </>
-        )}
-      </Column>
-    </Columns>
-  )
-}
+//   return (
+//     <Columns>
+//       <Column>
+//         {props.specContent && props.specContent[spec.key]}
+//       </Column>
+//       <Column>
+//         {guides.length > 0 && (
+//           <>
+//             Guides:
+//             <ul>
+//               {
+//                 guides.map(guide => {
+//                   return <li><ExternalLink url={guide.url} text={guide.name} /></li>
+//                 })
+//               }
+//             </ul>
+//           </>
+//         )}
+//       </Column>
+//     </Columns>
+//   )
+// }
 
 export default function WoWClassPage(props) {
   if (!props.class || !props.class.css || !props.class.name) {
     return (
-      <Page title="Invalid Class">
+      <PageWithWidgets title="Invalid Class">
         <p>Class data is missing or malformed.</p>
-      </Page>
+      </PageWithWidgets>
     )
   }
+
 
   const css = props.class.css
   const name = props.class.name
   const discord = RenderDiscords(props.discord)
 
   let tabContent = []
-  if (props.specs) {
-    props.specs.forEach((spec, index) => {
-      tabContent.push({
-        title: spec.name,
-        content: renderSpecTab(index, props)
-      })
-    })
-  }
+  // if (props.specs) {
+  //   props.specs.forEach((spec, index) => {
+  //     tabContent.push({
+  //       title: spec.name,
+  //       content: renderSpecTab(index, props)
+  //     })
+  //   })
+  // }
 
   return (
-    <Page title={props.title} className={css}>
+    <PageWithWidgets title={props.title} className={css}>
       <h1 className={`h1 text-2xl fg-${css} mb-4`}>{name}</h1>
       <div className='mb-4'>
         {discord}
       </div>
       <TabbedContent content={tabContent} />
       {props.children}
-    </Page>
+    </PageWithWidgets>
   )
 }

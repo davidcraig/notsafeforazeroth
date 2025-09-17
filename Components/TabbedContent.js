@@ -19,17 +19,22 @@ export class TabbedContent extends React.Component {
 
   changeTab(e) {
     const key = e.target.getAttribute('data-tab')
-    this.setState({ activeTab: key })
+    if (key !== null) {
+      this.setState({ activeTab: key })
+    }
   }
 
   renderTabs() {
-    return this.props.content.map((tab, index) => {
+    const { content } = this.props
+    return content.map((tab, index) => {
       const key = String(index)
       const isActive = key === this.state.activeTab
+      const title = tab?.title ?? `Tab ${index + 1}`
+
       return (
         <li key={key} className={`p-2 ${isActive ? 'is-active' : ''}`}>
-          {isActive ? tab.title : (
-            <a data-tab={key} onClick={this.changeTab}>{tab.title}</a>
+          {isActive ? title : (
+            <a data-tab={key} onClick={this.changeTab}>{title}</a>
           )}
         </li>
       )
@@ -38,22 +43,38 @@ export class TabbedContent extends React.Component {
 
   renderActiveTabContent() {
     const index = parseInt(this.state.activeTab, 10)
-    const tab = this.props.content[index]
-    return tab?.content ?? <>No tab content found</>
+    const tab = this.props.content?.[index]
+
+    if (!tab || !tab.content) {
+      return <p className="has-text-grey">No tab content found</p>
+    }
+
+    // Defensive: only render if it's a valid React element
+    return React.isValidElement(tab.content)
+      ? tab.content
+      : <p className="has-text-grey">Invalid tab content</p>
   }
 
   render() {
-    if (!Array.isArray(this.props.content) || this.props.content.length === 0) {
-      return <>No content</>
+    const { content } = this.props
+
+    if (!Array.isArray(content) || content.length === 0) {
+      return <p className="has-text-grey">-</p>
     }
 
     return (
-      <>    
-        <div className='tabs'>
-          <ul className='flex'>{this.renderTabs()}</ul>
+      <>
+        <div className="tabs">
+          <ul className="flex">
+            {this.renderTabs()}
+          </ul>
         </div>
-        {this.renderActiveTabContent()}
+        <div className="tab-body">
+          {this.renderActiveTabContent()}
+        </div>
       </>
     )
   }
 }
+
+export default TabbedContent

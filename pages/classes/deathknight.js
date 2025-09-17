@@ -1,5 +1,5 @@
 import React from 'react'
-import Page from '../../Components/WoWClassPage'
+import WoWClassPage from '../../Components/WoWClassPage'
 import { DeathKnight } from '../../data/wow-classes'
 
 const DISCORD = 'https://discord.gg/acherus'
@@ -22,7 +22,7 @@ const guides = {
 
 export default function ClassDeathKnight() {
   return (
-    <Page
+    <WoWClassPage
       title='Death Knight'
       class={DeathKnight}
       discord={DISCORD}
@@ -33,6 +33,6 @@ export default function ClassDeathKnight() {
         { name: 'Blood', key: 'blood' },
       ]}
     >
-    </Page>
+    </WoWClassPage>
   )
 }

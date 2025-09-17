@@ -81,7 +81,7 @@ function RenderCraftersItemsTable(profession) {
 
   return <>
     {profession.crafters.map(crafter => {
-      if (!crafter.items) { return }
+      if (!crafter.items) { return null }
       return (
         <table className='table is-narrow is-striped mt-4'>
           <thead>
@@ -122,11 +122,11 @@ function RenderCraftersItemsTable(profession) {
 
 function RenderExpansionCrafting(expansionData, professionKey) {
   if (!expansionData || !professionKey || !expansionData.hasOwnProperty(professionKey)) {
-    return ''
+    return null
   }
   let profession = expansionData[professionKey]
   if (!profession || !profession.crafters) {
-    return ''
+    return null
   }
 
   return RenderCraftersItemsTable(profession)

@@ -3,7 +3,7 @@ import React from 'react'
 import Recruitment from './Widgets/Recruitment'
 import Progress from './Widgets/Progress'
 
-function PageWithWidgets(props) {
+export function PageWithWidgets(props) {
   let title = 'Not Safe for Azeroth'
   if (props.title) { title += ' | ' + props.title }
   const pageClass = props.className ? props.className : ''
