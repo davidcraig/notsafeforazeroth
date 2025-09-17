@@ -2,21 +2,28 @@ import React from 'react'
 
 export function WoWProfessionSkillBar({ skill, cap, label, color }) {
   const baseSkill = Math.min(skill, cap)
+  const isCapped = skill >= cap
   const bonus = skill > cap ? skill - cap : 0
   const percent = (baseSkill / cap) * 100
 
   const SkillDisplayValue = (
     <>
-        {bonus > 0 ? (
+      {isCapped && bonus === 0 && (
+        <span style={{ fontWeight: 'bold', color: 'var(--wow-rarity-legendary)' }}>{cap}</span>
+      )}
+
+      {!isCapped && bonus > 0 && (
         <>
-            <span style={{ fontWeight: 'bold', color: '#ffd700' }}>{cap}</span>
-            <span style={{ margin: '0 4px' }}>+</span>
-            <span style={{ color: '#aaa' }}>{bonus}</span>
-            <span style={{ marginLeft: '4px' }}>/ {cap}</span>
+        <span style={{ fontWeight: 'bold', color: 'var(--wow-rarity-legendary)' }}>{cap}</span>
+        <span style={{ margin: '0 4px' }}>+</span>
+        <span style={{ color: 'var(--wow-rarity-uncommon)' }}>{bonus}</span>
+        <span style={{ marginLeft: '4px' }}>/ {cap}</span>
         </>
-        ) : (
+      )}
+
+      {!isCapped && bonus === 0 && (
         <>{baseSkill} / {cap}</>
-        )}
+      )}
     </>
   )
 
