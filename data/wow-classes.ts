@@ -2,10 +2,6 @@ import ROLES from "./roles"
 
 import type { WoWClass } from "../Types/WoWClass"
 
-import DeathKnight from "./classes/dk"
-import DemonHunter from "./classes/dh"
-import Priest from "./classes/priest"
-
 export const Mage: WoWClass = {
   name: 'Mage', css: 'mage', roles: [ ROLES.DPS ],
   img: '/img/wow/classes/mage/mage.png',
@@ -16,12 +12,7 @@ export const Warlock: WoWClass = {
   img: '/img/wow/classes/warlock/warlock.png',
 }
 
-export const Druid: WoWClass = {
-  name: 'Druid',
-  css: 'druid',
-  roles: [ ROLES.DPS, ROLES.Healer, ROLES.Tank ],
-  img: '/img/wow/classes/druid/druid.png',
-}
+
 
 export const Rogue: WoWClass = {
   name: 'Rogue',
@@ -64,23 +55,3 @@ export const Paladin: WoWClass = {
   img: '/img/wow/classes/paladin/paladin.png',
 }
 
-export const classes: Record<string, WoWClass> = {
-  Mage,
-  Priest,
-  Warlock,
-
-  Druid,
-  Rogue,
-  Monk,
-  DemonHunter,
-
-  Hunter,
-  Shaman,
-  Evoker,
-
-  Warrior,
-  Paladin,
-  DeathKnight
-}
-
-export default classes
