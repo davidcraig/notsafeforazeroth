@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Warlock } from '../../data/wow-classes'
+import { Warlock } from '../../data/classes/warlock'
 
 const guides = {
   affliction: [],

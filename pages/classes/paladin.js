@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Paladin } from '../../data/wow-classes'
+import { Paladin } from '../../data/classes/paladin'
 
 const guides = {
   holy: [],

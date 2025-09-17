@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Hunter } from '../../data/wow-classes'
+import { Hunter } from '../../data/classes/hunter'
 
 const guides = {
   beastmaster: [],

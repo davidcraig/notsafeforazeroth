@@ -1,8 +1,7 @@
 import React from 'react'
 import { Card } from '@davidcraig/react-bulma'
-import { Column, Columns } from '@davidcraig/react-bulma/dist/Columns/Columns'
 import Page from '../../Components/WoWClassPage'
-import { Monk } from '../../data/wow-classes'
+import { Monk } from '../../data/classes/monk'
 
 const guides = {
   brewmaster: [],
@@ -44,13 +43,6 @@ export default function ClassMonk() {
   }
 
   return (
-    <Page { ...props }>
-      <Columns>
-        <Column>
-          
-        </Column>
-        <Column></Column>
-      </Columns>
-    </Page>
+    <Page { ...props }></Page>
   )
 }

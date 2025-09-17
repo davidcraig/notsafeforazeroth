@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Mage } from '../../data/wow-classes'
+import { Mage } from '../../data/classes/mage'
 
 const guides = {
   arcane: [],

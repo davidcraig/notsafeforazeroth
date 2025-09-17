@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Rogue } from '../../data/wow-classes'
+import { Rogue } from '../../data/classes/rogue'
 
 const DISCORD = 'https://discord.gg/0h08tydxoNhfDVZf'
 

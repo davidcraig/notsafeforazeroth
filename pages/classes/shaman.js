@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Shaman } from '../../data/wow-classes'
+import { Shaman } from '../../data/classes/shaman'
 
 const guides = {
   restoration: [],

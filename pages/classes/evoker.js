@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Evoker } from '../../data/wow-classes'
+import { Evoker } from '../../data/classes/evoker'
 
 const guides = {
   devastation: [],
