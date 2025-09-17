@@ -104,7 +104,7 @@ function RenderCraftersItemsTable(profession) {
                     item.materials.map(mat => {
                       return (
                         <div className='mr-4' key={mat.name}>
-                        { mat.url ? <a href={mat.url} className={`fg-${mat.rarity || 'common'}`}>{mat.name}</a> : mat.name } x{mat.quantity}
+                        { mat.url ? <a href={mat.url} className={`fg-${mat.rarity || 'common'}`}>{mat.name}</a> : mat.name } x {mat.quantity}
                         </div>
                       )
                     })
