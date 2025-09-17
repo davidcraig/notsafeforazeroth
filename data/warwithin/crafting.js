@@ -4,6 +4,9 @@ import Engineering from "./crafting/engineering"
 import Tailoring from "./crafting/tailoring"
 import Enchanting from "./crafting/enchanting"
 
+// Shadowlands Crating
+
+// Blacksmithing
 const bs = {
     name: 'Blacksmithing',
     crafters: [

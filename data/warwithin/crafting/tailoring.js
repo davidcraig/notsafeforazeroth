@@ -1,5 +1,6 @@
 import materials from "./materials";
 
+// 11. TWW - Tailoring
 const Tailoring = {
     DuskweaveBag: {
         "name": "Duskweave Bag",

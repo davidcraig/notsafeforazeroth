@@ -14,44 +14,49 @@ function RenderExpansionCrafting(expansionData, professionKey) {
     return ''
   }
 
-  return <table className='table is-narrow is-striped mt-4'>
-    <thead>
-      <tr>
-        <th>Crafter</th>
-        <th>Item</th>
-        <th>Type</th>
-        <th>Materials</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
+  return (
+    <>
+      {profession.crafters.map(crafter => {
+        if (!crafter.items) { return }
+        return (
+          <table className='table is-narrow is-striped mt-4'>
+            <thead>
+              <tr>
+                <th>Crafter</th>
+                <th>Item</th>
+                <th>Type</th>
+                <th>Materials</th>
+              </tr>
+            </thead>
+            <tbody>
+              {crafter.items.map((item, idx) => {
+                return <tr key={item.name+crafter.name}>
+                  <td className={`fg-${crafter.class.css}`}>{idx == 0 && crafter.name}</td>
+                  <td><a className={`fg-${item.rarity}`} href={item.url}>{item.name}</a></td>
+                  <td>{item.type}</td>
+                  <td>
+                    <div className='flex'>
+                    {
+                      item.materials.map(mat => {
+                        return (
+                          <div className='mr-4' key={mat.name}>
+                          { mat.url ? <a href={mat.url} className={`fg-${mat.rarity || 'common'}`}>{mat.name}</a> : mat.name } x{mat.quantity}
+                          </div>
+                        )
+                      })
+                    }
+                    </div>
+                  </td>
+                </tr>
+              })}
+            </tbody>
+          </table>
+        )
+      })}
+    </>
+  )
 
-        profession.crafters.map(crafter => {
-          if (!crafter.items) { return }
-          return crafter.items.map(item => {
-            return <tr key={item.name+crafter.name}>
-              <td className={`fg-${crafter.class.css}`}>{crafter.name}</td>
-              <td><a className={`fg-${item.rarity}`} href={item.url}>{item.name}</a></td>
-              <td>{item.type}</td>
-              <td>
-                <div className='flex'>
-                {
-                  item.materials.map(mat => {
-                    return (
-                      <div className='mr-4' key={mat.name}>
-                      { mat.url ? <a href={mat.url} className={`fg-${mat.rarity || 'common'}`}>{mat.name}</a> : mat.name } x{mat.quantity}
-                      </div>
-                    )
-                  })
-                }
-                </div>
-              </td>
-            </tr>
-          })
-        })
-      }
-    </tbody>
-  </table>
+  return 
 }
 
 function RenderShadowlands() {

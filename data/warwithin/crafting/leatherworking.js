@@ -1,5 +1,6 @@
 import materials from "./materials";
 
+// 11. TWW - Leatherworking
 const Leatherworking = {
     GlyphEtchedVambraces: {
         "name": "Glyph-Etched Vambraces",

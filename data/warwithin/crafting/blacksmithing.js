@@ -1,5 +1,6 @@
 import materials from "./materials";
 
+// 11. TWW - Blacksmithing
 const Blacksmithing = {
     BeledarsBulwark: {
         "name": "Beledar's Bulwark",
