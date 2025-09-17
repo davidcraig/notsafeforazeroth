@@ -23,13 +23,17 @@
 }
 
 .tabs li {
-  border-bottom: 1px solid var(--horde-bg-2);
+  border-bottom: 2px solid var(--horde-bg-2);
+
+  background-color: var(--theme-bg-2);
+  color: var(--theme-text);
 }
 
 .tabs .is-active {
   // border: 2px solid var(--tab-colour);
-  border-bottom: 1px solid var(--horde-alt-2);
-  color: var(--tab-colour);
+  color: var(--theme-link);
+
+  border-bottom: 2px solid var(--theme-link);
   font-weight: bold;
 }
 

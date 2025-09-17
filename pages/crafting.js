@@ -147,7 +147,7 @@ function RenderExpansion(expansionTitle, expansionCraftingData, idSlug) {
 
   return (
     <div className='mt-8'>
-      <h1 className='mb-4' style={{ fontWeight: 'bold' }}>{expansionTitle}</h1>
+      <h1 className='mb-4 text-xl' style={{ fontWeight: 'bold' }}>{expansionTitle}</h1>
 
       {RenderCrafterSkillGrid(expansionCraftingData)}
       <TabWithKey id={`${idSlug}-crafting`} content={tabs} />
@@ -168,7 +168,7 @@ export default function Crafting() {
   }))
   
   return <Page title='Crafting'>
-    <h1 className='h1'>Crafting</h1>
+    <h2 className='h2 text-2xl mb-2'>Guild Crafting</h2>
 
     <TabWithKey id="crafting-tabs" content={tabs} />
   </Page>
