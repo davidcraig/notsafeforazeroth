@@ -9,8 +9,6 @@ import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar'
 // HoC
 const TabWithKey = TabbedContentWithKey(TabbedContent)
 
-const warWithinProfessionKeys = Object.keys(wwCrafting)
-const shadowlandsProfessionKeys = Object.keys(slCrafting)
 const nonCraftingKeys = ["skinning", "mining", "herbalism"]
 
 
@@ -141,28 +139,6 @@ function RenderExpansionCrafting(expansionData, professionKey) {
 
 }
 
-function RenderShadowlands() {
-  const tabs = shadowlandsProfessionKeys.filter(key => !nonCraftingKeys.includes(key)).map(key => 
-  {
-    if (key == 'mining' || key == "skinning") {
-      return null
-    }
-    return {
-      title: slCrafting[key]?.name || key,
-      content: RenderExpansionCrafting(slCrafting, key)
-    }
-  })
-
-  return (
-    <div className='mt-4'>
-      <h1>Shadowlands</h1>
-
-      {RenderCrafterSkillGrid(slCrafting)}
-      <TabWithKey id="sl-crafting" content={tabs} />
-    </div>
-  )
-}
-
 const GetExpansionTabs = (expansionCraftingData) => {
   const keys = Object.keys(expansionCraftingData)
 
@@ -173,31 +149,30 @@ const GetExpansionTabs = (expansionCraftingData) => {
   ))
 }
 
-function RenderWarWithin() {
-  const tabs = GetExpansionTabs(wwCrafting);
-
-  // const tabs = warWithinProfessionKeys.filter(key => !nonCraftingKeys.includes(key)).map(key => ({
-  //     title: wwCrafting[key]?.name || key,
-  //     content: RenderExpansionCrafting(wwCrafting, key)
-  //   }
-  // ))
+function RenderExpansion(expansionTitle, expansionCraftingData, idSlug) {
+  const tabs = GetExpansionTabs(expansionCraftingData);
 
   return (
-    <div className='mt-4'>
-      <h1>The War Within</h1>
+    <div className='mt-8'>
+      <h1 className='mb-4' style={{ fontWeight: 'bold' }}>{expansionTitle}</h1>
 
-      {RenderCrafterSkillGrid(wwCrafting)}
-      <TabWithKey id="tww-crafting" content={tabs} />
+      {RenderCrafterSkillGrid(expansionCraftingData)}
+      <TabWithKey id={`${idSlug}-crafting`} content={tabs} />
     </div>
   )
 }
 
 
 export default function Crafting() {
-  const tabs = [
-    { title: 'War Within', content: RenderWarWithin() },
-    { title: 'Shadowlands', content: RenderShadowlands() },
+  const expansions = [
+    { name: 'The War Within', crafts: wwCrafting, slug: 'tww' },
+    { name: 'Shadowlands', crafts: slCrafting, slug: 'sl' },
   ]
+
+  const tabs = expansions.map(ex => ({
+    title: ex.name,
+    content: RenderExpansion(ex.name, ex.crafts, ex.slug)
+  }))
   
   return <Page title='Crafting'>
     <h1 className='h1'>Crafting</h1>
