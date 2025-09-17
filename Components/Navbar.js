@@ -33,7 +33,8 @@ const wikiPages = [
   {
     name: 'War Within', pages: [
       { name: 'Raids', pages: [
-        { name: 'Nerub-ar Palace', slug: '/warwithin/raid/nerubarpalace' }
+        { name: 'Nerub-ar Palace', slug: '/warwithin/raid/nerubarpalace' },
+        { name: 'Manaforge Omega', slug: '/warwithin/raid/manaforge' }
       ] }
     ],
   }

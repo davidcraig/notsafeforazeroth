@@ -1,18 +1,18 @@
 import Page from '../../../Components/Page'
 import YoutubeEmbed from '../../../Components/YoutubeEmbed'
-import { default as nerubBosses } from '../../../data/warwithin/progression/nerubarPalace'
+import { default as manaforgeBosses } from '../../../data/warwithin/progression/manaforge'
 
 const imgPath = '/img/warwithin/raid/nerubar/'
 
 export default function NerubarPalace(props) {
   return <Page title='Nerub-ar Palace'>
-    <h1 className='text-xl'>Nerub-ar Palace</h1>
+    <h1 className='text-xl'>Manaforge Omega</h1>
 
     <h2 className='text-lg'>Boss Guides</h2>
     <div className=''>
 
       <div className='grid grid-cols-2 lg:grid-cols-3 gap-2 mb-2'>
-        {nerubBosses.map((boss,index) => {
+        {manaforgeBosses.map((boss,index) => {
               return boss.video && (
                 <YoutubeEmbed url={boss.video} height='450' />
               )
@@ -20,7 +20,7 @@ export default function NerubarPalace(props) {
         </div>
 
       <div className='grid grid-cols-2 xl:grid-cols-3 gap-2'>
-        {nerubBosses.map((boss,index) => {
+        {manaforgeBosses.map((boss,index) => {
               return boss.img && (
                 <img style={{width: '100%', flexGrow: 0, flexShrink: 0, maxWidth: '100%'}} src={boss.img ? `${imgPath}${boss.img}` : null} />
               )
