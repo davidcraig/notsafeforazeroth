@@ -44,6 +44,7 @@ export function WoWProfessionSkillBar({ skill, cap, label, color }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          fontWeight: 'bold',
           textShadow: '0 0 2px #000, 0 0 2px #000',
           pointerEvents: 'none', // ensures clicks pass through
         }}>
