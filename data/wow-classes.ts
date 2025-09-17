@@ -1,25 +1,74 @@
-export const Mage = { name: 'Mage', css: 'mage', roles: [ 'DPS' ] }
-export const Priest = { name: 'Priest', css: 'priest', roles: [ 'DPS', 'Healer' ] }
-export const Warlock = { name: 'Warlock', css: 'warlock', roles: [ 'DPS' ] }
+import ROLES from "./roles"
 
-export const Druid = { name: 'Druid', css: 'druid', roles: [ 'DPS', 'Healer', 'Tank' ] }
-export const Rogue = { name: 'Rogue', css: 'rogue', roles: [ 'DPS' ] }
-export const Monk = { name: 'Monk', css: 'monk', roles: [ 'DPS', 'Tank', 'Healer' ] }
-export const DemonHunter = { name: 'Demon Hunter', css: 'demonhunter', roles: [ 'DPS', 'Tank' ] }
+import type { WoWClass } from "../Types/WoWClass"
 
-export const Hunter = { name: 'Hunter', css: 'hunter', roles: [ 'DPS' ] }
-export const Shaman = { name: 'Shaman', css: 'shaman', roles: [ 'DPS', 'Healer' ] }
-export const Evoker = { name: 'Evoker', css: 'evoker', roles: [ 'DPS', 'Healer' ], armoryBg: '/img/wow/classes/armory_bg_class_evoker.jpg' }
+import DeathKnight from "./classes/dk"
+import DemonHunter from "./classes/dh"
 
-export const Warrior = { name: 'Warrior', css: 'warrior', roles: [ 'DPS', 'Tank' ] }
-export const Paladin = { name: 'Paladin', css: 'paladin', roles: [ 'DPS', 'Tank' ] }
-export const DeathKnight = {
-  name: 'Death Knight',
-  css: 'deathknight',
-  roles: [ 'DPS', 'Tank' ]
+export const Mage: WoWClass = {
+  name: 'Mage', css: 'mage', roles: [ ROLES.DPS ],
+  img: '/img/wow/classes/mage/mage.png',
 }
 
-export const classes = {
+export const Priest: WoWClass = {
+  name: 'Priest', css: 'priest', roles: [ ROLES.DPS, ROLES.Healer ],
+  img: '/img/wow/classes/priest/priest.png',
+}
+
+export const Warlock: WoWClass = {
+  name: 'Warlock', css: 'warlock', roles: [ ROLES.DPS ],
+  img: '/img/wow/classes/warlock/warlock.png',
+}
+
+export const Druid: WoWClass = {
+  name: 'Druid',
+  css: 'druid',
+  roles: [ ROLES.DPS, ROLES.Healer, ROLES.Tank ],
+  img: '/img/wow/classes/druid/druid.png',
+}
+
+export const Rogue: WoWClass = {
+  name: 'Rogue',
+  css: 'rogue',
+  roles: [ ROLES.DPS ],
+  img: '/img/wow/classes/rogue/rogue.png',
+}
+
+export const Monk: WoWClass = {
+  name: 'Monk',
+  css: 'monk',
+  roles: [ ROLES.DPS, ROLES.Tank, ROLES.Healer ],
+  img: '/img/wow/classes/monk/monk.png',
+}
+
+export const Hunter: WoWClass = {
+  name: 'Hunter', css: 'hunter', roles: [ ROLES.DPS ],
+  img: '/img/wow/classes/hunter/hunter.png',
+}
+
+export const Shaman: WoWClass = {
+  name: 'Shaman', css: 'shaman', roles: [ ROLES.DPS, ROLES.Healer ],
+  img: '/img/wow/classes/shaman/shaman.png',
+}
+
+export const Evoker: WoWClass = {
+  name: 'Evoker', css: 'evoker', roles: [ ROLES.DPS, ROLES.Healer ],
+  img: '/img/wow/classes/evoker/evoker.png',
+}
+
+export const Warrior: WoWClass = {
+  name: 'Warrior', css: 'warrior', roles: [ ROLES.DPS, ROLES.Tank ],
+  img: '/img/wow/classes/warrior/warrior.png',
+}
+
+export const Paladin: WoWClass = {
+  name: 'Paladin',
+  css: 'paladin',
+  roles: [ ROLES.DPS, ROLES.Tank, ROLES.Healer ],
+  img: '/img/wow/classes/paladin/paladin.png',
+}
+
+export const classes: Record<string, WoWClass> = {
   Mage,
   Priest,
   Warlock,
