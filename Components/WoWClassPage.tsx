@@ -99,7 +99,12 @@ export default function WoWClassPage(props: Props) {
                   )}
 
                   {/* Center Text */}
-                  <span className={`mx-auto text-xl font-bold text-center fg-${classData.css}`}>
+                  <span
+                    className={`mx-auto text-xl font-bold text-center fg-${classData.css} tracking-wide`}
+                    style={{
+                      textShadow: '0 0 1px #000, 0 0 1px #000',
+                    }}
+                  >
                     {spec.name}
                   </span>
 
