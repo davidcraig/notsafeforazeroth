@@ -4,15 +4,11 @@ import type { WoWClass } from "../Types/WoWClass"
 
 import DeathKnight from "./classes/dk"
 import DemonHunter from "./classes/dh"
+import Priest from "./classes/priest"
 
 export const Mage: WoWClass = {
   name: 'Mage', css: 'mage', roles: [ ROLES.DPS ],
   img: '/img/wow/classes/mage/mage.png',
-}
-
-export const Priest: WoWClass = {
-  name: 'Priest', css: 'priest', roles: [ ROLES.DPS, ROLES.Healer ],
-  img: '/img/wow/classes/priest/priest.png',
 }
 
 export const Warlock: WoWClass = {

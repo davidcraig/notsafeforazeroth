@@ -102,22 +102,6 @@ export default function Navigation(props) {
         {externalLink('https://worldofwarcraft.blizzard.com/en-gb/guild/eu/tarren-mill/not-safe-for-azeroth', 'Armory')}
       </div>
     </nav>
-    // <Navbar>
-    //   <Brand title='Not Safe for Azeroth' />
-    //   <Start>
-    //     {pages.map(page => {
-    //       return renderNavigationItem(page)
-    //     })}
-    //   </Start>
-    //   <End>
-        
-    //     <Item
-    //       href='https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth'
-    //       title='Raider.IO'
-    //       target='_blank'
-    //     />
-    //   </End>
-    // </Navbar>
   )
 }
 
