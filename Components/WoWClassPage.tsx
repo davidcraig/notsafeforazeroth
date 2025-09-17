@@ -5,6 +5,7 @@ import ExternalLink from './ExternalLink'
 type Spec = {
   name: string
   key: string
+  img?: string
   guides?: Guide[]
 }
 
@@ -81,6 +82,13 @@ export default function WoWClassPage(props: Props) {
             <div key={spec.key} className="card">
               <div className="card-header">
                 <div className={`card-header-title fg-${css}`}>
+                  {spec.img && (
+                    <img
+                      src={spec.img}
+                      alt={`${spec.name} Spec Icon`}
+                      className="inline-block mr-2"
+                    />
+                  )}
                   {spec.name}
                 </div>
               </div>

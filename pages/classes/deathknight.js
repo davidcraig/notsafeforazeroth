@@ -25,6 +25,7 @@ const specs = [
   {
     name: 'Blood',
     key: 'blood',
+    img: '/img/wow/classes/spell_deathknight_bloodpresence.jpg',
     guides: [
       { name: 'Icy Veins', url: 'https://www.icy-veins.com/wow/blood-death-knight-pve-tank-guide' },
       { name: 'Noxxic', url: 'https://www.noxxic.com/wow/guide/blood-death-knight/' },
