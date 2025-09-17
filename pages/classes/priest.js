@@ -1,7 +1,6 @@
 import React from 'react'
-import Page from '../../Components/WoWClassPage'
+import WoWClassPage from '../../Components/WoWClassPage'
 import Priest from '../../data/classes/priest'
-
 
 export default function ClassPriest() {
   const props = {
@@ -10,6 +9,6 @@ export default function ClassPriest() {
   }
 
   return (
-    <Page { ...props }></Page>
+    <WoWClassPage { ...props }></WoWClassPage>
   )
 }

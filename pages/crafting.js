@@ -96,7 +96,7 @@ function RenderCraftersItemsTable(profession) {
             {crafter.items.map((item, idx) => {
               return <tr key={item.name+crafter.name}>
                 <td className={`fg-${crafter.class.css}`}>{idx == 0 && crafter.name}</td>
-                <td><a className={`fg-${item.rarity}`} href={item.url}>{item.name}</a></td>
+                <td><a className={`fg-${item.rarity}`} href={item.url} rel="noopener noreferrer" target='_blank'>{item.name}</a></td>
                 <td>{item.type}</td>
                 <td>
                   <div className='flex'>
@@ -104,7 +104,7 @@ function RenderCraftersItemsTable(profession) {
                     item.materials.map(mat => {
                       return (
                         <div className='mr-4' key={mat.name}>
-                        { mat.url ? <a href={mat.url} className={`fg-${mat.rarity || 'common'}`}>{mat.name}</a> : mat.name } x {mat.quantity}
+                        { mat.url ? <a href={mat.url} rel='noopener noreferrer' target='_blank' className={`fg-${mat.rarity || 'common'}`}>{mat.name}</a> : mat.name } x {mat.quantity}
                         </div>
                       )
                     })
