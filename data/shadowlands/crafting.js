@@ -6,7 +6,7 @@ const tailor = {
         {
             "name": "Snipermagi-TarrenMill",
             "class":  { name: 'Mage', css: 'mage' },
-            "skill": { current: 100, max: 100 },
+            "skill": { current: 100, cap: 100 },
             "items": [
                 Tailoring.GrimVeiledBelt_Rank1,
                 Tailoring.GrimVeiledBracers_Rank1,

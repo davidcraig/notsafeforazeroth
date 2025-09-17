@@ -4,10 +4,16 @@ import wwCrafting from '../data/warwithin/crafting'
 import slCrafting from '../data/shadowlands/crafting'
 import { TabbedContent } from '../Components/TabbedContent'
 import TabbedContentWithKey from '../Components/TabbedContentWithKey'
+import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar'
 
+// HoC
 const TabWithKey = TabbedContentWithKey(TabbedContent)
 
-function RenderCraftersTable(profession) {
+const warWithinProfessionKeys = Object.keys(wwCrafting)
+const shadowlandsProfessionKeys = Object.keys(slCrafting)
+
+
+function RenderCraftersItemsTable(profession) {
   if (!profession.crafters) return null
 
   return <>
@@ -51,6 +57,25 @@ function RenderCraftersTable(profession) {
   </>
 }
 
+function RenderSkillBars(profession) {
+  if (!profession.crafters) {
+    console.warn("No crafters for", profession)
+    return null
+  }
+  console.log(profession)
+  if (!profession.crafters.length > 0) return null
+
+  return (
+    <div>
+      {profession.crafters.map(crafter => {
+        return <div>
+          {crafter.name} - {profession.name} <WoWProfessionSkillBar skill={crafter.skill?.current ?? 0} cap={crafter.skill?.cap ?? 100} color={crafter["class"].css} />
+        </div>
+      })}
+    </div>
+  )
+}
+
 function RenderExpansionCrafting(expansionData, professionKey) {
   if (!expansionData || !professionKey || !expansionData.hasOwnProperty(professionKey)) {
     return ''
@@ -60,38 +85,54 @@ function RenderExpansionCrafting(expansionData, professionKey) {
     return ''
   }
 
-  return RenderCraftersTable(profession)
+  return (
+    <>
+      <p>Skill Bars</p>
+      {RenderSkillBars(profession)}
+      <p>Crafters Items</p>
+      {RenderCraftersItemsTable(profession)}
+    </>
+  )
+
 }
 
 function RenderShadowlands() {
-  const tabs = [
-    { title: 'Tailoring', content: RenderExpansionCrafting(slCrafting, 'tailor') },
-  ]
+  const tabs = shadowlandsProfessionKeys.map(key => ({
+    title: slCrafting[key]?.name || key,
+    content: RenderExpansionCrafting(slCrafting, key)
+  }))
 
   return (
     <div className='mt-4'>
       <h1>Shadowlands</h1>
+
+      <p>Skill Bars</p>
+      {shadowlandsProfessionKeys.map(key => RenderSkillBars(slCrafting[key]))}
+
       <TabWithKey id="sl-crafting" content={tabs} />
     </div>
   )
 }
 
+
 function RenderWarWithin() {
-  const tabs = [
-    { title: 'Blacksmithing', content: RenderExpansionCrafting(wwCrafting, 'bs') },
-    { title: 'Leatherworking', content: RenderExpansionCrafting(wwCrafting, 'lw') },
-    { title: 'Engineering', content: RenderExpansionCrafting(wwCrafting, 'eng') },
-    { title: 'Tailoring', content: RenderExpansionCrafting(wwCrafting, 'tailor') },
-    { title: 'Enchanting', content: RenderExpansionCrafting(wwCrafting, 'ench') },
-  ]
+  const tabs = warWithinProfessionKeys.map(key => ({
+    title: wwCrafting[key]?.name || key,
+    content: RenderExpansionCrafting(wwCrafting, key)
+  }))
 
   return (
     <div className='mt-4'>
       <h1>The War Within</h1>
+
+      <p>Skill Bars</p>
+      {warWithinProfessionKeys.map(key => RenderSkillBars(wwCrafting[key]))}
+
       <TabWithKey id="tww-crafting" content={tabs} />
     </div>
   )
 }
+
 
 export default function Crafting() {
   const tabs = [
