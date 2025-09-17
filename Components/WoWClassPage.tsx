@@ -5,6 +5,7 @@ import ExternalLink from './ExternalLink'
 type Spec = {
   name: string
   key: string
+  guides?: Guide[]
 }
 
 type Guide = {
@@ -73,11 +74,7 @@ export default function WoWClassPage(props: Props) {
 
       <div className={`grid gap-4 mt-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-${gridCols}`}>
         {specs.map(spec => {
-          if (!guides || !guides[spec.key]) {
-            return null
-          }
-
-          const specGuides = guides?.[spec.key] ?? []
+          const specGuides = spec.guides ?? []
           const content = specContent?.[spec.key] ?? null
 
           return (
@@ -87,7 +84,7 @@ export default function WoWClassPage(props: Props) {
                   {spec.name}
                 </div>
               </div>
-              <div className="card-content">
+              <div className="p-4">
                 {content}
                 {specGuides && specGuides.length > 0 && (
                   <>

@@ -1,3 +1,6 @@
+import type { Material } from "../../../Types/Material"
+import { Rarities } from "../../../Types/Rarity"
+
 const RingingDeepsIngot = { name: 'Ringing Deeps Ingot', url: 'https://www.wowhead.com/item=221754/ringing-deeps-ingot', rarity: 'rare' }
 const SanctifiedAlloy = { name: 'Sanctified Alloy', url: 'https://www.wowhead.com/item=222423/sanctified-alloy', rarity: 'epic' }
 const IronclawAlloy = { name: 'Ironclaw Alloy', url: 'https://www.wowhead.com/item=222426/ironclaw-alloy', rarity: "rare" }
