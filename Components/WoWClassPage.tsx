@@ -99,7 +99,7 @@ export default function WoWClassPage(props: Props) {
                   )}
 
                   {/* Center Text */}
-                  <span className="mx-auto text-xl font-bold text-center">
+                  <span className={`mx-auto text-xl font-bold text-center fg-${classData.css}`}>
                     {spec.name}
                   </span>
 
@@ -122,7 +122,7 @@ export default function WoWClassPage(props: Props) {
                     <ul>
                       {specGuides.map(guide => (
                         <li key={guide.url}>
-                          <ExternalLink url={guide.url} text={guide.name} />
+                          <ExternalLink wowClass={classData} url={guide.url} text={guide.name} />
                         </li>
                       ))}
                     </ul>
