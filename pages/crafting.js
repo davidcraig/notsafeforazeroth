@@ -11,7 +11,6 @@ const TabWithKey = TabbedContentWithKey(TabbedContent)
 
 const nonCraftingKeys = ["skinning", "mining", "herbalism"]
 
-
 function getCrafterSkillMap(expansionData) {
   const crafterMap = {}
 
@@ -130,13 +129,7 @@ function RenderExpansionCrafting(expansionData, professionKey) {
     return ''
   }
 
-  return (
-    <>
-      <p>Crafters Items</p>
-      {RenderCraftersItemsTable(profession)}
-    </>
-  )
-
+  return RenderCraftersItemsTable(profession)
 }
 
 const GetExpansionTabs = (expansionCraftingData) => {
