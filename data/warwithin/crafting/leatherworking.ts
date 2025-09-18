@@ -30,10 +30,25 @@ const GlyphEtchedGauntlets: CraftedItem = {
   ]
 }
 
+const GlyphEtchedBreastplate: CraftedItem = {
+  name: "Glyph-Etched Breastplate",
+  url: 'https://www.wowhead.com/item=219336/glyph-etched-breastplate',
+  rarity: Rarities.Epic,
+  type: "Chest, Mail",
+  materials: [
+    { ...tww_materials.SPARK, quantity: 1 },
+    { ...tww_materials.GloomfathomHide, quantity: 2 },
+    { ...tww_materials.GloomChitin, quantity: 150 },
+    { ...tww_materials.LeyfusedHide, quantity: 3 },
+    { ...tww_materials.ChitinArmorBanding, quantity: 1 },
+  ]
+}
+
 // 11. TWW - Leatherworking
 export const Leatherworking = {
     GlyphEtchedVambraces,
-    GlyphEtchedGauntlets
+    GlyphEtchedGauntlets,
+    GlyphEtchedBreastplate
 }
 
 export default Leatherworking

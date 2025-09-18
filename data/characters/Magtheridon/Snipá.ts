@@ -16,7 +16,8 @@ export const Snipá: Character = {
             skill: 62,
             items: [
               TWW_LW.GlyphEtchedGauntlets,
-              TWW_LW.GlyphEtchedVambraces
+              TWW_LW.GlyphEtchedVambraces,
+              TWW_LW.GlyphEtchedBreastplate,
             ]
           }
         },
