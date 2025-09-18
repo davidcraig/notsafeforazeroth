@@ -55,6 +55,9 @@ export const SKILL_CAPS = {
   mop: {
     default: 75,
   },
+  cata: {
+    default: 75
+  },
   wrath: {
     default: 75,
   },

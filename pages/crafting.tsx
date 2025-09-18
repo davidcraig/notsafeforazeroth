@@ -4,8 +4,6 @@ import { TabbedContent } from '../Components/TabbedContent'
 import TabbedContentWithKey from '../Components/TabbedContentWithKey'
 import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar'
 import { buildExpansionCraftingData } from '../data/crafting'
-import { Character } from '../Types/Character'
-import type { CharacterProfessions } from '../Types/Character'
 
 // HoC
 const TabWithKey = TabbedContentWithKey(TabbedContent)
@@ -66,7 +64,8 @@ function RenderCrafterSkillGrid(expansionData) {
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               padding: '.5rem',
-              background: 'var(--theme-bg-2)'
+              background: 'var(--theme-bg-2)',
+              borderBottom: '1px solid rgba(0,0,0,0.4)'
             }}
             className={`fg-${wowclass?.css || wowclass?.wowclass?.css}`}
           >
