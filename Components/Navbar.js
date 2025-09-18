@@ -6,13 +6,8 @@ const externalLinkSvg = <svg width={20} height={20} xmlns="http://www.w3.org/200
 const showClassLinks = true;
 
 const pages = [
-  {
-    name: 'Guild', pages: [
-      // { name: 'Rules', slug: '/rules' },
-      // { name: 'Officers', slug: '/officers' },
-      { name: 'Crafting', slug: '/crafting' },
-    ]
-  }
+  { name: 'Crafting', slug: '/crafting' },
+  { name: 'Professions', slug: '/professions' },
 ]
 
 const wikiPages = [
@@ -57,8 +52,8 @@ if (showClassLinks) {
 const DropdownLink = ({ id, title, children }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div key={id} className={`navbar-item ml-4 has-dropdown is-hoverable ${open ? "is-open" : ""}`}>
-      <a className='navbar-link' onClick={(e) => { e.preventDefault; setOpen(!open) }}>{title}</a>
+    <div key={id} className={`navbar-item ml-4 has-dropdown ${open ? "is-open" : ""}`}>
+      <a className='navbar-link' href="#" onClick={(e) => { e.preventDefault(); setOpen(!open) }}>{title}</a>
       <div className='navbar-dropdown'>
         {children}
       </div>
@@ -88,10 +83,16 @@ const externalLink = (href, title) => {
 }
 
 export default function Navigation(props) {
+  const [mobileOpen, setMobileOpen] = useState(false)
   return (
-    <nav className={`navbar p-4 flex flex-col md:flex-row ${props.className}`}>
-      <a className='brand font-bold text-xl ml-auto md:ml-0 mr-auto' href='/'>&lt;Not Safe for Azeroth&gt;</a>
-      <div className='ml-auto mr-auto md:mr-0 flex flex-col md:flex-row text-center'>
+    <nav className={`navbar p-4 flex flex-col gap-4 md:flex-row ${props.className}`}>
+      <div className='flex items-center w-full'>
+        <a className='brand font-bold text-xl mr-auto' href='/'>&lt;Not Safe for Azeroth&gt;</a>
+        <button aria-label='Toggle navigation' className='navbar-burger md:hidden' onClick={() => setMobileOpen(!mobileOpen)}>
+          <span>☰</span>
+        </button>
+      </div>
+      <div className={`nav-links ml-auto gap-4 mr-auto md:mr-0 flex flex-col md:flex-row text-center ${mobileOpen ? 'is-open' : ''}`} onClick={() => setMobileOpen(false)}>
         {pages.map(page => {
           return renderNavigationItem(page)
         })}
