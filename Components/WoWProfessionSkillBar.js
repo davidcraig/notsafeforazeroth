@@ -33,7 +33,7 @@ export function WoWProfessionSkillBar({ skill, cap, label, color }) {
   )
 
   return (
-    <div className="skill-bar-container" style={{ marginBottom: '1rem' }}>
+    <div className="skill-bar-container" style={{ marginBottom: '.4rem' }}>
       {label && (
         <div className="skill-label" style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>
           {label}

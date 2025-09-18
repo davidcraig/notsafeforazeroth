@@ -4,7 +4,7 @@ import Engineering from "./crafting/engineering"
 import Tailoring from "./crafting/tailoring"
 import Enchanting from "./crafting/enchanting"
 
-// Shadowlands Crating
+// War Within Crafting
 
 const TWW_PROFESSION_CAP = 100
 
@@ -127,6 +127,18 @@ const herb = {
   ]
 }
 
+const cook = {
+  name: 'Cooking',
+  crafters: [
+    {
+      "name": 'Snipá-Magtheridon',
+      "class":  { name: 'Hunter', css: 'hunter' },
+      "skill": { current: 88, cap: TWW_PROFESSION_CAP },
+      "items": []
+    }
+  ]
+}
+
 export default {
     bs,
     lw,
@@ -135,5 +147,6 @@ export default {
     ench,
     skinning,
     mining,
-    herb
+    herb,
+    cook,
 }

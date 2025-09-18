@@ -57,7 +57,7 @@ function RenderCrafterSkillGrid(expansionData) {
 
           <div style={{
             display: 'flex',
-            gap: '1rem',
+            gap: '0 1rem',
             flexWrap: 'wrap'
           }}>
             {skills.map((skillData, idx) => (
