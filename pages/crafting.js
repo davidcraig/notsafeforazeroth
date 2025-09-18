@@ -1,15 +1,17 @@
 import React from 'react'
 import Page from '../Components/Page'
-import wwCrafting from '../data/warwithin/crafting'
-import slCrafting from '../data/shadowlands/crafting'
 import { TabbedContent } from '../Components/TabbedContent'
 import TabbedContentWithKey from '../Components/TabbedContentWithKey'
 import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar'
+// Characters (source of truth for profession skills and items)
+import { buildExpansionCraftingData } from '../data/crafting'
 
 // HoC
 const TabWithKey = TabbedContentWithKey(TabbedContent)
 
 const nonCraftingKeys = ["skinning", "mining", "herbalism", "cooking"]
+
+// skill cap and builder logic moved to data/crafting
 
 function getCrafterSkillMap(expansionData) {
   const crafterMap = {}
@@ -200,8 +202,8 @@ function RenderExpansion(expansionTitle, expansionCraftingData, idSlug) {
 
 export default function Crafting() {
   const expansions = [
-    { name: 'The War Within', crafts: wwCrafting, slug: 'tww' },
-    { name: 'Shadowlands', crafts: slCrafting, slug: 'sl' },
+    { name: 'The War Within', crafts: buildExpansionCraftingData('tww'), slug: 'tww' },
+    { name: 'Shadowlands', crafts: buildExpansionCraftingData('sl'), slug: 'sl' },
   ]
 
   const tabs = expansions.map(ex => ({

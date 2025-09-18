@@ -23,9 +23,9 @@ export type WowProfession = typeof WOW_PROFESSIONS[number];
 
 // Expansion slugs keyed the same way other parts of the app refer to them
 export const WOW_EXPANSIONS = [
-    "classic",
+    "wow",
     "tbc",
-    "wotlk",
+    "wrath",
     "cata",
     "mop",
     "wod",
@@ -43,6 +43,7 @@ export type WowExpansionSlug = typeof WOW_EXPANSIONS[number];
 export type ProfessionProgress = {
     skill: number;
     items?: CraftedItem[];
+    cap?: number; // optional per-character cap override
 };
 
 // For a single profession, map expansion -> progress value

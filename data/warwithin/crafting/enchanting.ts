@@ -2,7 +2,7 @@ import materials from "./materials";
 import { Rarities } from "../../../Types/Rarity";
 
 // 11. TWW - Enchanting
-const Enchanting = {
+export const Enchanting = {
     EnchantedGildedHarbingerCrest: {
         name: "Enchanted Gilded Harbinger Crest",
         rarity: Rarities.Epic,
