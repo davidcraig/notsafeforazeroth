@@ -1,40 +1,41 @@
 import materials from "./materials";
+import { Rarities } from "../../../Types/Rarity";
 
 // 11. TWW - Tailoring
 const Tailoring = {
     DuskweaveBag: {
-        "name": "Duskweave Bag",
-        "type": "Bag",
-        "rarity": "rare",
-        "url": "https://www.wowhead.com/item=222856/duskweave-bag",
-        "materials": [
-            { ...materials.AdorningRibbon, "quantity": 2 },
-            { ...materials.SpoolOfDuskthread, "quantity": 30 },
-            { ...materials.DuskweaveBolt, "quantity": 4 }
+        name: "Duskweave Bag",
+        type: "Bag",
+        rarity: Rarities.Rare,
+        url: "https://www.wowhead.com/item=222856/duskweave-bag",
+        materials: [
+            { ...materials.AdorningRibbon, quantity: 2 },
+            { ...materials.SpoolOfDuskthread, quantity: 30 },
+            { ...materials.DuskweaveBolt, quantity: 4 }
         ]
     },
     GlovesOfTheWovenDusk: {
-        "name": "Gloves of the Woven Dusk",
-        "type": "Gloves, Cloth",
-        "rarity": "epic",
-        "url": "https://www.wowhead.com/item=222809/gloves-of-the-woven-dusk",
-        "materials": [
-            { ...materials.AdorningRibbon, "quantity": 5 },
-            { ...materials.DuskweaveBolt, "quantity": 8 },
-            { ...materials.GleamingShard, "quantity": 6 },
-            { ...materials.SpoolOfDuskthread, "quantity": 15 }
+        name: "Gloves of the Woven Dusk",
+        type: "Gloves, Cloth",
+        rarity: Rarities.Epic,
+        url: "https://www.wowhead.com/item=222809/gloves-of-the-woven-dusk",
+        materials: [
+            { ...materials.AdorningRibbon, quantity: 5 },
+            { ...materials.DuskweaveBolt, quantity: 8 },
+            { ...materials.GleamingShard, quantity: 6 },
+            { ...materials.SpoolOfDuskthread, quantity: 15 }
         ]
     },
     SlippersOfTheWovenDusk: {
-        "name": "Slippers of the Woven Dusk",
-        "type": "Gloves, Cloth",
-        "rarity": "epic",
-        "url": "https://www.wowhead.com/item=222810/slippers-of-the-woven-dusk",
-        "materials": [
-            { ...materials.AdorningRibbon, "quantity": 5 },
-            { ...materials.DuskweaveBolt, "quantity": 10 },
-            { ...materials.GleamingShard, "quantity": 6 },
-            { ...materials.SpoolOfDuskthread, "quantity": 10 }
+        name: "Slippers of the Woven Dusk",
+        type: "Gloves, Cloth",
+        rarity: Rarities.Epic,
+        url: "https://www.wowhead.com/item=222810/slippers-of-the-woven-dusk",
+        materials: [
+            { ...materials.AdorningRibbon, quantity: 5 },
+            { ...materials.DuskweaveBolt, quantity: 10 },
+            { ...materials.GleamingShard, quantity: 6 },
+            { ...materials.SpoolOfDuskthread, quantity: 10 }
         ]
     }
 }

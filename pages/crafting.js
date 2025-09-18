@@ -9,7 +9,7 @@ import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar'
 // HoC
 const TabWithKey = TabbedContentWithKey(TabbedContent)
 
-const nonCraftingKeys = ["skinning", "mining", "herbalism"]
+const nonCraftingKeys = ["skinning", "mining", "herbalism", "cooking"]
 
 function getCrafterSkillMap(expansionData) {
   const crafterMap = {}
@@ -83,42 +83,86 @@ function RenderCraftersItemsTable(profession) {
     {profession.crafters.map(crafter => {
       if (!crafter.items) { return null }
       return (
-        <table className='table is-narrow is-striped mt-4'>
-          <thead>
-            <tr>
-              <th>Crafter</th>
-              <th>Item</th>
-              <th>Type</th>
-              <th>Materials</th>
-            </tr>
-          </thead>
-          <tbody>
-            {crafter.items.map((item, idx) => {
-              return <tr key={item.name+crafter.name}>
-                <td className={`fg-${crafter.class.css}`}>{idx == 0 && crafter.name}</td>
-                <td><a className={`fg-${item.rarity}`} href={item.url} rel="noopener noreferrer" target='_blank'>{item.name}</a></td>
-                <td>{item.type}</td>
-                <td>
-                  <div className='flex'>
-                  {
-                    item.materials.map(mat => {
-                      return (
-                        <div className='mr-4' key={mat.name}>
-                        { mat.url ? <a href={mat.url} rel='noopener noreferrer' target='_blank' className={`fg-${mat.rarity || 'common'}`}>{mat.name}</a> : mat.name } x {mat.quantity}
-                        </div>
-                      )
-                    })
-                  }
-                  </div>
-                </td>
-              </tr>
-            })}
-          </tbody>
-        </table>
+        <div key={crafter.name} className='mt-8'>
+          <h1 className={`fg-${crafter.class.css} font-bold text-xl`}>{crafter.name}</h1>
+
+          <RenderCraftsAsGrid crafter={crafter} />
+        </div>
       )
     })}
   </>
 }
+
+function RenderCraftsAsGrid({ crafter }) {
+  if (!crafter.items) return null
+
+  return (
+    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-4'>
+      {crafter.items.map((item, idx) => {
+          return <div
+            key={item.name+crafter.name}
+            className='flex flex-col card'
+            style={{
+              padding: '0 .8rem .4rem .8rem',
+              boxShadow: '0 0 2px #000'
+            }}
+          >
+            <a className={`fg-${item.rarity} font-bold`} href={item.url} rel="noopener noreferrer" target='_blank'>{item.name}</a>
+            {item.type}
+            
+            <div className='flex flex-col mt-4'>
+            {
+              item.materials.map(mat => {
+                return (
+                  <div className='mb-2' key={mat.name}>
+                    { mat.url ? <a href={mat.url} rel='noopener noreferrer' target='_blank' className={`fg-${mat.rarity || 'common'}`}>{mat.name}</a> : mat.name } x {mat.quantity}
+                  </div>
+                )
+              })
+            }
+            </div>
+          </div>
+        })}
+    </div>
+  )
+}
+
+
+function RenderCraftsAsTable(crafter) {
+  return (
+    <table className='table is-narrow is-striped mt-4'>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Type</th>
+          <th>Materials</th>
+        </tr>
+      </thead>
+      <tbody>
+        {crafter.items.map((item, idx) => {
+          return <tr key={item.name+crafter.name}>
+            <td><a className={`fg-${item.rarity}`} href={item.url} rel="noopener noreferrer" target='_blank'>{item.name}</a></td>
+            <td>{item.type}</td>
+            <td>
+              <div className='flex'>
+              {
+                item.materials.map(mat => {
+                  return (
+                    <div className='mr-4' key={mat.name}>
+                    { mat.url ? <a href={mat.url} rel='noopener noreferrer' target='_blank' className={`fg-${mat.rarity || 'common'}`}>{mat.name}</a> : mat.name } x {mat.quantity}
+                    </div>
+                  )
+                })
+              }
+              </div>
+            </td>
+          </tr>
+        })}
+      </tbody>
+    </table>
+  )
+}
+
 
 function RenderExpansionCrafting(expansionData, professionKey) {
   if (!expansionData || !professionKey || !expansionData.hasOwnProperty(professionKey)) {

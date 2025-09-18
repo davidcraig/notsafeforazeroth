@@ -18,6 +18,13 @@ const RefulgentCrystal = { name: "Refulgent Crystal", url: "https://www.wowhead.
 const AdorningRibbon = { name: "Adorning Ribbon", url: "https://www.wowhead.com/item=228930/adorning-ribbon", rarity: "uncommon" }
 const SpoolOfDuskthread = { name: "Spool of Duskthread", url: "https://www.wowhead.com/item=222789/spool-of-duskthread", rarity: "rare" }
 const DuskweaveBolt = { name: "Duskweave Bolt", url: "https://www.wowhead.com/item=222798/duskweave-bolt", rarity: "epic" }
+const AssortedWhirligigs = { name: "Assorted Whirligigs", url: "https://www.wowhead.com/item=227770/assorted-whirligigs", rarity: "uncommon" }
+const BlinkerFluid = { name: "Blinker Fluid", url: "https://www.wowhead.com/item=227771/blinker-fluid", rarity: "rare" }
+const CataclysmicConverter = { name: "Cataclysmic Converter", url: "https://www.wowhead.com/item=227772/cataclysmic-converter", rarity: "rare" }
+const PummelProofPlating = { name: "Pummel-Proof Plating", url: "https://www.wowhead.com/item=227773/pummel-proof-plating", rarity: "rare" }
+const PummelPermit = { name: "Pummel Permit", url: "https://www.wowhead.com/item=227774/pummel-permit", rarity: "epic" }
+
+const SPARK = { name: "Any Spark", quantity: 1, url: SparkOfStarlight.url, rarity: Rarities.Epic }
 
 export default {
     GloomfathomHide,
@@ -29,6 +36,11 @@ export default {
     RingingDeepsIngot,
     /* Engineering */
     BountifulBolts,
+    AssortedWhirligigs,
+    BlinkerFluid,
+    CataclysmicConverter,
+    PummelProofPlating,
+    PummelPermit,
     /* Leatherworking */
     GloomChitin,
     ChitinArmorBanding,
@@ -43,4 +55,6 @@ export default {
     AdorningRibbon,
     SpoolOfDuskthread,
     DuskweaveBolt,
+    /* Helper constant */
+    SPARK
 }

@@ -115,7 +115,7 @@ const ench = {
     ]
 }
 
-const herb = {
+const herbalism = {
   name: 'Herbalism',
   crafters: [
     {
@@ -127,7 +127,7 @@ const herb = {
   ]
 }
 
-const cook = {
+const cooking = {
   name: 'Cooking',
   crafters: [
     {
@@ -147,6 +147,6 @@ export default {
     ench,
     skinning,
     mining,
-    herb,
-    cook,
+    herbalism,
+    cooking,
 }
