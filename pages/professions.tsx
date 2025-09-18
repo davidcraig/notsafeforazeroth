@@ -38,8 +38,6 @@ function RenderCharacterProfessionTable(ex: { name: string, slug: string, id: nu
       )
     : rows
 
-
-
   return (
     <div key={ex.slug} className='mt-8'>
       <h3 className='mb-4 text-xl' style={{ fontWeight: 'bold' }}>{ex.id}. {ex.name}</h3>
@@ -92,16 +90,20 @@ export default function Professions() {
   const [filterText, setFilterText] = React.useState('')
 
   return <Page title='Professions'>
-    <h2 className='h2 text-2xl mb-2'>Guild Professions</h2>
-    <div className='mb-4'>
+    <h2 className='h2 text-2xl mb-2 flex'>
+      Guild Professions
+
       <input
-        type='text'
-        placeholder='Filter by character, realm, or profession'
-        className='input'
-        value={filterText}
-        onChange={e => setFilterText(e.target.value)}
-        style={{ maxWidth: 420 }}
-      />
+          type='text'
+          placeholder='Search'
+          className='input ml-auto'
+          value={filterText}
+          onChange={e => setFilterText(e.target.value)}
+          style={{ maxWidth: 420 }}
+        />
+    </h2>
+    <div className='ml-auto'>
+      
     </div>
     {expansions.map(ex => (
       RenderCharacterProfessionTable(ex, filterText)

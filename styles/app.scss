@@ -218,3 +218,10 @@ a.spell {
 .progress { color: var(--theme-warn); }
 .killed { color: var(--theme-good); }
 .flex { display: flex; }
+
+input {
+  border: 2px solid var(--theme-bg-2);
+  background: var(--theme-bg);
+  color: var(--theme-text);
+  padding: .2em 0.4em;
+}
