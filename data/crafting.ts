@@ -4,6 +4,7 @@ import Sniperdrood from './characters/TarrenMill/Sniperdrood'
 import Snipermagi from './characters/TarrenMill/Snipermagi'
 import Sniperwar from './characters/Silvermoon/Sniperwar'
 import Snipá from './characters/Magtheridon/Snipá'
+import Snipevoke from './characters/TarrenMill/Snipevoke'
 import Whoorelips from './characters/TarrenMill/Whoorelips'
 import Aronin from './characters/TarrenMill/Aronin'
 
@@ -12,9 +13,10 @@ export const CHARACTERS = [
   Sniperdrood,
   Snipermagi,
   Sniperwar,
+  Snipevoke,
   Snipá,
   Whoorelips,
-  Aronin
+  Aronin,
 ]
 
 export const PROF_NAME_MAP = {

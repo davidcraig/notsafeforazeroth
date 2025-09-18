@@ -11,6 +11,11 @@ export const Snipevoke: Character = {
       tww: {
         skill: 93
       }
+    },
+    herbalism: {
+      tww: {
+        skill: 69
+      }
     }
   }
 }
