@@ -54,10 +54,10 @@ if (showClassLinks) {
   )
 }
 
-const DropdownLink = ({ key, title, children }) => {
+const DropdownLink = ({ id, title, children }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div key={key} className={`navbar-item ml-4 has-dropdown is-hoverable ${open ? "is-open" : ""}`}>
+    <div key={id} className={`navbar-item ml-4 has-dropdown is-hoverable ${open ? "is-open" : ""}`}>
       <a className='navbar-link' onClick={(e) => { e.preventDefault; setOpen(!open) }}>{title}</a>
       <div className='navbar-dropdown'>
         {children}
@@ -68,7 +68,7 @@ const DropdownLink = ({ key, title, children }) => {
 
 function renderNavigationItem(item) {
   if (item.pages) {
-    return <DropdownLink className='pr-2 mr-4 ml-4' key={item.name} title={item.name}>
+    return <DropdownLink key={item.name} className='pr-2 mr-4 ml-4' id={item.name} title={item.name}>
       {item.pages.map(dropdownPage => {
         return renderNavigationItem(dropdownPage)
       })}
@@ -83,7 +83,7 @@ function renderNavigationItem(item) {
 
 const externalLink = (href, title) => {
   return (
-    <a className='ml-4 p-4 md:p-0 flex' href={href} target='_blank' rel='noopener noreferrer'>{title} <span style={{marginLeft: '0.5rem', marginRight: '0.5rem'}}>{externalLinkSvg}</span></a>
+    <a key={href} className='ml-4 p-4 md:p-0 flex' href={href} target='_blank' rel='noopener noreferrer'>{title} <span style={{marginLeft: '0.5rem', marginRight: '0.5rem'}}>{externalLinkSvg}</span></a>
   )
 }
 
