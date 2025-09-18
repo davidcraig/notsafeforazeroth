@@ -9,7 +9,15 @@ export const Snipá: Character = {
     wowclass: Hunter,
     professions: {
         skinning: {
-            tww: 100
+            tww: {
+              skill: 100
+            },
+            bfa: { skill: 1 },
+            legion: { skill: 100 },
+            wod: { skill: 4 },
+            cata: { skill: 18 },
+            tbc: { skill: 37 },
+            wow: { skill: 1 },
         },
         leatherworking: {
           tww: {
@@ -19,7 +27,9 @@ export const Snipá: Character = {
               TWW_LW.GlyphEtchedVambraces,
               TWW_LW.GlyphEtchedBreastplate,
             ]
-          }
+          },
+          legion: { skill: 40 },
+          wow: { skill: 1, }
         },
         cooking: {
           tww: {
