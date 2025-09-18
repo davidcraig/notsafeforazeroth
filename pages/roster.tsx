@@ -5,6 +5,10 @@ import Sniperdrood from '../data/characters/TarrenMill/Sniperdrood'
 import Snipedeath from '../data/characters/TarrenMill/Snipedeath'
 import Crássiúss from '../data/characters/TarrenMill/Crássiúss'
 import Snipermagi from '../data/characters/TarrenMill/Snipermagi'
+import Sniperwar from '../data/characters/Silvermoon/Sniperwar'
+import Snipá from '../data/characters/Magtheridon/Snipá'
+import Whoorelips from '../data/characters/TarrenMill/Whoorelips'
+import Aronin from '../data/characters/TarrenMill/Aronin'
 import { Realms } from '../data/Enum/Realms'
 
 const RANKS = {
@@ -44,7 +48,7 @@ const roster = {
     {
       real: 'Chris',
       rank: RANKS.Officer,
-      // main: characters.Aronin,
+      main: Aronin,
       // alts: [
       //   characters.Violatór
       // ]
@@ -54,8 +58,13 @@ const roster = {
       rank: RANKS.Officer,
       main: Sniperdrood,
       alts: [
+        // TM
         Snipedeath,
-        Snipermagi
+        Snipermagi,
+        // SM
+        Sniperwar,
+        // Mag
+        Snipá
       ]
       // main: characters.Snipedeath,
       // alts: [
@@ -67,7 +76,7 @@ const roster = {
     {
       real: 'Rob',
       rank: RANKS.Officer,
-      // main: characters.Whoorelips
+      main: Whoorelips
     },
     {
       real: 'Gary',
