@@ -11,10 +11,9 @@ export function WoWProfessionSkillBar({ skill, cap, label, color }) {
 
       {isCapped && bonus > 0 && (
         <>
-        {console.log('rendering bonus')}
-        <span className='mr-1' style={{ fontWeight: 'bold' }}>{cap}</span>
-        <span style={{ color: 'var(--wow-rarity-uncommon)' }}> +{bonus}</span>
-        <span style={{ marginLeft: '4px', fontSize: '0.75em', color: 'rgba(255, 255, 255, 0.8)' }}>/ {cap}</span>
+          <span className='mr-1' style={{ fontWeight: 'bold' }}>{cap}</span>
+          <span style={{ color: 'var(--wow-rarity-uncommon)' }}> +{bonus}</span>
+          <span style={{ marginLeft: '4px', fontSize: '0.75em', color: 'rgba(255, 255, 255, 0.8)' }}>/ {cap}</span>
         </>
       )}
 
