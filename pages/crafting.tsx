@@ -58,15 +58,23 @@ function RenderCrafterSkillGrid(expansionData) {
     }}>
       {Object.entries(crafterMap).map(([name, { wowclass, skills }]: any) => (
         <div key={name} style={{
-          padding: '0.75rem',
           border: '1px solid rgba(0,0,0,0.4)',
           backgroundColor: 'rgba(0,0,0,0.1)'
         }}>
-          <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }} className={`fg-${wowclass?.css || wowclass?.wowclass?.css}`}>
+          <div
+            style={{
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              padding: '.5rem',
+              background: 'var(--theme-bg-2)'
+            }}
+            className={`fg-${wowclass?.css || wowclass?.wowclass?.css}`}
+          >
             {name}
           </div>
 
           <div style={{
+            padding: '0.75rem',
             display: 'flex',
             gap: '0 1rem',
             flexWrap: 'wrap'
