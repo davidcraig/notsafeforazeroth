@@ -8,28 +8,32 @@ export function WoWProfessionSkillBar({ skill, cap, label, color }) {
 
   const SkillDisplayValue = (
     <>
-      {isCapped && bonus === 0 && (
-        <span style={{ fontWeight: 'bold', color: 'var(--wow-rarity-legendary)' }}>{cap}</span>
-      )}
 
-      {!isCapped && bonus > 0 && (
+      {isCapped && bonus > 0 && (
         <>
-        <span style={{ fontWeight: 'bold', color: 'var(--wow-rarity-legendary)' }}>{cap}</span>
-        <span style={{ margin: '0 4px' }}>+</span>
-        <span style={{ color: 'var(--wow-rarity-uncommon)' }}>{bonus}</span>
-        <span style={{ marginLeft: '4px' }}>/ {cap}</span>
+        {console.log('rendering bonus')}
+        <span className='mr-1' style={{ fontWeight: 'bold' }}>{cap}</span>
+        <span style={{ color: 'var(--wow-rarity-uncommon)' }}> +{bonus}</span>
+        <span style={{ marginLeft: '4px', fontSize: '0.75em', color: 'rgba(255, 255, 255, 0.8)' }}>/ {cap}</span>
         </>
       )}
 
+      {isCapped && bonus === 0 && (
+        <span style={{ fontWeight: 'bold' }}>{cap}</span>
+      )}
+
       {!isCapped && bonus === 0 && (
-        <>{baseSkill} / {cap}</>
+        <>
+          {baseSkill}
+          <span className='mr-1' style={{ marginLeft: '4px', fontSize: '0.75em', color: 'rgba(255, 255, 255, 0.8)' }}>/ {cap}</span>
+        </>
       )}
     </>
   )
 
 
   //const displayText = bonus > 0 ? `${cap} + ${bonus} / ${cap}` : `${baseSkill} / ${cap}`
-  const barWidth = '100px'
+  const barWidth = '120px'
 
   return (
     <div className="skill-bar-container" style={{ marginBottom: '1rem' }}>
@@ -41,9 +45,9 @@ export function WoWProfessionSkillBar({ skill, cap, label, color }) {
 
       <div className="skill-bar" style={{
         position: 'relative',
-        height: '20px',
+        height: '24px',
         backgroundColor: 'rgba(0,0,0,0.2)',
-        border: '1px solid #000',
+        border: `2px solid ${isCapped ? 'var(--wow-rarity-legendary)' : 'rgba(0,0,0,0.4)'}`,
         overflow: 'hidden',
         width: barWidth,
         fontSize: '0.9rem',

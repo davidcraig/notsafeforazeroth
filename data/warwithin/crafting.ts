@@ -6,6 +6,8 @@ import Enchanting from "./crafting/enchanting"
 
 // Shadowlands Crating
 
+const TWW_PROFESSION_CAP = 100
+
 // Blacksmithing
 const bs = {
     name: 'Blacksmithing',
@@ -30,7 +32,7 @@ const lw = {
         {
             "name": 'Snipá-Magtheridon',
             "class":  { name: 'Hunter', css: 'hunter' },
-            "skill": { current: 62, cap: 100 },
+            "skill": { current: 62, cap: TWW_PROFESSION_CAP },
             "items": [
                 Leatherworking.GlyphEtchedVambraces,
                 Leatherworking.GlyphEtchedGauntlets,
@@ -45,22 +47,28 @@ const skinning = {
         {
             "name": 'Snipá-Magtheridon',
             "class":  { name: 'Hunter', css: 'hunter' },
-            "skill": { current: 100, cap: 100 },
+            "skill": { current: 100, cap: TWW_PROFESSION_CAP },
             "items": []
         }
     ]
 }
 
 const mining = {
-    name: 'Mining',
-    crafters: [
-        {
-            "name": 'Sniperwar-Silvermoon',
-            "class":  { name: 'Warrior', css: 'warrior' },
-            "skill": { current: 100, cap: 100 },
-            "items": []
-        }
-    ]
+  name: 'Mining',
+  crafters: [
+    {
+      "name": 'Sniperwar-Silvermoon',
+      "class":  { name: 'Warrior', css: 'warrior' },
+      "skill": { current: 100, cap: TWW_PROFESSION_CAP },
+      "items": []
+    },
+    {
+      "name": 'Sniperdrood-TarrenMill',
+      "class":  { name: 'Druid', css: 'druid' },
+      "skill": { current: 118, cap: (TWW_PROFESSION_CAP + 5) }, // 5 racial bonus
+      "items": []
+    }
+  ]
 }
 
 const eng = {
@@ -69,7 +77,7 @@ const eng = {
         {
             "name": 'Sniperwar-Silvermoon',
             "class":  { name: 'Warrior', css: 'warrior' },
-            "skill": { current: 65, cap: 100 },
+            "skill": { current: 65, cap: TWW_PROFESSION_CAP },
             "items": [
                 Engineering.CrowdPummeler230,
             ]
@@ -83,7 +91,7 @@ const tailor = {
         {
             "name": "Snipermagi-TarrenMill",
             "class":  { name: 'Mage', css: 'mage' },
-            "skill": { current: 66, cap: 100 },
+            "skill": { current: 66, cap: TWW_PROFESSION_CAP },
             "items": [
                 Tailoring.DuskweaveBag,
                 Tailoring.GlovesOfTheWovenDusk,
@@ -99,12 +107,24 @@ const ench = {
         {
             "name": "Snipermagi-TarrenMill",
             "class":  { name: 'Mage', css: 'mage' },
-            "skill": { current: 53, cap: 100 },
+            "skill": { current: 53, cap: TWW_PROFESSION_CAP },
             "items": [
                 Enchanting.EnchantedGildedHarbingerCrest
             ]
         }
     ]
+}
+
+const herb = {
+  name: 'Herbalism',
+  crafters: [
+    {
+      "name": 'Sniperdrood-TarrenMill',
+      "class":  { name: 'Druid', css: 'druid' },
+      "skill": { current: 118, cap: TWW_PROFESSION_CAP },
+      "items": []
+    }
+  ]
 }
 
 export default {
@@ -114,5 +134,6 @@ export default {
     tailor,
     ench,
     skinning,
-    mining
+    mining,
+    herb
 }
