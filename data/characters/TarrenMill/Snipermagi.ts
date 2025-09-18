@@ -18,6 +18,10 @@ export const Snipermagi: Character = {
           WW_T.SlippersOfTheWovenDusk,
         ]
       },
+      df: {
+        skill: 35,
+        items: [],
+      },
       sl: {
         skill: 100,
         items: [
