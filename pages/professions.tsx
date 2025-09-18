@@ -3,7 +3,7 @@ import Page from '../Components/Page'
 import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar'
 import { buildCharacterSkillsByExpansion } from '../data/crafting'
 
-function RenderCharacterProfessionTable(ex: { name: string, slug: string }, filterText: string) {
+function RenderCharacterProfessionTable(ex: { name: string, slug: string, id: number }, filterText: string) {
   const byCharacter = buildCharacterSkillsByExpansion(ex.slug) as any
   const rows: any[] = []
 
