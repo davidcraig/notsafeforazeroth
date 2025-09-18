@@ -1,52 +1,75 @@
 import React from 'react'
 import Page from '../Components/Page'
 import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar'
-import { buildExpansionCraftingData } from '../data/crafting'
+import { buildCharacterSkillsByExpansion } from '../data/crafting'
 
-function RenderProfessionTables(expansionSlug: string) {
-  const data = buildExpansionCraftingData(expansionSlug) as any
-  const profKeys = Object.keys(data)
-  if (profKeys.length === 0) return null
+function RenderCharacterProfessionTable(ex: { name: string, slug: string }, filterText: string) {
+  const byCharacter = buildCharacterSkillsByExpansion(ex.slug) as any
+  const rows: any[] = []
 
-  const sorted = profKeys.sort((a, b) => (data[a]?.name || a).localeCompare(data[b]?.name || b))
+  Object.values(byCharacter).forEach((entry: any) => {
+    const { character, skills } = entry
+    skills.forEach((s: any) => {
+      rows.push({
+        key: `${character.name}-${character.realm}-${s.professionKey}`,
+        character,
+        professionName: s.professionName,
+        current: s.current,
+        cap: s.cap,
+      })
+    })
+  })
+
+  if (rows.length === 0) return null
+
+  // Sort rows by character name, then profession name
+  rows.sort((a, b) => {
+    const nc = a.character.name.localeCompare(b.character.name)
+    if (nc !== 0) return nc
+    return a.professionName.localeCompare(b.professionName)
+  })
+
+  const normalized = (filterText || '').trim().toLowerCase()
+  const filteredRows = normalized
+    ? rows.filter(r =>
+        r.character.name.toLowerCase().includes(normalized) ||
+        String(r.character.realm).toLowerCase().includes(normalized) ||
+        r.professionName.toLowerCase().includes(normalized)
+      )
+    : rows
+
+
 
   return (
-    <div>
-      {sorted.map((key: string) => {
-        const profession = data[key]
-        if (!profession?.crafters || profession.crafters.length === 0) return null
-
-        return (
-          <div key={key} className='mt-6'>
-            <h4 className='font-bold text-lg mb-2'>{profession.name}</h4>
-            <table className='table is-narrow is-striped'>
-              <thead>
-                <tr>
-                  <th>Character</th>
-                  <th>Realm</th>
-                  <th>Skill</th>
-                </tr>
-              </thead>
-              <tbody>
-                {profession.crafters.map((c: any) => (
-                  <tr key={`${c.name}-${c.realm}`}>
-                    <td className={`fg-${c?.wowclass?.css || c?.wowclass?.wowclass?.css}`}>{c.name}</td>
-                    <td>{c.realm}</td>
-                    <td style={{ minWidth: 220 }}>
-                      <WoWProfessionSkillBar
-                        skill={c?.skill?.current || 0}
-                        cap={c?.skill?.cap || 100}
-                        label={`${c?.skill?.current || 0}/${c?.skill?.cap || 100}`}
-                        color={c?.wowclass?.css || ''}
-                      />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )
-      })}
+    <div key={ex.slug} className='mt-8'>
+      <h3 className='mb-4 text-xl' style={{ fontWeight: 'bold' }}>{ex.name}</h3>
+      <table className='table is-narrow is-striped'>
+        <thead>
+          <tr>
+            <th>Character</th>
+            <th>Realm</th>
+            <th>Profession</th>
+            <th>Skill</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredRows.map(row => (
+            <tr key={row.key}>
+              <td className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`}>{row.character.name}</td>
+              <td>{row.character.realm}</td>
+              <td>{row.professionName}</td>
+              <td style={{ minWidth: 220 }}>
+                <WoWProfessionSkillBar
+                  skill={row.current || 0}
+                  cap={row.cap || 100}
+                  label={null}
+                  color={row.character?.wowclass?.css || ''}
+                  />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -66,13 +89,22 @@ export default function Professions() {
     { name: 'World of Warcraft', slug: 'wow', id: 1 },
   ]
 
+  const [filterText, setFilterText] = React.useState('')
+
   return <Page title='Professions'>
     <h2 className='h2 text-2xl mb-2'>Guild Professions</h2>
+    <div className='mb-4'>
+      <input
+        type='text'
+        placeholder='Filter by character, realm, or profession'
+        className='input'
+        value={filterText}
+        onChange={e => setFilterText(e.target.value)}
+        style={{ maxWidth: 420 }}
+      />
+    </div>
     {expansions.map(ex => (
-      <div key={ex.slug} className='mt-8'>
-        <h3 className='mb-4 text-xl' style={{ fontWeight: 'bold' }}>{ex.name}</h3>
-        {RenderProfessionTables(ex.slug)}
-      </div>
+      RenderCharacterProfessionTable(ex, filterText)
     ))}
   </Page>
 }
