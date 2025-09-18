@@ -17,9 +17,11 @@ const OrborealShard: Material = {
     rarity: Rarities.Rare
 }
 
-export default {
-    OrborealShard,
-    /* Cloth */
-    ShroudedCloth,
-    EnchantedLightlessSilk,
+const sl_materials = {
+  OrborealShard,
+  /* Cloth */
+  ShroudedCloth,
+  EnchantedLightlessSilk,
 }
+
+export default sl_materials

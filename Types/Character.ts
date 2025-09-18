@@ -1,4 +1,5 @@
 import type { WoWClass } from "./WoWClass";
+import type { CraftedItem } from "./CraftedItem";
 import { Realms } from "../data/Enum/Realms";
 
 // Canonical list of WoW professions
@@ -37,8 +38,15 @@ export const WOW_EXPANSIONS = [
 
 export type WowExpansionSlug = typeof WOW_EXPANSIONS[number];
 
-// For a single profession, map expansion -> skill value
-export type ProfessionProgressByExpansion = Partial<Record<WowExpansionSlug, number>>;
+// Per-expansion profession progress can be a simple skill number (backward compatible)
+// or an object including the skill and an optional list of crafted items
+export type ProfessionProgress = {
+    skill: number;
+    items?: CraftedItem[];
+};
+
+// For a single profession, map expansion -> progress value
+export type ProfessionProgressByExpansion = Partial<Record<WowExpansionSlug, number | ProfessionProgress>>;
 
 // For a character, map profession -> per-expansion progress
 export type CharacterProfessions = Partial<Record<WowProfession, ProfessionProgressByExpansion>>;

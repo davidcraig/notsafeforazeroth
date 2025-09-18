@@ -2,7 +2,7 @@ import materials from "./materials";
 import { Rarities } from "../../../Types/Rarity";
 
 // 11. TWW - Tailoring
-const Tailoring = {
+export const Tailoring = {
     DuskweaveBag: {
         name: "Duskweave Bag",
         type: "Bag",

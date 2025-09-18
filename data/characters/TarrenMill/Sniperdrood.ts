@@ -10,10 +10,17 @@ export const Sniperdrood: Character = {
     wowclass: Druid,
     professions: {
       herbalism: {
-        tww: 100 + 18
+        tww: {
+          skill: 100 + 18
+        }
       },
-      mining:{
-        tww: 100 + MINING_RACIAL_BONUS + 13
+      mining: {
+        tww: {
+          skill: 100 + MINING_RACIAL_BONUS + 13
+        },
+        df: {
+          skill: 35 + MINING_RACIAL_BONUS
+        }
       }
     }
 }

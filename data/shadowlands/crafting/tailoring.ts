@@ -2,8 +2,7 @@ import type { CraftedItem } from "../../../Types/CraftedItem";
 import { Rarities } from "../../../Types/Rarity";
 import materials from "./materials";
 
-
-const Tailoring: Record<string, CraftedItem> = {
+export const Tailoring: Record<string, CraftedItem> = {
     GrimVeiledBelt_Rank1: {
         name: "Grim-Veiled Belt (Rank 1)",
         type: "Cloth Belt",

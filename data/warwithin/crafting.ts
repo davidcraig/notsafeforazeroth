@@ -1,17 +1,35 @@
 import Blacksmithing from "./crafting/blacksmithing"
 import Leatherworking from "./crafting/leatherworking"
-import Engineering from "./crafting/engineering"
-import Tailoring from "./crafting/tailoring"
-import Enchanting from "./crafting/enchanting"
+// Items now sourced from character files per profession
 import Sniperdrood from "../characters/TarrenMill/Sniperdrood"
 import Snipedeath from "../characters/TarrenMill/Snipedeath"
 import Snipermagi from "../characters/TarrenMill/Snipermagi"
 import Sniperwar from "../characters/Silvermoon/Sniperwar"
 import Snipá from "../characters/Magtheridon/Snipá"
+import type { CraftedItem } from "../../Types/CraftedItem"
 
 // War Within Crafting
 
 const TWW_PROFESSION_CAP = 100
+
+function getExpansionSkill(expansionProgress: unknown): number {
+  if (typeof expansionProgress === 'number') {
+    return expansionProgress
+  }
+  if (expansionProgress && typeof expansionProgress === 'object') {
+    // @ts-ignore - allow reading optional skill on loose object shape
+    return (expansionProgress?.skill as number) ?? 0
+  }
+  return 0
+}
+
+function getExpansionItems(expansionProgress: unknown): CraftedItem[] | undefined {
+  if (expansionProgress && typeof expansionProgress === 'object') {
+    // @ts-ignore - allow reading optional items on loose object shape
+    return expansionProgress?.items as CraftedItem[] | undefined
+  }
+  return undefined
+}
 
 // Blacksmithing
 const bs = {
@@ -19,13 +37,8 @@ const bs = {
   crafters: [
     {
       ...Snipedeath,
-      "skill": { current: 78, cap: 100 },
-      "items": [
-        Blacksmithing.BeledarsBulwark,
-        Blacksmithing.EverforgedVambraces,
-        Blacksmithing.EverforgedPauldrons,
-        Blacksmithing.EverforgedGauntlets,
-      ]
+      skill: { current: getExpansionSkill(Snipedeath?.professions?.blacksmithing?.tww), cap: TWW_PROFESSION_CAP },
+      items: getExpansionItems(Snipedeath.professions?.blacksmithing?.tww)
     },
   ],
 }
@@ -35,11 +48,8 @@ const lw = {
   crafters: [
     {
       ...Snipá,
-      skill: { current: Snipá?.professions?.leatherworking?.tww, cap: TWW_PROFESSION_CAP },
-      items: [
-        Leatherworking.GlyphEtchedVambraces,
-        Leatherworking.GlyphEtchedGauntlets,
-      ]
+      skill: { current: getExpansionSkill(Snipá?.professions?.leatherworking?.tww), cap: TWW_PROFESSION_CAP },
+      items: getExpansionItems(Snipá.professions?.leatherworking?.tww)
     }
   ],
 }
@@ -49,7 +59,7 @@ const skinning = {
   crafters: [
     {
       ...Snipá,
-      "skill": { current: Snipá?.professions?.skinning?.tww, cap: TWW_PROFESSION_CAP },
+      "skill": { current: getExpansionSkill(Snipá?.professions?.skinning?.tww), cap: TWW_PROFESSION_CAP },
       "items": []
     }
   ]
@@ -60,11 +70,11 @@ const mining = {
   crafters: [
     {
       ...Sniperwar,
-      skill: { current: Sniperwar.professions?.mining?.tww, cap: TWW_PROFESSION_CAP }
+      skill: { current: getExpansionSkill(Sniperwar.professions?.mining?.tww), cap: TWW_PROFESSION_CAP }
     },
     {
       ...Sniperdrood,
-      skill: { current: Sniperdrood.professions?.mining?.tww, cap: (TWW_PROFESSION_CAP + 5) } // 5 racial bonus
+      skill: { current: getExpansionSkill(Sniperdrood.professions?.mining?.tww), cap: (TWW_PROFESSION_CAP + 5) } // 5 racial bonus
     }
   ]
 }
@@ -74,10 +84,8 @@ const eng = {
   crafters: [
     {
       ...Sniperwar,
-      skill: { current: Sniperwar.professions?.engineering?.tww, cap: TWW_PROFESSION_CAP },
-      items: [
-        Engineering.CrowdPummeler230,
-      ]
+      skill: { current: getExpansionSkill(Sniperwar.professions?.engineering?.tww), cap: TWW_PROFESSION_CAP },
+      items: getExpansionItems(Sniperwar.professions?.engineering?.tww)
     }
   ],
 }
@@ -87,12 +95,8 @@ const tailor = {
   crafters: [
     {
       ...Snipermagi,
-      skill: { current: Snipermagi.professions?.tailoring?.tww, cap: TWW_PROFESSION_CAP },
-      items: [
-        Tailoring.DuskweaveBag,
-        Tailoring.GlovesOfTheWovenDusk,
-        Tailoring.SlippersOfTheWovenDusk,
-      ]
+      skill: { current: getExpansionSkill(Snipermagi.professions?.tailoring?.tww), cap: TWW_PROFESSION_CAP },
+      items: getExpansionItems(Snipermagi.professions?.tailoring?.tww)
     }
   ]
 }
@@ -102,10 +106,8 @@ const ench = {
   crafters: [
     {
       ...Snipermagi,
-      skill: { current: Snipermagi.professions?.enchanting?.tww, cap: TWW_PROFESSION_CAP },
-      items: [
-        Enchanting.EnchantedGildedHarbingerCrest
-      ]
+      skill: { current: getExpansionSkill(Snipermagi.professions?.enchanting?.tww), cap: TWW_PROFESSION_CAP },
+      items: getExpansionItems(Snipermagi.professions?.enchanting?.tww)
     }
   ]
 }
@@ -115,7 +117,7 @@ const herbalism = {
   crafters: [
     {
       ...Sniperdrood,
-      skill: { current: Sniperdrood.professions?.herbalism?.tww, cap: TWW_PROFESSION_CAP },
+      skill: { current: getExpansionSkill(Sniperdrood.professions?.herbalism?.tww), cap: TWW_PROFESSION_CAP },
       "items": []
     }
   ]
@@ -125,10 +127,9 @@ const cooking = {
   name: 'Cooking',
   crafters: [
     {
-      "name": 'Snipá-Magtheridon',
-      "class": { name: 'Hunter', css: 'hunter' },
-      "skill": { current: 88, cap: TWW_PROFESSION_CAP },
-      "items": []
+      ...Snipá,
+      "skill": { current: getExpansionSkill(Snipá.professions?.cooking?.tww), cap: TWW_PROFESSION_CAP },
+      "items": getExpansionItems(Snipá.professions?.cooking?.tww)
     }
   ]
 }
