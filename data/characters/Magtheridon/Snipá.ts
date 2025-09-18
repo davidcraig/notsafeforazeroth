@@ -34,7 +34,13 @@ export const Snipá: Character = {
         fishing: {
           tww: {
             skill: 70,
-          }
+          },
+          wod: { skill: 100 },
+          mop: { skill: 75 },
+          cata: { skill: 75 },
+          wrath: { skill: 75 },
+          tbc: { skill: 75 },
+          wow: { skill: 300 }
         }
     }
 }
