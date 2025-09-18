@@ -1,5 +1,7 @@
 .navbar {
   background: var(--theme-bg-2);
+  position: relative;
+  z-index: 200;
 
   a {
     color: var(--theme-text);
@@ -9,6 +11,7 @@
 // Mobile-first nav links visibility
 .nav-links {
   display: none;
+  flex-direction: column; // mobile: vertical stack
 }
 .nav-links.is-open {
   display: flex;
@@ -16,6 +19,7 @@
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
+    flex-direction: row; // desktop: horizontal
   }
 }
 
@@ -78,6 +82,16 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 
 .navbar-dropdown { display: none; }
 
+// Pointer/hover devices: open details on hover without clicking
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+  .nav-details:hover > .navbar-dropdown {
+    display: flex;
+  }
+  .nav-details:hover > .navbar-dropdown .nav-details:hover > .navbar-dropdown {
+    display: flex;
+  }
+}
+
 // .has-dropdown:hover > .navbar-dropdown {
 //   display: flex;
 //   flex-direction: column;
@@ -97,7 +111,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 //   width: max-content;
 // }
 
-.has-dropdown.is-open > .navbar-dropdown {
+.has-dropdown.is-open > .navbar-dropdown, details[open] > .navbar-dropdown, .nav-details[open] > .navbar-dropdown {
   display: flex;
   flex-direction: column;
   position: static; // mobile: push content down
@@ -113,6 +127,34 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     width: max-content;
     z-index: 1000;
     padding: 0.5rem;
+    white-space: nowrap;
+  }
+  // Desktop: details-based dropdowns overlay and don't grow navbar
+  .nav-details { position: relative; }
+  .nav-details[open] > .navbar-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    max-height: 60vh;
+    overflow: visible; // allow nested flyouts to overflow
+    z-index: 1000;
+    padding: 0.5rem;
+    background: var(--theme-bg-2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    white-space: nowrap;
+  }
+  // Nested flyouts positioning
+  .nav-details > .navbar-dropdown .nav-details { position: relative; }
+  .nav-details > .navbar-dropdown .nav-details > .navbar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: max-content;
+    z-index: 1002;
+    padding: 0.5rem;
+    background: var(--theme-bg-2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
 }
 

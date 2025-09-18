@@ -49,31 +49,39 @@ if (showClassLinks) {
   )
 }
 
-const DropdownLink = ({ id, title, children }) => {
-  const [open, setOpen] = useState(false);
+const DetailsLink = ({ id, title, children, openId, setOpenId }) => {
+  const isOpen = openId === id
+  const handleToggle = (e) => {
+    const el = e.currentTarget
+    if (el.open) {
+      setOpenId(id)
+    } else if (openId === id) {
+      setOpenId(null)
+    }
+  }
   return (
-    <div key={id} className={`navbar-item ml-4 has-dropdown ${open ? "is-open" : ""}`}>
-      <a className='navbar-link' href="#" onClick={(e) => { e.preventDefault(); setOpen(!open) }}>{title}</a>
+    <details key={id} className='navbar-item ml-4 nav-details' open={isOpen} onToggle={handleToggle}>
+      <summary className='navbar-link'>{title}</summary>
       <div className='navbar-dropdown'>
         {children}
       </div>
-    </div>
+    </details>
   )
 }
 
-function renderNavigationItem(item) {
+function renderNavigationItem(item, onNavigate, openId, setOpenId) {
   if (item.pages) {
-    return <DropdownLink key={item.name} className='pr-2 mr-4 ml-4' id={item.name} title={item.name}>
+    return <DetailsLink key={item.name} className='pr-2 mr-4 ml-4' id={item.name} title={item.name} openId={openId} setOpenId={setOpenId}>
       {item.pages.map(dropdownPage => {
-        return renderNavigationItem(dropdownPage)
+        return renderNavigationItem(dropdownPage, onNavigate, openId, setOpenId)
       })}
-    </DropdownLink>
+    </DetailsLink>
   }
   let itemCssClass = ''
   if (item.wowClassColour) {
     itemCssClass = item.slug.replace('/classes/', '')
   }
-  return <Item className={itemCssClass} key={item.slug} title={item.name} href={item.slug} />
+  return <Item className={itemCssClass} key={item.slug} title={item.name} href={item.slug} onClick={onNavigate} />
 }
 
 const externalLink = (href, title) => {
@@ -84,6 +92,7 @@ const externalLink = (href, title) => {
 
 export default function Navigation(props) {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [openId, setOpenId] = useState(null)
   return (
     <nav className={`navbar p-4 flex flex-col gap-4 md:flex-row ${props.className}`}>
       <div className='flex items-center w-full'>
@@ -92,16 +101,16 @@ export default function Navigation(props) {
           <span>☰</span>
         </button>
       </div>
-      <div className={`nav-links ml-auto gap-4 mr-auto md:mr-0 flex flex-col md:flex-row text-center ${mobileOpen ? 'is-open' : ''}`} onClick={() => setMobileOpen(false)}>
+      <div className={`nav-links ml-auto gap-4 mr-auto md:mr-0 text-center ${mobileOpen ? 'is-open' : ''}`}>
         {pages.map(page => {
-          return renderNavigationItem(page)
+          return renderNavigationItem(page, () => { setMobileOpen(false); setOpenId(null) }, openId, setOpenId)
         })}
         {wikiPages.map(page => {
-          return renderNavigationItem(page)
+          return renderNavigationItem(page, () => { setMobileOpen(false); setOpenId(null) }, openId, setOpenId)
         })}
-        {externalLink('https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth', 'Raider.IO')}
-        {externalLink('https://discord.gg/CtqNwgQnJm', 'Discord')}
-        {externalLink('https://worldofwarcraft.blizzard.com/en-gb/guild/eu/tarren-mill/not-safe-for-azeroth', 'Armory')}
+        <a onClick={() => setMobileOpen(false)} className='ml-4 p-4 md:p-0 flex' href='https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth' target='_blank' rel='noopener noreferrer'>Raider.IO <span style={{marginLeft: '0.5rem', marginRight: '0.5rem'}}>{externalLinkSvg}</span></a>
+        <a onClick={() => setMobileOpen(false)} className='ml-4 p-4 md:p-0 flex' href='https://discord.gg/CtqNwgQnJm' target='_blank' rel='noopener noreferrer'>Discord <span style={{marginLeft: '0.5rem', marginRight: '0.5rem'}}>{externalLinkSvg}</span></a>
+        <a onClick={() => setMobileOpen(false)} className='ml-4 p-4 md:p-0 flex' href='https://worldofwarcraft.blizzard.com/en-gb/guild/eu/tarren-mill/not-safe-for-azeroth' target='_blank' rel='noopener noreferrer'>Armory <span style={{marginLeft: '0.5rem', marginRight: '0.5rem'}}>{externalLinkSvg}</span></a>
       </div>
     </nav>
   )
