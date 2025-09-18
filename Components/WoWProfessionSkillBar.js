@@ -1,5 +1,7 @@
 import React from 'react'
 
+const barWidth = '120px'
+
 export function WoWProfessionSkillBar({ skill, cap, label, color }) {
   const baseSkill = Math.min(skill, cap)
   const isCapped = skill >= cap
@@ -29,10 +31,6 @@ export function WoWProfessionSkillBar({ skill, cap, label, color }) {
       )}
     </>
   )
-
-
-  //const displayText = bonus > 0 ? `${cap} + ${bonus} / ${cap}` : `${baseSkill} / ${cap}`
-  const barWidth = '120px'
 
   return (
     <div className="skill-bar-container" style={{ marginBottom: '1rem' }}>
