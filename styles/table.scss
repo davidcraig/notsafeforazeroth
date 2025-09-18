@@ -25,11 +25,11 @@ th {
   background: var(--theme-bg-2);
 }
 
-.table.table-striped tbody tr:nth-child(even) {
+.table.is-striped tbody tr:nth-child(even) {
   background: rgba(0,0,0,0.25)
 }
 
-.table.table-striped thead
+.table.is-striped thead
 {
   background: rgba(0,0,0,0.5)
 }
