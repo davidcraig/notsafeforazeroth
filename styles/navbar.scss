@@ -20,6 +20,9 @@
   .nav-links {
     display: flex;
     flex-direction: row; // desktop: horizontal
+    flex-wrap: wrap; // allow wrapping to prevent overflow
+    max-width: 100%;
+    min-width: 0;
   }
 }
 

@@ -43,9 +43,9 @@ function RenderCharacterProfessionTable(ex: { name: string, slug: string }, filt
   return (
     <div key={ex.slug} className='mt-8'>
       <h3 className='mb-4 text-xl' style={{ fontWeight: 'bold' }}>{ex.name}</h3>
-      <table className='table is-narrow is-striped'>
+      <table className='table is-narrow is-striped border' style={{ borderColor: 'var(--theme-bg-2)' }}>
         <thead>
-          <tr>
+          <tr className='border' style={{ borderColor: 'var(--theme-bg-2)' }}>
             <th>Character</th>
             <th>Realm</th>
             <th>Profession</th>
