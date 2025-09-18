@@ -3,7 +3,6 @@ import Page from '../Components/Page'
 import { TabbedContent } from '../Components/TabbedContent'
 import TabbedContentWithKey from '../Components/TabbedContentWithKey'
 import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar'
-// Characters (source of truth for profession skills and items)
 import { buildExpansionCraftingData } from '../data/crafting'
 
 // HoC
@@ -15,6 +14,8 @@ const nonCraftingKeys = ["skinning", "mining", "herbalism", "cooking"]
 
 function getCrafterSkillMap(expansionData) {
   const crafterMap = {}
+
+  console.log(expansionData)
 
   Object.values(expansionData).forEach(profession => {
     profession.crafters?.forEach(crafter => {
@@ -203,7 +204,16 @@ function RenderExpansion(expansionTitle, expansionCraftingData, idSlug) {
 export default function Crafting() {
   const expansions = [
     { name: 'The War Within', crafts: buildExpansionCraftingData('tww'), slug: 'tww' },
-    { name: 'Shadowlands', crafts: buildExpansionCraftingData('sl'), slug: 'sl' },
+    { name: 'DF', crafts: buildExpansionCraftingData('df'), slug: 'df' },
+    { name: 'SL', crafts: buildExpansionCraftingData('sl'), slug: 'sl' },
+    { name: 'BFA', crafts: buildExpansionCraftingData('bfa'), slug: 'bfa' },
+    { name: 'Legion', crafts: buildExpansionCraftingData('legion'), slug: 'legion' },
+    { name: 'WoD', crafts: buildExpansionCraftingData('wod'), slug: 'wod' },
+    { name: 'MoP', crafts: buildExpansionCraftingData('mop'), slug: 'mop' },
+    { name: 'Cata', crafts: buildExpansionCraftingData('cata'), slug: 'cata' },
+    { name: 'Wrath', crafts: buildExpansionCraftingData('wrath'), slug: 'wrath' },
+    { name: 'tBC', crafts: buildExpansionCraftingData('tbc'), slug: 'tbc' },
+    { name: 'WoW', crafts: buildExpansionCraftingData('wow'), slug: 'wow' },
   ]
 
   const tabs = expansions.map(ex => ({

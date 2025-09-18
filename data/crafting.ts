@@ -4,8 +4,18 @@ import Sniperdrood from './characters/TarrenMill/Sniperdrood'
 import Snipermagi from './characters/TarrenMill/Snipermagi'
 import Sniperwar from './characters/Silvermoon/Sniperwar'
 import Snipá from './characters/Magtheridon/Snipá'
+import Whoorelips from './characters/TarrenMill/Whoorelips'
+import Aronin from './characters/TarrenMill/Aronin'
 
-export const CHARACTERS = [Snipedeath, Sniperdrood, Snipermagi, Sniperwar, Snipá]
+export const CHARACTERS = [
+  Snipedeath,
+  Sniperdrood,
+  Snipermagi,
+  Sniperwar,
+  Snipá,
+  Whoorelips,
+  Aronin
+]
 
 export const PROF_NAME_MAP = {
   alchemy: 'Alchemy',
@@ -27,11 +37,26 @@ export const SKILL_CAPS = {
   tww: {
     default: 100
   },
+  df: {
+    default: 100,
+  },
   sl: {
     default: 100,
   },
+  bfa: {
+    default: 175,
+  },
+  legion: {
+    default: 100,
+  },
+  wod: {
+    default: 100,
+  },
+  mop: {
+    default: 75,
+  },
   wrath: {
-
+    default: 75,
   },
   tbc: {
     default: 75,
