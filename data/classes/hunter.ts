@@ -26,3 +26,5 @@ export const Hunter: WoWClass = {
     },
   ],
 }
+
+export default Hunter

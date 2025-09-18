@@ -16,10 +16,10 @@ function getCrafterSkillMap(expansionData) {
 
   Object.values(expansionData).forEach(profession => {
     profession.crafters?.forEach(crafter => {
-      const name = crafter.name
+      const name = `${crafter.name}-${crafter.realm}`
       if (!crafterMap[name]) {
         crafterMap[name] = {
-          class: crafter.class,
+          wowclass: crafter.wowclass,
           skills: []
         }
       }
@@ -45,13 +45,13 @@ function RenderCrafterSkillGrid(expansionData) {
       gap: '1rem',
       marginBottom: '2rem'
     }}>
-      {Object.entries(crafterMap).map(([name, { class: crafterClass, skills }]) => (
+      {Object.entries(crafterMap).map(([name, { wowclass, skills }]) => (
         <div key={name} style={{
           padding: '0.75rem',
           border: '1px solid rgba(0,0,0,0.4)',
           backgroundColor: 'rgba(0,0,0,0.1)'
         }}>
-          <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }} className={`fg-${crafterClass.css}`}>
+          <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }} className={`fg-${wowclass?.css || wowclass?.wowclass?.css}`}>
             {name}
           </div>
 
@@ -66,7 +66,7 @@ function RenderCrafterSkillGrid(expansionData) {
                 skill={skillData.skill}
                 cap={skillData.cap}
                 label={skillData.profession}
-                color={crafterClass.css}
+                color={wowclass?.css || ""}
               />
             ))}
           </div>
@@ -84,7 +84,7 @@ function RenderCraftersItemsTable(profession) {
       if (!crafter.items) { return null }
       return (
         <div key={crafter.name} className='mt-8'>
-          <h1 className={`fg-${crafter.class.css} font-bold text-xl`}>{crafter.name}</h1>
+          <h1 className={`fg-${crafter?.wowclass?.css || crafter.class?.css || ""} font-bold text-xl`}>{crafter.name}</h1>
 
           <RenderCraftsAsGrid crafter={crafter} />
         </div>
@@ -127,7 +127,6 @@ function RenderCraftsAsGrid({ crafter }) {
   )
 }
 
-
 function RenderCraftsAsTable(crafter) {
   return (
     <table className='table is-narrow is-striped mt-4'>
@@ -162,7 +161,6 @@ function RenderCraftsAsTable(crafter) {
     </table>
   )
 }
-
 
 function RenderExpansionCrafting(expansionData, professionKey) {
   if (!expansionData || !professionKey || !expansionData.hasOwnProperty(professionKey)) {

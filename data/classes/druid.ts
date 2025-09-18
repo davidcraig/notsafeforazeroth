@@ -39,3 +39,5 @@ export const Druid: WoWClass = {
   ],
   discord: []
 }
+
+export default Druid

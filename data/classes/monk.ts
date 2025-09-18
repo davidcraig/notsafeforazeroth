@@ -28,3 +28,5 @@ export const Monk: WoWClass = {
     },
   ],
 }
+
+export default Monk

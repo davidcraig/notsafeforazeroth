@@ -1,12 +1,12 @@
 import Tailoring from "./crafting/tailoring"
+import Snipermagi from "../characters/TarrenMill/Snipermagi"
 
 const tailor = {
     name: 'Tailoring',
     crafters: [
         {
-            "name": "Snipermagi-TarrenMill",
-            "class":  { name: 'Mage', css: 'mage' },
-            "skill": { current: 100, cap: 100 },
+            ...Snipermagi,
+            "skill": { current: Snipermagi.professions?.tailoring?.sl, cap: 100 },
             "items": [
                 Tailoring.GrimVeiledBelt_Rank1,
                 Tailoring.GrimVeiledBracers_Rank1,

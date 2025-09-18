@@ -25,3 +25,5 @@ export const Evoker: WoWClass = {
     },
   ],
 }
+
+export default Evoker

@@ -28,3 +28,5 @@ export const Paladin: WoWClass = {
     },
   ]
 }
+
+export default Paladin

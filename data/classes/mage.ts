@@ -26,3 +26,5 @@ export const Mage: WoWClass = {
   ],
   discord: 'https://discord.gg/WzYCnbg'
 }
+
+export default Mage

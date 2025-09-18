@@ -26,3 +26,5 @@ export const Warlock: WoWClass = {
     },
   ]
 }
+
+export default Warlock

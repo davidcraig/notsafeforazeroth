@@ -27,3 +27,5 @@ export const Shaman: WoWClass = {
     },
   ]
 }
+
+export default Shaman
