@@ -35,7 +35,8 @@ export const PROF_NAME_MAP = {
 
 export const SKILL_CAPS = {
   tww: {
-    default: 100
+    default: 100,
+    fishing: 300
   },
   df: {
     default: 100,
