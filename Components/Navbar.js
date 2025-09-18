@@ -49,18 +49,25 @@ if (showClassLinks) {
   )
 }
 
-const DetailsLink = ({ id, title, children, openId, setOpenId }) => {
-  const isOpen = openId === id
+const DetailsLink = ({ id, title, children, depth, openByDepth, setOpenByDepth }) => {
+  const isOpen = openByDepth[depth] === id
   const handleToggle = (e) => {
     const el = e.currentTarget
-    if (el.open) {
-      setOpenId(id)
-    } else if (openId === id) {
-      setOpenId(null)
-    }
+    setOpenByDepth(prev => {
+      const next = { ...prev }
+      if (el.open) {
+        next[depth] = id
+        // close deeper levels when opening a new branch at this depth
+        Object.keys(next).forEach(k => { if (Number(k) > depth) delete next[k] })
+      } else {
+        if (next[depth] === id) delete next[depth]
+        Object.keys(next).forEach(k => { if (Number(k) > depth) delete next[k] })
+      }
+      return next
+    })
   }
   return (
-    <details key={id} className='navbar-item ml-4 nav-details' open={isOpen} onToggle={handleToggle}>
+    <details key={id} className={`navbar-item ml-4 nav-details nav-depth-${depth}`} open={isOpen} onToggle={handleToggle}>
       <summary className='navbar-link'>{title}</summary>
       <div className='navbar-dropdown'>
         {children}
@@ -69,11 +76,11 @@ const DetailsLink = ({ id, title, children, openId, setOpenId }) => {
   )
 }
 
-function renderNavigationItem(item, onNavigate, openId, setOpenId) {
+function renderNavigationItem(item, onNavigate, openByDepth, setOpenByDepth, depth = 0) {
   if (item.pages) {
-    return <DetailsLink key={item.name} className='pr-2 mr-4 ml-4' id={item.name} title={item.name} openId={openId} setOpenId={setOpenId}>
+    return <DetailsLink key={item.name} className='pr-2 mr-4 ml-4' id={item.name} title={item.name} depth={depth} openByDepth={openByDepth} setOpenByDepth={setOpenByDepth}>
       {item.pages.map(dropdownPage => {
-        return renderNavigationItem(dropdownPage, onNavigate, openId, setOpenId)
+        return renderNavigationItem(dropdownPage, onNavigate, openByDepth, setOpenByDepth, depth + 1)
       })}
     </DetailsLink>
   }
@@ -92,7 +99,7 @@ const externalLink = (href, title) => {
 
 export default function Navigation(props) {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [openId, setOpenId] = useState(null)
+  const [openByDepth, setOpenByDepth] = useState({})
   return (
     <nav className={`navbar p-4 flex flex-col gap-4 md:flex-row ${props.className}`}>
       <div className='flex items-center w-full'>
@@ -103,10 +110,10 @@ export default function Navigation(props) {
       </div>
       <div className={`nav-links ml-auto gap-4 mr-auto md:mr-0 text-center ${mobileOpen ? 'is-open' : ''}`}>
         {pages.map(page => {
-          return renderNavigationItem(page, () => { setMobileOpen(false); setOpenId(null) }, openId, setOpenId)
+          return renderNavigationItem(page, () => { setMobileOpen(false); setOpenByDepth({}) }, openByDepth, setOpenByDepth)
         })}
         {wikiPages.map(page => {
-          return renderNavigationItem(page, () => { setMobileOpen(false); setOpenId(null) }, openId, setOpenId)
+          return renderNavigationItem(page, () => { setMobileOpen(false); setOpenByDepth({}) }, openByDepth, setOpenByDepth)
         })}
         <a onClick={() => setMobileOpen(false)} className='ml-4 p-4 md:p-0 flex' href='https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth' target='_blank' rel='noopener noreferrer'>Raider.IO <span style={{marginLeft: '0.5rem', marginRight: '0.5rem'}}>{externalLinkSvg}</span></a>
         <a onClick={() => setMobileOpen(false)} className='ml-4 p-4 md:p-0 flex' href='https://discord.gg/CtqNwgQnJm' target='_blank' rel='noopener noreferrer'>Discord <span style={{marginLeft: '0.5rem', marginRight: '0.5rem'}}>{externalLinkSvg}</span></a>

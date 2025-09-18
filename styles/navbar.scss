@@ -141,7 +141,8 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     z-index: 1000;
     padding: 0.5rem;
     background: var(--theme-bg-2);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border: 1px solid var(--theme-bg-2);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     white-space: nowrap;
   }
   // Nested flyouts positioning
@@ -154,7 +155,26 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     z-index: 1002;
     padding: 0.5rem;
     background: var(--theme-bg-2);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border: 3px solid var(--theme-bg-2);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.5);
+  }
+
+  // Depth-based visual hierarchy (up to 4 levels)
+  .nav-depth-0 > .navbar-dropdown {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    border: 5cqb solid var(--theme-bg-2);
+  }
+  .nav-depth-1 > .navbar-dropdown {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.38);
+    border: 8px solid var(--theme-bg-2);
+  }
+  .nav-depth-2 > .navbar-dropdown {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.42);
+    border: 10px solid var(--theme-bg-2);
+  }
+  .nav-depth-3 > .navbar-dropdown {
+    box-shadow: 0 12px 28px rgba(0,0,0,0.46); 
+    border: 12px solid var(--theme-bg-2);
   }
 }
 
