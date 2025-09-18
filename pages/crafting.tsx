@@ -4,6 +4,8 @@ import { TabbedContent } from '../Components/TabbedContent'
 import TabbedContentWithKey from '../Components/TabbedContentWithKey'
 import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar'
 import { buildExpansionCraftingData } from '../data/crafting'
+import { Character } from '../Types/Character'
+import type { CharacterProfessions } from '../Types/Character'
 
 // HoC
 const TabWithKey = TabbedContentWithKey(TabbedContent)
@@ -15,10 +17,13 @@ const nonCraftingKeys = ["skinning", "mining", "herbalism", "cooking"]
 function getCrafterSkillMap(expansionData) {
   const crafterMap = {}
 
-  console.log(expansionData)
+  if (Object.keys(expansionData).length == 0) {
+    return null
+  }
+  console.log(expansionData, 'expansionData')
 
-  Object.values(expansionData).forEach(profession => {
-    profession.crafters?.forEach(crafter => {
+  Object.values(expansionData).forEach((profession: any) => {
+    profession?.crafters?.forEach(crafter => {
       const name = `${crafter.name}-${crafter.realm}`
       if (!crafterMap[name]) {
         crafterMap[name] = {
@@ -40,6 +45,9 @@ function getCrafterSkillMap(expansionData) {
 
 function RenderCrafterSkillGrid(expansionData) {
   const crafterMap = getCrafterSkillMap(expansionData)
+  if (!crafterMap || crafterMap == null) {
+    return null
+  }
 
   return (
     <div className="crafter-grid" style={{
@@ -48,7 +56,7 @@ function RenderCrafterSkillGrid(expansionData) {
       gap: '1rem',
       marginBottom: '2rem'
     }}>
-      {Object.entries(crafterMap).map(([name, { wowclass, skills }]) => (
+      {Object.entries(crafterMap).map(([name, { wowclass, skills }]: any) => (
         <div key={name} style={{
           padding: '0.75rem',
           border: '1px solid rgba(0,0,0,0.4)',
