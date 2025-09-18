@@ -3,4 +3,5 @@ export enum Realms {
     TarrenMill = "TarrenMill",
     Draenor = "Draenor",
     Magtheridon = "Magtheridon",
+    Kazzak = "Kazzak"
 }

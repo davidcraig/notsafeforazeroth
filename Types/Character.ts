@@ -1,6 +1,7 @@
 import type { WoWClass } from "./WoWClass";
 import type { CraftedItem } from "./CraftedItem";
 import { Realms } from "../data/Enum/Realms";
+import { Role } from "../data/roles";
 
 // Canonical list of WoW professions
 export const WOW_PROFESSIONS = [
@@ -57,4 +58,5 @@ export type Character = {
     realm: Realms;
     wowclass: WoWClass;
     professions?: CharacterProfessions;
+    role?: Role[];
 };
