@@ -65,7 +65,7 @@ function RenderCrafterSkillGrid(expansionData) {
               marginBottom: '0.5rem',
               padding: '.5rem',
               background: 'var(--theme-bg-2)',
-              borderBottom: '1px solid rgba(0,0,0,0.4)'
+              borderBottom: '1px solid rgba(0,0,0,0.4)',
             }}
             className={`fg-${wowclass?.css || wowclass?.wowclass?.css}`}
           >
