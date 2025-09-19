@@ -1,4 +1,4 @@
-import { Character } from "../../../Types/Character"
+import type { Character } from "../../../Types/Character"
 import { Realms } from "../../Enum/Realms"
 import { Mage } from "../../classes/mage"
 import { Tailoring as WW_T } from "../../warwithin/crafting/tailoring"
@@ -32,7 +32,7 @@ export const Snipermagi: Character = {
         ]
       },
       bfa: { skill: 43 },
-      legion: { skill: 27 },
+      legion: { skill: 37 },
       wod: { skill: 30 },
       mop: { skill: 75 },
       cata: { skill: 75 },
@@ -54,7 +54,7 @@ export const Snipermagi: Character = {
         skill: 115
       },
       bfa: { skill: 65 },
-      legion: { skill: 30 },
+      legion: { skill: 33 },
       wod: { skill: 100 },
       mop: { skill: 75 },
       cata: { skill: 30 },
