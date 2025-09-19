@@ -54,7 +54,7 @@ export const Snipermagi: Character = {
         skill: 115
       },
       bfa: { skill: 65 },
-      legion: { skill: 28 },
+      legion: { skill: 30 },
       wod: { skill: 100 },
       mop: { skill: 75 },
       cata: { skill: 30 },
