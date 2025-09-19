@@ -5,6 +5,10 @@ import { Tailoring as WW_T } from "../../warwithin/crafting/tailoring"
 import { Enchanting as WW_E } from "../../warwithin/crafting/enchanting"
 import { Tailoring as SL_T } from "../../shadowlands/crafting/tailoring"
 
+const slTailorItems = [
+  
+]
+
 export const Snipermagi: Character = {
   name: "Snipermagi",
   realm: Realms.TarrenMill,
@@ -32,7 +36,7 @@ export const Snipermagi: Character = {
         ]
       },
       bfa: { skill: 43 },
-      legion: { skill: 37 },
+      legion: { skill: 45 },
       wod: { skill: 30 },
       mop: { skill: 75 },
       cata: { skill: 75 },
@@ -54,7 +58,8 @@ export const Snipermagi: Character = {
         skill: 115
       },
       bfa: { skill: 65 },
-      legion: { skill: 33 },
+      // https://www.wow-professions.com/guides/legion-enchanting-leveling
+      legion: { skill: 50 },
       wod: { skill: 100 },
       mop: { skill: 75 },
       cata: { skill: 30 },

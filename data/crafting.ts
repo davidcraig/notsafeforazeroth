@@ -36,6 +36,9 @@ export const PROF_NAME_MAP = {
 }
 
 export const SKILL_CAPS = {
+  midnight: {
+    default: 100, // Assumed for now
+  },
   tww: {
     default: 100,
     fishing: 300

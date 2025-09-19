@@ -28,30 +28,33 @@ export const Snipá: Character = {
               TWW_LW.GlyphEtchedBreastplate,
             ]
           },
-          legion: { skill: 40 },
+          // https://www.wow-professions.com/guides/legion-leatherworking-leveling
+          legion: { skill: 65 },
+          // https://www.wow-professions.com/guides/draenor-leatherworking-leveling
+          wod: { skill: 38 },
           wow: { skill: 1, }
         },
         cooking: {
           tww: {
             skill: 88
           },
-          wod: { skill: 100 },
-          mop: { skill: 75 },
-          cata: { skill: 75 },
-          wrath: { skill: 75 },
-          tbc: { skill: 75 },
-          wow: { skill: 300 }
+          wod: { skill: 100 },  // Capped
+          mop: { skill: 75 },  // Capped
+          cata: { skill: 75 },  // Capped
+          wrath: { skill: 75 },  // Capped
+          tbc: { skill: 75 },  // Capped
+          wow: { skill: 300 }  // Capped
         },
         fishing: {
           tww: {
             skill: 70,
           },
-          wod: { skill: 100 },
-          mop: { skill: 75 },
-          cata: { skill: 75 },
-          wrath: { skill: 75 },
-          tbc: { skill: 75 },
-          wow: { skill: 300 }
+          wod: { skill: 100 }, // Capped
+          mop: { skill: 75 }, // Capped
+          cata: { skill: 75 }, // Capped
+          wrath: { skill: 75 }, // Capped
+          tbc: { skill: 75 }, // Capped
+          wow: { skill: 300 } // Capped
         }
     }
 }

@@ -218,6 +218,8 @@ function RenderExpansion(expansionTitle, expansionCraftingData, idSlug) {
 
 export default function Crafting() {
   const expansions = [
+    // Hide midnight for now
+    // { name: 'Midnight', crafts: buildExpansionCraftingData('midnight'), slug: 'midnight' },
     { name: 'The War Within', crafts: buildExpansionCraftingData('tww'), slug: 'tww' },
     { name: 'DF', crafts: buildExpansionCraftingData('df'), slug: 'df' },
     { name: 'SL', crafts: buildExpansionCraftingData('sl'), slug: 'sl' },
