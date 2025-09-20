@@ -16,7 +16,7 @@ export const Snipermagi: Character = {
   professions: {
     tailoring: {
       tww: {
-        skill: 66, items: [
+        skill: 69, items: [
           WW_T.DuskweaveBag,
           WW_T.GlovesOfTheWovenDusk,
           WW_T.SlippersOfTheWovenDusk,
@@ -46,7 +46,7 @@ export const Snipermagi: Character = {
     },
     enchanting: {
       tww: {
-        skill: 53,
+        skill: 60,
         items: [
           WW_E.EnchantedGildedHarbingerCrest,
         ]
