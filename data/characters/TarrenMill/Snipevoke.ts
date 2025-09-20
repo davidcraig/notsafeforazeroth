@@ -9,7 +9,7 @@ export const Snipevoke: Character = {
   professions: {
     alchemy: {
       tww: {
-        skill: 93
+        skill: 95
       }
     },
     herbalism: {
