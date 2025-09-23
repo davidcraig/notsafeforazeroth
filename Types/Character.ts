@@ -2,6 +2,7 @@ import type { WoWClass } from "./WoWClass";
 import type { CraftedItem } from "./CraftedItem";
 import { Realms } from "../data/Enum/Realms";
 import { Role } from "../data/roles";
+import { Races } from "../data/Enum/Races";
 
 // Canonical list of WoW professions
 export const WOW_PROFESSIONS = [
@@ -56,6 +57,7 @@ export type CharacterProfessions = Partial<Record<WowProfession, ProfessionProgr
 export type Character = {
     name: string;
     realm: Realms;
+    race?: Races;
     wowclass: WoWClass;
     professions?: CharacterProfessions;
     role?: Role[];

@@ -4,9 +4,11 @@ import Sniperdrood from './characters/TarrenMill/Sniperdrood'
 import Snipermagi from './characters/TarrenMill/Snipermagi'
 import Sniperwar from './characters/Silvermoon/Sniperwar'
 import Snipá from './characters/Magtheridon/Snipá'
+import Snipá_SM from './characters/Silvermoon/Snipá'
 import Snipevoke from './characters/TarrenMill/Snipevoke'
 import Whoorelips from './characters/TarrenMill/Whoorelips'
 import Aronin from './characters/TarrenMill/Aronin'
+import Snipérmonk from './characters/TarrenMill/Snipérmonk'
 
 export const CHARACTERS = [
   Snipedeath,
@@ -14,7 +16,9 @@ export const CHARACTERS = [
   Snipermagi,
   Sniperwar,
   Snipevoke,
+  Snipérmonk,
   Snipá,
+  Snipá_SM,
   Whoorelips,
   Aronin,
 ]
@@ -153,5 +157,3 @@ export default {
   SKILL_CAPS,
   PROF_NAME_MAP,
 }
-
-

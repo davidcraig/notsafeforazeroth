@@ -1,0 +1,23 @@
+export enum Races {
+  NightElf = "Night Elf",
+  Human = "Human",
+  Orc = "Orc",
+  Undead = "Undead",
+  Gnome = "Gnome",
+  Dwarf = "Dwarf",
+  Pandaren = "Pandaren",
+  Dracthyr = "Dracthyr",
+  Troll = "Troll",
+  ZandalariTroll = "Zandalari Troll",
+  Tauren = "Tauren",
+  
+  MagharOrc = "Mag'har Orc",
+  BloodElf = "Blood Elf",
+  Earthen = "Earthen",
+  Draenei = "Draenei",
+  Worgen = "Worgen",
+  Goblin = "Goblin",
+  VoidElf = "Void Elf",
+  LightforgedDraenei = "Lightforged Draenei",
+  HighmountainTauren = "Highmountain Tauren",
+}
