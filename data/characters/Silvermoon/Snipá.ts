@@ -18,7 +18,7 @@ export const Snipá: Character = {
             wow: { skill: 6 },
         },
         leatherworking: {
-          tww: { skill: 1 },
+          tww: { skill: 10 },
           df: { skill: 10 },
           wod: { skill: 2 },
           wow: { skill: 1 }

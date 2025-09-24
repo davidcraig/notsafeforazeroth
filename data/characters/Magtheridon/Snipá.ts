@@ -11,13 +11,7 @@ export const Snipá: Character = {
         skinning: {
             tww: {
               skill: 100
-            },
-            bfa: { skill: 1 },
-            legion: { skill: 100 },
-            wod: { skill: 4 },
-            cata: { skill: 18 },
-            tbc: { skill: 37 },
-            wow: { skill: 1 },
+            }
         },
         leatherworking: {
           tww: {

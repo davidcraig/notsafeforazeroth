@@ -1,4 +1,5 @@
-// Centralized crafting helpers and configuration
+import { Races } from './Enum/Races'
+
 import Snipedeath from './characters/TarrenMill/Snipedeath'
 import Sniperdrood from './characters/TarrenMill/Sniperdrood'
 import Snipermagi from './characters/TarrenMill/Snipermagi'
@@ -6,7 +7,7 @@ import Sniperwar from './characters/Silvermoon/Sniperwar'
 import Snipá from './characters/Magtheridon/Snipá'
 import Snipá_SM from './characters/Silvermoon/Snipá'
 import Snipevoke from './characters/TarrenMill/Snipevoke'
-import Whoorelips from './characters/TarrenMill/Whoorelips'
+import Snipepal from './characters/Silvermoon/Snipepal'
 import Aronin from './characters/TarrenMill/Aronin'
 import Snipérmonk from './characters/TarrenMill/Snipérmonk'
 
@@ -17,9 +18,9 @@ export const CHARACTERS = [
   Sniperwar,
   Snipevoke,
   Snipérmonk,
+  Snipepal,
   Snipá,
   Snipá_SM,
-  Whoorelips,
   Aronin,
 ]
 
@@ -79,6 +80,16 @@ export const SKILL_CAPS = {
   }
 }
 
+export const RACIAL_PROFESSION_BONUSES: Partial<Record<Races, Partial<Record<keyof typeof PROF_NAME_MAP, number>>>> = {
+  [Races.Draenei]: {
+    jewelcrafting: 5,
+  },
+  [Races.Goblin]: {
+    alchemy: 5,
+  },
+}
+
+
 export function getSkillFromProgress(progress) {
   if (typeof progress === 'number') return progress
   if (progress && typeof progress === 'object') return progress.skill ?? 0
@@ -107,11 +118,14 @@ export function buildExpansionCraftingData(expansionSlug) {
         }
       }
 
+      const baseCap = SKILL_CAPS[expansionSlug]?.[profKey] ?? SKILL_CAPS[expansionSlug]?.default ?? 100
+      const racialBonus = RACIAL_PROFESSION_BONUSES[character.race]?.[profKey] ?? 0
+
       byProfession[profKey].crafters.push({
         ...character,
         skill: {
           current: getSkillFromProgress(progress),
-          cap: (SKILL_CAPS[expansionSlug]?.[profKey] ?? SKILL_CAPS[expansionSlug]?.default ?? 100),
+          cap: baseCap + racialBonus,
         },
         items: getItemsFromProgress(progress),
       })
@@ -135,11 +149,14 @@ export function buildCharacterSkillsByExpansion(expansionSlug: string) {
       const progress = perExpansion[expansionSlug]
       if (progress == null) return
 
+      const baseCap = (SKILL_CAPS as any)[expansionSlug]?.[profKey] ?? (SKILL_CAPS as any)[expansionSlug]?.default ?? 100
+      const racialBonus = RACIAL_PROFESSION_BONUSES[character.race]?.[profKey] ?? 0
+
       skills.push({
         professionKey: profKey,
         professionName: (PROF_NAME_MAP as any)[profKey] || profKey,
         current: getSkillFromProgress(progress),
-        cap: ((SKILL_CAPS as any)[expansionSlug]?.[profKey] ?? (SKILL_CAPS as any)[expansionSlug]?.default ?? 100),
+        cap: baseCap + racialBonus,
       })
     })
 
