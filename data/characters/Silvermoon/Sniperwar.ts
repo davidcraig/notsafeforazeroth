@@ -9,9 +9,12 @@ export const Sniperwar: Character = {
     wowclass: Warrior,
     professions: {
       engineering: {
-        tww: { skill: 67, items: [
-          Engineering.CrowdPummeler230,
-        ] },
+        tww: {
+          skill: 71,
+          items: [
+            Engineering.CrowdPummeler230,
+          ]
+        },
       },
       mining: {
         tww: 100
