@@ -80,6 +80,8 @@ export const SKILL_CAPS = {
   }
 }
 
+// Sources:
+//  - https://www.wowhead.com/news/skill-bonuses-reduced-with-profession-racials-in-dragonflight-330138
 export const RACIAL_PROFESSION_BONUSES: Partial<Record<Races, Partial<Record<keyof typeof PROF_NAME_MAP, number>>>> = {
   [Races.BloodElf]: {
     enchanting: 5
