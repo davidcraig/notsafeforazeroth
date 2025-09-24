@@ -1,23 +1,28 @@
 export enum Races {
+  // Alliance
   NightElf = "Night Elf",
   Human = "Human",
-  Orc = "Orc",
-  Undead = "Undead",
   Gnome = "Gnome",
   Dwarf = "Dwarf",
-  Pandaren = "Pandaren",
-  Dracthyr = "Dracthyr",
+  Draenei = "Draenei",
+  KulTiran = "KulTiran",
+  Worgen = "Worgen",
+  VoidElf = "Void Elf",
+  LightforgedDraenei = "Lightforged Draenei",
+
+  // Horde
+  Orc = "Orc",
+  Undead = "Undead",
   Troll = "Troll",
   ZandalariTroll = "Zandalari Troll",
   Tauren = "Tauren",
-  
   MagharOrc = "Mag'har Orc",
   BloodElf = "Blood Elf",
-  Earthen = "Earthen",
-  Draenei = "Draenei",
-  Worgen = "Worgen",
   Goblin = "Goblin",
-  VoidElf = "Void Elf",
-  LightforgedDraenei = "Lightforged Draenei",
   HighmountainTauren = "Highmountain Tauren",
+
+  // Both
+  Pandaren = "Pandaren",
+  Dracthyr = "Dracthyr",
+  Earthen = "Earthen",
 }
