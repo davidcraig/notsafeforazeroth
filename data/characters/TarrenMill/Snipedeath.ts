@@ -1,11 +1,13 @@
 import { Character } from "../../../Types/Character"
 import { DeathKnight } from "../../classes/dk"
+import { Races } from "../../Enum/Races"
 import { Realms } from "../../Enum/Realms"
 import { Blacksmithing as WW_BS } from "../../warwithin/crafting/blacksmithing"
 
 export const Snipedeath: Character = {
     name: "Snipedeath",
     realm: Realms.TarrenMill,
+    race: Races.HighmountainTauren,
     wowclass: DeathKnight,
     professions: {
       blacksmithing: {

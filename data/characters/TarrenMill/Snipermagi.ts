@@ -4,6 +4,7 @@ import { Mage } from "../../classes/mage"
 import { Tailoring as WW_T } from "../../warwithin/crafting/tailoring"
 import { Enchanting as WW_E } from "../../warwithin/crafting/enchanting"
 import { Tailoring as SL_T } from "../../shadowlands/crafting/tailoring"
+import { Races } from "../../Enum/Races"
 
 const slTailorItems = [
   
@@ -12,6 +13,7 @@ const slTailorItems = [
 export const Snipermagi: Character = {
   name: "Snipermagi",
   realm: Realms.TarrenMill,
+  race: Races.Pandaren,
   wowclass: Mage,
   professions: {
     tailoring: {
