@@ -81,12 +81,54 @@ export const SKILL_CAPS = {
 }
 
 export const RACIAL_PROFESSION_BONUSES: Partial<Record<Races, Partial<Record<keyof typeof PROF_NAME_MAP, number>>>> = {
+  [Races.BloodElf]: {
+    enchanting: 5
+  },
+  [Races.DarkIronDwarf]: {
+    blacksmithing: 5
+  },
   [Races.Draenei]: {
     jewelcrafting: 5,
   },
   [Races.Goblin]: {
     alchemy: 5,
   },
+  [Races.KulTiran]: {
+    alchemy: 2,
+    blacksmithing: 2,
+    enchanting: 2,
+    engineering: 2,
+    inscription: 2,
+    jewelcrafting: 2,
+    leatherworking: 2,
+    tailoring: 2,
+    skinning: 2,
+    herbalism: 2,
+    mining: 2,
+    cooking: 2,
+    fishing: 2,
+  },
+  [Races.Gnome]: {
+    engineering: 5,
+  },
+  [Races.HighmountainTauren]: {
+    mining: 5,
+  },
+  [Races.LightforgedDraenei]: {
+    blacksmithing: 5
+  },
+  [Races.Nightborne]: {
+    inscription: 5
+  },
+  [Races.Pandaren]: {
+    cooking: 5
+  },
+  [Races.Tauren]: {
+    herbalism: 5
+  },
+  [Races.Worgen]: {
+    skinning: 5
+  }
 }
 
 
