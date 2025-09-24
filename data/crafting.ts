@@ -80,19 +80,19 @@ export const RACIAL_PROFESSION_BONUSES: Partial<Record<Races, Partial<Record<key
     alchemy: 5,
   },
   [Races.KulTiran]: {
-    alchemy: 2,
-    blacksmithing: 2,
-    enchanting: 2,
-    engineering: 2,
-    inscription: 2,
-    jewelcrafting: 2,
-    leatherworking: 2,
-    tailoring: 2,
-    skinning: 2,
-    herbalism: 2,
-    mining: 2,
-    cooking: 2,
-    fishing: 2,
+    alchemy: 2, // [Goblin]
+    blacksmithing: 2, // [Dark Iron Dwarf] or [Lightforged Draenei]
+    enchanting: 2, // [Blood Elf]
+    engineering: 2, // [Gnome]
+    inscription: 2, // [Nightborne]
+    jewelcrafting: 2, // [Draenei]
+    leatherworking: 2, // <-- Best
+    tailoring: 2, // <-- Best
+    skinning: 2, // [Worgen]
+    herbalism: 2, // [Tauren]
+    mining: 2, // [Highmountain Tauren]
+    cooking: 2, // [Pandaren]
+    fishing: 2, // <-- Best
   },
   [Races.Gnome]: {
     engineering: 5,
