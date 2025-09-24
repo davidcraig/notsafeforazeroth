@@ -22,12 +22,21 @@ function RenderCharacterProfessionTable(ex: { name: string, slug: string, id: nu
 
   if (rows.length === 0) return null
 
-  // Sort rows by character name, then profession name
   rows.sort((a, b) => {
-    const nc = a.character.name.localeCompare(b.character.name)
-    if (nc !== 0) return nc
+    const aNameRealm = `${a.character.name}-${a.character.realm}`
+    const bNameRealm = `${b.character.name}-${b.character.realm}`
+
+    const comp = aNameRealm.localeCompare(bNameRealm)
+    if (comp !== 0) return comp
     return a.professionName.localeCompare(b.professionName)
   })
+
+  // Sort rows by character name, then profession name
+  // rows.sort((a, b) => {
+  //   const nc = a.character.name.localeCompare(b.character.name)
+  //   if (nc !== 0) return nc
+  //   return a.professionName.localeCompare(b.professionName)
+  // })
 
   const normalized = (filterText || '').trim().toLowerCase()
   const filteredRows = normalized
