@@ -1,28 +1,6 @@
 import { Races } from './Enum/Races'
 
-import Snipedeath from './characters/TarrenMill/Snipedeath'
-import Sniperdrood from './characters/TarrenMill/Sniperdrood'
-import Snipermagi from './characters/TarrenMill/Snipermagi'
-import Sniperwar from './characters/Silvermoon/Sniperwar'
-import Snipá from './characters/Magtheridon/Snipá'
-import Snipá_SM from './characters/Silvermoon/Snipá'
-import Snipevoke from './characters/TarrenMill/Snipevoke'
-import Snipepal from './characters/Silvermoon/Snipepal'
-import Aronin from './characters/TarrenMill/Aronin'
-import Snipérmonk from './characters/TarrenMill/Snipérmonk'
-
-export const CHARACTERS = [
-  Snipedeath,
-  Sniperdrood,
-  Snipermagi,
-  Sniperwar,
-  Snipevoke,
-  Snipérmonk,
-  Snipepal,
-  Snipá,
-  Snipá_SM,
-  Aronin,
-]
+import CHARACTERS from './characters'
 
 export const PROF_NAME_MAP = {
   alchemy: 'Alchemy',
@@ -41,9 +19,14 @@ export const PROF_NAME_MAP = {
 }
 
 export const SKILL_CAPS = {
+  // The Last Titan
+  tlt:{
+    default: 100, // Assumed for now
+  },
   midnight: {
     default: 100, // Assumed for now
   },
+  // The War Within
   tww: {
     default: 100,
     fishing: 300
@@ -52,6 +35,7 @@ export const SKILL_CAPS = {
     default: 100,
   },
   sl: {
+    enchanting: 115,
     default: 100,
   },
   bfa: {

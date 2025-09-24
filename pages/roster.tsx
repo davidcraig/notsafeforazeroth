@@ -1,14 +1,24 @@
 import React from 'react'
 import Page from '../Components/Page'
 import type { Character } from '../Types/Character'
+
+// Tarren Mill
 import Sniperdrood from '../data/characters/TarrenMill/Sniperdrood'
 import Snipedeath from '../data/characters/TarrenMill/Snipedeath'
 import Crássiúss from '../data/characters/TarrenMill/Crássiúss'
 import Snipermagi from '../data/characters/TarrenMill/Snipermagi'
-import Sniperwar from '../data/characters/Silvermoon/Sniperwar'
-import Snipá from '../data/characters/Magtheridon/Snipá'
 import Whoorelips from '../data/characters/TarrenMill/Whoorelips'
+import Snipérmonk from '../data/characters/TarrenMill/Snipérmonk'
 import Aronin from '../data/characters/TarrenMill/Aronin'
+
+// Draenor
+
+// Silvermoon
+import Sniperwar from '../data/characters/Silvermoon/Sniperwar'
+
+// Magtheridon
+import Snipá from '../data/characters/Magtheridon/Snipá'
+
 import { Realms } from '../data/Enum/Realms'
 
 const RANKS = {
@@ -28,7 +38,6 @@ const addCharacter = (character: Character) => {
 // addCharacter('Aronin', wowClasses.Paladin, ROLES.Tank, realms.TarrenMill)
 // // Sniper
 // addCharacter('Snipevoke', wowClasses.Evoker, ROLES.DPS, realms.TarrenMill);
-// addCharacter('Sniperwar', wowClasses.Warrior, ROLES.DPS, realms.TarrenMill);
 // addCharacter('Sniperdrood', wowClasses.Druid, ROLES.DPS, realms.TarrenMill);
 // addCharacter('Snipedeath', wowClasses.DeathKnight, ROLES.Tank, realms.TarrenMill);
 // // Rob
@@ -49,9 +58,6 @@ const roster = {
       real: 'Chris',
       rank: RANKS.Officer,
       main: Aronin,
-      // alts: [
-      //   characters.Violatór
-      // ]
     },
     {
       real: 'Dave / Sniper',
@@ -61,17 +67,12 @@ const roster = {
         // TM
         Snipedeath,
         Snipermagi,
+        Snipérmonk,
         // SM
         Sniperwar,
         // Mag
         Snipá
       ]
-      // main: characters.Snipedeath,
-      // alts: [
-      //   characters.Sniperwar,
-      //   characters.Snipevoke,
-      //   characters.Sniperdrood
-      // ]
     },
     {
       real: 'Rob',

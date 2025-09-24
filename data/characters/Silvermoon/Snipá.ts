@@ -11,14 +11,14 @@ export const Snipá: Character = {
     race: Races.Worgen,
     professions: {
         skinning: {
-            tww: { skill: 6 },
+            tww: { skill: 7 },
             df: { skill: 57 },
             wod: { skill: 49 },
             cata: { skill: 6 },
             wow: { skill: 6 },
         },
         leatherworking: {
-          tww: { skill: 10 },
+          tww: { skill: 13 },
           df: { skill: 10 },
           wod: { skill: 2 },
           wow: { skill: 1 }
