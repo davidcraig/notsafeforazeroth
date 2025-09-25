@@ -1,10 +1,10 @@
+import type { Character } from "@davidcraig/wowdata/Character"
 import { Realm } from "@davidcraig/wowdata/Realm"
 import { Race } from "@davidcraig/wowdata/Race"
 import Mage from "@davidcraig/wowdata/classes/mage.ts"
 import { Tailoring as WW_T } from "../../warwithin/crafting/tailoring.ts"
 import { Enchanting as WW_E } from "../../warwithin/crafting/enchanting.ts"
 import { Tailoring as SL_T } from "../../shadowlands/crafting/tailoring.ts"
-import type { Character } from "../../../Types/Character.ts"
 
 export const Snipermagi: Character = {
   name: "Snipermagi",

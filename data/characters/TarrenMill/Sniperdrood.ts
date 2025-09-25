@@ -1,8 +1,8 @@
+import type { Character } from "@davidcraig/wowdata/Character"
 import Druid from "@davidcraig/wowdata/classes/druid"
 import { Realm } from "@davidcraig/wowdata/Realm"
 import { Race } from "@davidcraig/wowdata/Race"
 import ROLES from "../../roles.ts"
-import { Character } from "../../../Types/Character.ts"
 
 const MINING_RACIAL_BONUS = 5
 

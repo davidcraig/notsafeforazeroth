@@ -1,7 +1,7 @@
+import type { Character } from "@davidcraig/wowdata/Character"
 import Paladin from "@davidcraig/wowdata/classes/paladin"
 import { Race } from "@davidcraig/wowdata/Race"
 import { Realm } from "@davidcraig/wowdata/Realm"
-import { Character } from "../../../Types/Character.ts"
 
 export const Snipepal: Character = {
     name: "Snipepal",

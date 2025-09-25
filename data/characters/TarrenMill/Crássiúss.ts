@@ -1,4 +1,4 @@
-import { Character } from "../../../Types/Character.ts";
+import type { Character } from "@davidcraig/wowdata/Character"
 import Hunter from "@davidcraig/wowdata/classes/hunter"
 import { Realm } from "@davidcraig/wowdata/Realm"
 

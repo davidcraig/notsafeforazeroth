@@ -19,6 +19,9 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "@davidcraig/wowdata/Character": [
+        "node_modules/@davidcraig/wowdata/src/types/Character.d.ts"
+      ],
       "@davidcraig/wowdata/classes/*": [
         "node_modules/@davidcraig/wowdata/src/data/classes/*"
       ],
@@ -33,6 +36,9 @@
       ],
       "@davidcraig/wowdata/Roles": [
         "node_modules/@davidcraig/wowdata/src/data/Roles.ts"
+      ],
+      "@davidcraig/wowdata/WoWClass": [
+        "node_modules/@davidcraig/wowdata/src/types/WoWClass.d.ts"
       ],
     }
   },
