@@ -98,7 +98,7 @@ function RenderCraftersItemsTable(profession) {
 
   return <>
     {profession.crafters.map(crafter => {
-      if (!crafter.items) { return null }
+      if (!crafter.items || crafter.items?.length == 0) return null
       const name = `${crafter.name}-${crafter.realm}`
       return (
         <div key={name} className='mt-8'>
