@@ -1,7 +1,8 @@
 import React from 'react'
 import { ItemGrid } from '@davidcraig/react-bulma'
 import Page from '../../Components/Page.js'
-import { Card, TabbedContent } from '@davidcraig/react-bulma'
+import { Card } from '@davidcraig/react-bulma'
+import TabbedContent from '@nsfa/Components/TabbedContent.tsx'
 import { castleNathria } from '../../data/shadowlands/raids.ts'
 
 const SHOW_MYTHIC = false
@@ -31,13 +32,13 @@ const TLDRTactics = {
 const NormalHeroicVideos = {
   title: 'Videos: Normal / Heroic',
   content: (
-    <ItemGrid columns={2}>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
       {
         castleNathria.map(boss => (
-          <Card ytVideo={boss.video} title={boss.name} />
+          <Card className='mt-4' ytVideo={boss.video} title={boss.name} />
         ))
       }
-    </ItemGrid>
+    </div>
   )
 }
 const MythicVideos = {
@@ -62,7 +63,6 @@ export default function CastleNathriaPage() {
 
   return <Page title='Castle Nathria'>
     <h1 className='h1'>Castle Nathria</h1>
-    <h2 className='h2'>Videos (Fatboss)</h2>
     <TabbedContent content={tabbedContent} />
   </Page>
 }

@@ -19,6 +19,9 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "@nsfa/Components/*": [
+        "./Components/*"
+      ],
       "@davidcraig/wowdata/Character": [
         "node_modules/@davidcraig/wowdata/src/types/Character.d.ts"
       ],

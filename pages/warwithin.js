@@ -1,5 +1,5 @@
 import React from 'react'
-import TabbedContent from '../Components/TabbedContent'
+import TabbedContent from '@nsfa/Components/TabbedContent.tsx'
 import Timeline from '../Components/Timeline'
 import PageWithWidgets from '../Components/PageWithWidgets'
 import GetRaidProgression from '../Functions/WoW/GetRaidProgression'

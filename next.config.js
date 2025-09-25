@@ -1,6 +1,9 @@
 /**
  * @type {import('next').NextConfig}
  */
+
+const path = require('path');
+
 const nextConfig = {
   output: 'export',
 
@@ -14,6 +17,11 @@ const nextConfig = {
  
   // Optional: Change the output directory `out` -> `dist`
   // distDir: 'dist',
+
+  webpack(config) {
+    config.resolve.alias['@nsfa/Components'] = path.resolve(__dirname, 'Components');
+    return config;
+  }
 }
  
 module.exports = nextConfig
