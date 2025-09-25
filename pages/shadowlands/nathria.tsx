@@ -47,7 +47,7 @@ const MythicVideos = {
     <ItemGrid columns={2}>
       {
         castleNathria.map(boss => (
-          <Card ytVideo={boss.mythic_video ?? null} title={boss.name} />
+          <Card key={boss.name} ytVideo={boss.mythic_video ?? null} title={boss.name} />
         ))
       }
     </ItemGrid>
