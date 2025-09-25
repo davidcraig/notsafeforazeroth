@@ -44,11 +44,23 @@ const GlyphEtchedBreastplate: CraftedItem = {
   ]
 }
 
+const HideseekersPack: CraftedItem = {
+  name: "Hideseeker's Pack",
+  url: 'https://www.wowhead.com/item=219862/hideseekers-pack',
+  rarity: Rarity.Uncommon,
+  type: "Skinning Accessory, Back",
+  materials: [
+    { ...tww_materials.StormchargedLeather, quantity: 10 },
+    { ...tww_materials.ThunderousHide, quantity: 1 },
+  ]
+}
+
 // 11. TWW - Leatherworking
 export const Leatherworking = {
     GlyphEtchedVambraces,
     GlyphEtchedGauntlets,
-    GlyphEtchedBreastplate
+    GlyphEtchedBreastplate,
+    HideseekersPack,
 }
 
 export default Leatherworking

@@ -18,13 +18,13 @@ const wikiPages = [
         { name: 'Manaforge Omega', slug: '/warwithin/raid/manaforge' }
       ] }
     ],
+  },
+  {
+    name: 'Guides', pages: [
+      { name: 'Profession Equipment', slug: '/guides/profession-equipment' }
+    ],
   }
-  // {
-  //   name: 'Shadowlands', pages: [
-  //     { name: 'Castle Nathria', slug: '/shadowlands/nathria' },
-  //     { name: 'FAQ', slug: '/shadowlands/faq' },
-  //   ]
-  // }
+
 ]
 
 if (showClassLinks) {
@@ -48,6 +48,17 @@ if (showClassLinks) {
     }
   )
 }
+
+wikiPages.push({
+  name: 'Legacy', pages: [
+    {
+      name: 'Shadowlands', pages: [
+        { name: 'Castle Nathria', slug: '/shadowlands/nathria' },
+        { name: 'FAQ', slug: '/shadowlands/faq' },
+      ]
+    }
+  ]
+})
 
 const DetailsLink = ({ id, title, children, depth, openByDepth, setOpenByDepth }) => {
   const isOpen = openByDepth[depth] === id
@@ -109,15 +120,12 @@ export default function Navigation(props) {
         </button>
       </div>
       <div className={`nav-links w-full gap-4 md:flex-1 md:ml-auto md:justify-end md:items-center text-center ${mobileOpen ? 'is-open' : ''}`}>
-        {pages.map(page => {
-          return renderNavigationItem(page, () => { setMobileOpen(false); setOpenByDepth({}) }, openByDepth, setOpenByDepth)
-        })}
         {wikiPages.map(page => {
           return renderNavigationItem(page, () => { setMobileOpen(false); setOpenByDepth({}) }, openByDepth, setOpenByDepth)
         })}
-        <a onClick={() => setMobileOpen(false)} className='ml-4 p-4 md:p-0 flex' href='https://raider.io/guilds/eu/tarren-mill/Not%20Safe%20for%20Azeroth' target='_blank' rel='noopener noreferrer'>Raider.IO <span style={{marginLeft: '0.5rem', marginRight: '0.5rem'}}>{externalLinkSvg}</span></a>
-        <a onClick={() => setMobileOpen(false)} className='ml-4 p-4 md:p-0 flex' href='https://discord.gg/CtqNwgQnJm' target='_blank' rel='noopener noreferrer'>Discord <span style={{marginLeft: '0.5rem', marginRight: '0.5rem'}}>{externalLinkSvg}</span></a>
-        <a onClick={() => setMobileOpen(false)} className='ml-4 p-4 md:p-0 flex' href='https://worldofwarcraft.blizzard.com/en-gb/guild/eu/tarren-mill/not-safe-for-azeroth' target='_blank' rel='noopener noreferrer'>Armory <span style={{marginLeft: '0.5rem', marginRight: '0.5rem'}}>{externalLinkSvg}</span></a>
+        {pages.map(page => {
+          return renderNavigationItem(page, () => { setMobileOpen(false); setOpenByDepth({}) }, openByDepth, setOpenByDepth)
+        })}
       </div>
     </nav>
   )

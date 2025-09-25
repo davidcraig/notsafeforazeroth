@@ -1,0 +1,18 @@
+footer {
+  background: var(--theme-bg-2);
+  border-top: 2px solid var(--theme-bg-2);
+  box-shadow: 0 0 6px var(--theme-bg);
+  margin-top: auto;
+  padding: 1rem;
+  position: relative;
+  z-index: 200;
+
+  a {
+    color: var(--theme-text);
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}

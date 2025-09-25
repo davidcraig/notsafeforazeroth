@@ -33,6 +33,7 @@
 
 @import 'wow';
 @import 'navbar';
+@import 'footer';
 @import 'table';
 @import 'tabs';
 
@@ -77,6 +78,13 @@ html, body {
 
 html, body {
   background-image: linear-gradient(to top, var(--theme-bg-2) , rgba(0, 0, 0, 0));
+  min-height: 100vh;
+}
+
+.full-height {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 body {

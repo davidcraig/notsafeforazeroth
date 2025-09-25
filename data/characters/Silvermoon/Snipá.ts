@@ -18,7 +18,12 @@ export const Snipá: Character = {
             wow: { skill: 6 },
         },
         leatherworking: {
-          tww: { skill: 13 },
+          tww: {
+            skill: 13,
+            items: [
+              TWW_LW.HideseekersPack
+            ]
+          },
           df: { skill: 10 },
           wod: { skill: 2 },
           wow: { skill: 1 }
