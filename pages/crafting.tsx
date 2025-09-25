@@ -18,7 +18,6 @@ function getCrafterSkillMap(expansionData) {
   if (Object.keys(expansionData).length == 0) {
     return null
   }
-  console.log(expansionData, 'expansionData')
 
   Object.values(expansionData).forEach((profession: any) => {
     profession?.crafters?.forEach(crafter => {
@@ -100,9 +99,10 @@ function RenderCraftersItemsTable(profession) {
   return <>
     {profession.crafters.map(crafter => {
       if (!crafter.items) { return null }
+      const name = `${crafter.name}-${crafter.realm}`
       return (
-        <div key={crafter.name} className='mt-8'>
-          <h1 className={`fg-${crafter?.wowclass?.css || crafter.class?.css || ""} font-bold text-xl`}>{crafter.name}</h1>
+        <div key={name} className='mt-8'>
+          <h1 className={`fg-${crafter?.wowclass?.css || crafter.class?.css || ""} font-bold text-xl`}>{name}</h1>
 
           <RenderCraftsAsGrid crafter={crafter} />
         </div>
@@ -112,13 +112,13 @@ function RenderCraftersItemsTable(profession) {
 }
 
 function RenderCraftsAsGrid({ crafter }) {
-  if (!crafter.items) return null
+  if (!crafter.items || crafter.items?.length == 0) return null
 
   return (
     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-4'>
       {crafter.items.map((item, idx) => {
           return <div
-            key={item.name+crafter.name}
+            key={`${item.name}-${crafter.name}`}
             className='flex flex-col card'
             style={{
               padding: '0 .8rem .4rem .8rem',
