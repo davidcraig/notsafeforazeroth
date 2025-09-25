@@ -8,7 +8,7 @@ import { buildExpansionCraftingData } from '../data/crafting.ts'
 // HoC
 const TabWithKey = TabbedContentWithKey(TabbedContent)
 
-const nonCraftingKeys = ["skinning", "mining", "herbalism", "cooking"]
+const nonCraftingKeys = ["skinning", "mining", "herbalism", "fishing"]
 
 // skill cap and builder logic moved to data/crafting
 
@@ -180,37 +180,67 @@ function RenderCraftsAsTable(crafter) {
   )
 }
 
-function RenderExpansionCrafting(expansionData, professionKey) {
+function ExpansionDataHasProfession(expansionData, professionKey) {
   if (!expansionData || !professionKey || !expansionData.hasOwnProperty(professionKey)) {
-    return null
+    return false
   }
   let profession = expansionData[professionKey]
   if (!profession || !profession.crafters) {
+    return false
+  }
+
+ const anyCharacterHasItems = profession.crafters.some(crafter => {
+    if (!("items" in crafter)) {
+      console.warn(`Crafter: ${crafter.name} has no items key set`)
+      return false
+    }
+    if (crafter.items.length == 0) {
+      console.warn(`Crafter: ${crafter.name} has no items in the array`)
+      return false
+    }
+    return true
+  })
+
+  if (!anyCharacterHasItems) { return false }
+  return true
+}
+
+function RenderExpansionCrafting(expansionData, professionKey) {
+  const hasData = ExpansionDataHasProfession(expansionData, professionKey)
+  if (!hasData) {
     return null
   }
 
-  return RenderCraftersItemsTable(profession)
+  return RenderCraftersItemsTable(expansionData[professionKey])
 }
 
 const GetExpansionTabs = (expansionCraftingData) => {
   const keys = Object.keys(expansionCraftingData)
 
-  return keys.filter(key => !nonCraftingKeys.includes(key)).map(key => ({
-      title: expansionCraftingData[key]?.name || key,
-      content: RenderExpansionCrafting(expansionCraftingData, key)
-    }
-  ))
+  return keys
+    .filter(key => !nonCraftingKeys.includes(key))
+    .filter(key => ExpansionDataHasProfession(expansionCraftingData, key))
+    .map(key => {
+      return {
+        title: expansionCraftingData[key]?.name || key,
+        content: RenderExpansionCrafting(expansionCraftingData, key)
+      }
+    })
 }
 
 function RenderExpansion(expansionTitle, expansionCraftingData, idSlug) {
   const tabs = GetExpansionTabs(expansionCraftingData);
+
+  console.log(tabs)
 
   return (
     <div className='mt-8'>
       <h1 className='mb-4 text-xl' style={{ fontWeight: 'bold' }}>{expansionTitle}</h1>
 
       {RenderCrafterSkillGrid(expansionCraftingData)}
-      <TabWithKey id={`${idSlug}-crafting`} content={tabs} />
+      {tabs.length > 0 && (
+        <TabWithKey id={`${idSlug}-crafting`} content={tabs} />
+      )}
     </div>
   )
 }
