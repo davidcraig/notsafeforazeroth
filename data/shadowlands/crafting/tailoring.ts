@@ -1,6 +1,6 @@
-import type { CraftedItem } from "../../../Types/CraftedItem";
-import { Rarities } from "../../../Types/Rarity";
-import materials from "./materials";
+import type { CraftedItem } from "../../../Types/CraftedItem.ts";
+import { Rarities } from "../../../Types/Rarity.ts";
+import materials from "./materials.ts";
 
 export const Tailoring: Record<string, CraftedItem> = {
     GrimVeiledBelt_Rank1: {

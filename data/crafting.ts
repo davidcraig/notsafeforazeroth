@@ -1,6 +1,6 @@
-import { Races } from './Enum/Races'
+import { Race } from "@davidcraig/wowdata/Race"
 
-import CHARACTERS from './characters'
+import CHARACTERS from './characters.ts'
 
 export const PROF_NAME_MAP = {
   alchemy: 'Alchemy',
@@ -66,20 +66,20 @@ export const SKILL_CAPS = {
 
 // Sources:
 //  - https://www.wowhead.com/news/skill-bonuses-reduced-with-profession-racials-in-dragonflight-330138
-export const RACIAL_PROFESSION_BONUSES: Partial<Record<Races, Partial<Record<keyof typeof PROF_NAME_MAP, number>>>> = {
-  [Races.BloodElf]: {
+export const RACIAL_PROFESSION_BONUSES: Partial<Record<Race, Partial<Record<keyof typeof PROF_NAME_MAP, number>>>> = {
+  [Race.BloodElf]: {
     enchanting: 5
   },
-  [Races.DarkIronDwarf]: {
+  [Race.DarkIronDwarf]: {
     blacksmithing: 5
   },
-  [Races.Draenei]: {
+  [Race.Draenei]: {
     jewelcrafting: 5,
   },
-  [Races.Goblin]: {
+  [Race.Goblin]: {
     alchemy: 5,
   },
-  [Races.KulTiran]: {
+  [Race.KulTiran]: {
     leatherworking: 2, // <-- Best
     tailoring: 2, // <-- Best
     fishing: 2, // <-- Best
@@ -95,25 +95,25 @@ export const RACIAL_PROFESSION_BONUSES: Partial<Record<Races, Partial<Record<key
     mining: 2, // [Highmountain Tauren]
     cooking: 2, // [Pandaren]
   },
-  [Races.Gnome]: {
+  [Race.Gnome]: {
     engineering: 5,
   },
-  [Races.HighmountainTauren]: {
+  [Race.HighmountainTauren]: {
     mining: 5,
   },
-  [Races.LightforgedDraenei]: {
+  [Race.LightforgedDraenei]: {
     blacksmithing: 5
   },
-  [Races.Nightborne]: {
+  [Race.Nightborne]: {
     inscription: 5
   },
-  [Races.Pandaren]: {
+  [Race.Pandaren]: {
     cooking: 5
   },
-  [Races.Tauren]: {
+  [Race.Tauren]: {
     herbalism: 5
   },
-  [Races.Worgen]: {
+  [Race.Worgen]: {
     skinning: 5
   }
 }

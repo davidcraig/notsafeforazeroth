@@ -1,13 +1,13 @@
-import { Character } from "../../../Types/Character"
 import Paladin from "@davidcraig/wowdata/classes/paladin"
-import { Races } from "../../Enum/Races"
+import { Race } from "@davidcraig/wowdata/Race"
 import { Realm } from "@davidcraig/wowdata/Realm"
+import { Character } from "../../../Types/Character.ts"
 
 export const Snipepal: Character = {
     name: "Snipepal",
     realm: Realm.Silvermoon,
     wowclass: Paladin,
-    race: Races.Draenei,
+    race: Race.Draenei,
     professions: {
         jewelcrafting: {
             tww: { skill: 6 },

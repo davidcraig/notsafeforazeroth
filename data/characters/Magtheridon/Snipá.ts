@@ -1,15 +1,14 @@
-import { Character } from "../../../Types/Character"
-
 import Hunter from "@davidcraig/wowdata/classes/hunter"
-
-import { Races } from "../../Enum/Races"
+import { Race } from "@davidcraig/wowdata/Race"
 import { Realm } from "@davidcraig/wowdata/Realm"
-import { Leatherworking as TWW_LW } from "../../warwithin/crafting/leatherworking"
+
+import { Character } from "../../../Types/Character.ts"
+import { Leatherworking as TWW_LW } from "../../warwithin/crafting/leatherworking.ts"
 
 export const Snipá: Character = {
     name: "Snipá",
     realm: Realm.Magtheridon,
-    race: Races.BloodElf,
+    race: Race.BloodElf,
     wowclass: Hunter,
     professions: {
         skinning: {

@@ -1,14 +1,14 @@
-import { Character } from "../../../Types/Character"
-import { Races } from "../../Enum/Races"
+import { Character } from "../../../Types/Character.ts"
+import { Race } from "@davidcraig/wowdata/Race"
 import { Realm } from "@davidcraig/wowdata/Realm"
 import Warrior from "@davidcraig/wowdata/classes/warrior"
-import Engineering from "../../warwithin/crafting/engineering"
+import Engineering from "../../warwithin/crafting/engineering.ts"
 
 export const Sniperwar: Character = {
     name: "Sniperwar",
     realm: Realm.Silvermoon,
     wowclass: Warrior,
-    race: Races.Gnome,
+    race: Race.Gnome,
     professions: {
       engineering: {
         tww: {

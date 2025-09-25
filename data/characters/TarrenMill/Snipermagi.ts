@@ -1,19 +1,15 @@
-import type { Character } from "../../../Types/Character"
 import { Realm } from "@davidcraig/wowdata/Realm"
-import Mage from "@davidcraig/wowdata/classes/mage"
-import { Tailoring as WW_T } from "../../warwithin/crafting/tailoring"
-import { Enchanting as WW_E } from "../../warwithin/crafting/enchanting"
-import { Tailoring as SL_T } from "../../shadowlands/crafting/tailoring"
-import { Races } from "../../Enum/Races"
-
-const slTailorItems = [
-  
-]
+import { Race } from "@davidcraig/wowdata/Race"
+import Mage from "@davidcraig/wowdata/classes/mage.ts"
+import { Tailoring as WW_T } from "../../warwithin/crafting/tailoring.ts"
+import { Enchanting as WW_E } from "../../warwithin/crafting/enchanting.ts"
+import { Tailoring as SL_T } from "../../shadowlands/crafting/tailoring.ts"
+import type { Character } from "../../../Types/Character.ts"
 
 export const Snipermagi: Character = {
   name: "Snipermagi",
   realm: Realm.TarrenMill,
-  race: Races.Pandaren,
+  race: Race.Pandaren,
   wowclass: Mage,
   professions: {
     tailoring: {

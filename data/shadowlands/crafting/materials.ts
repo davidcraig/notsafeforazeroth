@@ -1,5 +1,5 @@
-import type { Material } from "../../../Types/Material"
-import { Rarities } from "../../../Types/Rarity"
+import type { Material } from "../../../Types/Material.ts"
+import { Rarities } from "../../../Types/Rarity.ts"
 
 const ShroudedCloth: Material = {
     name: 'Shrouded Cloth',

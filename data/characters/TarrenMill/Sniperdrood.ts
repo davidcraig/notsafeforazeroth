@@ -1,15 +1,15 @@
-import { Character } from "../../../Types/Character"
-import { Races } from "../../Enum/Races"
 import Druid from "@davidcraig/wowdata/classes/druid"
 import { Realm } from "@davidcraig/wowdata/Realm"
-import ROLES from "../../roles"
+import { Race } from "@davidcraig/wowdata/Race"
+import ROLES from "../../roles.ts"
+import { Character } from "../../../Types/Character.ts"
 
 const MINING_RACIAL_BONUS = 5
 
 export const Sniperdrood: Character = {
     name: "Sniperdrood",
     realm: Realm.TarrenMill,
-    race: Races.HighmountainTauren,
+    race: Race.HighmountainTauren,
     wowclass: Druid,
     role: [ ROLES.DPS, ROLES.Healer ],
     professions: {

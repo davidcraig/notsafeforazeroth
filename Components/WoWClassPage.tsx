@@ -1,7 +1,7 @@
 import React from 'react'
-import Page from './Page'
-import ExternalLink from './ExternalLink'
-import type { WoWClass } from '../Types/WoWClass'
+import Page from './Page.js'
+import ExternalLink from './ExternalLink.js'
+import type { WoWClass } from "@davidcraig/wowdata/WoWClass"
 
 type Spec = {
   name: string

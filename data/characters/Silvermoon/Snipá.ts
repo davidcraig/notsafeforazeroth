@@ -1,14 +1,14 @@
-import { Character } from "../../../Types/Character"
+import { Character } from "../../../Types/Character.ts"
 import Hunter from "@davidcraig/wowdata/classes/hunter"
-import { Races } from "../../Enum/Races"
+import { Race } from "@davidcraig/wowdata/Race"
 import { Realm } from "@davidcraig/wowdata/Realm"
-import { Leatherworking as TWW_LW } from "../../warwithin/crafting/leatherworking"
+import { Leatherworking as TWW_LW } from "../../warwithin/crafting/leatherworking.ts"
 
 export const Snipá: Character = {
     name: "Snipá",
     realm: Realm.Silvermoon,
     wowclass: Hunter,
-    race: Races.Worgen,
+    race: Race.Worgen,
     professions: {
         skinning: {
             tww: { skill: 7 },
