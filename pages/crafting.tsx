@@ -191,11 +191,9 @@ function ExpansionDataHasProfession(expansionData, professionKey) {
 
  const anyCharacterHasItems = profession.crafters.some(crafter => {
     if (!("items" in crafter)) {
-      console.warn(`Crafter: ${crafter.name} has no items key set`)
       return false
     }
     if (crafter.items.length == 0) {
-      console.warn(`Crafter: ${crafter.name} has no items in the array`)
       return false
     }
     return true
@@ -230,8 +228,6 @@ const GetExpansionTabs = (expansionCraftingData) => {
 
 function RenderExpansion(expansionTitle, expansionCraftingData, idSlug) {
   const tabs = GetExpansionTabs(expansionCraftingData);
-
-  console.log(tabs)
 
   return (
     <div className='mt-8'>

@@ -145,7 +145,6 @@ const getArmoryLink = (character: Character) => {
 
 const renderAlt = (alt) => {
   const link = getArmoryLink(alt)
-  console.log(link, 'link')
 
   if (!link) {
     return <>
