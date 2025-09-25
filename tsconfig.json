@@ -15,12 +15,21 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "@davidcraig/wowdata/classes/*": [
+        "node_modules/@davidcraig/wowdata/src/data/classes/*"
+      ],
+      "@davidcraig/wowdata/Realm": [
+        "node_modules/@davidcraig/wowdata/src/data/enum/Realm.ts"
+      ],
+    }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "node_modules/davidcraig/**/*.ts"
   ],
   "exclude": [
     "node_modules"

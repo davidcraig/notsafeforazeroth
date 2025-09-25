@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Warrior } from '../../data/classes/warrior'
+import Warrior from '@davidcraig/wowdata/classes/warrior'
 
 export default function ClassWarrior() {
   const props = {

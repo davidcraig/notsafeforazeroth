@@ -1,11 +1,11 @@
 import { Character } from "../../../Types/Character";
-import Evoker from "../../classes/evoker";
+import Evoker from "@davidcraig/wowdata/classes/evoker"
 import { Races } from "../../Enum/Races";
-import { Realms } from "../../Enum/Realms";
+import { Realm } from "@davidcraig/wowdata/Realm"
 
 export const Snipevoke: Character = {
   name: "Snipevoke",
-  realm: Realms.TarrenMill,
+  realm: Realm.TarrenMill,
   wowclass: Evoker,
   race: Races.Dracthyr,
   professions: {

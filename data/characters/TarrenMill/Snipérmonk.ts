@@ -1,11 +1,11 @@
 import type { Character } from "../../../Types/Character"
 import { Races } from "../../Enum/Races"
-import { Realms } from "../../Enum/Realms"
-import Monk from "../../classes/monk"
+import { Realm } from "@davidcraig/wowdata/Realm"
+import Monk from "@davidcraig/wowdata/classes/monk"
 
 export const Snipérmonk: Character = {
   name: "Snipérmonk",
-  realm: Realms.TarrenMill,
+  realm: Realm.TarrenMill,
   race: Races.Goblin,
   wowclass: Monk,
   professions: {

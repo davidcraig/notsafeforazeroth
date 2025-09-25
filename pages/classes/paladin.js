@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Paladin } from '../../data/classes/paladin'
+import Paladin from '@davidcraig/wowdata/classes/paladin'
 
 export default function ClassPaladin() {
   const props = {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card } from '@davidcraig/react-bulma'
 import Page from '../../Components/WoWClassPage'
-import { Monk } from '../../data/classes/monk'
+import Monk from '@davidcraig/wowdata/classes/monk'
 
 export default function ClassMonk() {
   const props = {

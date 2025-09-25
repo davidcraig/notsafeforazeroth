@@ -1,6 +1,6 @@
 import React from 'react'
 import WoWClassPage from '../../Components/WoWClassPage'
-import { DeathKnight } from '../../data/classes/dk'
+import DeathKnight from '@davidcraig/wowdata/classes/death-knight'
 
 export default function ClassDeathKnight() {
   return (

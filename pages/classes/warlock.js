@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Warlock } from '../../data/classes/warlock'
+import Warlock from '@davidcraig/wowdata/classes/warlock'
 
 export default function ClassWarlock() {
   const props = {

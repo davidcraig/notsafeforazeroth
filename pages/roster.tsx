@@ -10,6 +10,7 @@ import Snipermagi from '../data/characters/TarrenMill/Snipermagi'
 import Whoorelips from '../data/characters/TarrenMill/Whoorelips'
 import Snipérmonk from '../data/characters/TarrenMill/Snipérmonk'
 import Aronin from '../data/characters/TarrenMill/Aronin'
+import { Realm } from '@davidcraig/wowdata/Realm'
 
 // Draenor
 
@@ -18,8 +19,6 @@ import Sniperwar from '../data/characters/Silvermoon/Sniperwar'
 
 // Magtheridon
 import Snipá from '../data/characters/Magtheridon/Snipá'
-
-import { Realms } from '../data/Enum/Realms'
 
 const RANKS = {
   Officer: 'Officer',
@@ -139,7 +138,7 @@ const getArmoryLink = (character: Character) => {
   if (!character.realm) return null
 
   let realm: string = character.realm;
-  if (character.realm == Realms.TarrenMill) { realm = "tarren-mill" }
+  if (character.realm == Realm.TarrenMill) { realm = "tarren-mill" }
 
   return `https://worldofwarcraft.blizzard.com/en-gb/character/eu/${realm}/${character.name}`
 }

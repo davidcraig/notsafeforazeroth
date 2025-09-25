@@ -1,10 +1,9 @@
-import { Url } from "url"
 import type { Role } from "../data/roles"
 
 export type WoWClass = {
   name: string
   css: string
-  roles: Role[]
+  roles?: Role[]
   img?: string
   discord?: string[] | string
   specs?: {

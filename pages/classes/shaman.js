@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Shaman } from '../../data/classes/shaman'
+import Shaman from '@davidcraig/wowdata/classes/shaman'
 
 export default function ClassShaman() {
   const props = {

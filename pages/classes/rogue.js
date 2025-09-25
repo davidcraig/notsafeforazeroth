@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Rogue } from '../../data/classes/rogue'
+import Rogue from '@davidcraig/wowdata/classes/rogue'
 
 export default function ClassRogue() {
   const props = {

@@ -1,11 +1,11 @@
 import { Character } from "../../../Types/Character"
-import Paladin from "../../classes/paladin"
+import Paladin from "@davidcraig/wowdata/classes/paladin"
 import { Races } from "../../Enum/Races"
-import { Realms } from "../../Enum/Realms"
+import { Realm } from "@davidcraig/wowdata/Realm"
 
 export const Snipepal: Character = {
     name: "Snipepal",
-    realm: Realms.Silvermoon,
+    realm: Realm.Silvermoon,
     wowclass: Paladin,
     race: Races.Draenei,
     professions: {

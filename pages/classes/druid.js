@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../../Components/WoWClassPage'
-import { Druid } from '../../data/classes/druid'
+import Druid from '@davidcraig/wowdata/classes/druid'
 
 const guides = {
   restoration: [

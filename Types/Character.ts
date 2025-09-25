@@ -1,6 +1,6 @@
 import type { WoWClass } from "./WoWClass";
 import type { CraftedItem } from "./CraftedItem";
-import { Realms } from "../data/Enum/Realms";
+import { Realm } from "@davidcraig/wowdata/Realm"
 import { Role } from "../data/roles";
 import { Races } from "../data/Enum/Races";
 
@@ -56,7 +56,7 @@ export type CharacterProfessions = Partial<Record<WowProfession, ProfessionProgr
 
 export type Character = {
     name: string;
-    realm: Realms;
+    realm: Realm;
     race?: Races;
     wowclass: WoWClass;
     professions?: CharacterProfessions;

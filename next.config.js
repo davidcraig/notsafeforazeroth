@@ -3,6 +3,8 @@
  */
 const nextConfig = {
   output: 'export',
+
+  transpilePackages: ['@davidcraig/wowdata'],
  
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
   // trailingSlash: true,

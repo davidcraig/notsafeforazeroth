@@ -1,10 +1,10 @@
 import { Character } from "../../../Types/Character";
-import Hunter from "../../classes/hunter";
-import { Realms } from "../../Enum/Realms";
+import Hunter from "@davidcraig/wowdata/classes/hunter"
+import { Realm } from "@davidcraig/wowdata/Realm"
 
 export const Crássiúss: Character = {
   name: "Crássiúss",
-  realm: Realms.Kazzak,
+  realm: Realm.Kazzak,
   wowclass: Hunter
 }
 
