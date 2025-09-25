@@ -77,14 +77,77 @@ const HideshapersCover: CraftedItem = {
   ]
 }
 
+const GardenersBasket: CraftedItem = {
+  name: "Gardener's Basket",
+  url: 'https://www.wowhead.com/item=219861/gardeners-basket',
+  rarity: Rarity.Uncommon,
+  type: "Herbalism Accessory, Back",
+  materials: [
+    { ...tww_materials.ThunderousHide, quantity: 1 },
+    { ...tww_materials.StormchargedLeather, quantity: 20 },
+    { ...tww_materials.Mycobloom, quantity: 10 },
+  ]
+}
+
+const ScrapsmithsGloves: CraftedItem = {
+  name: "Scrapsmith's Gloves",
+  url: 'https://www.wowhead.com/item=219864/scrapsmiths-gloves',
+  rarity: Rarity.Uncommon,
+  type: "Herbalism Accessory, Back",
+  materials: [
+    { ...tww_materials.StormchargedLeather, quantity: 50 },
+    { ...tww_materials.GloomChitin, quantity: 50 },
+    { ...tww_materials.WhimsicalWiring, quantity: 5 },
+  ]
+}
+
+const GemcuttersApron: CraftedItem = {
+  name: "Gemcutter's Apron",
+  url: 'https://www.wowhead.com/item=219875/gemcutters-apron',
+  rarity: Rarity.Uncommon,
+  type: "Jewelcrafting Accessory, Chest",
+  materials: [
+    { ...tww_materials.ThunderousHide, quantity: 1 },
+    { ...tww_materials.StormchargedLeather, quantity: 20 },
+  ]
+}
+
+const SteelsmithsApron: CraftedItem = {
+  name: "Steelsmith's Apron",
+  url: 'https://www.wowhead.com/item=219873/steelsmiths-apron',
+  rarity: Rarity.Uncommon,
+  type: "Blacksmithing Accessory, Chest",
+  materials: [
+    { ...tww_materials.ThunderousHide, quantity: 1 },
+    { ...tww_materials.GloomChitin, quantity: 20 },
+  ]
+}
+
+const ApothecarysCap: CraftedItem = {
+  name: "Apothecary's Cap",
+  url: '',
+  rarity: Rarity.Uncommon,
+  type: "Alchemy Accessory, Head",
+  materials: [
+    { ...tww_materials.SunlessCarapace, quantity: 1 },
+    { ...tww_materials.StormchargedLeather, quantity: 20 },
+  ]
+}
+
 // 11. TWW - Leatherworking
 export const Leatherworking = {
     GlyphEtchedVambraces,
     GlyphEtchedGauntlets,
     GlyphEtchedBreastplate,
+    // Profession Equipment
     HideseekersPack,
     HideseekersHat,
     HideshapersCover,
+    GardenersBasket,
+    ScrapsmithsGloves,
+    GemcuttersApron,
+    SteelsmithsApron,
+    ApothecarysCap,
 }
 
 export default Leatherworking

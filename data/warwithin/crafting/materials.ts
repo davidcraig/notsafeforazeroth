@@ -15,7 +15,11 @@ const CataclysmicConverter: Material = { name: "Cataclysmic Converter", url: "ht
 const PummelProofPlating: Material = { name: "Pummel-Proof Plating", url: "https://www.wowhead.com/item=227773/pummel-proof-plating", rarity: Rarity.Rare }
 const PummelPermit: Material = { name: "Pummel Permit", url: "https://www.wowhead.com/item=227774/pummel-permit", rarity: Rarity.Epic }
 
-// Ore
+// Herbs
+const Mycobloom: Material = { name: "Mycobloom", url: 'https://www.wowhead.com/item=210796/mycobloom', rarity: Rarity.Common }
+
+// Engineering
+const WhimsicalWiring: Material = { name: 'Whimsical Wiring', url: 'https://www.wowhead.com/item=221856/whimsical-wiring', rarity: Rarity.Common }
 
 // Ingots / Alloys (Blacksmithing)
 const RingingDeepsIngot: Material = { name: 'Ringing Deeps Ingot', url: 'https://www.wowhead.com/item=221754/ringing-deeps-ingot', rarity: Rarity.Rare }
@@ -33,6 +37,7 @@ const WrithingHide: Material = { name: 'Writhing Hide', url: 'https://www.wowhea
 const LeyfusedHide: Material = { name: 'Leyfused Hide', url: 'https://www.wowhead.com/item=219892/leyfused-hide', rarity: Rarity.Rare }
 const GloomChitin: Material = { name: 'Gloom Chitin', url: 'https://www.wowhead.com/item=212667/gloom-chitin', rarity: Rarity.Common }
 const GloomfathomHide: Material = { name: 'Gloomfathom Hide', url: 'https://www.wowhead.com/item=221757/gloomfathom-hide', rarity: Rarity.Rare }
+const SunlessCarapace: Material = { name: 'Sunless Carapace', url: 'https://www.wowhead.com/item=212674/sunless-carapace', rarity: Rarity.Rare }
 
 
 const SPARK: Material = { name: "Any Spark", url: SparkOfStarlight.url, rarity: Rarity.Epic }
@@ -52,6 +57,7 @@ export const tww_materials = {
     CataclysmicConverter,
     PummelProofPlating,
     PummelPermit,
+    WhimsicalWiring,
     /* Leatherworking */
     GloomChitin,
     ChitinArmorBanding,
@@ -59,6 +65,7 @@ export const tww_materials = {
     LeyfusedHide,
     StormchargedLeather,
     ThunderousHide,
+    SunlessCarapace,
     /* Enchanting */
     NascentGildedHarbingerCrest,
     StormDust,
@@ -68,6 +75,8 @@ export const tww_materials = {
     AdorningRibbon,
     SpoolOfDuskthread,
     DuskweaveBolt,
+    /* Herbs */
+    Mycobloom,
     /* Helper constant */
     SPARK
 }

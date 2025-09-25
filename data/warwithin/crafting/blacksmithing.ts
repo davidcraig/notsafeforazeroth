@@ -52,11 +52,24 @@ const EverforgedGauntlets: CraftedItem = {
   ]
 }
 
+const ProficientLeatherworkersToolset: CraftedItem = {
+  name: "Proficient Leatherworker's Toolset",
+  type: "Leatherworking Accessory, Toolkit",
+  rarity: Rarity.Uncommon,
+  url: 'https://www.wowhead.com/item=222485/proficient-leatherworkers-toolset',
+  materials: [
+    { ...materials.SPARK, quantity: 1 },
+    { ...materials.SanctifiedAlloy, quantity: 6 },
+    { ...materials.IronclawAlloy, quantity: 12 }
+  ]
+}
+
 export const Blacksmithing = {
     BeledarsBulwark,
     EverforgedPauldrons,
     EverforgedVambraces,
-    EverforgedGauntlets
+    EverforgedGauntlets,
+    ProficientLeatherworkersToolset
 }
 
 export default Blacksmithing
