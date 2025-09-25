@@ -1,6 +1,6 @@
 import React from 'react'
+import type { Character } from '@davidcraig/wowdata/Character'
 import Page from '../Components/Page.js'
-import type { Character } from '../Types/Character.ts'
 
 // Tarren Mill
 import Sniperdrood from '../data/characters/TarrenMill/Sniperdrood.ts'
