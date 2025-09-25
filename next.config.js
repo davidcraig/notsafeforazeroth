@@ -20,6 +20,7 @@ const nextConfig = {
 
   webpack(config) {
     config.resolve.alias['@nsfa/Components'] = path.resolve(__dirname, 'Components');
+    config.resolve.alias['@nsfa/data'] = path.resolve(__dirname, 'data');
     return config;
   }
 }

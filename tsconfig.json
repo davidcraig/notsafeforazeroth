@@ -22,6 +22,9 @@
       "@nsfa/Components/*": [
         "./Components/*"
       ],
+      "@nsfa/data/*": [
+        "./data/*"
+      ],
       "@davidcraig/wowdata/Character": [
         "node_modules/@davidcraig/wowdata/src/types/Character.d.ts"
       ],

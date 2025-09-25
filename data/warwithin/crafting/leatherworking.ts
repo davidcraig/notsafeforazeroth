@@ -55,12 +55,36 @@ const HideseekersPack: CraftedItem = {
   ]
 }
 
+const HideseekersHat: CraftedItem = {
+  name: "Hideseeker's Hat",
+  url: 'https://www.wowhead.com/item=219863/hideseekers-hat',
+  rarity: Rarity.Uncommon,
+  type: "Skinning Accessory, Head",
+  materials: [
+    { ...tww_materials.StormchargedLeather, quantity: 40 },
+    { ...tww_materials.GloomChitin, quantity: 40 },
+  ]
+}
+
+const HideshapersCover: CraftedItem = {
+  name: "Hideshaper's Cover",
+  url: 'https://www.wowhead.com/item=219865/hideshapers-cover',
+  rarity: Rarity.Uncommon,
+  type: "Leatherworking Accessory, Chest",
+  materials: [
+    { ...tww_materials.StormchargedLeather, quantity: 50 },
+    { ...tww_materials.GloomChitin, quantity: 50 },
+  ]
+}
+
 // 11. TWW - Leatherworking
 export const Leatherworking = {
     GlyphEtchedVambraces,
     GlyphEtchedGauntlets,
     GlyphEtchedBreastplate,
     HideseekersPack,
+    HideseekersHat,
+    HideshapersCover,
 }
 
 export default Leatherworking
