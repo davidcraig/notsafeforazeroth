@@ -48,6 +48,7 @@ export const TabbedContent: React.FC<TabbedContentProps> = ({ content }) => {
   }
 
   if (!Array.isArray(content) || content.length === 0) {
+    console.error(content, 'content is undefined?')
     return <p className="has-text-grey">-</p>
   }
 

@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }) {
         <footer>
           <nav id='footer-navigation' name='footer-nav' aria-label="Footer Navigation">
             {footerLinks.map((link) => {
-              return <a href={link.url} className='ml-4 p-4 md:p-0 flex' target='_blank' rel='noopener noreferrer'>
+              return <a key={link.url} href={link.url} className='ml-4 p-4 md:p-0 flex' target='_blank' rel='noopener noreferrer'>
                 {link.name}
                 <span style={{marginLeft: '0.5rem', marginRight: '0.5rem'}}>{externalLinkSvg}</span>
               </a>

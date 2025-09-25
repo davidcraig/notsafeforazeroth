@@ -2,6 +2,10 @@ import React from 'react'
 import Page from '../Components/Page.js'
 import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar.js'
 import { buildCharacterSkillsByExpansion } from '../data/crafting.ts'
+import TabbedContent from "@nsfa/Components/TabbedContent.tsx"
+import TabbedContentWithKey from "@nsfa/Components/TabbedContentWithKey.js"
+
+const TabWithKey = TabbedContentWithKey(TabbedContent)
 
 function RenderCharacterProfessionTable(ex: { name: string, slug: string, id: number }, filterText: string) {
   const byCharacter = buildCharacterSkillsByExpansion(ex.slug) as any
@@ -98,6 +102,18 @@ export default function Professions() {
 
   const [filterText, setFilterText] = React.useState('')
 
+  const tabs = []
+
+  expansions.map(ex => {
+    const slug = ex.slug.toUpperCase()
+
+    tabs.push({
+      id: ex.id,
+      title: `${ex.id}. ${slug}`,
+      content: RenderCharacterProfessionTable(ex, filterText)
+    })
+  })
+
   return <Page title='Professions'>
     <h2 className='h2 text-2xl mb-2 flex'>
       Guild Professions
@@ -114,9 +130,7 @@ export default function Professions() {
     <div className='ml-auto'>
       
     </div>
-    {expansions.map(ex => (
-      RenderCharacterProfessionTable(ex, filterText)
-    ))}
+    <TabWithKey id='professions-expansion-tabs' content={tabs} />
   </Page>
 }
 
