@@ -1,11 +1,11 @@
-import materials from "./materials";
-import { Rarities } from "../../../Types/Rarity";
+import materials from "./materials.ts";
+import { Rarity } from "@davidcraig/wowdata/Rarity"
 
 // 11. TWW - Enchanting
 export const Enchanting = {
     EnchantedGildedHarbingerCrest: {
         name: "Enchanted Gilded Harbinger Crest",
-        rarity: Rarities.Epic,
+        rarity: Rarity.Epic,
         type: "Crafting Reagent",
         url: "https://www.wowhead.com/item=224073/enchanted-gilded-harbinger-crest",
         materials: [

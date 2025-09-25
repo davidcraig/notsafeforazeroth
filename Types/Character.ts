@@ -1,5 +1,5 @@
 import type { WoWClass } from "@davidcraig/wowdata/WoWClass"
-import type { CraftedItem } from "./CraftedItem";
+import type { CraftedItem } from "@davidcraig/wowdata/CraftedItem"
 import { Realm } from "@davidcraig/wowdata/Realm"
 import { Role } from "@davidcraig/wowdata/Role";
 import { Race } from "@davidcraig/wowdata/Race";

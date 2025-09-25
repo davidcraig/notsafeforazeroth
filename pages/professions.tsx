@@ -1,7 +1,7 @@
 import React from 'react'
-import Page from '../Components/Page'
-import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar'
-import { buildCharacterSkillsByExpansion } from '../data/crafting'
+import Page from '../Components/Page.js'
+import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar.js'
+import { buildCharacterSkillsByExpansion } from '../data/crafting.ts'
 
 function RenderCharacterProfessionTable(ex: { name: string, slug: string, id: number }, filterText: string) {
   const byCharacter = buildCharacterSkillsByExpansion(ex.slug) as any

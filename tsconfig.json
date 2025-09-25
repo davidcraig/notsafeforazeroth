@@ -10,19 +10,29 @@
     "strict": false,
     "noEmit": true,
     "incremental": true,
-    "module": "esnext",
+    "module": "nodenext",
     "esModuleInterop": true,
     "moduleResolution": "nodenext",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "baseUrl": ".",
     "paths": {
       "@davidcraig/wowdata/classes/*": [
         "node_modules/@davidcraig/wowdata/src/data/classes/*"
       ],
       "@davidcraig/wowdata/Realm": [
         "node_modules/@davidcraig/wowdata/src/data/enum/Realm.ts"
+      ],
+      "@davidcraig/wowdata/Race": [
+        "node_modules/@davidcraig/wowdata/src/data/enum/Race.ts"
+      ],
+      "@davidcraig/wowdata/Rarity": [
+        "node_modules/@davidcraig/wowdata/src/data/enum/Rarity.ts"
+      ],
+      "@davidcraig/wowdata/Roles": [
+        "node_modules/@davidcraig/wowdata/src/data/Roles.ts"
       ],
     }
   },

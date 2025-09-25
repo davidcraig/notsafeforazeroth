@@ -1,4 +1,4 @@
-import { raids } from "../../data/warwithin/raids"
+import { raids } from "../../data/warwithin/raids.ts"
 
 const GetCurrentRaidTier = () => {
   return raids[1]

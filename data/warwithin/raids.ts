@@ -1,4 +1,4 @@
-import nerubarPalace from "./progression/nerubarPalace"
+import nerubarPalace from "./progression/nerubarPalace.ts"
 
 export const raids = {
   1: {

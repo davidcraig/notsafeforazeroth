@@ -1,11 +1,11 @@
-import { tww_materials } from "./materials";
-import { Rarities } from "../../../Types/Rarity";
-import type { CraftedItem } from "../../../Types/CraftedItem";
+import { tww_materials } from "./materials.ts";
+import { Rarity } from "@davidcraig/wowdata/Rarity"
+import type { CraftedItem } from "@davidcraig/wowdata/CraftedItem"
 
 const GlyphEtchedVambraces: CraftedItem = {
   name: "Glyph-Etched Vambraces",
   type: "Bracers, Mail",
-  rarity: Rarities.Epic,
+  rarity: Rarity.Epic,
   url: 'https://www.wowhead.com/item=219342/glyph-etched-vambraces',
   materials: [
     { ...tww_materials.SPARK, quantity: 1 },
@@ -19,7 +19,7 @@ const GlyphEtchedVambraces: CraftedItem = {
 const GlyphEtchedGauntlets: CraftedItem = {
   name: "Glyph-Etched Gauntlets",
   type: "Gloves, Mail",
-  rarity: Rarities.Epic,
+  rarity: Rarity.Epic,
   url: 'https://www.wowhead.com/item=219341/glyph-etched-gauntlets',
   materials: [
     { ...tww_materials.SPARK, quantity: 1 },
@@ -33,7 +33,7 @@ const GlyphEtchedGauntlets: CraftedItem = {
 const GlyphEtchedBreastplate: CraftedItem = {
   name: "Glyph-Etched Breastplate",
   url: 'https://www.wowhead.com/item=219336/glyph-etched-breastplate',
-  rarity: Rarities.Epic,
+  rarity: Rarity.Epic,
   type: "Chest, Mail",
   materials: [
     { ...tww_materials.SPARK, quantity: 1 },

@@ -1,10 +1,10 @@
 import React from 'react'
 import { ItemGrid } from '@davidcraig/react-bulma'
-import PageWithWidgets from '../Components/PageWithWidgets'
-import { Card } from '@davidcraig/react-bulma/dist/Card/Card'
-import Sniperdrood from '../data/characters/TarrenMill/Sniperdrood'
-import Aronin from '../data/characters/TarrenMill/Aronin'
-import Whoorelips from '../data/characters/TarrenMill/Whoorelips'
+import PageWithWidgets from '../Components/PageWithWidgets.js'
+import { Card } from '@davidcraig/react-bulma'
+import Sniperdrood from '../data/characters/TarrenMill/Sniperdrood.ts'
+import Aronin from '../data/characters/TarrenMill/Aronin.ts'
+import Whoorelips from '../data/characters/TarrenMill/Whoorelips.ts'
 
 const officers = [
   {

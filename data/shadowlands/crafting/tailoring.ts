@@ -1,12 +1,12 @@
-import type { CraftedItem } from "../../../Types/CraftedItem.ts";
-import { Rarities } from "../../../Types/Rarity.ts";
+import type { CraftedItem } from "@davidcraig/wowdata/CraftedItem"
+import { Rarity } from "@davidcraig/wowdata/Rarity"
 import materials from "./materials.ts";
 
 export const Tailoring: Record<string, CraftedItem> = {
     GrimVeiledBelt_Rank1: {
         name: "Grim-Veiled Belt (Rank 1)",
         type: "Cloth Belt",
-        rarity: Rarities.Common,
+        rarity: Rarity.Common,
         materials: [
             { ...materials.ShroudedCloth, quantity: 45 },
             { ...materials.EnchantedLightlessSilk, quantity: 15 },
@@ -16,7 +16,7 @@ export const Tailoring: Record<string, CraftedItem> = {
     GrimVeiledBracers_Rank1: {
         name: "Grim-Veiled Bracers (Rank 1)",
         type: "Cloth Bracers",
-        rarity: Rarities.Common,
+        rarity: Rarity.Common,
         url: "https://www.wowhead.com/item=173249/grim-veiled-bracers",
         materials: [
             { ...materials.ShroudedCloth, quantity: 35 },
@@ -27,7 +27,7 @@ export const Tailoring: Record<string, CraftedItem> = {
     GrimVeiledCape_Rank1: {
         name: "Grim-Veiled Cape (Rank 1)",
         type: "Cloak",
-        rarity: Rarities.Common,
+        rarity: Rarity.Common,
         url: "https://www.wowhead.com/item=173242/grim-veiled-cape",
         materials: [
             { ...materials.ShroudedCloth, quantity: 35 },
@@ -38,7 +38,7 @@ export const Tailoring: Record<string, CraftedItem> = {
     GrimVeiledHood_Rank1: {
         name: "Grim-Veiled Hood (Rank 1)",
         type: "Helm, Cloth",
-        rarity: Rarities.Common,
+        rarity: Rarity.Common,
         url: "https://www.wowhead.com/item=173245/grim-veiled-hood",
         materials: [
             { ...materials.ShroudedCloth, quantity: 55 },

@@ -1,4 +1,4 @@
-import GetCurrentExpansion from "./GetCurrentExpansion";
+import GetCurrentExpansion from "./GetCurrentExpansion.ts";
 
 const GetLevelCap = () => {
   return GetCurrentExpansion().levelcap;

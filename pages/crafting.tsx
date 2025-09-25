@@ -1,9 +1,9 @@
 import React from 'react'
-import Page from '../Components/Page'
-import { TabbedContent } from '../Components/TabbedContent'
-import TabbedContentWithKey from '../Components/TabbedContentWithKey'
-import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar'
-import { buildExpansionCraftingData } from '../data/crafting'
+import Page from '../Components/Page.js'
+import { TabbedContent } from '../Components/TabbedContent.tsx'
+import TabbedContentWithKey from '../Components/TabbedContentWithKey.js'
+import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar.js'
+import { buildExpansionCraftingData } from '../data/crafting.ts'
 
 // HoC
 const TabWithKey = TabbedContentWithKey(TabbedContent)

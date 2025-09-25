@@ -1,12 +1,12 @@
-import materials from "./materials";
-import { Rarities } from "../../../Types/Rarity";
-import { CraftedItem } from "../../../Types/CraftedItem";
+import materials from "./materials.ts";
+import { Rarity } from "@davidcraig/wowdata/Rarity"
+import type { CraftedItem } from "@davidcraig/wowdata/CraftedItem"
 
 // 11. TWW - Blacksmithing
 const BeledarsBulwark: CraftedItem = {
   name: "Beledar's Bulwark",
   type: "Shield",
-  rarity: Rarities.Epic,
+  rarity: Rarity.Epic,
   url: 'https://www.wowhead.com/item=222459/beledars-bulwark',
   materials: [
     { ...materials.SPARK, quantity: 1 },
@@ -19,7 +19,7 @@ const BeledarsBulwark: CraftedItem = {
 const EverforgedPauldrons: CraftedItem = {
   name: "Everforged Pauldrons",
   type: "Shoulder, Plate",
-  rarity: Rarities.Epic,
+  rarity: Rarity.Epic,
   url: 'https://www.wowhead.com/item=222436/everforged-pauldrons',
   materials: [
     { ...materials.SPARK, quantity: 1 },
@@ -31,7 +31,7 @@ const EverforgedPauldrons: CraftedItem = {
 const EverforgedVambraces: CraftedItem = {
   name: "Everforged Vambraces",
   type: "Bracers, Plate",
-  rarity: Rarities.Epic,
+  rarity: Rarity.Epic,
   url: 'https://www.wowhead.com/item=222435/everforged-vambraces',
   materials: [
     { ...materials.SPARK, quantity: 1 },
@@ -43,7 +43,7 @@ const EverforgedVambraces: CraftedItem = {
 const EverforgedGauntlets: CraftedItem = {
   name: "Everforged Gauntlets",
   type: "Gloves, Plate",
-  rarity: Rarities.Epic,
+  rarity: Rarity.Epic,
   url: 'https://www.wowhead.com/item=222437/everforged-gauntlets',
   materials: [
     { ...materials.SPARK, quantity: 1 },

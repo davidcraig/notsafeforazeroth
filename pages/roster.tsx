@@ -1,24 +1,24 @@
 import React from 'react'
-import Page from '../Components/Page'
-import type { Character } from '../Types/Character'
+import Page from '../Components/Page.js'
+import type { Character } from '../Types/Character.ts'
 
 // Tarren Mill
-import Sniperdrood from '../data/characters/TarrenMill/Sniperdrood'
-import Snipedeath from '../data/characters/TarrenMill/Snipedeath'
-import Crássiúss from '../data/characters/TarrenMill/Crássiúss'
-import Snipermagi from '../data/characters/TarrenMill/Snipermagi'
-import Whoorelips from '../data/characters/TarrenMill/Whoorelips'
-import Snipérmonk from '../data/characters/TarrenMill/Snipérmonk'
-import Aronin from '../data/characters/TarrenMill/Aronin'
+import Sniperdrood from '../data/characters/TarrenMill/Sniperdrood.ts'
+import Snipedeath from '../data/characters/TarrenMill/Snipedeath.ts'
+import Crássiúss from '../data/characters/TarrenMill/Crássiúss.ts'
+import Snipermagi from '../data/characters/TarrenMill/Snipermagi.ts'
+import Whoorelips from '../data/characters/TarrenMill/Whoorelips.ts'
+import Snipérmonk from '../data/characters/TarrenMill/Snipérmonk.ts'
+import Aronin from '../data/characters/TarrenMill/Aronin.ts'
 import { Realm } from '@davidcraig/wowdata/Realm'
 
 // Draenor
 
 // Silvermoon
-import Sniperwar from '../data/characters/Silvermoon/Sniperwar'
+import Sniperwar from '../data/characters/Silvermoon/Sniperwar.ts'
 
 // Magtheridon
-import Snipá from '../data/characters/Magtheridon/Snipá'
+import Snipá from '../data/characters/Magtheridon/Snipá.ts'
 
 const RANKS = {
   Officer: 'Officer',
