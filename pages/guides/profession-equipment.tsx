@@ -84,11 +84,11 @@ function RenderExpansionContent(expansion) {
   const professions = getExpansionContent(expansion.id)
 
   return (
-    <table className='table mt-4'>
+    <table id={`expansion-${expansion.id}`} key={`expansion-${expansion.id}`} className='table mt-4'>
       <tbody>
         {professions.map(profession => {
           return (
-            <>
+            <React.Fragment key={profession.name}>
               <tr key={`${profession.name}-header`}>
                 <th colSpan={3} className='bg-theme-2 text-xl py-4'>{profession.name}</th>
               </tr>
@@ -118,7 +118,7 @@ function RenderExpansionContent(expansion) {
                   })}</td>
                 </tr>
               })}
-            </>
+            </React.Fragment>
           )
         })}
       </tbody>
