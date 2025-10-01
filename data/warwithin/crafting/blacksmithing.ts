@@ -64,12 +64,28 @@ const ProficientLeatherworkersToolset: CraftedItem = {
   ]
 }
 
+const ProficientLeatherworkersKnife: CraftedItem = {
+  name: "Proficient Leatherworker's Knife",
+  type: "Leatherworking Tool",
+  rarity: Rarity.Uncommon,
+  url: 'https://www.wowhead.com/item=222484/proficient-leatherworkers-knife',
+  materials: [
+    { ...materials.SPARK, quantity: 1 },
+    { ...materials.SanctifiedAlloy, quantity: 6 },
+    { ...materials.IronclawAlloy, quantity: 12 }
+  ]
+}
+
+
+
+
 export const Blacksmithing = {
     BeledarsBulwark,
     EverforgedPauldrons,
     EverforgedVambraces,
     EverforgedGauntlets,
-    ProficientLeatherworkersToolset
+    ProficientLeatherworkersToolset,
+    ProficientLeatherworkersKnife
 }
 
 export default Blacksmithing

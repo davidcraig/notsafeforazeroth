@@ -5,6 +5,8 @@ import TabbedContentWithKey from "@nsfa/Components/TabbedContentWithKey.js"
 import TWW_LW from "@nsfa/data/warwithin/crafting/leatherworking"
 import TWW_BS from "@nsfa/data/warwithin/crafting/blacksmithing"
 import { CraftedItem } from '@davidcraig/wowdata/CraftedItem'
+import Snipá_SM from '@nsfa/data/characters/Silvermoon/Snipá.ts'
+import type { Character } from '@davidcraig/wowdata/Character'
 
 const TabWithKey = TabbedContentWithKey(TabbedContent)
 
@@ -14,7 +16,7 @@ const expansions = [
   // Profession Equip didn't exist in this form before that.
 ]
 
-type CraftedProfessionEquipment = CraftedItem & { craftedByProfession?: string; };
+type CraftedProfessionEquipment = CraftedItem & { craftedByProfession?: string; crafters?: Character[] };
 type ProfessionEquipmentPageProfession = {
   name: string;
   basicItems?: CraftedProfessionEquipment[];
@@ -40,8 +42,8 @@ function getExpansionContent(expansionId) {
         {
           name: "Skinning",
           basicItems: [
-            { ...TWW_LW.HideseekersPack, craftedByProfession: 'Leatherworking' },
-            { ...TWW_LW.HideseekersHat, craftedByProfession: 'Leatherworking' },
+            { ...TWW_LW.HideseekersPack, craftedByProfession: 'Leatherworking', crafters: [ Snipá_SM ] },
+            { ...TWW_LW.HideseekersHat, craftedByProfession: 'Leatherworking', crafters: [ Snipá_SM ] },
           ]
         },
         {
@@ -54,6 +56,7 @@ function getExpansionContent(expansionId) {
           name: "Leatherworking",
           basicItems: [
             { ...TWW_BS.ProficientLeatherworkersToolset, craftedByProfession: 'Blacksmithing' },
+            { ...TWW_BS.ProficientLeatherworkersKnife, craftedByProfession: 'Blacksmithing' },
             { ...TWW_LW.HideshapersCover, craftedByProfession: 'Leatherworking' }
           ]
         },
@@ -100,7 +103,9 @@ function RenderExpansionContent(expansion) {
                 return <tr key={item.url}>
                   <td><a className={`fg-${item.rarity}`} href={item.url}>{item.name}</a></td>
                   <td>{item.craftedByProfession ?? "Source Unknown"}</td>
-                  <td>?</td>
+                  <td>{item.crafters?.map(crafter => {
+                    return <p className={`fg-${crafter.wowclass.css}`} key={`${crafter.name}-${crafter.realm}`}>{crafter.name}-{crafter.realm}</p>
+                  })}</td>
                 </tr>
               })}
 
@@ -108,7 +113,9 @@ function RenderExpansionContent(expansion) {
                 return <tr key={item.url}>
                   <td><a className={`fg-${item.rarity}`} href={item.url}>{item.name}</a></td>
                   <td>({item.craftedByProfession ?? "Source Unknown"})</td>
-                  <td>?</td>
+                  <td>{item.crafters?.map(crafter => {
+                    return <p className={`fg-${crafter.wowclass.css}`} key={crafter.name}>{crafter.name}</p>
+                  })}</td>
                 </tr>
               })}
             </>
