@@ -9,6 +9,7 @@ import Aronin from './characters/TarrenMill/Aronin.ts'
 import Sniperwar_SM from './characters/Silvermoon/Sniperwar.ts'
 import Snipá_SM from './characters/Silvermoon/Snipá.ts'
 import Snipepal_SM from './characters/Silvermoon/Snipepal.ts'
+import Snipedk from './characters/Silvermoon/Snipedk.ts'
 // Magtheridon
 import Snipá_MAG from './characters/Magtheridon/Snipá.ts'
 
@@ -20,6 +21,7 @@ export const CHARACTERS = [
   Snipérmonk,
   Aronin,
   // Silvermoon
+  Snipedk,
   Sniperwar_SM,
   Snipá_SM,
   Snipepal_SM,
