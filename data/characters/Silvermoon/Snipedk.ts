@@ -11,12 +11,14 @@ export const Snipedk: Character = {
     race: Race.DarkIronDwarf,
     professions: {
       blacksmithing: {
+        legion: { skill: 6 },
         cata: { skill: 6 },
-        wow: { skill: 6 },
+        wow: { skill: 37 },
       },
       mining: {
-        cata: { skill: 6 },
-        wow: { skill: 6 }
+        legion: { skill: 1 },
+        cata: { skill: 1 },
+        wow: { skill: 46 }
       }
     }
 }
