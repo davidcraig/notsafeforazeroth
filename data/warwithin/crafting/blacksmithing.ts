@@ -76,7 +76,16 @@ const ProficientLeatherworkersKnife: CraftedItem = {
   ]
 }
 
-
+const ProficientSickle: CraftedItem = {
+  name: "Proficient Sickle",
+  type: "Herbalism Tool",
+  rarity: Rarity.Uncommon,
+  url: 'https://www.wowhead.com/item=222480/proficient-sickle',
+  materials: [
+    { ...materials.CrystallinePowder, quantity: 3 },
+    { ...materials.CoreAlloy, quantity: 2 }
+  ]
+}
 
 
 export const Blacksmithing = {
@@ -85,7 +94,8 @@ export const Blacksmithing = {
     EverforgedVambraces,
     EverforgedGauntlets,
     ProficientLeatherworkersToolset,
-    ProficientLeatherworkersKnife
+    ProficientLeatherworkersKnife,
+    ProficientSickle
 }
 
 export default Blacksmithing

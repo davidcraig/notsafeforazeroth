@@ -14,6 +14,7 @@ const BlinkerFluid: Material = { name: "Blinker Fluid", url: "https://www.wowhea
 const CataclysmicConverter: Material = { name: "Cataclysmic Converter", url: "https://www.wowhead.com/item=227772/cataclysmic-converter", rarity: Rarity.Rare }
 const PummelProofPlating: Material = { name: "Pummel-Proof Plating", url: "https://www.wowhead.com/item=227773/pummel-proof-plating", rarity: Rarity.Rare }
 const PummelPermit: Material = { name: "Pummel Permit", url: "https://www.wowhead.com/item=227774/pummel-permit", rarity: Rarity.Epic }
+const CrystallinePowder: Material = { name: 'Crystalline Powder', url: 'https://www.wowhead.com/item=213610/crystalline-powder', rarity: Rarity.Rare }
 
 // Herbs
 const Mycobloom: Material = { name: "Mycobloom", url: 'https://www.wowhead.com/item=210796/mycobloom', rarity: Rarity.Common }
@@ -22,6 +23,7 @@ const Mycobloom: Material = { name: "Mycobloom", url: 'https://www.wowhead.com/i
 const WhimsicalWiring: Material = { name: 'Whimsical Wiring', url: 'https://www.wowhead.com/item=221856/whimsical-wiring', rarity: Rarity.Common }
 
 // Ingots / Alloys (Blacksmithing)
+const CoreAlloy: Material = { name: 'Core Alloy', url: 'https://www.wowhead.com/item=222417/core-alloy', rarity: Rarity.Uncommon }
 const RingingDeepsIngot: Material = { name: 'Ringing Deeps Ingot', url: 'https://www.wowhead.com/item=221754/ringing-deeps-ingot', rarity: Rarity.Rare }
 const SanctifiedAlloy: Material = { name: 'Sanctified Alloy', url: 'https://www.wowhead.com/item=222423/sanctified-alloy', rarity: Rarity.Epic }
 const IronclawAlloy: Material = { name: 'Ironclaw Alloy', url: 'https://www.wowhead.com/item=222426/ironclaw-alloy', rarity: Rarity.Rare }
@@ -47,9 +49,11 @@ export const tww_materials = {
     /* Sparks */
     SparkOfStarlight,
     /* Blacksmithing Materials */
+    CoreAlloy,
     SanctifiedAlloy,
     IronclawAlloy,
     RingingDeepsIngot,
+    CrystallinePowder,
     /* Engineering */
     BountifulBolts,
     AssortedWhirligigs,
