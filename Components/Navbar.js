@@ -21,7 +21,8 @@ const wikiPages = [
   },
   {
     name: 'Guides', pages: [
-      { name: 'Profession Equipment', slug: '/guides/profession-equipment' }
+      { name: 'Profession Equipment', slug: '/guides/profession-equipment' },
+      { name: 'Bags', slug: '/guides/bags' }
     ],
   }
 
