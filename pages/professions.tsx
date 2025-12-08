@@ -35,13 +35,6 @@ function RenderCharacterProfessionTable(ex: { name: string, slug: string, id: nu
     return a.professionName.localeCompare(b.professionName)
   })
 
-  // Sort rows by character name, then profession name
-  // rows.sort((a, b) => {
-  //   const nc = a.character.name.localeCompare(b.character.name)
-  //   if (nc !== 0) return nc
-  //   return a.professionName.localeCompare(b.professionName)
-  // })
-
   const normalized = (filterText || '').trim().toLowerCase()
   const filteredRows = normalized
     ? rows.filter(r =>
