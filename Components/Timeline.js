@@ -1,5 +1,4 @@
 import React from 'react'
-import { Column, Columns } from '@davidcraig/react-bulma'
 
 function TimelineRow(date, content, even = true) {
   return (
