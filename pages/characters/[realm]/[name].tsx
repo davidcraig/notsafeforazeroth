@@ -2,34 +2,40 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Page from '@nsfa/Components/Page'
 import WoWProfessionSkillBar from '@nsfa/Components/WoWProfessionSkillBar.js'
+import { getLatestSortedExpansionKeys } from 'Types/expansions'
+import ucFirst from 'Functions/ucFirst'
 
 const buildProfessionData = (characterData) => {
   const professionRows = []
+  const expKeys = getLatestSortedExpansionKeys();
 
-  const professions = {}
+  professionRows.push(
+    <tr>
+      <th>Profession</th>
+      {Object.values(expKeys).map(expKey => {
+        return <th>{expKey.toLocaleUpperCase()}</th>
+      })}
+    </tr>
+  )
 
   {Object.keys(characterData?.professions).forEach((profession) => {
-    {Object.keys(characterData.professions[profession]).forEach((expansion) => {
-
-      professionRows.push(
-        <tr>
-          <td></td>
-          <td>
-            {profession}
-            {expansion}
-          </td>
-          <td>
-            <WoWProfessionSkillBar
-              skill={characterData.professions[profession][expansion].skill}
-              cap={characterData.cap || 100}
-              label={null}
-              color={characterData?.wowclass?.css || ''}
-            />
-          </td>
-        </tr>
-      )
-      
-    })}
+    professionRows.push(
+      <tr>
+        <td>{ucFirst(profession)}</td>
+        {Object.values(expKeys).map(expKey => {
+          if (!characterData.professions[profession][expKey]) return <td>-</td>
+          return <td><WoWProfessionSkillBar
+            skill={characterData.professions[profession][expKey]?.skill}
+            cap={characterData.cap || 100}
+            label={null}
+            color={characterData?.wowclass?.css || ''}
+          /></td>
+        })}
+        <td>
+          
+        </td>
+      </tr>
+    )
   })}
 
   return professionRows
@@ -56,7 +62,7 @@ export default function Character() {
     <Page>
       <h1 className={`text-xl fg-${characterData.wowclass.css}`}>{characterData.name}-{characterData.realm}</h1>
 
-      <h2>Professions</h2>
+      <h2 className='text-lg my-4'>Professions</h2>
       <table>
         <tbody>
 
