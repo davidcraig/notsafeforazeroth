@@ -12,7 +12,7 @@ export const Snipá: Character = {
     professions: {
         skinning: {
             tww: { skill: 105 },
-            df: { skill: 75 },
+            df: { skill: 105 },
             wod: { skill: 49 },
             cata: { skill: 6 },
             wow: { skill: 6 },
