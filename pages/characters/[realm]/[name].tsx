@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Page from '@nsfa/Components/Page'
 import WoWProfessionSkillBar from '@nsfa/Components/WoWProfessionSkillBar.js'
@@ -47,8 +47,14 @@ export default function Character() {
   const character = router.query.name
   const [characterData, setCharacterData] = useState(null);
 
-  import(`../../../data/characters/${realm}/${character}.ts`)
-  .then((module) => {setCharacterData(module.default)})
+  useEffect(() => {
+    if (!realm || !character) return;
+
+    import(`../../../data/characters/${realm}/${character}.ts`)
+    .then((module) => {setCharacterData(module.default)})
+  }, [realm, character])
+
+  
 
   if (characterData == null) {
     return <Page><p>Character not found</p></Page>
