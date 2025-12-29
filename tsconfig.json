@@ -16,7 +16,7 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@nsfa/Components/*": [
@@ -45,8 +45,9 @@
       ],
       "@davidcraig/wowdata/WoWClass": [
         "node_modules/@davidcraig/wowdata/src/types/WoWClass.d.ts"
-      ],
-    }
+      ]
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",

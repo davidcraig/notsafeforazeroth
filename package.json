@@ -23,7 +23,7 @@
     "@davidcraig/tailwind-nextjs-tsx": "npm:@jsr/davidcraig__tailwind-nextjs-tsx@^0.1.2",
     "@davidcraig/wowdata": "^0.0.11",
     "eslint-config-next": "^14.2.4",
-    "next": "^14.2.5",
+    "next": "^16.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }
