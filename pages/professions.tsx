@@ -5,6 +5,7 @@ import WoWProfessionSkillBar from '@nsfa/Components/WoWProfessionSkillBar.js'
 import { buildCharacterSkillsByExpansion } from '../data/crafting.ts'
 import TabbedContent from "@nsfa/Components/TabbedContent.tsx"
 import TabbedContentWithKey from "@nsfa/Components/TabbedContentWithKey.js"
+import { getReversedExpansions } from 'Types/expansions.ts'
 
 const TabWithKey = TabbedContentWithKey(TabbedContent)
 
@@ -82,23 +83,12 @@ function RenderCharacterProfessionTable(ex: { name: string, slug: string, id: nu
 }
 
 export default function Professions() {
-  const expansions = [
-    { name: 'The War Within', slug: 'tww', id: 11 },
-    { name: 'Dragonflight', slug: 'df', id: 10 },
-    { name: 'Shadowlands', slug: 'sl', id: 9 },
-    { name: 'Battle for Azeroth', slug: 'bfa', id: 8 },
-    { name: 'Legion', slug: 'legion', id: 7 },
-    { name: 'Warlords of Draenor', slug: 'wod', id: 6 },
-    { name: 'Mists of Pandaria', slug: 'mop', id: 5 },
-    { name: 'Cataclysm', slug: 'cata', id: 4 },
-    { name: 'Wrath of the Lich King', slug: 'wrath', id: 3 },
-    { name: 'The Burning Crusade', slug: 'tbc', id: 2 },
-    { name: 'World of Warcraft', slug: 'wow', id: 1 },
-  ]
 
   const [filterText, setFilterText] = React.useState('')
 
   const tabs = []
+
+  const expansions = getReversedExpansions()
 
   expansions.map(ex => {
     const slug = ex.slug.toUpperCase()
