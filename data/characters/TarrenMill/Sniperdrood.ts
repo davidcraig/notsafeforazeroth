@@ -11,7 +11,7 @@ export const Sniperdrood: Character = {
     realm: Realm.TarrenMill,
     race: Race.HighmountainTauren,
     wowclass: Druid,
-    role: [ ROLES.DPS, ROLES.Healer ],
+    role: [ ROLES.Healer, ROLES.DPS ],
     professions: {
       herbalism: {
         tww: {

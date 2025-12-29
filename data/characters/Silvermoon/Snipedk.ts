@@ -3,12 +3,14 @@ import DeathKnight from "@davidcraig/wowdata/classes/death-knight.ts"
 import { Race } from "@davidcraig/wowdata/Race"
 import { Realm } from "@davidcraig/wowdata/Realm"
 import { Blacksmithing as TWW_BS } from "../../warwithin/crafting/blacksmithing.ts"
+import ROLES from "@davidcraig/wowdata/Roles"
 
 export const Snipedk: Character = {
     name: "Snipedk",
     realm: Realm.Silvermoon,
     wowclass: DeathKnight,
     race: Race.DarkIronDwarf,
+    role: [ ROLES.Tank, ROLES.DPS ],
     professions: {
       blacksmithing: {
         tww: {
