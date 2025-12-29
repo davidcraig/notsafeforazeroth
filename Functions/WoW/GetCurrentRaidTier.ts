@@ -1,7 +1,7 @@
 import { raids } from "../../data/warwithin/raids.ts"
 
 const GetCurrentRaidTier = () => {
-  return raids[1]
+  return null
 }
 
 export default GetCurrentRaidTier

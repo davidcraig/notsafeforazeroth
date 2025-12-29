@@ -1,6 +1,7 @@
 import React from 'react'
+import Link from 'next/link'
 import Page from '../Components/Page.js'
-import WoWProfessionSkillBar from '../Components/WoWProfessionSkillBar.js'
+import WoWProfessionSkillBar from '@nsfa/Components/WoWProfessionSkillBar.js'
 import { buildCharacterSkillsByExpansion } from '../data/crafting.ts'
 import TabbedContent from "@nsfa/Components/TabbedContent.tsx"
 import TabbedContentWithKey from "@nsfa/Components/TabbedContentWithKey.js"
@@ -59,7 +60,9 @@ function RenderCharacterProfessionTable(ex: { name: string, slug: string, id: nu
         <tbody>
           {filteredRows.map(row => (
             <tr key={row.key}>
-              <td className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`}>{row.character.name}</td>
+              <td className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`}>
+                <Link className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`} href={`/characters/${row.character.realm}/${row.character.name}`}>{row.character.name}</Link>
+              </td>
               <td>{row.character.realm}</td>
               <td>{row.professionName}</td>
               <td style={{ minWidth: 220 }}>

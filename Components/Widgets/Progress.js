@@ -3,6 +3,10 @@ import { Card } from '@davidcraig/react-bulma'
 import GetCurrentRaidTier from '../../Functions/WoW/GetCurrentRaidTier'
 
 function getStatus (progression) {
+  if (!profession) {
+    return 'No active raid tier'
+  }
+
   if (!progression.normal) {
     return 'Not yet killed'
   }
@@ -25,7 +29,12 @@ function getStatusClass (progression) {
 
 export default function Progress() {
   const currentTier = GetCurrentRaidTier()
-  const progression = currentTier.progression;
+  if (!currentTier) {
+    return <Card title='Progression'>
+      <p>Not currently raiding</p>
+    </Card>
+  }
+  const progression = currentTier?.progression;
 
   return (
     <Card title={`Progression - ${currentTier.name}`} className='widget widget-progression'>
