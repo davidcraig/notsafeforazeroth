@@ -4,6 +4,8 @@ import { Realm } from '@davidcraig/wowdata/Realm'
 import CharacterNameRealmLink from '@nsfa/Components/Character/CharacterNameRealmLink.tsx'
 import Page from '../Components/Page.js'
 
+import CHARACTERS from '@nsfa/data/characters.ts'
+
 // Tarren Mill
 import Sniperdrood_TM from '../data/characters/TarrenMill/Sniperdrood.ts'
 import Snipedeath from '../data/characters/TarrenMill/Snipedeath.ts'
@@ -14,14 +16,6 @@ import Snipérmonk from '../data/characters/TarrenMill/Snipérmonk.ts'
 import Aronin from '../data/characters/TarrenMill/Aronin.ts'
 
 // Draenor
-
-// Silvermoon
-import Sniperwar from '../data/characters/Silvermoon/Sniperwar.ts'
-import Snipa_SM from '../data/characters/Silvermoon/Snipá.ts'
-import Snipedk_SM from '@nsfa/data/characters/Silvermoon/Snipedk.ts'
-
-// Magtheridon
-import Snipá from '../data/characters/Magtheridon/Snipá.ts'
 
 const RANKS = {
   Officer: 'Officer',
@@ -45,9 +39,14 @@ const roster = {
     {
       real: 'Dave / Sniper',
       rank: RANKS.Officer,
-      main: Sniperdrood_TM,
+      main: CHARACTERS.Sniperdrood_TM, // Mining/Herbalism
       mainalts: [
-        Snipedk_SM
+        CHARACTERS.Snipedk_SM, // BS
+        CHARACTERS.Snipá_SM, // Skinning
+        CHARACTERS.Sniperdeeh_TM, // Ench
+        CHARACTERS.Snipersham_SM, // Tail / LW
+        CHARACTERS.Sniperwar_SM, // Engineering
+        CHARACTERS.Snipérmonk_TM, // Alchemy
       ],
       alts: [
         // TM
@@ -56,9 +55,8 @@ const roster = {
         // Snipérmonk,
         // SM
         // Sniperwar,
-        Snipa_SM,
         // Mag
-        Snipá
+        CHARACTERS.Snipá_MAG, // Cooking / Fishing
       ]
     },
     {
@@ -140,7 +138,7 @@ const renderAlt = (alt: Character) => {
 
   if (!link) {
     return (
-      <>
+      <span key={`${alt.name}-${alt.realm}`}>
         {alt.role && alt.role.map(role => (
           <img
             width={24}
@@ -150,11 +148,11 @@ const renderAlt = (alt: Character) => {
           />
         ))}
         <CharacterNameRealmLink character={alt} />
-      </>
+      </span>
     )
   }
 
-  return <>
+  return <span key={`${alt.name}-${alt.realm}`}>
       {alt.role && alt.role.map(role => (
         <img
           width={24}
@@ -166,7 +164,7 @@ const renderAlt = (alt: Character) => {
       <span className='mr-4'>
         <CharacterNameRealmLink character={alt} />
       </span>
-  </>
+  </span>
 }
 
 // const ClassCompWidget = () => {
@@ -215,7 +213,7 @@ const RosterAsTable = ({ className }) => {
       </thead>
       <tbody>
         {roster.combined.map(player => {
-          return <tr>
+          return <tr key={player.real}>
             <td>{player.real}</td>
             <td>{getCardTitle(player)}</td>
             <td><div style={{ display: 'flex', flexWrap: 'wrap' }}>{player.mainalts && (
@@ -236,20 +234,7 @@ export default function Roster() {
     <h1 className='h1 text-xl mb-4'>Roster</h1>
     <div className='grid grid-cols-1 lg:grid-cols-6 gap-2'>
 
-      <RosterAsTable className='lg:col-span-5'></RosterAsTable>
-
-      {/* <main className='flex flex-col grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 lg:col-span-5'>
-        {SHOW_ALTS && roster.combined.map(m => {
-          return <Card title={getCardTitle(m)} className={m.main?.class?.css}>
-            {SHOW_ALTS && m.alts && (
-              m.alts.map(alt => renderAlt(alt))
-            )}
-          </Card>
-        })}
-        {!SHOW_ALTS && roster.combined.map(m => {
-          return <div className={m.main?.class?.css}>{getCardTitle(m)}</div>
-        })}
-      </main> */}
+      <RosterAsTable className='lg:col-span-5' />
 
       <aside className='grid grid-cols-1 lg:col-span-1'>
         {/* <Card title="Role Composition ~">

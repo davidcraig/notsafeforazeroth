@@ -25,7 +25,7 @@ const buildProfessionData = (characterData) => {
         {Object.values(expKeys).map(expKey => {
           if (!characterData.professions[profession][expKey]) return <td>-</td>
           return <td><WoWProfessionSkillBar
-            skill={characterData.professions[profession][expKey]?.skill}
+            skill={characterData.professions[profession][expKey]?.skill || characterData.professions[profession][expKey] || 0}
             cap={characterData.cap || 100}
             label={null}
             color={characterData?.wowclass?.css || ''}

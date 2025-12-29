@@ -133,7 +133,7 @@ export function getItemsFromProgress(progress) {
 export function buildExpansionCraftingData(expansionSlug) {
   const byProfession = {}
 
-  CHARACTERS.forEach(character => {
+  Object.values(CHARACTERS).forEach(character => {
     const professions = character.professions || {}
     Object.keys(professions).forEach(profKey => {
       const perExpansion = professions[profKey] || {}
@@ -170,7 +170,7 @@ type CharacterSkillsEntry = { character: any; skills: CharacterSkill[] }
 export function buildCharacterSkillsByExpansion(expansionSlug: string) {
   const byCharacter: Record<string, CharacterSkillsEntry> = {}
 
-  CHARACTERS.forEach(character => {
+  Object.values(CHARACTERS).forEach(character => {
     const professions = (character as any).professions || {}
     const skills: CharacterSkill[] = []
     Object.keys(professions).forEach((profKey: string) => {

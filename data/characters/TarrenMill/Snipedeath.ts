@@ -9,19 +9,6 @@ export const Snipedeath: Character = {
     realm: Realm.TarrenMill,
     race: Race.HighmountainTauren,
     wowclass: DeathKnight,
-    professions: {
-      blacksmithing: {
-        tww: {
-          skill: 78,
-          items: [
-            WW_BS.BeledarsBulwark,
-            WW_BS.EverforgedVambraces,
-            WW_BS.EverforgedGauntlets,
-            WW_BS.EverforgedPauldrons,
-          ]
-        }
-      }
-    }
 }
 
 export default Snipedeath
