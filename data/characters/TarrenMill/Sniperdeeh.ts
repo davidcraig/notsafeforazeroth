@@ -1,14 +1,13 @@
 import type { Character } from "@davidcraig/wowdata/Character"
 import { Race } from "@davidcraig/wowdata/Race"
 import { Realm } from "@davidcraig/wowdata/Realm"
-import DeathKnight from "@davidcraig/wowdata/classes/death-knight"
-import { Blacksmithing as WW_BS } from "../../warwithin/crafting/blacksmithing.ts"
+import DemonHunter from "@davidcraig/wowdata/classes/demon-hunter.ts"
 
 export const Sniperdeeh: Character = {
     name: "Sniperdeeh",
     realm: Realm.TarrenMill,
     race: Race.HighmountainTauren,
-    wowclass: DeathKnight,
+    wowclass: DemonHunter,
     professions: {
       enchanting: {
         tww: 105,
