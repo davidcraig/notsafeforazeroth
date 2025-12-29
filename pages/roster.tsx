@@ -1,6 +1,7 @@
 import React from 'react'
 import type { Character } from '@davidcraig/wowdata/Character'
 import Page from '../Components/Page.js'
+import CharacterNameRealmLink from '@nsfa/Components/Character/CharacterNameRealmLink.tsx'
 
 // Tarren Mill
 import Sniperdrood from '../data/characters/TarrenMill/Sniperdrood.ts'
@@ -16,6 +17,7 @@ import { Realm } from '@davidcraig/wowdata/Realm'
 
 // Silvermoon
 import Sniperwar from '../data/characters/Silvermoon/Sniperwar.ts'
+import Snipa_SM from '../data/characters/Silvermoon/Snipá.ts'
 
 // Magtheridon
 import Snipá from '../data/characters/Magtheridon/Snipá.ts'
@@ -31,25 +33,6 @@ let characters = {}
 const addCharacter = (character: Character) => {
   characters[character.name] = { name: character.name, class: character.wowclass, role: character.role, realm: character.realm }
 }
-
-// Chris
-// addCharacter('Violatór', wowClasses.Rogue, ROLES.DPS, realms.TarrenMill);
-// addCharacter('Aronin', wowClasses.Paladin, ROLES.Tank, realms.TarrenMill)
-// // Sniper
-// addCharacter('Snipevoke', wowClasses.Evoker, ROLES.DPS, realms.TarrenMill);
-// addCharacter('Sniperdrood', wowClasses.Druid, ROLES.DPS, realms.TarrenMill);
-// addCharacter('Snipedeath', wowClasses.DeathKnight, ROLES.Tank, realms.TarrenMill);
-// // Rob
-// addCharacter('Whoorelips', wowClasses.Hunter, ROLES.DPS, realms.TarrenMill);
-// // Gary
-// addCharacter('Palabellum', wowClasses.Paladin, ROLES.DPS, realms.TarrenMill);
-// addCharacter('Hoarfróst', wowClasses.DeathKnight, ROLES.DPS, realms.TarrenMill);
-// // Tom
-// addCharacter('Demonbanger', wowClasses.Warlock, ROLES.DPS, realms.TarrenMill);
-// addCharacter('Skiradan', wowClasses.DemonHunter, ROLES.DPS, realms.TarrenMill);
-// // Crassius
-// addCharacter('Crássiúss', wowClasses.Hunter, ROLES.DPS, realms.Kazzak);
-// addCharacter('Twiggss', wowClasses.Mage, ROLES.DPS, realms.Kazzak);
 
 const roster = {
   officers: [
@@ -69,6 +52,7 @@ const roster = {
         Snipérmonk,
         // SM
         Sniperwar,
+        Snipa_SM,
         // Mag
         Snipá
       ]
@@ -97,11 +81,12 @@ const roster = {
   combined: [],
 }
 
-const addMember = (character, alts) => {
+const addMember = (real: string, character: Character, alts: Character[] = null) => {
   let obj = {
     rank: RANKS.Member,
     main: character,
-    alts: null
+    alts: null,
+    real: real
   }
 
   if (alts) {
@@ -111,7 +96,7 @@ const addMember = (character, alts) => {
   roster.members.push(obj)
 }
 
-addMember(Crássiúss, []);
+addMember('Crass', Crássiúss);
 
 roster.combined = [...roster.officers, ...roster.enforcers, ...roster.members]
 
@@ -126,7 +111,9 @@ const getCardTitle = (m) => {
           })}
         </>
       )}
-      <a target="_blank" rel='noopener noreferrer' className={`fg-${m.main.wowclass.css}`} href={getArmoryLink(m.main)}>{m.main?.name}</a>{m.real && ` (${m.real})`}
+      <span className='mr-4'>
+        <CharacterNameRealmLink character={m.main} />
+      </span>
     </>
   )
 
@@ -143,23 +130,32 @@ const getArmoryLink = (character: Character) => {
   return `https://worldofwarcraft.blizzard.com/en-gb/character/eu/${realm}/${character.name}`
 }
 
-const renderAlt = (alt) => {
+const renderAlt = (alt: Character) => {
   const link = getArmoryLink(alt)
 
   if (!link) {
-    return <>
-      {alt?.role && (
-        <img width={24} height={24} style={{display: 'inline-block', marginRight: '.25rem'}} src={alt.role?.icon} />
-      )}
-      <span className={`fg-${alt.wowclass.css} mr-4`}>{alt.name}</span>
-  </>
+    return (
+      <>
+        {alt.role && alt.role.map(role => (
+          <img
+            width={24}
+            height={24}
+            style={{ display: 'inline-block', marginRight: '.25rem' }}
+            src={role.icon}
+          />
+        ))}
+        <CharacterNameRealmLink character={alt} />
+      </>
+    )
   }
 
   return <>
-      {alt?.role && (
+      {alt.role && (
         <img width={24} height={24} style={{display: 'inline-block', marginRight: '.25rem'}} src={alt.role?.icon} />
       )}
-      <a target="_blank" rel='noopener noreferrer' className={`fg-${alt.wowclass.css} mr-4`} href={link}>{alt.name}</a>
+      <span className='mr-4'>
+        <CharacterNameRealmLink character={alt} />
+      </span>
   </>
 }
 
@@ -201,6 +197,7 @@ const RosterAsTable = ({ className }) => {
     <table className={`table is-striped ${className}`}>
       <thead>
         <tr>
+          <th>Player</th>
           <th>Main</th>
           <th>Alts</th>
         </tr>
@@ -208,10 +205,11 @@ const RosterAsTable = ({ className }) => {
       <tbody>
         {roster.combined.map(player => {
           return <tr>
+            <td>{player.real}</td>
             <td>{getCardTitle(player)}</td>
-            <td>{player.alts && (
+            <td><div style={{ display: 'flex', flexWrap: 'wrap' }}>{player.alts && (
               player.alts.map(alt => { return renderAlt(alt) })
-            )}</td>
+            )}</div></td>
           </tr>
         })}
       </tbody>
