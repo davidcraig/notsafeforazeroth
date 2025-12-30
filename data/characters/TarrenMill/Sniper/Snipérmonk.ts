@@ -13,6 +13,7 @@ export const Snipérmonk: Character = {
       tww: 75,
       wod: 105,
       mop: 80,
+      cata: 18,
       wow: 12,
     },
     herbalism: {
