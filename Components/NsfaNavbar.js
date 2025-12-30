@@ -75,7 +75,7 @@ wikiPages.push({
   ],
 });
 
-export default function NsfaNavbar(props) {
+export default function NsfaNavbar() {
   return (
     <Navbar
       brand={`<Not Safe for Azeroth>`}
