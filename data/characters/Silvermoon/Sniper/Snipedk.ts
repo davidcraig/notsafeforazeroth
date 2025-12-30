@@ -22,10 +22,10 @@ export const Snipedk: Character = {
       wow: { skill: 37 },
     },
     mining: {
-      tww: { skill: 6 },
-      legion: { skill: 1 },
-      cata: { skill: 1 },
-      wow: { skill: 46 },
+      // tww: 6,
+      // legion: 1,
+      // cata: 1,
+      // wow: 46,
     },
   },
 };
