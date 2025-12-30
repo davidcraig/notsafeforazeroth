@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -18,44 +14,39 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types"],
     "paths": {
-      "@nsfa/Components/*": [
-        "./Components/*"
-      ],
-      "@nsfa/data/*": [
-        "./data/*"
-      ],
+      "@nsfa/Components/*": ["./Components/*"],
+      "@nsfa/data/*": ["./data/*"],
       "@davidcraig/wowdata/Character": [
-        "node_modules/@davidcraig/wowdata/src/types/Character.d.ts"
+        "node_modules/@davidcraig/wowdata/src/types/Character.d.ts",
       ],
       "@davidcraig/wowdata/classes/*": [
-        "node_modules/@davidcraig/wowdata/src/data/classes/*"
+        "node_modules/@davidcraig/wowdata/src/data/classes/*",
       ],
       "@davidcraig/wowdata/Realm": [
-        "node_modules/@davidcraig/wowdata/src/data/enum/Realm.ts"
+        "node_modules/@davidcraig/wowdata/src/data/enum/Realm.ts",
       ],
       "@davidcraig/wowdata/Race": [
-        "node_modules/@davidcraig/wowdata/src/data/enum/Race.ts"
+        "node_modules/@davidcraig/wowdata/src/data/enum/Race.ts",
       ],
       "@davidcraig/wowdata/Rarity": [
-        "node_modules/@davidcraig/wowdata/src/data/enum/Rarity.ts"
+        "node_modules/@davidcraig/wowdata/src/data/enum/Rarity.ts",
       ],
       "@davidcraig/wowdata/Roles": [
-        "node_modules/@davidcraig/wowdata/src/data/Roles.ts"
+        "node_modules/@davidcraig/wowdata/src/data/Roles.ts",
       ],
       "@davidcraig/wowdata/WoWClass": [
-        "node_modules/@davidcraig/wowdata/src/types/WoWClass.d.ts"
-      ]
+        "node_modules/@davidcraig/wowdata/src/types/WoWClass.d.ts",
+      ],
     },
-    "target": "ES2017"
+    "target": "ES2017",
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "node_modules/davidcraig/**/*.ts"
+    "node_modules/davidcraig/**/*.ts",
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"],
 }
