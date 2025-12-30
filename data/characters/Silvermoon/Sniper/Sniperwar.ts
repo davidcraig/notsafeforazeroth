@@ -12,12 +12,12 @@ export const Sniperwar: Character = {
   professions: {
     engineering: {
       tww: {
-        skill: 71,
+        skill: 91,
         items: [Engineering.CrowdPummeler230],
       },
     },
     mining: {
-      tww: 100,
+      // tww: 100,
     },
   },
 };

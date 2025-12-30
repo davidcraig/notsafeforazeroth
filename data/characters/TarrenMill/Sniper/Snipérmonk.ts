@@ -10,8 +10,10 @@ export const Snipérmonk: Character = {
   wowclass: Monk,
   professions: {
     alchemy: {
-      tww: 6,
-      wow: 6,
+      tww: 75,
+      wod: 103,
+      mop: 80,
+      wow: 12,
     },
     herbalism: {
       wow: 1,

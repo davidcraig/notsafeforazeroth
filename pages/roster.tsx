@@ -48,6 +48,8 @@ const roster = {
         CHARACTERS.Sniperwar_SM, // Engineering
         CHARACTERS.Snipérmonk_TM, // Alchemy
         CHARACTERS.Sniperlock_TM, // Inscription
+        CHARACTERS.Snipepal_SM, // Jewelcrafting
+        CHARACTERS.Snipermagi_TM, // Cooking
       ],
       alts: [
         // TM

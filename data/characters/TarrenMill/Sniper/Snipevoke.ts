@@ -1,7 +1,7 @@
-import type { Character } from "@davidcraig/wowdata/Character"
-import Evoker from "@davidcraig/wowdata/classes/evoker"
-import { Race } from "@davidcraig/wowdata/Race"
-import { Realm } from "@davidcraig/wowdata/Realm"
+import type { Character } from "@davidcraig/wowdata/Character";
+import Evoker from "@davidcraig/wowdata/classes/evoker";
+import { Race } from "@davidcraig/wowdata/Race";
+import { Realm } from "@davidcraig/wowdata/Realm";
 
 export const Snipevoke: Character = {
   name: "Snipevoke",
@@ -10,19 +10,17 @@ export const Snipevoke: Character = {
   race: Race.Dracthyr,
   professions: {
     alchemy: {
-      tww: {
-        skill: 95
-      },
-      wod: {
-        skill: 50,
-      },
+      // tww: {
+      //   skill: 95,
+      // },
+      // wod: {
+      //   skill: 50,
+      // },
     },
     herbalism: {
-      tww: {
-        skill: 69
-      }
-    }
-  }
-}
+      // tww: 69,
+    },
+  },
+};
 
-export default Snipevoke
+export default Snipevoke;
