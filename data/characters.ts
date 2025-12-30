@@ -1,21 +1,21 @@
 // TarrenMill
-import Snipedeath_TM from "./characters/TarrenMill/Snipedeath.ts";
-import Sniperdrood_TM from "./characters/TarrenMill/Sniperdrood.ts";
-import Snipermagi_TM from "./characters/TarrenMill/Snipermagi.ts";
-import Snipevoke_TM from "./characters/TarrenMill/Snipevoke.ts";
-import Snipérmonk_TM from "./characters/TarrenMill/Snipérmonk.ts";
+import Snipedeath_TM from "./characters/TarrenMill/Sniper/Snipedeath.ts";
+import Sniperdrood_TM from "./characters/TarrenMill/Sniper/Sniperdrood.ts";
+import Snipermagi_TM from "./characters/TarrenMill/Sniper/Snipermagi.ts";
+import Snipevoke_TM from "./characters/TarrenMill/Sniper/Snipevoke.ts";
+import Snipérmonk_TM from "./characters/TarrenMill/Sniper/Snipérmonk.ts";
 import Aronin_TM from "./characters/TarrenMill/Aronin.ts";
-import Sniperdeeh_TM from "./characters/TarrenMill/Sniperdeeh.ts";
-import Sniperlock_TM from "./characters/TarrenMill/Sniperlock.ts";
+import Sniperdeeh_TM from "./characters/TarrenMill/Sniper/Sniperdeeh.ts";
+import Sniperlock_TM from "./characters/TarrenMill/Sniper/Sniperlock.ts";
 import Whoorelips_TM from "./characters/TarrenMill/Whoorelips.ts";
 // Silvermoon
-import Sniperwar_SM from "./characters/Silvermoon/Sniperwar.ts";
-import Snipá_SM from "./characters/Silvermoon/Snipá.ts";
-import Snipepal_SM from "./characters/Silvermoon/Snipepal.ts";
-import Snipedk_SM from "./characters/Silvermoon/Snipedk.ts";
-import Snipersham_SM from "./characters/Silvermoon/Snipersham.ts";
+import Sniperwar_SM from "./characters/Silvermoon/Sniper/Sniperwar.ts";
+import Snipá_SM from "./characters/Silvermoon/Sniper/Snipá.ts";
+import Snipepal_SM from "./characters/Silvermoon/Sniper/Snipepal.ts";
+import Snipedk_SM from "./characters/Silvermoon/Sniper/Snipedk.ts";
+import Snipersham_SM from "./characters/Silvermoon/Sniper/Snipersham.ts";
 // Magtheridon
-import Snipá_MAG from "./characters/Magtheridon/Snipá.ts";
+import Snipá_MAG from "./characters/Magtheridon/Sniper/Snipá.ts";
 
 export const CHARACTERS = {
   // Tarren Mill

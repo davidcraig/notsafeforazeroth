@@ -2,9 +2,9 @@ import React from "react";
 import { ItemGrid } from "@davidcraig/react-bulma";
 import PageWithWidgets from "../Components/PageWithWidgets.js";
 import { Card } from "@davidcraig/tailwind-nextjs-tsx";
-import Sniperdrood from "../data/characters/TarrenMill/Sniperdrood.ts";
 import Aronin from "../data/characters/TarrenMill/Aronin.ts";
 import Whoorelips from "../data/characters/TarrenMill/Whoorelips.ts";
+import CHARACTERS from "@nsfa/data/characters.ts";
 
 const officers = [
   {
@@ -12,7 +12,7 @@ const officers = [
     alias: "Sniper",
     rank: "Fuhrer",
     bio: "",
-    main: Sniperdrood,
+    main: CHARACTERS.Sniperdrood_TM,
   },
   {
     real: "Chris",
