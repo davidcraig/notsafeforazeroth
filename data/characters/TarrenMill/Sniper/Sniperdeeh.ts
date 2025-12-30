@@ -12,7 +12,7 @@ export const Sniperdeeh: Character = {
     enchanting: {
       tww: 105,
       df: 6,
-      sl: 19,
+      sl: 25,
       legion: 45,
       wod: 70,
       mop: 19,
