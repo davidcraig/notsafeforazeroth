@@ -9,6 +9,10 @@ const nextConfig = {
 
   transpilePackages: ["@davidcraig/wowdata", "@davidcraig/tailwind-nextjs-tsx"],
 
+  experimental: {
+    externalDir: true,
+  },
+
   turbopack: {
     resolveAlias: {
       "@nsfa/Components": path.resolve(__dirname, "Components"),

@@ -142,15 +142,16 @@ const getArmoryLink = (character: Character) => {
   return `https://worldofwarcraft.blizzard.com/en-gb/character/eu/${realm}/${character.name}`;
 };
 
-const renderAlt = (alt: Character) => {
+const renderAlt = (alt: Character, index: number) => {
   const link = getArmoryLink(alt);
 
   if (!link) {
     return (
-      <span key={`${alt.name}-${alt.realm}`}>
+      <span key={`${alt.name}-${alt.realm}-${index}`}>
         {alt.role &&
-          alt.role.map((role) => (
+          alt.role.map((role, index) => (
             <img
+              key={`${alt.name}-${role}-${index}`}
               width={24}
               height={24}
               style={{ display: "inline-block", marginRight: ".25rem" }}
@@ -225,24 +226,24 @@ const RosterAsTable = ({ className }) => {
         </tr>
       </thead>
       <tbody>
-        {roster.combined.map((player) => {
+        {roster.combined.map((player, index) => {
           return (
-            <tr key={player.real}>
+            <tr key={`${player.real}-${index}`}>
               <td>{player.real}</td>
               <td>{getCardTitle(player)}</td>
               <td>
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
                   {player.mainalts &&
-                    player.mainalts.map((alt) => {
-                      return renderAlt(alt);
+                    player.mainalts.map((alt, index) => {
+                      return renderAlt(alt, index);
                     })}
                 </div>
               </td>
               <td>
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
                   {player.alts &&
-                    player.alts.map((alt) => {
-                      return renderAlt(alt);
+                    player.alts.map((alt, index) => {
+                      return renderAlt(alt, index);
                     })}
                 </div>
               </td>

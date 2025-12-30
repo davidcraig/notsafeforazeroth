@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "@davidcraig/tailwind-nextjs-tsx/src/css/Navbar.css";
+
 :root {
   --dark-mode-text: #ececec;
   --dark-mode-bg-1: #161616;
@@ -31,53 +33,111 @@
   --theme-link: var(--horde-link);
 }
 
-@import 'wow';
-@import 'navbar';
-@import 'footer';
-@import 'table';
-@import 'tabs';
+@import "wow";
+@import "navbar";
+@import "footer";
+@import "table";
+@import "tabs";
 
 @mixin class-colours {
-  &.fg-mage { color: var(--wow-class-mage); }
-  &.fg-priest { color: var(--wow-class-priest); }
-  &.fg-warlock { color: var(--wow-class-warlock); }
-  &.fg-druid { color: var(--wow-class-druid); }
-  &.fg-rogue { color: var(--wow-class-rogue); }
-  &.fg-monk { color: var(--wow-class-monk); }
-  &.fg-demonhunter { color: var(--wow-class-demonhunter); }
-  &.fg-hunter { color: var(--wow-class-hunter); }
-  &.fg-shaman { color: var(--wow-class-shaman); }
-  &.fg-evoker { color: var(--wow-class-evoker); }
-  &.fg-warrior { color: var(--wow-class-warrior); }
-  &.fg-deathknight { color: var(--wow-class-deathknight); }
-  &.fg-paladin { color: var(--wow-class-paladin); }
+  &.fg-mage {
+    color: var(--wow-class-mage);
+  }
+  &.fg-priest {
+    color: var(--wow-class-priest);
+  }
+  &.fg-warlock {
+    color: var(--wow-class-warlock);
+  }
+  &.fg-druid {
+    color: var(--wow-class-druid);
+  }
+  &.fg-rogue {
+    color: var(--wow-class-rogue);
+  }
+  &.fg-monk {
+    color: var(--wow-class-monk);
+  }
+  &.fg-demonhunter {
+    color: var(--wow-class-demonhunter);
+  }
+  &.fg-hunter {
+    color: var(--wow-class-hunter);
+  }
+  &.fg-shaman {
+    color: var(--wow-class-shaman);
+  }
+  &.fg-evoker {
+    color: var(--wow-class-evoker);
+  }
+  &.fg-warrior {
+    color: var(--wow-class-warrior);
+  }
+  &.fg-deathknight {
+    color: var(--wow-class-deathknight);
+  }
+  &.fg-paladin {
+    color: var(--wow-class-paladin);
+  }
 }
 
 @mixin class-colours-important {
-  &.fg-mage { color: var(--wow-class-mage) !important; }
-  &.fg-priest { color: var(--wow-class-priest) !important; }
-  &.fg-warlock { color: var(--wow-class-warlock) !important; }
-  &.fg-druid { color: var(--wow-class-druid) !important; }
-  &.fg-rogue { color: var(--wow-class-rogue) !important; }
-  &.fg-monk { color: var(--wow-class-monk) !important; }
-  &.fg-demonhunter { color: var(--wow-class-demonhunter) !important; }
-  &.fg-evoker { color: var(--wow-class-evoker) !important; }
-  &.fg-hunter { color: var(--wow-class-hunter) !important; }
-  &.fg-shaman { color: var(--wow-class-shaman) !important; }
-  &.fg-warrior { color: var(--wow-class-warrior) !important; }
-  &.fg-deathknight { color: var(--wow-class-deathknight) !important; }
-  &.fg-paladin { color: var(--wow-class-paladin) !important; }
+  &.fg-mage {
+    color: var(--wow-class-mage) !important;
+  }
+  &.fg-priest {
+    color: var(--wow-class-priest) !important;
+  }
+  &.fg-warlock {
+    color: var(--wow-class-warlock) !important;
+  }
+  &.fg-druid {
+    color: var(--wow-class-druid) !important;
+  }
+  &.fg-rogue {
+    color: var(--wow-class-rogue) !important;
+  }
+  &.fg-monk {
+    color: var(--wow-class-monk) !important;
+  }
+  &.fg-demonhunter {
+    color: var(--wow-class-demonhunter) !important;
+  }
+  &.fg-evoker {
+    color: var(--wow-class-evoker) !important;
+  }
+  &.fg-hunter {
+    color: var(--wow-class-hunter) !important;
+  }
+  &.fg-shaman {
+    color: var(--wow-class-shaman) !important;
+  }
+  &.fg-warrior {
+    color: var(--wow-class-warrior) !important;
+  }
+  &.fg-deathknight {
+    color: var(--wow-class-deathknight) !important;
+  }
+  &.fg-paladin {
+    color: var(--wow-class-paladin) !important;
+  }
 }
 
-@import './widgets.scss';
+@import "./widgets.scss";
 
-html, body {
+html,
+body {
   background: var(--theme-bg);
   color: var(--theme-text);
 }
 
-html, body {
-  background-image: linear-gradient(to top, var(--theme-bg-2) , rgba(0, 0, 0, 0));
+html,
+body {
+  background-image: linear-gradient(
+    to top,
+    var(--theme-bg-2),
+    rgba(0, 0, 0, 0)
+  );
   min-height: 100vh;
 }
 
@@ -95,7 +155,12 @@ a {
   color: var(--horde-link);
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   color: var(--theme-text);
 
   @include class-colours();
@@ -182,13 +247,14 @@ a {
   }
 }
 
-.card, .card-content {
+.card,
+.card-content {
   background: transparent;
   color: var(--theme-text);
 }
 
 .card-content {
-  padding: .25rem;
+  padding: 0.25rem;
 }
 
 .card-header {
@@ -214,24 +280,34 @@ a.spell {
   padding: 4px;
 
   table.is-striped-columns {
-    tbody, thead {
-      & td:nth-child(even), & th:nth-child(even) {
+    tbody,
+    thead {
+      & td:nth-child(even),
+      & th:nth-child(even) {
         background-color: var(--alliance-bg-1) !important;
       }
     }
   }
 }
 
-.alive { color: var(--theme-bad); }
-.progress { color: var(--theme-warn); }
-.killed { color: var(--theme-good); }
-.flex { display: flex; }
+.alive {
+  color: var(--theme-bad);
+}
+.progress {
+  color: var(--theme-warn);
+}
+.killed {
+  color: var(--theme-good);
+}
+.flex {
+  display: flex;
+}
 
 input {
   border: 2px solid var(--theme-bg-2);
   background: var(--theme-bg);
   color: var(--theme-text);
-  padding: .2em 0.4em;
+  padding: 0.2em 0.4em;
 }
 
 .bg-theme-2 {

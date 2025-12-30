@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Navbar } from "@davidcraig/tailwind-nextjs-tsx";
+import { Navbar } from "jsr:@davidcraig/tailwind-nextjs-tsx";
 
 const showClassLinks = true;
 
 const pages = [
-  { name: "Crafting", slug: "/crafting" },
-  { name: "Professions", slug: "/professions" },
-  { name: "Roster", slug: "/roster" },
+  { name: "Crafting", href: "/crafting" },
+  { name: "Professions", href: "/professions" },
+  { name: "Roster", href: "/roster" },
 ];
 
 const wikiPages = [
@@ -18,8 +18,8 @@ const wikiPages = [
       {
         name: "Raids",
         pages: [
-          { name: "Nerub-ar Palace", slug: "/warwithin/raid/nerubarpalace" },
-          { name: "Manaforge Omega", slug: "/warwithin/raid/manaforge" },
+          { name: "Nerub-ar Palace", href: "/warwithin/raid/nerubarpalace" },
+          { name: "Manaforge Omega", href: "/warwithin/raid/manaforge" },
         ],
       },
     ],
@@ -27,8 +27,8 @@ const wikiPages = [
   {
     name: "Guides",
     pages: [
-      { name: "Profession Equipment", slug: "/guides/profession-equipment" },
-      { name: "Bags", slug: "/guides/bags" },
+      { name: "Profession Equipment", href: "/guides/profession-equipment" },
+      { name: "Bags", href: "/guides/bags" },
     ],
   },
 ];
@@ -37,35 +37,73 @@ if (showClassLinks) {
   wikiPages.push({
     name: "Classes",
     pages: [
-      { name: "Priest", slug: "/classes/priest", wowClassColour: true },
-      { name: "Mage", slug: "/classes/mage", wowClassColour: true },
-      { name: "Warlock", slug: "/classes/warlock", wowClassColour: true },
-      { name: "Druid", slug: "/classes/druid", wowClassColour: true },
-      { name: "Rogue", slug: "/classes/rogue", wowClassColour: true },
-      { name: "Monk", slug: "/classes/monk", wowClassColour: true },
+      {
+        name: "Priest",
+        href: "/classes/priest",
+        className: "fg-priest-important",
+      },
+      { name: "Mage", href: "/classes/mage", className: "fg-mage-important" },
+      {
+        name: "Warlock",
+        href: "/classes/warlock",
+        className: "fg-warlock-important",
+      },
+      {
+        name: "Druid",
+        href: "/classes/druid",
+        className: "fg-druid-important",
+      },
+      {
+        name: "Rogue",
+        href: "/classes/rogue",
+        className: "fg-rogue-important",
+      },
+      { name: "Monk", href: "/classes/monk", className: "fg-monk-important" },
       {
         name: "Demon Hunter",
-        slug: "/classes/demonhunter",
-        wowClassColour: true,
+        href: "/classes/demonhunter",
+        className: "fg-demonhunter-important",
       },
-      { name: "Hunter", slug: "/classes/hunter", wowClassColour: true },
-      { name: "Shaman", slug: "/classes/shaman", wowClassColour: true },
-      { name: "Warrior", slug: "/classes/warrior", wowClassColour: true },
-      { name: "Paladin", slug: "/classes/paladin", wowClassColour: true },
+      {
+        name: "Hunter",
+        href: "/classes/hunter",
+        className: "fg-hunter-important",
+      },
+      {
+        name: "Shaman",
+        href: "/classes/shaman",
+        className: "fg-shaman-important",
+      },
+      {
+        name: "Warrior",
+        href: "/classes/warrior",
+        className: "fg-warrior-important",
+      },
+      {
+        name: "Paladin",
+        href: "/classes/paladin",
+        className: "fg-paladin-important",
+      },
       {
         name: "Death Knight",
-        slug: "/classes/deathknight",
-        wowClassColour: true,
+        href: "/classes/deathknight",
+        className: "fg-deathknight-important",
       },
-      { name: "Evoker", slug: "/classes/evoker", wowClassColour: true },
+      {
+        name: "Evoker",
+        href: "/classes/evoker",
+        className: "fg-evoker-important",
+      },
     ],
   });
 }
 
 export default function NsfaNavbar() {
+  const brand = <>&lt;Not Safe for Azeroth&gt;</>;
+
   return (
     <Navbar
-      brand={`<Not Safe for Azeroth>`}
+      brand={brand}
       Link={Link}
       useState={useState}
       pages={[...wikiPages, ...pages]}

@@ -43,7 +43,11 @@ function MyApp({ Component, pageProps }) {
             {footerLinks.map((link) => {
               return (
                 <>
-                  <ExternalLink href={link.url} title={link.name} />
+                  <ExternalLink
+                    key={link.url}
+                    href={link.url}
+                    title={link.name}
+                  />
                 </>
               );
             })}

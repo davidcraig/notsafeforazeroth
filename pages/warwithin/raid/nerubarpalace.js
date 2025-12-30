@@ -13,7 +13,7 @@ export default function NerubarPalace() {
       <div className="">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 mb-2">
           {nerubBosses.map((boss, index) => {
-            return boss.video && <YoutubeEmbed url={boss.video} />;
+            return boss.video && <YoutubeEmbed key={index} url={boss.video} />;
           })}
         </div>
 
@@ -22,6 +22,7 @@ export default function NerubarPalace() {
             return (
               boss.img && (
                 <img
+                  key={index}
                   style={{
                     width: "100%",
                     flexGrow: 0,

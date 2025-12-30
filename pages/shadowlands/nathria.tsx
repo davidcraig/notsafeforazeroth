@@ -1,5 +1,4 @@
 import React from "react";
-import { ItemGrid } from "@davidcraig/react-bulma";
 import Page from "../../Components/Page.js";
 import { Card } from "@davidcraig/tailwind-nextjs-tsx";
 import TabbedContent from "@nsfa/Components/TabbedContent.tsx";
@@ -30,17 +29,13 @@ const Tactics = {
 
 const TLDRTactics = {
   title: "TLDR Tactics",
-  content: (
-    <ItemGrid columns={2}>
-      <Card title="Shriekwing">{Tactics.shriekwing}</Card>
-    </ItemGrid>
-  ),
+  content: <Card title="Shriekwing">{Tactics.shriekwing}</Card>,
 };
 
 const NormalHeroicVideos = {
   title: "Videos: Normal / Heroic",
   content: (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
       {castleNathria.map((boss) => (
         <Card className="mt-4" title={boss.name}>
           <YoutubeEmbed url={boss.video} />
@@ -52,16 +47,13 @@ const NormalHeroicVideos = {
 const MythicVideos = {
   title: "Mythic",
   content: (
-    <ItemGrid columns={2}>
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
       {castleNathria.map((boss) => (
-        <>
-          <div className="card"></div>
-          <Card className="mt-4" title={boss.name}>
-            <YoutubeEmbed url={boss.mythic_video} />
-          </Card>
-        </>
+        <Card className="mt-4" title={boss.name}>
+          <YoutubeEmbed url={boss.mythic_video} />
+        </Card>
       ))}
-    </ItemGrid>
+    </div>
   ),
 };
 
