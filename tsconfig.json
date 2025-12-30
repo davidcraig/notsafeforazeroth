@@ -48,5 +48,4 @@
     "**/*.tsx",
     "node_modules/davidcraig/**/*.ts",
   ],
-  "exclude": ["node_modules"],
 }
