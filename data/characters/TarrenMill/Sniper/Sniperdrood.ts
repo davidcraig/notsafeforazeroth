@@ -14,17 +14,22 @@ export const Sniperdrood: Character = {
   role: [ROLES.Healer, ROLES.DPS],
   professions: {
     herbalism: {
-      tww: {
-        skill: 100 + 18,
-      },
+      tww: 100 + 18,
+      df: 47,
+      sl: 1,
+      legion: 30,
+      wod: 17,
+      mop: 75,
+      cata: 18,
+      wow: 189,
     },
     mining: {
-      tww: {
-        skill: 100 + MINING_RACIAL_BONUS + 13,
-      },
-      df: {
-        skill: 35 + MINING_RACIAL_BONUS,
-      },
+      tww: 100 + MINING_RACIAL_BONUS + 13,
+      df: 35 + MINING_RACIAL_BONUS,
+      sl: 6,
+      mop: 75 + MINING_RACIAL_BONUS,
+      cata: 15,
+      wow: 155,
     },
   },
 };
