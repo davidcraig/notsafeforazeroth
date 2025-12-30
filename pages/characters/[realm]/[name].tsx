@@ -107,8 +107,6 @@ export default function Character() {
 
   const professionData = buildProfessionData(characterData);
 
-  console.log(characterData);
-
   return (
     <Page>
       <h1 className={`text-xl fg-${characterData.wowclass.css}`}>

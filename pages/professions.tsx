@@ -137,7 +137,6 @@ export default function Professions() {
   const [filterText, setFilterText] = React.useState("");
 
   const onFilterKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    console.log(e);
     if (e.key === "Escape") {
       // Handle Enter key press
       setFilterText("");
