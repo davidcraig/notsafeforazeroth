@@ -37,7 +37,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   background: var(--theme-bg);
 }
 
-.navbar-item {
+.navbar-item, a {
   &.mage {
     color: var(--wow-class-mage) !important;
   }
@@ -176,7 +176,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     border: 10px solid var(--theme-bg-2);
   }
   .nav-depth-3 > .navbar-dropdown {
-    box-shadow: 0 12px 28px rgba(0,0,0,0.46); 
+    box-shadow: 0 12px 28px rgba(0,0,0,0.46);
     border: 12px solid var(--theme-bg-2);
   }
 }
