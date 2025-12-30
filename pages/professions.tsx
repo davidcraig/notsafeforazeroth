@@ -8,8 +8,53 @@ import TabbedContentWithKey from "@nsfa/Components/TabbedContentWithKey.js";
 import { getReversedExpansions } from "Types/expansions.ts";
 
 const secondarySkills = ["Cooking", "Fishing", "Archaeology"];
+const gatheringSkills = ["Mining", "Skinning", "Herbalism"];
 
 const TabWithKey = TabbedContentWithKey(TabbedContent);
+
+function RenderProfessionSectionTable({ rows }) {
+  return (
+    <table
+      className="table is-narrow is-striped border"
+      style={{ borderColor: "var(--theme-bg-2)" }}
+    >
+      <thead>
+        <tr className="border" style={{ borderColor: "var(--theme-bg-2)" }}>
+          <th>Character</th>
+          <th>Realm</th>
+          <th>Profession</th>
+          <th>Skill</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr key={row.key}>
+            <td
+              className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`}
+            >
+              <Link
+                className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`}
+                href={`/characters/${row.character.realm}/${row.character.name}`}
+              >
+                {row.character.name}
+              </Link>
+            </td>
+            <td>{row.character.realm}</td>
+            <td>{row.professionName}</td>
+            <td style={{ minWidth: 220 }}>
+              <WoWProfessionSkillBar
+                skill={row.current || 0}
+                cap={row.cap || 100}
+                label={null}
+                color={row.character?.wowclass?.css || ""}
+              />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
 
 function RenderCharacterProfessionTable(
   ex: { name: string; slug: string; id: number },
@@ -18,11 +63,12 @@ function RenderCharacterProfessionTable(
   const byCharacter = buildCharacterSkillsByExpansion(ex.slug) as any;
   const rows: any[] = [];
   const secondaryRows: any[] = [];
+  const gatheringRows: any[] = [];
 
   Object.values(byCharacter).forEach((entry: any) => {
     const { character, skills } = entry;
     skills.forEach((s: any) => {
-      if (secondarySkills.includes(s.professionName))
+      if (secondarySkills.includes(s.professionName)) {
         secondaryRows.push({
           key: `${character.name}-${character.realm}-${s.professionKey}`,
           character,
@@ -30,7 +76,15 @@ function RenderCharacterProfessionTable(
           current: s.current,
           cap: s.cap,
         });
-      else {
+      } else if (gatheringSkills.includes(s.professionName)) {
+        gatheringRows.push({
+          key: `${character.name}-${character.realm}-${s.professionKey}`,
+          character,
+          professionName: s.professionName,
+          current: s.current,
+          cap: s.cap,
+        });
+      } else {
         rows.push({
           key: `${character.name}-${character.realm}-${s.professionKey}`,
           character,
@@ -68,86 +122,13 @@ function RenderCharacterProfessionTable(
       <h3 className="mb-4 text-xl" style={{ fontWeight: "bold" }}>
         {ex.id}. {ex.name}
       </h3>
-      <table
-        className="table is-narrow is-striped border"
-        style={{ borderColor: "var(--theme-bg-2)" }}
-      >
-        <thead>
-          <tr className="border" style={{ borderColor: "var(--theme-bg-2)" }}>
-            <th>Character</th>
-            <th>Realm</th>
-            <th>Profession</th>
-            <th>Skill</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredRows.map((row) => (
-            <tr key={row.key}>
-              <td
-                className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`}
-              >
-                <Link
-                  className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`}
-                  href={`/characters/${row.character.realm}/${row.character.name}`}
-                >
-                  {row.character.name}
-                </Link>
-              </td>
-              <td>{row.character.realm}</td>
-              <td>{row.professionName}</td>
-              <td style={{ minWidth: 220 }}>
-                <WoWProfessionSkillBar
-                  skill={row.current || 0}
-                  cap={row.cap || 100}
-                  label={null}
-                  color={row.character?.wowclass?.css || ""}
-                />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <RenderProfessionSectionTable rows={rows} />
+
+      <h2 className="my-4">Gathering Professions</h2>
+      <RenderProfessionSectionTable rows={gatheringRows} />
 
       <h2 className="my-4">Secondary Professions</h2>
-      <table
-        className="table is-narrow is-striped border"
-        style={{ borderColor: "var(--theme-bg-2)" }}
-      >
-        <thead>
-          <tr className="border" style={{ borderColor: "var(--theme-bg-2)" }}>
-            <th>Character</th>
-            <th>Realm</th>
-            <th>Profession</th>
-            <th>Skill</th>
-          </tr>
-        </thead>
-        <tbody>
-          {secondaryRows.map((row) => (
-            <tr key={row.key}>
-              <td
-                className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`}
-              >
-                <Link
-                  className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`}
-                  href={`/characters/${row.character.realm}/${row.character.name}`}
-                >
-                  {row.character.name}
-                </Link>
-              </td>
-              <td>{row.character.realm}</td>
-              <td>{row.professionName}</td>
-              <td style={{ minWidth: 220 }}>
-                <WoWProfessionSkillBar
-                  skill={row.current || 0}
-                  cap={row.cap || 100}
-                  label={null}
-                  color={row.character?.wowclass?.css || ""}
-                />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <RenderProfessionSectionTable rows={secondaryRows} />
     </div>
   );
 }
