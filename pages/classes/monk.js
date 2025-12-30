@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "@davidcraig/tailwind-nextjs-tsx";
+import { Card } from "jsr:@davidcraig/tailwind-nextjs-tsx";
 import Page from "../../Components/WoWClassPage";
 import Monk from "@davidcraig/wowdata/classes/monk";
 import YoutubeEmbed from "../../Components/YoutubeEmbed";
