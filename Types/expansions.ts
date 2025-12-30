@@ -23,7 +23,7 @@ export const EXPANSIONS = {
   cata: {
     id: 4,
     code: "cata",
-    slug: "cataclysm",
+    slug: "cata",
     name: "Cataclysm",
     levelCap: 85,
   },
