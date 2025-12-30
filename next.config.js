@@ -13,7 +13,6 @@ const nextConfig = {
     resolveAlias: {
       "@nsfa/Components": path.resolve(__dirname, "Components"),
       "@nsfa/data": path.resolve(__dirname, "data"),
-      "jsr:@davidcraig/tailwind-nextjs-tsx": "@davidcraig/tailwind-nextjs-tsx",
     },
   },
 };

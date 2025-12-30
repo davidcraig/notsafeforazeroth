@@ -22,7 +22,6 @@
       "./node_modules/@types"
     ],
     "paths": {
-      "jsr:@davidcraig/tailwind-nextjs-tsx": ["../tailwind-nextjs-tsx/src/index.tsx"],
       "@nsfa/Components/*": [
         "./Components/*"
       ],
