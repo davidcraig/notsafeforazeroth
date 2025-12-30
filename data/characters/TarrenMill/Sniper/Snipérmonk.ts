@@ -11,7 +11,7 @@ export const Snipérmonk: Character = {
   professions: {
     alchemy: {
       tww: 75,
-      wod: 103,
+      wod: 105,
       mop: 80,
       wow: 12,
     },
