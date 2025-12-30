@@ -28,7 +28,7 @@ export const Snipersham: Character = {
       wod: 5,
       cata: 77, // Capped
       wrath: 43,
-      tbc: 72,
+      tbc: 77,
       wow: 302,
     },
   },
