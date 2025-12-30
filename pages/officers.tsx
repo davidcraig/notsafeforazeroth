@@ -1,7 +1,6 @@
 import React from "react";
-import { ItemGrid } from "@davidcraig/react-bulma";
 import PageWithWidgets from "../Components/PageWithWidgets.js";
-import { Card } from "jsr:@davidcraig/tailwind-nextjs-tsx";
+import { Card } from "@davidcraig/tailwind-nextjs-tsx";
 import Aronin from "../data/characters/TarrenMill/Aronin.ts";
 import Whoorelips from "../data/characters/TarrenMill/Whoorelips.ts";
 import CHARACTERS from "@nsfa/data/characters.ts";
@@ -34,7 +33,7 @@ export default function Officers() {
   return (
     <PageWithWidgets>
       <h1 className="h1">Officers</h1>
-      <ItemGrid columns={2}>
+      <div className="grid grid-cols-1 md:grid-cols-2">
         {officers.map((officer) => {
           return (
             <Card
@@ -43,7 +42,7 @@ export default function Officers() {
             ></Card>
           );
         })}
-      </ItemGrid>
+      </div>
     </PageWithWidgets>
   );
 }

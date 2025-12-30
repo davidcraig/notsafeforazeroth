@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "jsr:@davidcraig/tailwind-nextjs-tsx";
+import { Card } from "@davidcraig/tailwind-nextjs-tsx";
 
 const showClasses = false;
 

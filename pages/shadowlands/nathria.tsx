@@ -1,6 +1,6 @@
 import React from "react";
 import Page from "../../Components/Page.js";
-import { Card } from "jsr:@davidcraig/tailwind-nextjs-tsx";
+import { Card } from "@davidcraig/tailwind-nextjs-tsx";
 import TabbedContent from "@nsfa/Components/TabbedContent.tsx";
 import YoutubeEmbed from "@nsfa/Components/YoutubeEmbed.js";
 import { castleNathria } from "../../data/shadowlands/raids.ts";
