@@ -7,6 +7,8 @@ import TabbedContent from "@nsfa/Components/TabbedContent.tsx";
 import TabbedContentWithKey from "@nsfa/Components/TabbedContentWithKey.js";
 import { getReversedExpansions } from "Types/expansions.ts";
 
+const secondarySkills = ["Cooking", "Fishing", "Archaeology"];
+
 const TabWithKey = TabbedContentWithKey(TabbedContent);
 
 function RenderCharacterProfessionTable(
@@ -15,17 +17,28 @@ function RenderCharacterProfessionTable(
 ) {
   const byCharacter = buildCharacterSkillsByExpansion(ex.slug) as any;
   const rows: any[] = [];
+  const secondaryRows: any[] = [];
 
   Object.values(byCharacter).forEach((entry: any) => {
     const { character, skills } = entry;
     skills.forEach((s: any) => {
-      rows.push({
-        key: `${character.name}-${character.realm}-${s.professionKey}`,
-        character,
-        professionName: s.professionName,
-        current: s.current,
-        cap: s.cap,
-      });
+      if (secondarySkills.includes(s.professionName))
+        secondaryRows.push({
+          key: `${character.name}-${character.realm}-${s.professionKey}`,
+          character,
+          professionName: s.professionName,
+          current: s.current,
+          cap: s.cap,
+        });
+      else {
+        rows.push({
+          key: `${character.name}-${character.realm}-${s.professionKey}`,
+          character,
+          professionName: s.professionName,
+          current: s.current,
+          cap: s.cap,
+        });
+      }
     });
   });
 
@@ -94,9 +107,51 @@ function RenderCharacterProfessionTable(
           ))}
         </tbody>
       </table>
+
+      <h2 className="my-4">Secondary Professions</h2>
+      <table
+        className="table is-narrow is-striped border"
+        style={{ borderColor: "var(--theme-bg-2)" }}
+      >
+        <thead>
+          <tr className="border" style={{ borderColor: "var(--theme-bg-2)" }}>
+            <th>Character</th>
+            <th>Realm</th>
+            <th>Profession</th>
+            <th>Skill</th>
+          </tr>
+        </thead>
+        <tbody>
+          {secondaryRows.map((row) => (
+            <tr key={row.key}>
+              <td
+                className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`}
+              >
+                <Link
+                  className={`fg-${row.character?.wowclass?.css || row.character?.wowclass?.wowclass?.css}`}
+                  href={`/characters/${row.character.realm}/${row.character.name}`}
+                >
+                  {row.character.name}
+                </Link>
+              </td>
+              <td>{row.character.realm}</td>
+              <td>{row.professionName}</td>
+              <td style={{ minWidth: 220 }}>
+                <WoWProfessionSkillBar
+                  skill={row.current || 0}
+                  cap={row.cap || 100}
+                  label={null}
+                  color={row.character?.wowclass?.css || ""}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
+
 export default function Professions() {
   const [filterText, setFilterText] = React.useState("");
 
