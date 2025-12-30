@@ -52,13 +52,6 @@ const roster = {
         CHARACTERS.Snipermagi_TM, // Cooking
       ],
       alts: [
-        // TM
-        // Snipedeath,
-        // Snipermagi,
-        // Snipérmonk,
-        // SM
-        // Sniperwar,
-        // Mag
         CHARACTERS.Snipá_MAG, // Cooking / Fishing
       ],
     },
