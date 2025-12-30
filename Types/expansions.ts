@@ -76,25 +76,44 @@ export const EXPANSIONS = {
     name: "The War Within",
     levelCap: 80,
   },
-
+  // mn: {
+  //   id: 12,
+  //   code: "mn",
+  //   slug: "mn",
+  //   name: "Midnight",
+  //   levelCap: 90,
+  //   visible: false,
+  // },
+  // tlt: {
+  //   id: 13,
+  //   code: "tlt",
+  //   slug: "tlt",
+  //   name: "The Last Titan",
+  //   levelCap: 100,
+  //   visible: false,
+  // },
 } as const;
 
 export type ExpansionKey = keyof typeof EXPANSIONS;
-export type Expansion = typeof EXPANSIONS[ExpansionKey];
+export type Expansion = (typeof EXPANSIONS)[ExpansionKey];
 export type ExpansionCode = Expansion["code"];
 export type ExpansionSlug = Expansion["slug"];
 
-export const getExpansionByCode = (code: ExpansionCode): Expansion | undefined =>
-  Object.values(EXPANSIONS).find(e => e.code === code);
+export const getExpansionByCode = (
+  code: ExpansionCode,
+): Expansion | undefined =>
+  Object.values(EXPANSIONS).find((e) => e.code === code);
 
-export const getExpansionBySlug = (slug: ExpansionSlug): Expansion | undefined =>
-  Object.values(EXPANSIONS).find(e => e.slug === slug);
+export const getExpansionBySlug = (
+  slug: ExpansionSlug,
+): Expansion | undefined =>
+  Object.values(EXPANSIONS).find((e) => e.slug === slug);
 
-export const getCurrentExpansion = (): Expansion =>
-  EXPANSIONS.tww; // or dynamically determine this
+export const getCurrentExpansion = (): Expansion => EXPANSIONS.tww; // or dynamically determine this
 
-export const getReversedExpansions = () => Object.values(EXPANSIONS).reverse()
+export const getReversedExpansions = () => Object.values(EXPANSIONS).reverse();
 
-export const getExpansionKeys = () => Object.values(EXPANSIONS).map(e => e.code)
+export const getExpansionKeys = () =>
+  Object.values(EXPANSIONS).map((e) => e.code);
 
 export const getLatestSortedExpansionKeys = () => getExpansionKeys().reverse();
