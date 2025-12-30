@@ -11,12 +11,13 @@ export const Snipersham: Character = {
   professions: {
     leatherworking: {
       tww: 53,
-      bfa: 3,
+      bfa: 4,
       wod: 3,
       wow: 3,
     },
     tailoring: {
       tww: 23,
+      legion: 3,
       bfa: 12,
       wod: 5,
       cata: 74,
