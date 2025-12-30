@@ -7,6 +7,7 @@ import Snipérmonk_TM from "./characters/TarrenMill/Snipérmonk.ts";
 import Aronin_TM from "./characters/TarrenMill/Aronin.ts";
 import Sniperdeeh_TM from "./characters/TarrenMill/Sniperdeeh.ts";
 import Sniperlock_TM from "./characters/TarrenMill/Sniperlock.ts";
+import Whoorelips_TM from "./characters/TarrenMill/Whoorelips.ts";
 // Silvermoon
 import Sniperwar_SM from "./characters/Silvermoon/Sniperwar.ts";
 import Snipá_SM from "./characters/Silvermoon/Snipá.ts";
@@ -26,6 +27,7 @@ export const CHARACTERS = {
   Aronin_TM,
   Sniperdeeh_TM,
   Sniperlock_TM,
+  Whoorelips_TM,
   // Silvermoon
   Snipedk_SM,
   Sniperwar_SM,
