@@ -62,19 +62,6 @@ if (showClassLinks) {
   });
 }
 
-wikiPages.push({
-  name: "Legacy",
-  pages: [
-    {
-      name: "Shadowlands",
-      pages: [
-        { name: "Castle Nathria", slug: "/shadowlands/nathria" },
-        { name: "FAQ", slug: "/shadowlands/faq" },
-      ],
-    },
-  ],
-});
-
 export default function NsfaNavbar() {
   return (
     <Navbar
