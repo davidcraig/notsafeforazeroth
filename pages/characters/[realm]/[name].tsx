@@ -4,6 +4,7 @@ import Page from "@nsfa/Components/Page";
 import WoWProfessionSkillBar from "@nsfa/Components/WoWProfessionSkillBar.js";
 import { getLatestSortedExpansionKeys } from "Types/expansions";
 import ucFirst from "Functions/ucFirst";
+import { SKILL_CAPS } from "@nsfa/data/crafting";
 
 const buildProfessionData = (characterData) => {
   if (!characterData || !characterData.professions) return null;
@@ -35,7 +36,11 @@ const buildProfessionData = (characterData) => {
                     characterData.professions[profession][expKey] ||
                     0
                   }
-                  cap={characterData.cap || 100}
+                  cap={
+                    SKILL_CAPS[expKey][profession] ||
+                    SKILL_CAPS[expKey].default ||
+                    100
+                  }
                   label={null}
                   color={characterData?.wowclass?.css || ""}
                 />
