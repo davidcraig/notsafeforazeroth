@@ -1,0 +1,20 @@
+name: Publish
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install dependencies
+        run: npm install
+      - name: Remove uncommitted changes
+        run: rm -rf package-lock.json
+      - name: Publish package
+        run: npx jsr publish
