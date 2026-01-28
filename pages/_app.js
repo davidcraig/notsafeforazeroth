@@ -1,7 +1,7 @@
 import React from "react";
 import NsfaNavbar from "../Components/NsfaNavbar";
 import "../styles/app.scss";
-import { ExternalLink } from "@davidcraig/tailwind-nextjs-tsx";
+import { ExternalLink } from "@davidcraig/tailwind-nextjs-tsx/src/ExternalLink.tsx";
 
 const footerLinks = [
   {

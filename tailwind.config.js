@@ -4,7 +4,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./Components/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@davidcraig/**/*.tsx",
-    "../tailwind-nextjs-tsx/**/*.tsx",
+    // "../tailwind-nextjs-tsx/**/*.tsx",
 
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",

@@ -1,6 +1,6 @@
 import React from "react";
 import { Organization } from "@davidcraig/react-schema";
-import { Card } from "@davidcraig/tailwind-nextjs-tsx";
+import { Card } from "@davidcraig/tailwind-nextjs-tsx/src/Card.tsx";
 import PageWithWidgets from "../Components/PageWithWidgets";
 
 export default function Home(props) {
