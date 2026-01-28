@@ -22,6 +22,9 @@
       "./node_modules/@types"
     ],
     "paths": {
+      "#packages/*": [
+        "./packages/*"
+      ],
       "@nsfa/Components/*": [
         "./Components/*"
       ],

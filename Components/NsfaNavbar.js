@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Navbar } from "@davidcraig/tailwind-nextjs-tsx/src/Navbar";
+import Navbar from "#packages/tailwind-nextjs-tsx/src/Navbar";
 
 const showClassLinks = true;
 
