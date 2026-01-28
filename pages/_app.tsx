@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
         <footer>
           <nav
             id="footer-navigation"
-            name="footer-nav"
+            data-name="footer-nav"
             aria-label="Footer Navigation"
           >
             {footerLinks.map((link) => {
