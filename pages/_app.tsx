@@ -15,17 +15,18 @@ const footerLinks = [
   },
 ];
 
-const wowhead =
-  ((
+const wowhead = (
+  <>
     <script
       dangerouslySetInnerHTML={{
         __html: `
-        var wowhead_tooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};
-      `,
+          var wowhead_tooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};
+        `,
       }}
     />
-  ),
-  (<script src="https://wow.zamimg.com/widgets/power.js"></script>));
+    <script src="https://wow.zamimg.com/widgets/power.js"></script>
+  </>
+);
 
 function MyApp({ Component, pageProps }) {
   return (
