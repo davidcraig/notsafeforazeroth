@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "npx next dev",
     "build": "npx next build",
-    "start": "npx next start"
+    "start": "npx next start",
+    "update:package": "git subtree pull --prefix=packages/tailwind-nextjs-tsx git@github.com:davidcraig/tailwind-nextjs-tsx main --squash"
   },
   "devDependencies": {
     "@davidcraig/react": "^1.0.2",
