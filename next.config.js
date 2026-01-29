@@ -7,7 +7,9 @@ const path = require("path");
 const nextConfig = {
   output: "export",
 
-  transpilePackages: ["@davidcraig/wowdata", "@davidcraig/tailwind-nextjs-tsx"],
+  transpilePackages: [
+    "@davidcraig/wowdata"
+  ],
 
   turbopack: {
     resolveAlias: {

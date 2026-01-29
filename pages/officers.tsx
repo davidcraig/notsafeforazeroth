@@ -1,6 +1,6 @@
 import React from "react";
 import PageWithWidgets from "../Components/PageWithWidgets.js";
-import { Card } from "@davidcraig/tailwind-nextjs-tsx";
+import Card from "#packages/tailwind-nextjs-tsx/src/Card.tsx";
 import Aronin from "../data/characters/TarrenMill/Aronin.ts";
 import Whoorelips from "../data/characters/TarrenMill/Whoorelips.ts";
 import CHARACTERS from "@nsfa/data/characters.ts";
