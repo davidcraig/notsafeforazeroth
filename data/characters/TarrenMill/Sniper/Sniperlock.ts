@@ -10,8 +10,11 @@ export const Sniperlock: Character = {
   wowclass: Warlock,
   professions: {
     inscription: {
-      tww: 22,
-      wod: 87,
+      tww: 52,
+      legion: 14,
+      wod: 92,
+      mop: 33,
+      cata: 6,
       wow: 144,
     },
   },
