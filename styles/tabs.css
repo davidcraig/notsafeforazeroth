@@ -30,7 +30,6 @@
 }
 
 .tabs .is-active {
-  // border: 2px solid var(--tab-colour);
   color: var(--theme-link);
 
   border-bottom: 2px solid var(--theme-link);

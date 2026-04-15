@@ -14,10 +14,6 @@
 .widget-recruitment {
   .recruitment-open { color: var(--theme-good); }
   .recruitment-closed { color: var(--theme-bad); }
-
-  .table tbody td {
-    @include class-colours();
-  }
 }
 
 .widget-progression {
