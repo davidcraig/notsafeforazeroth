@@ -76,14 +76,14 @@ export const EXPANSIONS = {
     name: "The War Within",
     levelCap: 80,
   },
-  // mn: {
-  //   id: 12,
-  //   code: "mn",
-  //   slug: "mn",
-  //   name: "Midnight",
-  //   levelCap: 90,
-  //   visible: false,
-  // },
+  midnight: {
+    id: 12,
+    code: "midnight",
+    slug: "midnight",
+    name: "Midnight",
+    levelCap: 90,
+    visible: false,
+  },
   // tlt: {
   //   id: 13,
   //   code: "tlt",

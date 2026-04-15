@@ -118,7 +118,6 @@ export const RACIAL_PROFESSION_BONUSES: Partial<Record<Race, Partial<Record<keyo
   }
 }
 
-
 export function getSkillFromProgress(progress) {
   if (typeof progress === 'number') return progress
   if (progress && typeof progress === 'object') return progress.skill ?? 0

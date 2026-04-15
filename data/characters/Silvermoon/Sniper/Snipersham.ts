@@ -2,6 +2,8 @@ import type { Character } from "@davidcraig/wowdata/Character";
 import { Race } from "@davidcraig/wowdata/Race";
 import { Realm } from "@davidcraig/wowdata/Realm";
 import Shaman from "@davidcraig/wowdata/classes/shaman";
+import MN_LW from '../../../expansions/midnight/crafting/leatherworking'
+import MN_T from '../../../expansions/midnight/crafting/tailoring'
 
 export const Snipersham: Character = {
   name: "Snipersham",
@@ -10,6 +12,12 @@ export const Snipersham: Character = {
   race: Race.KulTiran,
   professions: {
     leatherworking: {
+      midnight: {
+        skill: 64,
+        items: [
+          MN_LW.RowWalkersDeflectors
+        ]
+      },
       tww: 53,
       df: 3,
       sl: 3,
@@ -20,6 +28,7 @@ export const Snipersham: Character = {
       wow: 3,
     },
     tailoring: {
+      midnight: 54,
       tww: 23,
       df: 3,
       sl: 3,
