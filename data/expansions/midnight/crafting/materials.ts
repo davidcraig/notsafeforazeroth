@@ -14,6 +14,7 @@ const SparkOfRadiance: Material = { name: 'Spark of Radiance', url: 'https://www
 // Leather / Hides
 const InfusedScalewovenHide: Material = { name: 'Infused Scalewoven Hide', url: 'https://www.wowhead.com/item=244633/infused-scalewoven-hide', rarity: Rarity.Rare }
 const VoidTemperedLeather: Material = { name: 'Void-Tempered Leather', url: 'https://www.wowhead.com/item=238511/void-tempered-leather', rarity: Rarity.Common }
+const VoidTemperedScales: Material = { name: 'Void-Tempered Scales', url: 'https://www.wowhead.com/item=238513/void-tempered-scales', rarity: Rarity.Common }
 const SindoreiArmorBanding: Material = { name: "Sin'dorei Armor Banding", url: 'https://www.wowhead.com/item=244635/sindorei-armor-banding', rarity: Rarity.Uncommon }
 
 // Enchanting?
@@ -33,6 +34,7 @@ export const midnight_materials = {
     // Leather / Scales / Hides
     InfusedScalewovenHide,
     VoidTemperedLeather,
+    VoidTemperedScales,
     SindoreiArmorBanding,
     // Enchanting?
     SmugglersEnchantedEdge

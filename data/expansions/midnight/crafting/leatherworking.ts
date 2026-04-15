@@ -17,20 +17,35 @@ export const Leatherworking = {
       { ...materials.InfusedScalewovenHide, quantity: 1 },
       { ...materials.SmugglersEnchantedEdge, quantity: 1 },
     ]
+  },
+  FarstridersBrilliantPlumes: {
+    name: "Farstrider's Brilliant Plumes",
+    type: "Shoulders, Mail",
+    rarity: Rarity.Epic,
+    url: "https://www.wowhead.com/item=244580/farstriders-brilliant-plumes",
+    materials: [
+      { ...materials.SPARK, quantity: 2 },
+      { ...materials.VoidTemperedLeather, quantity: 75 },
+      { ...materials.VoidTemperedScales, quantity: 150 },
+      { ...materials.SindoreiArmorBanding, quantity: 2 },
+      { ...materials.TormentedTantalum, quantity: 1 },
+      { ...materials.InfusedScalewovenHide, quantity: 1 },
+    ]
+  },
+  FarstridersPlatedBracers: {
+    name: "Farstrider's Plated Bracers",
+    type: "Bracers, Mail",
+    rarity: Rarity.Epic,
+    url: "https://www.wowhead.com/item=244584/farstriders-plated-bracers",
+    materials: [
+      { ...materials.SPARK, quantity: 2 },
+      { ...materials.VoidTemperedLeather, quantity: 50 },
+      { ...materials.VoidTemperedScales, quantity: 100 },
+      { ...materials.SindoreiArmorBanding, quantity: 1 },
+      { ...materials.TormentedTantalum, quantity: 1 },
+      { ...materials.InfusedScalewovenHide, quantity: 1 },
+    ]
   }
-
-    // SlippersOfTheWovenDusk: {
-    //     name: "Slippers of the Woven Dusk",
-    //     type: "Gloves, Cloth",
-    //     rarity: Rarity.Epic,
-    //     url: "https://www.wowhead.com/item=222810/slippers-of-the-woven-dusk",
-    //     materials: [
-    //         { ...materials.AdorningRibbon, quantity: 5 },
-    //         { ...materials.DuskweaveBolt, quantity: 10 },
-    //         { ...materials.GleamingShard, quantity: 6 },
-    //         { ...materials.SpoolOfDuskthread, quantity: 10 }
-    //     ]
-    // }
 }
 
 export default Leatherworking

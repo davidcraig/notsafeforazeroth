@@ -15,7 +15,9 @@ export const Snipersham: Character = {
       midnight: {
         skill: 64,
         items: [
-          MN_LW.RowWalkersDeflectors
+          MN_LW.RowWalkersDeflectors,
+          MN_LW.FarstridersBrilliantPlumes,
+          MN_LW.FarstridersPlatedBracers,
         ]
       },
       tww: 53,
