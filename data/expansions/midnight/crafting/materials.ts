@@ -8,6 +8,7 @@ const KaleidoscopicPrism: Material = { name: 'Kaleidoscopic Prism', url: 'https:
 const DuskshroudedStone: Material = { name: 'Duskshrouded Stone', url: 'https://www.wowhead.com/item=242788/duskshrouded-stone', rarity: Rarity.Common }
 const FlawlessAmaniLapis: Material = { name: 'Flawless Amani Lapis', url: 'https://www.wowhead.com/item=242612/flawless-amani-lapis', rarity: Rarity.Rare }
 const GlimmeringGemdust: Material = { name: 'Glimmering Gemdust', url: 'https://www.wowhead.com/item=242620/glimmering-gemdust', rarity: Rarity.Uncommon }
+const FlawlessHarandarPeridot: Material = { name: 'Flawless Harandar Peridot', url: 'https://www.wowhead.com/item=242610/flawless-harandar-peridot', rarity: Rarity.Rare }
 
 // Herbs
 
@@ -29,6 +30,7 @@ const SmugglersEnchantedEdge: Material = { name: "Smuggler's Enchanted Edge", ur
 // Misc
 const TormentedTantalum: Material = { name: 'Tormented Tantalum', url: 'https://www.wowhead.com/item=251283/tormented-tantalum', rarity: Rarity.Rare }
 const MoteOfWildMagic: Material = { name: 'Mote of Wild Magic', url: 'https://www.wowhead.com/item=236951/mote-of-wild-magic', rarity: Rarity.Rare }
+const MoteOfPrimalEnergy: Material = { name: 'Mote of Primal Energy', url: 'https://www.wowhead.com/item=236950/mote-of-primal-energy', rarity: Rarity.Rare }
 
 const SPARK: Material = { name: "Any Spark", url: SparkOfRadiance.url, rarity: Rarity.Epic }
 
@@ -38,6 +40,7 @@ export const midnight_materials = {
     // Reagent
     TormentedTantalum,
     MoteOfWildMagic,
+    MoteOfPrimalEnergy,
 
     // Leather / Scales / Hides
     InfusedScalewovenHide,
@@ -52,6 +55,7 @@ export const midnight_materials = {
     KaleidoscopicPrism,
     DuskshroudedStone,
     FlawlessAmaniLapis,
+    FlawlessHarandarPeridot,
     GlimmeringGemdust,
 }
 

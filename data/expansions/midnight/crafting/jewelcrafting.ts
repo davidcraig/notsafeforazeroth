@@ -31,6 +31,20 @@ export const Jewelcrafting = {
       { ...materials.GlimmeringGemdust, quantity: 5 }
     ]
   },
+  SignetOfAzerothianBlessings: {
+    name: "Signet of Azerothian Blessings",
+    type: "Jewelry, Ring",
+    rarity: Rarity.Epic,
+    url: "https://www.wowhead.com/item=241140/signet-of-azerothian-blessings",
+    materials: [
+      { ...materials.SPARK, quantity: 2 },
+      { ...materials.TormentedTantalum, quantity: 1 },
+      { ...materials.MoteOfPrimalEnergy, quantity: 20 },
+      { ...materials.KaleidoscopicPrism, quantity: 1 },
+      { ...materials.DuskshroudedStone, quantity: 5 },
+      { ...materials.FlawlessHarandarPeridot, quantity: 1 },
+    ]
+  },
 }
 
 export default Jewelcrafting

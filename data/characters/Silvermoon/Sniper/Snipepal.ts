@@ -15,7 +15,8 @@ export const Snipepal: Character = {
               skill: 67,
               items: [
                 Jewelcrafting.LoaWorshipersBand,
-                Jewelcrafting.MasterworkSindoreiBand
+                Jewelcrafting.MasterworkSindoreiBand,
+                Jewelcrafting.SignetOfAzerothianBlessings,
               ]
             },
             tww: { skill: 6 },
