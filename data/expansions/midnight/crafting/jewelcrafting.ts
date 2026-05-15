@@ -18,6 +18,19 @@ export const Jewelcrafting = {
       { ...materials.FlawlessAmaniLapis, quantity: 1 },
     ]
   },
+  MasterworkSindoreiBand: {
+    name: "Masterwork Sin'dorei Band",
+    type: "Jewelry, Ring",
+    rarity: Rarity.Epic,
+    url: "https://www.wowhead.com/item=240949/masterwork-sindorei-band",
+    materials: [
+      { ...materials.SPARK, quantity: 2 },
+      { ...materials.TormentedTantalum, quantity: 1 },
+      { ...materials.KaleidoscopicPrism, quantity: 1 },
+      { ...materials.DuskshroudedStone, quantity: 3 },
+      { ...materials.GlimmeringGemdust, quantity: 5 }
+    ]
+  },
 }
 
 export default Jewelcrafting

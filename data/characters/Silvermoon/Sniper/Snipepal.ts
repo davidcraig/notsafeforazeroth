@@ -14,7 +14,8 @@ export const Snipepal: Character = {
             midnight: {
               skill: 67,
               items: [
-                Jewelcrafting.LoaWorshipersBand
+                Jewelcrafting.LoaWorshipersBand,
+                Jewelcrafting.MasterworkSindoreiBand
               ]
             },
             tww: { skill: 6 },

@@ -7,6 +7,7 @@ const SparkOfRadiance: Material = { name: 'Spark of Radiance', url: 'https://www
 const KaleidoscopicPrism: Material = { name: 'Kaleidoscopic Prism', url: 'https://www.wowhead.com/item=240974/kaleidoscopic-prism', rarity: Rarity.Rare }
 const DuskshroudedStone: Material = { name: 'Duskshrouded Stone', url: 'https://www.wowhead.com/item=242788/duskshrouded-stone', rarity: Rarity.Common }
 const FlawlessAmaniLapis: Material = { name: 'Flawless Amani Lapis', url: 'https://www.wowhead.com/item=242612/flawless-amani-lapis', rarity: Rarity.Rare }
+const GlimmeringGemdust: Material = { name: 'Glimmering Gemdust', url: 'https://www.wowhead.com/item=242620/glimmering-gemdust', rarity: Rarity.Uncommon }
 
 // Herbs
 
@@ -51,6 +52,7 @@ export const midnight_materials = {
     KaleidoscopicPrism,
     DuskshroudedStone,
     FlawlessAmaniLapis,
+    GlimmeringGemdust,
 }
 
 export default midnight_materials
